@@ -1,7 +1,8 @@
 {
   "name": "cc0-library-mcp",
   "version": "0.1.0",
-  "description": "Search CC0 (public domain dedication) images, audio, HDRIs, textures and 3D models. Ships as an MCP server and a curated source catalog.",
+  "mcpName": "io.github.sanghyoLe/cc0-library",
+  "description": "MCP server and web gallery for CC0-only assets (images, audio, video, HDRIs, textures, 3D models, museum art) from 8 sources, with license evidence per result.",
   "license": "MIT",
   "type": "module",
   "bin": {
@@ -10,8 +11,7 @@
   "files": [
     "dist",
     "catalog",
-    "LICENSE",
-    "catalog/LICENSE"
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc",
@@ -31,7 +31,19 @@
     "model-context-protocol",
     "assets",
     "openverse",
-    "polyhaven"
+    "polyhaven",
+    "mcp-server",
+    "creative-commons",
+    "gamedev",
+    "game-assets",
+    "hdri",
+    "textures",
+    "3d-models",
+    "museum",
+    "open-access",
+    "wikimedia-commons",
+    "internet-archive",
+    "sketchfab"
   ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.32.2",
@@ -44,5 +56,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sanghyoLe/cc0-library.git"
+  },
+  "homepage": "https://sanghyole.github.io/cc0-library/",
+  "bugs": {
+    "url": "https://github.com/sanghyoLe/cc0-library/issues"
   }
 }
