@@ -90,19 +90,20 @@
     },
     {
       "id": "wikimedia-cc0",
-      "name": "Wikimedia Commons — Category:CC-Zero",
+      "name": "Wikimedia Commons (Category:CC-Zero)",
       "url": "https://commons.wikimedia.org/wiki/Category:CC-Zero",
       "kinds": [
         "image",
-        "audio"
+        "audio",
+        "video"
       ],
       "scope": "filter-only",
-      "searchable": false,
+      "searchable": true,
       "licensePage": "https://commons.wikimedia.org/wiki/Category:CC-Zero",
-      "notes": "Mixed licenses across Commons. Files in this category carry a CC0 tag; check each file page.",
+      "notes": "Mixed licenses across Commons. Search is limited to Category:CC-Zero, and each file must have extmetadata License=\"cc0\".",
       "verified": {
         "date": "2026-11-19",
-        "evidence": "category page reachable (HTTP 200)"
+        "evidence": "API extmetadata License=\"cc0\", LicenseShortName=\"CC0\" on files in Category:CC-Zero"
       }
     },
     {
@@ -236,6 +237,174 @@
         "date": "2026-11-19",
         "evidence": "FAQ describes uploading content as CC0; CC0 is one of the site's license filters"
       }
+    },
+    {
+      "id": "internet-archive",
+      "name": "Internet Archive (CC0 items)",
+      "url": "https://archive.org",
+      "kinds": [
+        "video",
+        "audio",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": true,
+      "licensePage": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Mixed licenses. Only items whose licenseurl is the CC0 1.0 deed qualify. Many CC0 videos are US government footage.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "advancedsearch returns items with licenseurl=\"http(s)://creativecommons.org/publicdomain/zero/1.0/\""
+      }
+    },
+    {
+      "id": "sketchfab-cc0",
+      "name": "Sketchfab (CC0 filter)",
+      "url": "https://sketchfab.com/search?features=downloadable&licenses=7c23a1ba438d4306920229c12afcb5f9&type=models",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": true,
+      "licensePage": "https://sketchfab.com/licenses",
+      "notes": "Mixed licenses. Only models whose license is \"CC0 Public Domain\" qualify. Downloads need a Sketchfab login. API terms ask apps to show the license and credit the creator.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "Data API model license: label \"CC0 Public Domain\", slug \"cc0\", url creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "id": "isorepublic",
+      "name": "ISO Republic",
+      "url": "https://isorepublic.com",
+      "kinds": [
+        "image",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://isorepublic.com/license/",
+      "notes": "Stock photos and videos.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "license page: 'CC0 License. All photo and video downloads on ISORepublic.com are free'"
+      }
+    },
+    {
+      "id": "skitterphoto",
+      "name": "Skitterphoto",
+      "url": "https://skitterphoto.com",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://skitterphoto.com/license",
+      "notes": "Stock photos.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "license page: photos 'will be published under Creative Commons CC0'"
+      }
+    },
+    {
+      "id": "freenaturestock",
+      "name": "Free Nature Stock",
+      "url": "https://freenaturestock.com",
+      "kinds": [
+        "image",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freenaturestock.com/license/",
+      "notes": "Nature photos and videos.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "license page: 'photos and videos published on Free Nature Stock are licensed under Creative Commons Zero'"
+      }
+    },
+    {
+      "id": "magdeleine",
+      "name": "Magdeleine",
+      "url": "https://magdeleine.co",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://magdeleine.co",
+      "notes": "Mix of CC0 and other public-domain labels; check the license on each photo.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "site metadata: 'Free high resolution stock images CC0 and Public Domain'"
+      }
+    },
+    {
+      "id": "texturecan",
+      "name": "TextureCan",
+      "url": "https://www.texturecan.com",
+      "kinds": [
+        "texture",
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.texturecan.com",
+      "notes": "PBR textures and 3D models.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "site title: 'TextureCan - Free PBR Textures and CC0 3D Models'"
+      }
+    },
+    {
+      "id": "svgrepo-cc0",
+      "name": "SVG Repo (CC0 filter)",
+      "url": "https://www.svgrepo.com",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.svgrepo.com/page/licensing/",
+      "notes": "Icons and vectors under mixed licenses (CC0, MIT, CC BY...). Check each icon's license.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "licensing page describes 'No copyright or CC0 1.0 Universal PD Dedication' as one of its licenses"
+      }
+    },
+    {
+      "id": "itchio-cc0",
+      "name": "itch.io game assets (CC0 tag)",
+      "url": "https://itch.io/game-assets/assets-cc0",
+      "kinds": [
+        "image",
+        "audio",
+        "model",
+        "texture"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://itch.io/game-assets/assets-cc0",
+      "notes": "Creator-set license filter; check the license row on each asset page.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "page title: 'Top game assets with assets under Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "fma-cc0",
+      "name": "Free Music Archive (CC0 filter)",
+      "url": "https://freemusicarchive.org",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/License_Guide",
+      "notes": "Music under mixed licenses. Filter by CC0 and check each track.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "license guide describes 'CC0: Public Domain Dedication / No Rights Reserved'"
+      }
     }
   ],
   "excluded": [
@@ -272,6 +441,54 @@
     {
       "name": "Art Institute of Chicago",
       "reason": "Site and API returned a bot challenge (HTTP 403) on the verification date."
+    },
+    {
+      "name": "Negative Space",
+      "reason": "License page returned HTTP 403 on the verification date."
+    },
+    {
+      "name": "Musopen",
+      "reason": "FAQ returned HTTP 403 on the verification date."
+    },
+    {
+      "name": "Smithsonian 3D (3d.si.edu)",
+      "reason": "CC0 page returned HTTP 403 on the verification date. Some Smithsonian CC0 models are reachable through Sketchfab search."
+    },
+    {
+      "name": "Walters Art Museum",
+      "reason": "Open access page returned HTTP 403 on the verification date."
+    },
+    {
+      "name": "Birmingham Museums Trust",
+      "reason": "Site returned HTTP 403 on the verification date."
+    },
+    {
+      "name": "FreePD",
+      "reason": "No CC0 text found on the home page."
+    },
+    {
+      "name": "Life of Pix",
+      "reason": "No CC0 text found on the license page."
+    },
+    {
+      "name": "Jay Mantri",
+      "reason": "No CC0 text found on the home page."
+    },
+    {
+      "name": "cgbookcase",
+      "reason": "License page returned HTTP 404; the home page has no CC0 statement of its own."
+    },
+    {
+      "name": "Getty Open Content",
+      "reason": "No CC0 text found on the program page."
+    },
+    {
+      "name": "Paris Musées",
+      "reason": "Open content page did not respond on the verification date."
+    },
+    {
+      "name": "Finnish National Gallery",
+      "reason": "Open data page redirected; license not checked yet."
     }
   ]
 }

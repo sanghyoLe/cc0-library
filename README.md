@@ -1,11 +1,11 @@
 # cc0-library
 
-Search **CC0-only** images, audio, HDRIs, textures, 3D models, and museum artworks from any MCP client (Claude Code, Claude Desktop, Cursor, and others).
+Search **CC0-only** images, audio, video, HDRIs, textures, 3D models, and museum artworks from any MCP client (Claude Code, Claude Desktop, Cursor, and others).
 
 The repo has two parts:
 
-1. **MCP server** (`src/`): live search over 5 providers (Openverse, Poly Haven, ambientCG, Cleveland Museum of Art, The Met). It returns only items confirmed as CC0 1.0.
-2. **Curated catalog** (`catalog/sources.json`): 14 CC0 asset sources, each with license evidence and a verification date. It also lists popular "free" sources that are **not** CC0, and candidates still pending verification.
+1. **MCP server** (`src/`): live search over 8 providers (Openverse, Wikimedia Commons, Internet Archive, Poly Haven, ambientCG, Sketchfab, Cleveland Museum of Art, The Met). It returns only items confirmed as CC0 1.0.
+2. **Curated catalog** (`catalog/sources.json`): 24 CC0 asset sources, each with license evidence and a verification date. It also lists popular "free" sources that are **not** CC0, and candidates still pending verification.
 
 [한국어 안내는 아래에 있습니다.](#한국어)
 
@@ -17,6 +17,9 @@ Most "free" asset sites use custom licenses (Unsplash, Pixabay, Pexels) or mix l
 |---|---|---|
 | [Openverse](https://openverse.org) | image, audio | The query uses `license=cc0`. Each item must also have `license === "cc0"` in its own record. Public Domain Mark (`pdm`) and mature items are dropped. |
 | [Poly Haven](https://polyhaven.com) | hdri, texture, model | Every asset in the library is CC0 ([license](https://polyhaven.com/license)). |
+| [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:CC-Zero) | image, audio, video | Search is limited to Category:CC-Zero. Each file must also have `extmetadata.License === "cc0"`. |
+| [Internet Archive](https://archive.org) | video, audio, image | The query requires a CC0 `licenseurl`. Each item's own `licenseurl` must be the CC0 1.0 deed. User text is stripped of query operators so it cannot bypass this clause. |
+| [Sketchfab](https://sketchfab.com) | model | The query uses `license=cc0`. Each model's own license must be "CC0 Public Domain". Age-restricted models are dropped. |
 | [ambientCG](https://ambientcg.com) | hdri, texture, model | Every asset in the library is CC0 ([license](https://docs.ambientcg.com/license/)). |
 | [Cleveland Museum of Art](https://www.clevelandart.org/open-access) | artwork | The query uses `cc0=1`. Each item must also have `share_license_status === "CC0"`. |
 | [The Met](https://github.com/metmuseum/openaccess) | artwork | Each object must have `isPublicDomain === true` (Open Access works are CC0) and an image. |
@@ -61,8 +64,8 @@ claude mcp add cc0-library -- node "$PWD/dist/index.js"
 
 | Tool | Input | Returns |
 |---|---|---|
-| `search_assets` | `query`, `kind` (`image`·`audio`·`hdri`·`texture`·`model`·`artwork`·`any`, default `any`), `limit` 1–20, `page` 1–12 | CC0 assets, per-provider totals, per-provider errors |
-| `get_asset` | `id` from `search_assets` (`openverse:image:<uuid>`, `openverse:audio:<uuid>`, `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`) | Details plus download URLs (Poly Haven: up to 60 map/resolution/format files) |
+| `search_assets` | `query`, `kind` (`image`·`audio`·`video`·`hdri`·`texture`·`model`·`artwork`·`any`, default `any`), `limit` 1–20, `page` 1–12 | CC0 assets, per-provider totals, per-provider errors |
+| `get_asset` | `id` from `search_assets` (`openverse:image:<uuid>`, `openverse:audio:<uuid>`, `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`, `commons:<pageid>`, `archive:<identifier>`, `sketchfab:<uid>`) | Details plus download URLs (Poly Haven: up to 60 map/resolution/format files; Sketchfab: model page only, because downloads need the user's own login) |
 | `list_sources` | `kind` (optional) | Curated catalog, the non-CC0 list, and the pending-verification list |
 
 If one provider fails, `search_assets` still returns results from the other providers and lists the failure in `errors`. Gateway errors (HTTP 502/503/504) are retried once.
@@ -93,6 +96,8 @@ Example result item:
 - **Openverse** anonymous access allows at most 20 items per page, so `limit` is capped at 20. Credit Openverse when you show its search results.
 - **ambientCG** is run by one person, and its docs say the API is not built for enterprise loads. Keep request volume low. The API sends no CORS headers, so it works from servers only, not from browsers.
 - **Cleveland Museum of Art** and **The Met** need no API key. Each result's `servedBy` names the museum.
+- **Wikimedia Commons** asks API clients to send an identifying User-Agent. This server sends one.
+- **Sketchfab** API terms ask apps that use its download API to show the license and credit the creator (username and model link). This server does not use the download API, but each result still carries `creator` and `landingUrl`.
 
 ## Development
 
@@ -114,6 +119,9 @@ src/
   providers/ambientcg.ts
   providers/cleveland.ts
   providers/met.ts
+  providers/commons.ts
+  providers/archive.ts
+  providers/sketchfab.ts
 catalog/sources.json    curated CC0 source list (CC0 data)
 test/                   node:test unit tests
 scripts/smoke.mjs       live end-to-end check
@@ -142,10 +150,10 @@ To add a searchable provider, add a module under `src/providers/` that returns `
 
 **cc0-library**는 CC0 1.0 자료만 찾아 주는 오픈소스 MCP 서버이자 CC0 자료원 목록입니다.
 
-- `search_assets`는 이미지와 오디오를 Openverse에서 찾습니다. HDRI, 텍스처, 3D 모델은 Poly Haven과 ambientCG에서 찾습니다. 미술품(`artwork`)은 Cleveland Museum of Art와 The Met에서 찾습니다.
+- `search_assets`는 이미지, 오디오, 영상을 Openverse, 위키미디어 공용, 인터넷 아카이브에서 찾습니다. HDRI, 텍스처, 3D 모델은 Poly Haven, ambientCG, Sketchfab에서 찾습니다. 미술품(`artwork`)은 Cleveland Museum of Art와 The Met에서 찾습니다.
 - 모든 결과에는 CC0 확인 근거(`licenseEvidence`)가 붙습니다.
 - `get_asset`은 다운로드 URL을 주기 전에 원본에서 CC0 여부를 다시 확인합니다.
-- `list_sources`는 검증한 CC0 자료원 14곳의 목록을 줍니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, SMK)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
+- `list_sources`는 검증한 CC0 자료원 24곳의 목록을 줍니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, SMK)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
 
 설치 (Claude Code):
 

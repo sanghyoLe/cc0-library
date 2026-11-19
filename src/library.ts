@@ -5,6 +5,9 @@ import { getPolyhaven, searchPolyhaven } from "./providers/polyhaven.js";
 import { getAmbientcg, searchAmbientcg } from "./providers/ambientcg.js";
 import { getCleveland, searchCleveland } from "./providers/cleveland.js";
 import { getMet, searchMet } from "./providers/met.js";
+import { getCommons, searchCommons } from "./providers/commons.js";
+import { getArchive, searchArchive } from "./providers/archive.js";
+import { getSketchfab, searchSketchfab } from "./providers/sketchfab.js";
 import type { Asset, AssetDetail, AssetKind, FetchLike } from "./types.js";
 
 export type SearchKind = AssetKind | "any";
@@ -23,7 +26,7 @@ export interface SearchResult {
 /**
  * Runs one search across the providers that serve `kind`. With kind "any",
  * results from each provider are interleaved so one provider cannot crowd
- * out the other.
+ * out the others.
  */
 export async function search(
   fetchImpl: FetchLike,
@@ -46,6 +49,13 @@ export async function search(
     jobs.push({ name: "cleveland", run: () => searchCleveland(fetchImpl, params) });
     jobs.push({ name: "met", run: () => searchMet(fetchImpl, params) });
   }
+  if (kind === "image" || kind === "audio" || kind === "video" || kind === "any") {
+    // With "any", one combined query per provider keeps the request count down.
+    const k = kind === "any" ? "all" : kind;
+    jobs.push({ name: "commons", run: () => searchCommons(fetchImpl, k, params) });
+    jobs.push({ name: "archive", run: () => searchArchive(fetchImpl, k, params) });
+  }
+  if (kind === "model" || kind === "any") jobs.push({ name: "sketchfab", run: () => searchSketchfab(fetchImpl, params) });
 
   const settled = await Promise.allSettled(jobs.map((j) => j.run()));
   const totals: Record<string, number> = {};
@@ -72,7 +82,8 @@ export function interleave<T>(lists: T[][]): T[] {
 
 /**
  * Resolves ids produced by `search`: `openverse:image:<uuid>`, `openverse:audio:<uuid>`,
- * `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`.
+ * `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`,
+ * `commons:<pageid>`, `archive:<identifier>`, `sketchfab:<uid>`.
  */
 export async function getAsset(fetchImpl: FetchLike, id: string): Promise<AssetDetail | null> {
   const parts = id.split(":");
@@ -83,6 +94,9 @@ export async function getAsset(fetchImpl: FetchLike, id: string): Promise<AssetD
   if (provider === "ambientcg") return getAmbientcg(fetchImpl, a);
   if (provider === "cleveland") return getCleveland(fetchImpl, a);
   if (provider === "met") return getMet(fetchImpl, a);
+  if (provider === "commons") return getCommons(fetchImpl, a);
+  if (provider === "archive") return getArchive(fetchImpl, a);
+  if (provider === "sketchfab") return getSketchfab(fetchImpl, a);
   return null;
 }
 

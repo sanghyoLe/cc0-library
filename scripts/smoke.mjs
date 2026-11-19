@@ -16,18 +16,21 @@ const check = (cond, msg) => { if (!cond) throw new Error(`FAIL: ${msg}`); conso
 const tools = (await client.listTools()).tools.map((t) => t.name).sort();
 check(tools.join() === "get_asset,list_sources,search_assets", `tools listed: ${tools}`);
 
-const QUERIES = { image: "cat", audio: "rain", hdri: "sunset", texture: "brick", model: "chair", artwork: "cat" };
+const QUERIES = { image: "cat", audio: "rain", video: "forest", hdri: "sunset", texture: "brick", model: "chair", artwork: "cat" };
 const seenProviders = new Map();
 for (const [kind, q] of Object.entries(QUERIES)) {
-  const r = await call("search_assets", { query: q, kind, limit: 6 });
+  const r = await call("search_assets", { query: q, kind, limit: 20 });
   check(r.assets.length > 0 && r.errors.length === 0, `search ${kind} "${q}" -> ${r.assets.length} results, errors=${JSON.stringify(r.errors)}`);
   check(r.assets.every((a) => a.licenseEvidence.license === "CC0-1.0"), `${kind} results all carry CC0 evidence`);
   for (const a of r.assets) if (!seenProviders.has(a.provider)) seenProviders.set(a.provider, a.id);
 }
-check(["openverse", "polyhaven", "ambientcg", "cleveland", "met"].every((p) => seenProviders.has(p)), `all 5 providers returned results: ${[...seenProviders.keys()]}`);
+const ALL = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab"];
+check(ALL.every((p) => seenProviders.has(p)), `all ${ALL.length} providers returned results: ${[...seenProviders.keys()]}`);
 for (const [provider, id] of seenProviders) {
   const d = await call("get_asset", { id });
-  check(d.id === id && d.files.length > 0, `get_asset ${provider} ${id} -> ${d.files.length} file(s), e.g. ${d.files[0].label}`);
+  // Sketchfab downloads need the user's own login, so a model may list no files.
+  const needsFiles = provider !== "sketchfab";
+  check(d.id === id && (!needsFiles || d.files.length > 0), `get_asset ${provider} ${id} -> ${d.files.length} file(s)${d.files[0] ? `, e.g. ${d.files[0].label}` : ""}`);
 }
 
 const any = await call("search_assets", { query: "forest", limit: 6 });

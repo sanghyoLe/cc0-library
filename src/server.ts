@@ -18,9 +18,10 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
     {
       title: "Search CC0 assets",
       description:
-        "Search CC0-only images, audio, HDRIs, textures, 3D models and museum artworks. Every result was checked as " +
-        "CC0 1.0 (public domain dedication) and carries licenseEvidence. Sources: Openverse (image, audio), " +
-        "Poly Haven and ambientCG (hdri, texture, model), Cleveland Museum of Art and The Met (artwork). " +
+        "Search CC0-only images, audio, video, HDRIs, textures, 3D models and museum artworks. Every result was checked as " +
+        "CC0 1.0 (public domain dedication) and carries licenseEvidence. Sources: Openverse, Wikimedia Commons and " +
+        "Internet Archive (image, audio, video), Poly Haven and ambientCG (hdri, texture, model), Sketchfab (model), " +
+        "Cleveland Museum of Art and The Met (artwork). " +
         "Include each result's servedBy credit when showing results to people.",
       inputSchema: {
         query: z.string().min(1).max(200).describe("Search words, e.g. 'rainy street' or 'brick wall'"),
@@ -40,7 +41,8 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
       description:
         "Get details and download URLs for one asset id returned by search_assets " +
         "(formats: 'openverse:image:<uuid>', 'openverse:audio:<uuid>', 'polyhaven:<slug>', " +
-        "'ambientcg:<assetId>', 'cleveland:<number>', 'met:<number>'). " +
+        "'ambientcg:<assetId>', 'cleveland:<number>', 'met:<number>', 'commons:<pageid>', 'archive:<identifier>', " +
+        "'sketchfab:<uid>'). Sketchfab returns the model page only: its downloads need the user's own login. " +
         "Re-checks the CC0 status at the source before returning.",
       inputSchema: { id: z.string().min(1).max(120).describe("Asset id from search_assets") },
       annotations: { readOnlyHint: true, openWorldHint: true },
