@@ -62,11 +62,11 @@
       <h2>Use it from Claude, Cursor or any MCP client</h2>
       <p>The same search runs as an MCP server, so your AI assistant can find CC0 assets and cite the license evidence.</p>
       <h3>Claude Code</h3>
-      <pre class="code"><code id="cmd-claude">claude mcp add cc0-library -- npx -y github:sanghyoLe/cc0-library</code><button class="copy" data-copy="cmd-claude">Copy</button></pre>
+      <pre class="code"><code id="cmd-claude">claude mcp add cc0-library -- npx -y cc0-library-mcp</code><button class="copy" data-copy="cmd-claude">Copy</button></pre>
       <h3>Claude Desktop, Cursor, others</h3>
       <pre class="code"><code id="cmd-json">{
   "mcpServers": {
-    "cc0-library": { "command": "npx", "args": ["-y", "github:sanghyoLe/cc0-library"] }
+    "cc0-library": { "command": "npx", "args": ["-y", "cc0-library-mcp"] }
   }
 }</code><button class="copy" data-copy="cmd-json">Copy</button></pre>
       <p>Tools: <code>search_assets</code>, <code>get_asset</code>, <code>list_sources</code>.</p>

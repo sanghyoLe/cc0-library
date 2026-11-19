@@ -6,9 +6,10 @@ One search across 8 sources for images, audio, video, HDRIs, textures, 3D models
 [![ci](https://github.com/sanghyoLe/cc0-library/actions/workflows/ci.yml/badge.svg)](https://github.com/sanghyoLe/cc0-library/actions/workflows/ci.yml)
 ![license: MIT](https://img.shields.io/badge/code-MIT-blue)
 ![catalog: CC0](https://img.shields.io/badge/catalog-CC0-green)
+[![npm](https://img.shields.io/npm/v/cc0-library-mcp)](https://www.npmjs.com/package/cc0-library-mcp)
 
 - **Try it in the browser:** https://sanghyole.github.io/cc0-library/
-- **Use it from Claude, Cursor, or any MCP client:** `claude mcp add cc0-library -- npx -y github:sanghyoLe/cc0-library`
+- **Use it from Claude, Cursor, or any MCP client:** `claude mcp add cc0-library -- npx -y cc0-library-mcp`
 
 [![cc0-library web gallery: CC0 search results for "cat" from Poly Haven, Cleveland Museum of Art and The Met](docs/screenshot.jpg)](https://sanghyole.github.io/cc0-library/?q=cat&strict=1)
 
@@ -64,7 +65,7 @@ Requires Node.js 20 or later.
 ### Claude Code
 
 ```sh
-claude mcp add cc0-library -- npx -y github:sanghyoLe/cc0-library
+claude mcp add cc0-library -- npx -y cc0-library-mcp
 ```
 
 ### Claude Desktop / other clients (`mcpServers` JSON)
@@ -74,7 +75,7 @@ claude mcp add cc0-library -- npx -y github:sanghyoLe/cc0-library
   "mcpServers": {
     "cc0-library": {
       "command": "npx",
-      "args": ["-y", "github:sanghyoLe/cc0-library"]
+      "args": ["-y", "cc0-library-mcp"]
     }
   }
 }
@@ -192,7 +193,7 @@ To add a searchable provider, add a module under `src/providers/` that returns `
 설치 (Claude Code):
 
 ```sh
-claude mcp add cc0-library -- npx -y github:sanghyoLe/cc0-library
+claude mcp add cc0-library -- npx -y cc0-library-mcp
 ```
 
 코드는 MIT, 카탈로그 데이터는 CC0입니다. 자료원 추가는 위 "Contributing a source" 절차를 따릅니다.
