@@ -9,12 +9,17 @@ await client.connect(new StdioClientTransport({ command: process.execPath, args:
 const call = async (name, args) => {
   const r = await client.callTool({ name, arguments: args });
   if (r.isError) throw new Error(`${name} failed: ${r.content[0].text}`);
-  return JSON.parse(r.content[0].text);
+  if (!r.structuredContent) throw new Error(`${name} returned no structuredContent`);
+  return r.structuredContent;
 };
 const check = (cond, msg) => { if (!cond) throw new Error(`FAIL: ${msg}`); console.log(`ok - ${msg}`); };
 
-const tools = (await client.listTools()).tools.map((t) => t.name).sort();
+const toolDefs = (await client.listTools()).tools;
+const tools = toolDefs.map((t) => t.name).sort();
 check(tools.join() === "get_asset,list_sources,search_assets", `tools listed: ${tools}`);
+// Glama's TDQS rewards documented outputs and declared annotations; keep them on every tool.
+check(toolDefs.every((t) => t.outputSchema?.properties && t.annotations?.readOnlyHint === true && t.title && t.description.length > 200),
+  "every tool has outputSchema, readOnly annotation, title and a full description");
 
 const QUERIES = { image: "cat", audio: "rain", video: "forest", hdri: "sunset", texture: "brick", model: "chair", artwork: "cat" };
 const seenProviders = new Map();
