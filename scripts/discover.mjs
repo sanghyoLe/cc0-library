@@ -29,6 +29,15 @@ async function get(url, accept = "*/*") {
   }
 }
 
+/** Parses JSON; returns null when a site answers with HTML (e.g. a bot-protection page). */
+function parseJson(text) {
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
+}
+
 const host = (u) => {
   try {
     return new URL(u).hostname.replace(/^www\./, "");
@@ -67,11 +76,13 @@ async function discover() {
   for (const media of ["images", "audio"]) {
     calls++;
     const stats = await get(`https://api.openverse.org/v1/${media}/stats/`, "application/json");
-    if (stats.status !== 200) {
-      candidates.push({ media, error: `stats HTTP ${stats.status || stats.error}` });
+    const list = stats.status === 200 ? parseJson(stats.text) : null;
+    if (!Array.isArray(list)) {
+      const why = stats.status !== 200 ? `HTTP ${stats.status || stats.error}` : "non-JSON response (likely bot protection on this network)";
+      candidates.push({ media, error: `Openverse ${media} stats: ${why}` });
       continue;
     }
-    for (const src of JSON.parse(stats.text)) {
+    for (const src of list) {
       const ids = [src.source_name, src.display_name, host(src.source_url), baseDomain(src.source_url)].map((x) => String(x).toLowerCase());
       if (ids.some((x) => known.has(x))) continue;
       if (calls >= MAX_OPENVERSE_CALLS) {
@@ -85,8 +96,9 @@ async function discover() {
         stoppedEarly = true;
         break;
       }
-      if (r.status !== 200) continue;
-      const cc0Count = JSON.parse(r.text).result_count ?? 0;
+      const body = r.status === 200 ? parseJson(r.text) : null;
+      if (!body) continue;
+      const cc0Count = body.result_count ?? 0;
       if (cc0Count > 0) candidates.push({ media, name: src.display_name, url: src.source_url, cc0Count, total: src.media_count });
     }
   }
