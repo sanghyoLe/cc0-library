@@ -6,8 +6,12 @@
  * confirmed, so a caller can re-check it instead of trusting this library.
  */
 
-export const ASSET_KINDS = ["image", "audio", "hdri", "texture", "model"] as const;
+/** `artwork` = photos of public-domain museum works (Cleveland Museum of Art, The Met). */
+export const ASSET_KINDS = ["image", "audio", "hdri", "texture", "model", "artwork"] as const;
 export type AssetKind = (typeof ASSET_KINDS)[number];
+
+export const PROVIDER_IDS = ["openverse", "polyhaven", "ambientcg", "cleveland", "met"] as const;
+export type ProviderId = (typeof PROVIDER_IDS)[number];
 
 export const CC0_LICENSE_URL = "https://creativecommons.org/publicdomain/zero/1.0/";
 
@@ -33,7 +37,7 @@ export interface Asset {
   fileUrl: string | null;
   thumbnailUrl: string | null;
   tags: string[];
-  provider: "openverse" | "polyhaven";
+  provider: ProviderId;
   /** Upstream site the item originally came from (e.g. flickr, freesound). */
   origin: string;
   licenseEvidence: LicenseEvidence;

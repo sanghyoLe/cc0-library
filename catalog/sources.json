@@ -1,77 +1,277 @@
 {
-  "$comment": "Curated CC0 sources. 'scope' = 'whole-library' when every item at the source is CC0; 'filter-only' when the source mixes licenses and only items carrying a CC0 label qualify. 'searchable' = this repo's MCP server can search it directly. 'verified' = date and evidence this entry was last checked against the source's own license page or API.",
+  "$comment": "Curated CC0 sources. 'scope' = 'whole-library' when every item at the source is CC0; 'filter-only' when the source mixes licenses and only items carrying a CC0 label qualify. 'searchable' = this repo's MCP server can search it directly. 'verified' = date and evidence this entry was last checked against the source's own license page or API. 'pending' = candidates not yet verified; they are neither recommended nor known to be non-CC0.",
   "sources": [
     {
       "id": "polyhaven",
       "name": "Poly Haven",
       "url": "https://polyhaven.com",
-      "kinds": ["hdri", "texture", "model"],
+      "kinds": [
+        "hdri",
+        "texture",
+        "model"
+      ],
       "scope": "whole-library",
       "searchable": true,
       "licensePage": "https://polyhaven.com/license",
       "notes": "API requires a User-Agent naming your app and a 'Powered by Poly Haven' credit when showing live API content. Downloaded assets need no attribution.",
-      "verified": { "date": "2026-11-19", "evidence": "license page meta: 'CC0 means absolute freedom.'; polyhaven.com/llms.txt: 'every asset is CC0'" }
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "license page meta: 'CC0 means absolute freedom.'; polyhaven.com/llms.txt: 'every asset is CC0'"
+      }
     },
     {
       "id": "openverse",
       "name": "Openverse",
       "url": "https://openverse.org",
-      "kinds": ["image", "audio"],
+      "kinds": [
+        "image",
+        "audio"
+      ],
       "scope": "filter-only",
       "searchable": true,
       "licensePage": "https://creativecommons.org/publicdomain/zero/1.0/",
       "notes": "Meta-search over Flickr, Freesound, Wikimedia Commons, museums and more. Only items whose own license field is 'cc0' qualify. Public Domain Mark ('pdm') items are excluded.",
-      "verified": { "date": "2026-11-19", "evidence": "API item field license=\"cc0\" with license_url creativecommons.org/publicdomain/zero/1.0/" }
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "API item field license=\"cc0\" with license_url creativecommons.org/publicdomain/zero/1.0/"
+      }
     },
     {
       "id": "ambientcg",
       "name": "ambientCG",
       "url": "https://ambientcg.com",
-      "kinds": ["texture", "hdri", "model"],
+      "kinds": [
+        "texture",
+        "hdri",
+        "model"
+      ],
       "scope": "whole-library",
-      "searchable": false,
+      "searchable": true,
       "licensePage": "https://docs.ambientcg.com/license/",
-      "notes": "PBR materials, HDRIs and models. Has its own JSON API (ambientcg.com/api/v2/full_json).",
-      "verified": { "date": "2026-11-19", "evidence": "docs.ambientcg.com/license links CC0 1.0 for all assets" }
+      "notes": "PBR materials, HDRIs and models. Searchable through the v3 API (ambientcg.com/api/v3/assets). The API sends no CORS headers, so browsers cannot call it directly.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "docs.ambientcg.com/license links CC0 1.0 for all assets"
+      }
     },
     {
       "id": "kenney",
       "name": "Kenney",
       "url": "https://kenney.nl/assets",
-      "kinds": ["image", "audio", "model"],
+      "kinds": [
+        "image",
+        "audio",
+        "model"
+      ],
       "scope": "whole-library",
       "searchable": false,
       "licensePage": "https://kenney.nl/support",
       "notes": "2D/3D game asset packs, UI kits and sound effects. CC0 covers the assets on the asset pages.",
-      "verified": { "date": "2026-11-19", "evidence": "kenney.nl/support: 'the asset pages are public domain licensed (CC0)'" }
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "kenney.nl/support: 'the asset pages are public domain licensed (CC0)'"
+      }
     },
     {
       "id": "freesound-cc0",
       "name": "Freesound (CC0 filter)",
       "url": "https://freesound.org/search/?f=license:%22Creative+Commons+0%22",
-      "kinds": ["audio"],
+      "kinds": [
+        "audio"
+      ],
       "scope": "filter-only",
       "searchable": false,
       "licensePage": "https://freesound.org/help/faq/",
       "notes": "Mixed licenses. Use the 'Creative Commons 0' license filter. Many CC0 Freesound items are also reachable through Openverse search.",
-      "verified": { "date": "2026-11-19", "evidence": "Openverse returns freesound items with license=\"cc0\"" }
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "Openverse returns freesound items with license=\"cc0\""
+      }
     },
     {
       "id": "wikimedia-cc0",
       "name": "Wikimedia Commons — Category:CC-Zero",
       "url": "https://commons.wikimedia.org/wiki/Category:CC-Zero",
-      "kinds": ["image", "audio"],
+      "kinds": [
+        "image",
+        "audio"
+      ],
       "scope": "filter-only",
       "searchable": false,
       "licensePage": "https://commons.wikimedia.org/wiki/Category:CC-Zero",
       "notes": "Mixed licenses across Commons. Files in this category carry a CC0 tag; check each file page.",
-      "verified": { "date": "2026-11-19", "evidence": "category page reachable (HTTP 200)" }
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "category page reachable (HTTP 200)"
+      }
+    },
+    {
+      "id": "cleveland",
+      "name": "Cleveland Museum of Art Open Access",
+      "url": "https://www.clevelandart.org/open-access",
+      "kinds": [
+        "artwork"
+      ],
+      "scope": "filter-only",
+      "searchable": true,
+      "licensePage": "https://www.clevelandart.org/open-access",
+      "notes": "Open Access API without a key. Only items whose share_license_status is \"CC0\" qualify; the collection also holds copyrighted works.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "open-access page links creativecommons.org/publicdomain/zero/1.0/; API items carry share_license_status=\"CC0\""
+      }
+    },
+    {
+      "id": "met",
+      "name": "The Metropolitan Museum of Art Open Access",
+      "url": "https://www.metmuseum.org/art/collection",
+      "kinds": [
+        "artwork"
+      ],
+      "scope": "filter-only",
+      "searchable": true,
+      "licensePage": "https://github.com/metmuseum/openaccess",
+      "notes": "Collection API without a key. Only objects with isPublicDomain=true qualify. The v1 search endpoint was retired on 2026-10-01; this repo uses v1.1.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "metmuseum/openaccess README: artworks covered by the Open Access policy are identified with the Creative Commons Zero (CC0) icon; metmuseum.github.io: datasets waived under CC0"
+      }
+    },
+    {
+      "id": "quaternius",
+      "name": "Quaternius",
+      "url": "https://quaternius.com",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://quaternius.com/faq.html",
+      "notes": "Low-poly 3D model packs for games.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "quaternius.com/faq.html: models are licensed under CC0"
+      }
+    },
+    {
+      "id": "kaykit",
+      "name": "KayKit (Kay Lousberg)",
+      "url": "https://kaylousberg.itch.io",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://kaylousberg.itch.io/kaykit-adventurers",
+      "notes": "Low-poly 3D game asset packs on itch.io. Free packs checked are CC0; check the license row on each pack page.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "KayKit Adventurers itch.io page license row: Creative Commons Zero v1.0 Universal"
+      }
+    },
+    {
+      "id": "sharetextures",
+      "name": "ShareTextures",
+      "url": "https://www.sharetextures.com",
+      "kinds": [
+        "texture",
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.sharetextures.com/about",
+      "notes": "PBR textures and 3D models.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "site metadata: 'ShareTextures Free CC0 Textures & Models'"
+      }
+    },
+    {
+      "id": "3dtextures",
+      "name": "3DTextures.me",
+      "url": "https://3dtextures.me",
+      "kinds": [
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://3dtextures.me/about/",
+      "notes": "Seamless PBR textures.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "about page: textures are licensed as CC0 (links creativecommons.org/publicdomain/zero/1.0/)"
+      }
+    },
+    {
+      "id": "openclipart",
+      "name": "Openclipart",
+      "url": "https://openclipart.org",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://openclipart.org/share",
+      "notes": "Vector clip art (SVG). Its JSON search endpoint returned HTML on the verification date, so it is not searchable here.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "openclipart.org/share: 'we use the Creative Commons Zero license'"
+      }
+    },
+    {
+      "id": "opengameart-cc0",
+      "name": "OpenGameArt (CC0 filter)",
+      "url": "https://opengameart.org/art-search-advanced?field_art_licenses_tid%5B%5D=4",
+      "kinds": [
+        "image",
+        "audio",
+        "model",
+        "texture"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/faq",
+      "notes": "Mixed licenses (CC-BY, CC-BY-SA, GPL, CC0). Filter by the CC0 license and check each entry.",
+      "verified": {
+        "date": "2026-11-19",
+        "evidence": "FAQ describes uploading content as CC0; CC0 is one of the site's license filters"
+      }
     }
   ],
   "excluded": [
-    { "name": "Unsplash", "reason": "Uses the Unsplash License, not CC0." },
-    { "name": "Pixabay", "reason": "Uses the Pixabay Content License, not CC0." },
-    { "name": "Pexels", "reason": "Uses the Pexels License, not CC0." },
-    { "name": "Quaternius", "reason": "Not machine-verified: license text is rendered by JavaScript. Add it after a manual check." }
+    {
+      "name": "Unsplash",
+      "reason": "Uses the Unsplash License, not CC0."
+    },
+    {
+      "name": "Pixabay",
+      "reason": "Uses the Pixabay Content License, not CC0."
+    },
+    {
+      "name": "Pexels",
+      "reason": "Uses the Pexels License, not CC0."
+    },
+    {
+      "name": "SMK (National Gallery of Denmark)",
+      "reason": "Its API marks public-domain works with the Public Domain Mark (PDM), not CC0."
+    }
+  ],
+  "pending": [
+    {
+      "name": "National Gallery of Art (US)",
+      "reason": "Metadata repo (github.com/NationalGalleryOfArt/opendata) is CC0. The image policy page returned HTTP 403, so image licensing is unverified."
+    },
+    {
+      "name": "Rijksmuseum",
+      "reason": "Object records link both the Public Domain Mark and CC0; which one covers the images is unverified."
+    },
+    {
+      "name": "Smithsonian Open Access",
+      "reason": "API needs an api.data.gov key; per-item CC0 fields could not be checked without one."
+    },
+    {
+      "name": "Art Institute of Chicago",
+      "reason": "Site and API returned a bot challenge (HTTP 403) on the verification date."
+    }
   ]
 }

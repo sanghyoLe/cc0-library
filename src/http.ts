@@ -24,8 +24,17 @@ export const defaultFetch: FetchLike = (url, init) =>
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
 
+/** Gateway errors that upstreams (notably Openverse) return transiently under load. */
+const RETRYABLE = new Set([502, 503, 504]);
+const RETRY_DELAY_MS = 500;
+
+/** GETs JSON. Retries once on a gateway error; any other non-2xx status throws UpstreamError. */
 export async function getJson<T>(fetchImpl: FetchLike, provider: string, url: string): Promise<T> {
-  const res = await fetchImpl(url);
+  let res = await fetchImpl(url);
+  if (RETRYABLE.has(res.status)) {
+    await new Promise((r) => setTimeout(r, RETRY_DELAY_MS));
+    res = await fetchImpl(url);
+  }
   if (!res.ok) throw new UpstreamError(provider, res.status, url);
   return (await res.json()) as T;
 }

@@ -18,9 +18,10 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
     {
       title: "Search CC0 assets",
       description:
-        "Search CC0-only images, audio, HDRIs, textures and 3D models. Every result was checked as CC0 1.0 " +
-        "(public domain dedication) and carries licenseEvidence. Images/audio come from Openverse; " +
-        "HDRIs/textures/models come from Poly Haven. Include each result's servedBy credit when showing results to people.",
+        "Search CC0-only images, audio, HDRIs, textures, 3D models and museum artworks. Every result was checked as " +
+        "CC0 1.0 (public domain dedication) and carries licenseEvidence. Sources: Openverse (image, audio), " +
+        "Poly Haven and ambientCG (hdri, texture, model), Cleveland Museum of Art and The Met (artwork). " +
+        "Include each result's servedBy credit when showing results to people.",
       inputSchema: {
         query: z.string().min(1).max(200).describe("Search words, e.g. 'rainy street' or 'brick wall'"),
         kind: z.enum([...ASSET_KINDS, "any"]).default("any").describe("Asset type to search"),
@@ -38,7 +39,8 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
       title: "Get CC0 asset details",
       description:
         "Get details and download URLs for one asset id returned by search_assets " +
-        "(formats: 'openverse:image:<uuid>', 'openverse:audio:<uuid>', 'polyhaven:<slug>'). " +
+        "(formats: 'openverse:image:<uuid>', 'openverse:audio:<uuid>', 'polyhaven:<slug>', " +
+        "'ambientcg:<assetId>', 'cleveland:<number>', 'met:<number>'). " +
         "Re-checks the CC0 status at the source before returning.",
       inputSchema: { id: z.string().min(1).max(120).describe("Asset id from search_assets") },
       annotations: { readOnlyHint: true, openWorldHint: true },
@@ -61,7 +63,7 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
       title: "List curated CC0 sources",
       description:
         "List the curated catalog of CC0 asset sources, with license evidence and the date each was verified. " +
-        "Also lists popular 'free' sources that are NOT CC0 and why.",
+        "Also lists popular 'free' sources that are NOT CC0 and why, and candidates still pending verification.",
       inputSchema: {
         kind: z.enum([...ASSET_KINDS, "any"]).default("any").describe("Only sources offering this asset type"),
       },
@@ -70,7 +72,7 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
     async ({ kind }) => {
       const catalog = loadCatalog();
       const sources = kind === "any" ? catalog.sources : catalog.sources.filter((s) => s.kinds.includes(kind));
-      return json({ sources, notCc0: catalog.excluded });
+      return json({ sources, notCc0: catalog.excluded, pendingVerification: catalog.pending });
     },
   );
 

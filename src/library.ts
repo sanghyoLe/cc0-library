@@ -2,6 +2,9 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { getOpenverse, searchOpenverse } from "./providers/openverse.js";
 import { getPolyhaven, searchPolyhaven } from "./providers/polyhaven.js";
+import { getAmbientcg, searchAmbientcg } from "./providers/ambientcg.js";
+import { getCleveland, searchCleveland } from "./providers/cleveland.js";
+import { getMet, searchMet } from "./providers/met.js";
 import type { Asset, AssetDetail, AssetKind, FetchLike } from "./types.js";
 
 export type SearchKind = AssetKind | "any";
@@ -34,10 +37,14 @@ export async function search(
 
   if (kind === "image" || kind === "any") jobs.push({ name: "openverse:image", run: () => searchOpenverse(fetchImpl, "image", params) });
   if (kind === "audio" || kind === "any") jobs.push({ name: "openverse:audio", run: () => searchOpenverse(fetchImpl, "audio", params) });
-  if (kind === "hdri" || kind === "texture" || kind === "model") {
-    jobs.push({ name: "polyhaven", run: () => searchPolyhaven(fetchImpl, kind, params) });
-  } else if (kind === "any") {
-    jobs.push({ name: "polyhaven", run: () => searchPolyhaven(fetchImpl, "all", params) });
+  if (kind === "hdri" || kind === "texture" || kind === "model" || kind === "any") {
+    const k = kind === "any" ? "all" : kind;
+    jobs.push({ name: "polyhaven", run: () => searchPolyhaven(fetchImpl, k, params) });
+    jobs.push({ name: "ambientcg", run: () => searchAmbientcg(fetchImpl, k, params) });
+  }
+  if (kind === "artwork" || kind === "any") {
+    jobs.push({ name: "cleveland", run: () => searchCleveland(fetchImpl, params) });
+    jobs.push({ name: "met", run: () => searchMet(fetchImpl, params) });
   }
 
   const settled = await Promise.allSettled(jobs.map((j) => j.run()));
@@ -63,11 +70,19 @@ export function interleave<T>(lists: T[][]): T[] {
   return out;
 }
 
-/** Resolves ids produced by `search`: `openverse:image:<uuid>`, `openverse:audio:<uuid>`, `polyhaven:<slug>`. */
+/**
+ * Resolves ids produced by `search`: `openverse:image:<uuid>`, `openverse:audio:<uuid>`,
+ * `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`.
+ */
 export async function getAsset(fetchImpl: FetchLike, id: string): Promise<AssetDetail | null> {
-  const [provider, a, b] = id.split(":");
-  if (provider === "polyhaven" && a && b === undefined) return getPolyhaven(fetchImpl, a);
-  if (provider === "openverse" && (a === "image" || a === "audio") && b) return getOpenverse(fetchImpl, a, b);
+  const parts = id.split(":");
+  const [provider, a, b] = parts;
+  if (parts.length === 3 && provider === "openverse" && (a === "image" || a === "audio") && b) return getOpenverse(fetchImpl, a, b);
+  if (parts.length !== 2 || !a) return null;
+  if (provider === "polyhaven") return getPolyhaven(fetchImpl, a);
+  if (provider === "ambientcg") return getAmbientcg(fetchImpl, a);
+  if (provider === "cleveland") return getCleveland(fetchImpl, a);
+  if (provider === "met") return getMet(fetchImpl, a);
   return null;
 }
 
@@ -86,6 +101,7 @@ export interface CatalogSource {
 export interface Catalog {
   sources: CatalogSource[];
   excluded: { name: string; reason: string }[];
+  pending: { name: string; reason: string }[];
 }
 
 const CATALOG_PATH = fileURLToPath(new URL("../catalog/sources.json", import.meta.url));
