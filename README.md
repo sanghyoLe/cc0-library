@@ -159,18 +159,17 @@ web/                    browser gallery (GitHub Pages); scripts/build-site.mjs a
 catalog/sources.json    curated CC0 source list (CC0 data)
 test/                   node:test unit tests
 scripts/smoke.mjs       live end-to-end check
+scripts/discover.mjs    weekly catalog re-check and Openverse candidate discovery
 ```
 
-## Contributing a source
+## Contributing
 
-1. Confirm on the source's **own** license page that its assets (or a filterable subset) are CC0 1.0.
-2. Add an entry to `catalog/sources.json`. Fill in `licensePage`, `scope` (`whole-library` or `filter-only`), and `verified.date` / `verified.evidence` (quote the text you checked).
-3. Run `npm test`. The catalog test checks required fields.
-4. Open a pull request.
+See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 
-If a source is free but not CC0, add it to `excluded` with the reason. If you could not verify a source, add it to `pending` with the reason.
-
-To add a searchable provider, add a module under `src/providers/` that returns `Asset` objects (`src/types.ts`) only after a per-item or whole-library CC0 check. Set `licenseEvidence.declaredBy` honestly. Then wire it into `search()` and `getAsset()` in `src/search.ts`, and add unit tests.
+- **Suggest a source:** open a [New CC0 source](https://github.com/sanghyoLe/cc0-library/issues/new?template=new-source.yml) issue with a quote from the source's own license page.
+- **Report a wrong license:** open a [Wrong license](https://github.com/sanghyoLe/cc0-library/issues/new?template=wrong-license.yml) issue.
+- **Automatic discovery:** a weekly workflow re-checks every catalog license page and lists new CC0 candidates from Openverse in the [`source-check`](https://github.com/sanghyoLe/cc0-library/issues?q=label%3Asource-check) issue. A person verifies each candidate before it enters the catalog.
+- **Pull requests:** `main` is protected. Changes need a pull request, passing tests, and maintainer approval.
 
 ## License
 
@@ -196,4 +195,4 @@ To add a searchable provider, add a module under `src/providers/` that returns `
 claude mcp add cc0-library -- npx -y cc0-library-mcp
 ```
 
-코드는 MIT, 카탈로그 데이터는 CC0입니다. 자료원 추가는 위 "Contributing a source" 절차를 따릅니다.
+코드는 MIT, 카탈로그 데이터는 CC0입니다. 자료원 제안과 기여 방법은 [CONTRIBUTING.md](CONTRIBUTING.md)에 있습니다. 매주 자동 점검이 새 CC0 후보를 찾아 `source-check` 이슈에 올립니다. 후보는 사람이 원본 라이선스 페이지를 확인한 뒤에 목록에 들어갑니다.

@@ -1,0 +1,59 @@
+name: New CC0 source
+description: Suggest a site whose assets (or a filterable subset) are CC0 1.0.
+title: "Source: "
+labels: ["source"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Source name
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Site URL
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: license-page
+    attributes:
+      label: The source's own license page
+      description: Not a third-party summary.
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Quote the exact sentence that says the assets are CC0 1.0.
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - whole-library (everything on the site is CC0)
+        - filter-only (mixed licenses; only CC0-labeled items qualify)
+    validations:
+      required: true
+  - type: checkboxes
+    id: kinds
+    attributes:
+      label: Asset types
+      options:
+        - label: image
+        - label: audio
+        - label: video
+        - label: hdri
+        - label: texture
+        - label: model
+        - label: artwork
+  - type: input
+    id: api
+    attributes:
+      label: Public search API (optional)
+      description: If the site has an API that can be searched without a key, link its docs.

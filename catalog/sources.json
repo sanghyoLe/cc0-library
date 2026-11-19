@@ -410,85 +410,105 @@
   "excluded": [
     {
       "name": "Unsplash",
-      "reason": "Uses the Unsplash License, not CC0."
+      "reason": "Uses the Unsplash License, not CC0.",
+      "url": "https://unsplash.com"
     },
     {
       "name": "Pixabay",
-      "reason": "Uses the Pixabay Content License, not CC0."
+      "reason": "Uses the Pixabay Content License, not CC0.",
+      "url": "https://pixabay.com"
     },
     {
       "name": "Pexels",
-      "reason": "Uses the Pexels License, not CC0."
+      "reason": "Uses the Pexels License, not CC0.",
+      "url": "https://www.pexels.com"
     },
     {
       "name": "SMK (National Gallery of Denmark)",
-      "reason": "Its API marks public-domain works with the Public Domain Mark (PDM), not CC0."
+      "reason": "Its API marks public-domain works with the Public Domain Mark (PDM), not CC0.",
+      "url": "https://open.smk.dk"
     }
   ],
   "pending": [
     {
       "name": "National Gallery of Art (US)",
-      "reason": "Metadata repo (github.com/NationalGalleryOfArt/opendata) is CC0. The image policy page returned HTTP 403, so image licensing is unverified."
+      "reason": "Metadata repo (github.com/NationalGalleryOfArt/opendata) is CC0. The image policy page returned HTTP 403, so image licensing is unverified.",
+      "url": "https://www.nga.gov"
     },
     {
       "name": "Rijksmuseum",
-      "reason": "Object records link both the Public Domain Mark and CC0; which one covers the images is unverified."
+      "reason": "Object records link both the Public Domain Mark and CC0; which one covers the images is unverified.",
+      "url": "https://www.rijksmuseum.nl"
     },
     {
       "name": "Smithsonian Open Access",
-      "reason": "API needs an api.data.gov key; per-item CC0 fields could not be checked without one."
+      "reason": "API needs an api.data.gov key; per-item CC0 fields could not be checked without one.",
+      "url": "https://www.si.edu/openaccess"
     },
     {
       "name": "Art Institute of Chicago",
-      "reason": "Site and API returned a bot challenge (HTTP 403) on the verification date."
+      "reason": "Open-access images are reported as CC0 (artic.edu open-access page, per search summaries; API responses mark data CC0), but artic.edu and its IIIF image server block automated requests, so neither the page nor a search provider could be verified.",
+      "url": "https://www.artic.edu"
     },
     {
       "name": "Negative Space",
-      "reason": "License page returned HTTP 403 on the verification date."
+      "reason": "License page returned HTTP 403 on the verification date.",
+      "url": "https://negativespace.co"
     },
     {
       "name": "Musopen",
-      "reason": "FAQ returned HTTP 403 on the verification date."
+      "reason": "FAQ returned HTTP 403 on the verification date.",
+      "url": "https://musopen.org"
     },
     {
       "name": "Smithsonian 3D (3d.si.edu)",
-      "reason": "CC0 page returned HTTP 403 on the verification date. Some Smithsonian CC0 models are reachable through Sketchfab search."
+      "reason": "CC0 page returned HTTP 403 on the verification date. Some Smithsonian CC0 models are reachable through Sketchfab search.",
+      "url": "https://3d.si.edu"
     },
     {
       "name": "Walters Art Museum",
-      "reason": "Open access page returned HTTP 403 on the verification date."
+      "reason": "Open access page returned HTTP 403 on the verification date.",
+      "url": "https://art.thewalters.org"
     },
     {
       "name": "Birmingham Museums Trust",
-      "reason": "Site returned HTTP 403 on the verification date."
+      "reason": "Site returned HTTP 403 on the verification date.",
+      "url": "https://www.birminghammuseums.org.uk"
     },
     {
       "name": "FreePD",
-      "reason": "No CC0 text found on the home page."
+      "reason": "No CC0 text found on the home page.",
+      "url": "https://freepd.com"
     },
     {
       "name": "Life of Pix",
-      "reason": "No CC0 text found on the license page."
+      "reason": "No CC0 text found on the license page.",
+      "url": "https://www.lifeofpix.com"
     },
     {
       "name": "Jay Mantri",
-      "reason": "No CC0 text found on the home page."
+      "reason": "No CC0 text found on the home page.",
+      "url": "https://jaymantri.com"
     },
     {
       "name": "cgbookcase",
-      "reason": "License page returned HTTP 404; the home page has no CC0 statement of its own."
+      "reason": "License page returned HTTP 404; the home page has no CC0 statement of its own.",
+      "url": "https://www.cgbookcase.com"
     },
     {
       "name": "Getty Open Content",
-      "reason": "No CC0 text found on the program page."
+      "reason": "No CC0 text found on the program page.",
+      "url": "https://www.getty.edu"
     },
     {
       "name": "Paris Musées",
-      "reason": "Open content page did not respond on the verification date."
+      "reason": "Open content page did not respond on the verification date.",
+      "url": "https://parismuseescollections.paris.fr"
     },
     {
       "name": "Finnish National Gallery",
-      "reason": "Open data page redirected; license not checked yet."
+      "reason": "Open data page redirected; license not checked yet.",
+      "url": "https://www.kansallisgalleria.fi"
     }
   ]
 }

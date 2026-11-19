@@ -1,0 +1,25 @@
+name: Wrong license
+description: A result or catalog entry is not actually CC0.
+title: "Wrong license: "
+labels: ["license"]
+body:
+  - type: input
+    id: item
+    attributes:
+      label: Asset id or catalog source id
+      placeholder: "e.g. archive:some-identifier or sharetextures"
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link to the item or page
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it is not CC0
+      description: Quote the license text you see, or explain who really owns the work.
+    validations:
+      required: true

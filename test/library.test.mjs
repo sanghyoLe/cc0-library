@@ -140,9 +140,18 @@ test("catalog: every source has a license page, verification and valid kinds", (
     assert.ok(["whole-library", "filter-only"].includes(s.scope), s.id);
     for (const k of s.kinds) assert.ok(kinds.has(k), `${s.id}: ${k}`);
   }
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = new Set();
+  for (const s of c.sources) {
+    assert.ok(s.verified.date <= today, `${s.id}: verified date is in the future`);
+    assert.match(s.url, /^https:\/\//, `${s.id}: url must be https`);
+    assert.ok(!urls.has(s.url), `${s.id}: duplicate url ${s.url}`);
+    urls.add(s.url);
+  }
   const listed = new Set(c.sources.map((s) => s.name));
   for (const e of [...c.excluded, ...c.pending]) {
     assert.ok(e.reason.length > 10, e.name);
+    assert.match(e.url ?? "", /^https?:\/\//, `${e.name}: excluded/pending entries need a url (used by scripts/discover.mjs)`);
     assert.ok(!listed.has(e.name), `${e.name} is both listed and excluded/pending`);
   }
 });
