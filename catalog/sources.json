@@ -1,0 +1,77 @@
+{
+  "$comment": "Curated CC0 sources. 'scope' = 'whole-library' when every item at the source is CC0; 'filter-only' when the source mixes licenses and only items carrying a CC0 label qualify. 'searchable' = this repo's MCP server can search it directly. 'verified' = date and evidence this entry was last checked against the source's own license page or API.",
+  "sources": [
+    {
+      "id": "polyhaven",
+      "name": "Poly Haven",
+      "url": "https://polyhaven.com",
+      "kinds": ["hdri", "texture", "model"],
+      "scope": "whole-library",
+      "searchable": true,
+      "licensePage": "https://polyhaven.com/license",
+      "notes": "API requires a User-Agent naming your app and a 'Powered by Poly Haven' credit when showing live API content. Downloaded assets need no attribution.",
+      "verified": { "date": "2026-11-19", "evidence": "license page meta: 'CC0 means absolute freedom.'; polyhaven.com/llms.txt: 'every asset is CC0'" }
+    },
+    {
+      "id": "openverse",
+      "name": "Openverse",
+      "url": "https://openverse.org",
+      "kinds": ["image", "audio"],
+      "scope": "filter-only",
+      "searchable": true,
+      "licensePage": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "notes": "Meta-search over Flickr, Freesound, Wikimedia Commons, museums and more. Only items whose own license field is 'cc0' qualify. Public Domain Mark ('pdm') items are excluded.",
+      "verified": { "date": "2026-11-19", "evidence": "API item field license=\"cc0\" with license_url creativecommons.org/publicdomain/zero/1.0/" }
+    },
+    {
+      "id": "ambientcg",
+      "name": "ambientCG",
+      "url": "https://ambientcg.com",
+      "kinds": ["texture", "hdri", "model"],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://docs.ambientcg.com/license/",
+      "notes": "PBR materials, HDRIs and models. Has its own JSON API (ambientcg.com/api/v2/full_json).",
+      "verified": { "date": "2026-11-19", "evidence": "docs.ambientcg.com/license links CC0 1.0 for all assets" }
+    },
+    {
+      "id": "kenney",
+      "name": "Kenney",
+      "url": "https://kenney.nl/assets",
+      "kinds": ["image", "audio", "model"],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://kenney.nl/support",
+      "notes": "2D/3D game asset packs, UI kits and sound effects. CC0 covers the assets on the asset pages.",
+      "verified": { "date": "2026-11-19", "evidence": "kenney.nl/support: 'the asset pages are public domain licensed (CC0)'" }
+    },
+    {
+      "id": "freesound-cc0",
+      "name": "Freesound (CC0 filter)",
+      "url": "https://freesound.org/search/?f=license:%22Creative+Commons+0%22",
+      "kinds": ["audio"],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freesound.org/help/faq/",
+      "notes": "Mixed licenses. Use the 'Creative Commons 0' license filter. Many CC0 Freesound items are also reachable through Openverse search.",
+      "verified": { "date": "2026-11-19", "evidence": "Openverse returns freesound items with license=\"cc0\"" }
+    },
+    {
+      "id": "wikimedia-cc0",
+      "name": "Wikimedia Commons — Category:CC-Zero",
+      "url": "https://commons.wikimedia.org/wiki/Category:CC-Zero",
+      "kinds": ["image", "audio"],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://commons.wikimedia.org/wiki/Category:CC-Zero",
+      "notes": "Mixed licenses across Commons. Files in this category carry a CC0 tag; check each file page.",
+      "verified": { "date": "2026-11-19", "evidence": "category page reachable (HTTP 200)" }
+    }
+  ],
+  "excluded": [
+    { "name": "Unsplash", "reason": "Uses the Unsplash License, not CC0." },
+    { "name": "Pixabay", "reason": "Uses the Pixabay Content License, not CC0." },
+    { "name": "Pexels", "reason": "Uses the Pexels License, not CC0." },
+    { "name": "Quaternius", "reason": "Not machine-verified: license text is rendered by JavaScript. Add it after a manual check." }
+  ]
+}
