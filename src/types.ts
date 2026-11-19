@@ -23,6 +23,14 @@ export interface LicenseEvidence {
   method: "per-item-license-field" | "whole-library-cc0";
   /** The field or policy page the confirmation came from. */
   source: string;
+  /**
+   * Who declared CC0. `library`: the site that made the assets (Poly Haven,
+   * ambientCG). `institution`: a museum for works in its own collection.
+   * `uploader`: whoever uploaded the item (Flickr, Freesound, Commons, Internet
+   * Archive, Sketchfab users). Uploader declarations are not reviewed by this
+   * library and can be wrong, e.g. someone else's work uploaded as CC0.
+   */
+  declaredBy: "library" | "institution" | "uploader";
 }
 
 export interface Asset {

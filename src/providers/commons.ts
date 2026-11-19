@@ -49,15 +49,17 @@ export function isCc0(page: Page): boolean {
   return !!ii && meta(ii, "License") === "cc0";
 }
 
-export function kindOfMime(mime: string): CommonsKind {
-  if (mime.startsWith("audio/") || mime === "application/ogg") return "audio";
+/** `application/ogg` covers both Ogg audio and Ogg video; the extension tells them apart. */
+export function kindOfMime(mime: string, fileName = ""): CommonsKind {
+  if (mime === "application/ogg") return /\.ogv$/i.test(fileName) ? "video" : "audio";
+  if (mime.startsWith("audio/")) return "audio";
   if (mime.startsWith("video/")) return "video";
   return "image";
 }
 
 export function toAsset(page: Page): Asset {
   const ii = page.imageinfo![0];
-  const kind = kindOfMime(ii.mime);
+  const kind = kindOfMime(ii.mime, page.title);
   return {
     id: `commons:${page.pageid}`,
     kind,
@@ -75,12 +77,15 @@ export function toAsset(page: Page): Asset {
       licenseUrl: CC0_LICENSE_URL,
       method: "per-item-license-field",
       source: `Wikimedia Commons file extmetadata License="cc0" (${ii.descriptionurl})`,
+      declaredBy: "uploader",
     },
     servedBy: SERVED_BY,
   };
 }
 
 const IMAGEINFO = {
+  /** Lets browsers call the API anonymously (MediaWiki CORS). */
+  origin: "*",
   prop: "imageinfo",
   iiprop: "url|mime|size|extmetadata",
   iiurlwidth: "320",

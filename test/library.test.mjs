@@ -334,3 +334,33 @@ test("Sketchfab get_asset re-checks the license", async () => {
   const f = fakeFetch({ [`https://api.sketchfab.com/v3/models/${UID_A}`]: sfModel(UID_A, { slug: "cc-by" }) });
   assert.equal(await getAsset(f, `sketchfab:${UID_A}`), null);
 });
+
+test("search options.skip leaves providers out (browser gallery skips ambientCG)", async () => {
+  resetPolyhavenCache();
+  const f = fakeFetch({});
+  const r = await search(f, "wood", "texture", 5, 1, { skip: ["ambientcg"] });
+  assert.equal(f.calls.filter((u) => u.includes("ambientcg")).length, 0);
+  assert.ok(!r.errors.some((e) => e.startsWith("ambientcg")));
+});
+
+test("Commons tells Ogg video (.ogv) from Ogg audio by extension", async () => {
+  const { kindOfMime } = await import("../dist/providers/commons.js");
+  assert.equal(kindOfMime("application/ogg", "File:Ocean surface waves.ogv"), "video");
+  assert.equal(kindOfMime("application/ogg", "File:Rain.ogg"), "audio");
+  assert.equal(kindOfMime("video/webm", "File:x.webm"), "video");
+  assert.equal(kindOfMime("image/jpeg", "File:x.jpg"), "image");
+});
+
+test("every provider states who declared CC0", async () => {
+  resetPolyhavenCache();
+  const f = fakeFetch({
+    "https://api.openverse.org/v1/images/?": { result_count: 1, results: [ov("i1", "cc0")] },
+    "https://api.polyhaven.com/search?": { total: 1, results: [{ slug: "sky", score: 1 }] },
+    "https://api.polyhaven.com/assets": polyIndex,
+    "https://openaccess-api.clevelandart.org/api/artworks/?": { info: { total: 1 }, data: [cle(1, "CC0")] },
+    "https://archive.org/advancedsearch.php?": { response: { numFound: 1, docs: [{ identifier: "a1", mediatype: "image", licenseurl: "http://creativecommons.org/publicdomain/zero/1.0/" }] } },
+  });
+  const r = await search(f, "x", "any", 20, 1);
+  const by = Object.fromEntries(r.assets.map((a) => [a.provider, a.licenseEvidence.declaredBy]));
+  assert.deepEqual(by, { openverse: "uploader", polyhaven: "library", cleveland: "institution", archive: "uploader" });
+});

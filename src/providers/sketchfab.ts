@@ -56,6 +56,7 @@ export function toAsset(m: SketchfabModel): Asset {
       licenseUrl: CC0_LICENSE_URL,
       method: "per-item-license-field",
       source: `Sketchfab model license "CC0 Public Domain" (${BASE}/models/${m.uid})`,
+      declaredBy: "uploader",
     },
     servedBy: SERVED_BY,
   };

@@ -66,6 +66,7 @@ export function toAsset(slug: string, info: PolyInfo): Asset {
       licenseUrl: CC0_LICENSE_URL,
       method: "whole-library-cc0",
       source: "https://polyhaven.com/license",
+      declaredBy: "library",
     },
     servedBy: SERVED_BY,
   };

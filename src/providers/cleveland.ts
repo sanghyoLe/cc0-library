@@ -52,6 +52,7 @@ export function toAsset(a: ClevelandArtwork): Asset {
       licenseUrl: CC0_LICENSE_URL,
       method: "per-item-license-field",
       source: `Cleveland Open Access item field share_license_status="CC0" (${BASE}/${a.id})`,
+      declaredBy: "institution",
     },
     servedBy: SERVED_BY,
   };

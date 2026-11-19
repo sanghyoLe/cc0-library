@@ -55,6 +55,7 @@ export function toAsset(o: MetObject): Asset {
       licenseUrl: CC0_LICENSE_URL,
       method: "per-item-license-field",
       source: `Met Collection API field isPublicDomain=true (${OBJECT}/${o.objectID}); Open Access works are CC0 per https://github.com/metmuseum/openaccess`,
+      declaredBy: "institution",
     },
     servedBy: SERVED_BY,
   };

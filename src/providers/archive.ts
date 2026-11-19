@@ -64,6 +64,7 @@ export function toAsset(doc: SearchDoc): Asset {
       licenseUrl: CC0_LICENSE_URL,
       method: "per-item-license-field",
       source: `Internet Archive item licenseurl="${doc.licenseurl}" (${BASE}/metadata/${doc.identifier})`,
+      declaredBy: "uploader",
     },
     servedBy: SERVED_BY,
   };

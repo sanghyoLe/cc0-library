@@ -62,6 +62,7 @@ export function toAsset(media: OpenverseMedia, item: OpenverseItem): Asset {
       licenseUrl: item.license_url ?? CC0_LICENSE_URL,
       method: "per-item-license-field",
       source: `Openverse item field license="cc0" (${BASE}/${endpoint(media)}/${item.id}/)`,
+      declaredBy: "uploader",
     },
     servedBy: SERVED_BY,
   };

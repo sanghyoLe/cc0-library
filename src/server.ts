@@ -22,6 +22,8 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
         "CC0 1.0 (public domain dedication) and carries licenseEvidence. Sources: Openverse, Wikimedia Commons and " +
         "Internet Archive (image, audio, video), Poly Haven and ambientCG (hdri, texture, model), Sketchfab (model), " +
         "Cleveland Museum of Art and The Met (artwork). " +
+        "licenseEvidence.declaredBy says who declared CC0: 'library' or 'institution' (the rights holder) or " +
+        "'uploader' (a site user; not reviewed, can be wrong). Tell people to check uploader-declared items. " +
         "Include each result's servedBy credit when showing results to people.",
       inputSchema: {
         query: z.string().min(1).max(200).describe("Search words, e.g. 'rainy street' or 'brick wall'"),

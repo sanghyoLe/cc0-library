@@ -63,6 +63,7 @@ export function toAsset(a: AcgAsset): Asset {
       licenseUrl: CC0_LICENSE_URL,
       method: "whole-library-cc0",
       source: "https://docs.ambientcg.com/license/",
+      declaredBy: "library",
     },
     servedBy: SERVED_BY,
   };

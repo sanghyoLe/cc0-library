@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cc0-library</title>
+  <meta name="description" content="Search CC0-only images, audio, video, HDRIs, textures, 3D models and museum artworks from 8 sources. Every result carries license evidence.">
+  <meta property="og:title" content="cc0-library — CC0-only asset search">
+  <meta property="og:description" content="8 sources, one search, CC0 only. Every result shows how its CC0 status was verified. Also an MCP server for Claude, Cursor and other AI tools.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%23111' stroke-width='3'/%3E%3Cpath d='M11 11l10 10' stroke='%23111' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="brand" href="./">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="3"/><path d="M11 11l10 10" stroke="currentColor" stroke-width="3"/></svg>
+        cc0-library
+      </a>
+      <nav class="tabs" role="tablist">
+        <button role="tab" data-tab="search" aria-selected="true">Search</button>
+        <button role="tab" data-tab="sources" aria-selected="false">Sources</button>
+        <button role="tab" data-tab="mcp" aria-selected="false">Use with AI</button>
+      </nav>
+      <a class="gh" href="https://github.com/sanghyoLe/cc0-library" rel="noopener">GitHub ★</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="tab-search" class="tab">
+      <div class="hero">
+        <h1>CC0 assets only. With receipts.</h1>
+        <p>One search across 8 sources: Openverse, Wikimedia Commons, Internet Archive, Poly Haven, Sketchfab, Cleveland Museum of Art, The Met — and ambientCG through the MCP server. Each result shows <em>how</em> its CC0 status was verified.</p>
+      </div>
+
+      <form id="search-form" class="search" role="search">
+        <input id="q" name="q" type="search" placeholder="Try “forest”, “brick wall”, “rain”, “cat”…" autocomplete="off" required maxlength="200">
+        <button type="submit">Search</button>
+      </form>
+      <div id="kinds" class="kinds" role="radiogroup" aria-label="Asset type"></div>
+      <label class="strict"><input type="checkbox" id="strict"> Only CC0 declared by the rights holder (studios and museums) — skips user uploads</label>
+
+      <p id="status" class="status" aria-live="polite"></p>
+      <div id="grid" class="grid"></div>
+      <div class="more-row"><button id="more" class="more" hidden>Load more</button></div>
+      <details id="errors" class="errors" hidden><summary>Some sources did not answer</summary><ul></ul></details>
+    </section>
+
+    <section id="tab-sources" class="tab" hidden>
+      <h2>Verified CC0 sources</h2>
+      <p class="muted">Each source was checked against its own license page or API. “Whole library” means everything there is CC0. “Filter only” means the site mixes licenses and only items labeled CC0 qualify.</p>
+      <div class="table-wrap"><table id="sources-table"><thead><tr><th>Source</th><th>Types</th><th>Scope</th><th>Search here</th><th>Evidence</th></tr></thead><tbody></tbody></table></div>
+      <h2>Popular “free” sites that are <u>not</u> CC0</h2>
+      <ul id="excluded" class="plain"></ul>
+      <h2>Not verified yet</h2>
+      <ul id="pending" class="plain"></ul>
+      <p class="muted">Know a CC0 source? <a href="https://github.com/sanghyoLe/cc0-library#contributing-a-source">Add it with evidence</a>.</p>
+    </section>
+
+    <section id="tab-mcp" class="tab" hidden>
+      <h2>Use it from Claude, Cursor or any MCP client</h2>
+      <p>The same search runs as an MCP server, so your AI assistant can find CC0 assets and cite the license evidence.</p>
+      <h3>Claude Code</h3>
+      <pre class="code"><code id="cmd-claude">claude mcp add cc0-library -- npx -y github:sanghyoLe/cc0-library</code><button class="copy" data-copy="cmd-claude">Copy</button></pre>
+      <h3>Claude Desktop, Cursor, others</h3>
+      <pre class="code"><code id="cmd-json">{
+  "mcpServers": {
+    "cc0-library": { "command": "npx", "args": ["-y", "github:sanghyoLe/cc0-library"] }
+  }
+}</code><button class="copy" data-copy="cmd-json">Copy</button></pre>
+      <p>Tools: <code>search_assets</code>, <code>get_asset</code>, <code>list_sources</code>.</p>
+    </section>
+  </main>
+
+  <dialog id="detail">
+    <form method="dialog"><button class="close" aria-label="Close">×</button></form>
+    <div id="detail-body"></div>
+  </dialog>
+
+  <footer class="wrap foot">
+    <p>Not legal advice. Sources can change; check the source page before you ship. Results via
+      <a href="https://openverse.org">Openverse</a>, <a href="https://commons.wikimedia.org">Wikimedia Commons</a>,
+      <a href="https://archive.org">Internet Archive</a>, <a href="https://sketchfab.com">Sketchfab</a>,
+      <a href="https://www.clevelandart.org/open-access">Cleveland Museum of Art</a>, <a href="https://www.metmuseum.org">The Met</a>.
+      Powered by <a href="https://polyhaven.com">Poly Haven</a>.
+      Code MIT · catalog CC0 · <a href="https://github.com/sanghyoLe/cc0-library">source</a>.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

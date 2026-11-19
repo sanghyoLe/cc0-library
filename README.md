@@ -1,17 +1,46 @@
 # cc0-library
 
-Search **CC0-only** images, audio, video, HDRIs, textures, 3D models, and museum artworks from any MCP client (Claude Code, Claude Desktop, Cursor, and others).
+**CC0 assets only. With receipts.**
+One search across 8 sources for images, audio, video, HDRIs, textures, 3D models, and museum artworks. Every result shows *how* its CC0 status was verified and *who* declared it.
 
-The repo has two parts:
+[![ci](https://github.com/sanghyoLe/cc0-library/actions/workflows/ci.yml/badge.svg)](https://github.com/sanghyoLe/cc0-library/actions/workflows/ci.yml)
+![license: MIT](https://img.shields.io/badge/code-MIT-blue)
+![catalog: CC0](https://img.shields.io/badge/catalog-CC0-green)
 
-1. **MCP server** (`src/`): live search over 8 providers (Openverse, Wikimedia Commons, Internet Archive, Poly Haven, ambientCG, Sketchfab, Cleveland Museum of Art, The Met). It returns only items confirmed as CC0 1.0.
-2. **Curated catalog** (`catalog/sources.json`): 24 CC0 asset sources, each with license evidence and a verification date. It also lists popular "free" sources that are **not** CC0, and candidates still pending verification.
+- **Try it in the browser:** https://sanghyole.github.io/cc0-library/
+- **Use it from Claude, Cursor, or any MCP client:** `claude mcp add cc0-library -- npx -y github:sanghyoLe/cc0-library`
+
+[![cc0-library web gallery: CC0 search results for "cat" from Poly Haven, Cleveland Museum of Art and The Met](docs/screenshot.jpg)](https://sanghyole.github.io/cc0-library/?q=cat&strict=1)
 
 [한국어 안내는 아래에 있습니다.](#한국어)
 
-## Why "CC0 only"
+## Why
 
-Most "free" asset sites use custom licenses (Unsplash, Pixabay, Pexels) or mix licenses on one site. This library returns an item only after it passes a CC0 check:
+"Free" is not "CC0". Unsplash, Pixabay, and Pexels use their own licenses. Openverse, Flickr, Commons, and Sketchfab mix licenses on one site, and the license on an item is whatever the uploader picked. If you ship a game, a product, or AI training data, you need to know which items are really CC0 and why.
+
+| | Openverse search alone | cc0-library |
+|---|---|---|
+| Sources | Openverse index (Flickr, Freesound, Commons, museums…) | Openverse **plus** Commons, Internet Archive, Poly Haven, ambientCG, Sketchfab, Cleveland, The Met |
+| CC0 filter | `license=cc0` query parameter | Query filter **and** a check of each item's own license field |
+| Who declared CC0 | Not shown | `declaredBy`: studio, museum, or uploader |
+| Re-check before download | — | `get_asset` re-checks CC0 at the source |
+| "Looks free but isn't" list | — | Unsplash, Pixabay, Pexels, SMK (Public Domain Mark) |
+| Asset types | Images, audio | Images, audio, video, HDRIs, textures, 3D models, artworks |
+| AI assistant access | REST API | MCP server (`search_assets`, `get_asset`, `list_sources`) |
+
+### Who declared CC0?
+
+Every result has `licenseEvidence.declaredBy`:
+
+| Value | Meaning | Providers |
+|---|---|---|
+| `library` | The studio that made the asset publishes everything as CC0. | Poly Haven, ambientCG |
+| `institution` | A museum marks a work in its own collection as CC0. | Cleveland Museum of Art, The Met |
+| `uploader` | A site user set the CC0 label. Nobody reviewed it, and it can be wrong (for example, someone else's work uploaded as CC0). | Openverse, Wikimedia Commons, Internet Archive, Sketchfab |
+
+The web gallery has a "rights holder only" switch that drops `uploader` results. MCP clients can filter on the field.
+
+## How each provider is checked
 
 | Provider | Asset kinds | How CC0 is checked |
 |---|---|---|
@@ -24,7 +53,7 @@ Most "free" asset sites use custom licenses (Unsplash, Pixabay, Pexels) or mix l
 | [Cleveland Museum of Art](https://www.clevelandart.org/open-access) | artwork | The query uses `cc0=1`. Each item must also have `share_license_status === "CC0"`. |
 | [The Met](https://github.com/metmuseum/openaccess) | artwork | Each object must have `isPublicDomain === true` (Open Access works are CC0) and an image. |
 
-Every result carries `licenseEvidence` (method plus source URL) so you can check it again yourself. `get_asset` checks the CC0 status again at the source before it returns download URLs.
+Every result carries `licenseEvidence` so you can check it again yourself. `get_asset` checks the CC0 status again at the source before it returns download URLs.
 
 > This library is not legal advice. Upstream sites can change or remove items. Check the `landingUrl` before you use an item in a product.
 
@@ -84,7 +113,8 @@ Example result item:
     "license": "CC0-1.0",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
     "method": "whole-library-cc0",
-    "source": "https://polyhaven.com/license"
+    "source": "https://polyhaven.com/license",
+    "declaredBy": "library"
   },
   "servedBy": "Powered by Poly Haven (https://polyhaven.com)"
 }
@@ -105,6 +135,7 @@ Example result item:
 npm install
 npm test          # unit tests with a fake fetch (no network)
 npm run smoke     # end-to-end: starts the server over stdio and calls every tool against the live APIs
+npm run build:site && python3 -m http.server -d _site 8765   # web gallery at http://127.0.0.1:8765
 ```
 
 Layout:
@@ -113,7 +144,8 @@ Layout:
 src/
   index.ts              stdio entry point (bin)
   server.ts             MCP tool definitions
-  library.ts            search fan-out, id routing, catalog loader
+  search.ts             search fan-out and id routing (no Node-only imports; also runs in the browser)
+  library.ts            catalog loader, re-exports search
   providers/openverse.ts
   providers/polyhaven.ts
   providers/ambientcg.ts
@@ -122,6 +154,7 @@ src/
   providers/commons.ts
   providers/archive.ts
   providers/sketchfab.ts
+web/                    browser gallery (GitHub Pages); scripts/build-site.mjs assembles it into _site/
 catalog/sources.json    curated CC0 source list (CC0 data)
 test/                   node:test unit tests
 scripts/smoke.mjs       live end-to-end check
@@ -136,7 +169,7 @@ scripts/smoke.mjs       live end-to-end check
 
 If a source is free but not CC0, add it to `excluded` with the reason. If you could not verify a source, add it to `pending` with the reason.
 
-To add a searchable provider, add a module under `src/providers/` that returns `Asset` objects (`src/types.ts`) only after a per-item or whole-library CC0 check. Then wire it into `search()` and `getAsset()` in `src/library.ts`, and add unit tests.
+To add a searchable provider, add a module under `src/providers/` that returns `Asset` objects (`src/types.ts`) only after a per-item or whole-library CC0 check. Set `licenseEvidence.declaredBy` honestly. Then wire it into `search()` and `getAsset()` in `src/search.ts`, and add unit tests.
 
 ## License
 
@@ -151,7 +184,8 @@ To add a searchable provider, add a module under `src/providers/` that returns `
 **cc0-library**는 CC0 1.0 자료만 찾아 주는 오픈소스 MCP 서버이자 CC0 자료원 목록입니다.
 
 - `search_assets`는 이미지, 오디오, 영상을 Openverse, 위키미디어 공용, 인터넷 아카이브에서 찾습니다. HDRI, 텍스처, 3D 모델은 Poly Haven, ambientCG, Sketchfab에서 찾습니다. 미술품(`artwork`)은 Cleveland Museum of Art와 The Met에서 찾습니다.
-- 모든 결과에는 CC0 확인 근거(`licenseEvidence`)가 붙습니다.
+- 모든 결과에는 CC0 확인 근거(`licenseEvidence`)가 붙습니다. 근거에는 CC0를 누가 선언했는지(`declaredBy`)도 들어 있습니다. 제작사(`library`), 미술관(`institution`), 업로더(`uploader`) 중 하나입니다. 업로더가 선언한 CC0는 아무도 검토하지 않았으므로 직접 확인해야 합니다.
+- 웹에서 바로 검색할 수 있습니다: https://sanghyole.github.io/cc0-library/
 - `get_asset`은 다운로드 URL을 주기 전에 원본에서 CC0 여부를 다시 확인합니다.
 - `list_sources`는 검증한 CC0 자료원 24곳의 목록을 줍니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, SMK)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
 
