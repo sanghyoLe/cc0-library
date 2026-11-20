@@ -533,6 +533,137 @@
         "date": "2026-11-20",
         "evidence": "textures page: 'The textures are published under the CC0 1.0 license, which means you can use them for free without giving credit'"
       }
+    },
+    {
+      "id": "shotstash",
+      "name": "ShotStash",
+      "url": "https://shotstash.com",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://shotstash.com/license/",
+      "notes": "Stock photos.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "license page: 'ShotStash.com photographs come with a CC0 license, meaning they are offered free for both personal and commercial use without attribution'"
+      }
+    },
+    {
+      "id": "snappygoat",
+      "name": "SnappyGoat",
+      "url": "https://snappygoat.com",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://snappygoat.com/",
+      "notes": "Search engine over about 14 million public-domain and CC0 images. Public domain items are not necessarily CC0; check each item's label.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "home page: '13,990,108 Free Public Domain/CC0 Images, Photos and Clipart'"
+      }
+    },
+    {
+      "id": "healthicons",
+      "name": "Health Icons",
+      "url": "https://healthicons.org",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://healthicons.org/",
+      "notes": "Medical and public-health icons (SVG, PNG).",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "home page: 'All icons are open source, licensed under a Creative Commons CC0 License'"
+      }
+    },
+    {
+      "id": "openpeeps",
+      "name": "Open Peeps",
+      "url": "https://www.openpeeps.com",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.openpeeps.com/",
+      "notes": "Hand-drawn mix-and-match people illustrations by Pablo Stanley.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "home page: 'Free for commercial and personal use under CC0 License'"
+      }
+    },
+    {
+      "id": "humaaans",
+      "name": "Humaaans",
+      "url": "https://www.humaaans.com",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.humaaans.com/",
+      "notes": "Mix-and-match people illustrations by Pablo Stanley.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "home page: 'Download CC0 Free for commercial or personal use by Pablo Stanley'"
+      }
+    },
+    {
+      "id": "lukaszadam",
+      "name": "Lukasz Adam Illustrations",
+      "url": "https://www.lukaszadam.com/illustrations",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.lukaszadam.com/illustrations",
+      "notes": "SVG illustrations for websites.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "page title: 'Free SVG Illustrations For Websites (CC0 Licensed)'"
+      }
+    },
+    {
+      "id": "blenderkit-cc0",
+      "name": "BlenderKit (CC0 filter)",
+      "url": "https://www.blenderkit.com",
+      "kinds": [
+        "model",
+        "texture",
+        "hdri"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.blenderkit.com/docs/licenses/",
+      "notes": "Blender add-on library of models, materials and HDRIs under two licenses (Royalty Free and CC0). Use only assets marked CC0.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "license page lists 'CC0 - No Rights Reserved' as one of its asset licenses"
+      }
+    },
+    {
+      "id": "screamingbrain",
+      "name": "Screaming Brain Studios",
+      "url": "https://screamingbrainstudios.com",
+      "kinds": [
+        "image",
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://screamingbrainstudios.com/",
+      "notes": "2D game asset packs (tiles, textures, sprites).",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "home page: 'Every asset pack from Screaming Brain Studios has been released under the CC0 / Public Domain license'"
+      }
     }
   ],
   "excluded": [
@@ -702,6 +833,21 @@
       "name": "Poly Pizza",
       "url": "https://poly.pizza",
       "reason": "Low-poly models under mixed licenses (CC0 and CC BY); the page is rendered by JavaScript and the API needs a key, so per-model licenses were not checked."
+    },
+    {
+      "name": "Pixnio",
+      "url": "https://pixnio.com",
+      "reason": "No CC0 statement found on the home page."
+    },
+    {
+      "name": "freestocks.org",
+      "url": "https://freestocks.org",
+      "reason": "No CC0 statement found on the home page."
+    },
+    {
+      "name": "GameArt2D freebies",
+      "url": "https://www.gameart2d.com/freebies.html",
+      "reason": "No CC0 statement found on the freebies page."
     }
   ]
 }
