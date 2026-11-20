@@ -1,0 +1,51 @@
+:root {
+  --bg: #0f0f12;
+  --panel: rgb(20 20 24 / 0.92);
+  --text: #f1f1f3;
+  --muted: #b3b3bd;
+  --accent: #3ecf8e;
+  --accent-ink: #0b1f16;
+  --warn: #fdba74;
+  --line: rgb(255 255 255 / 0.14);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg); color: var(--text);
+  font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+a { color: var(--accent); }
+#scene { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+
+.panel { position: fixed; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; backdrop-filter: blur(8px); }
+.intro { top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(520px, calc(100vw - 32px)); padding: 24px; z-index: 10; }
+.intro h1 { margin: 0 0 6px; font-size: 28px; letter-spacing: -0.01em; }
+.intro p { color: var(--muted); margin: 6px 0; }
+.intro label { display: block; font-weight: 600; margin: 14px 0 6px; }
+.row { display: flex; gap: 8px; }
+.row input { flex: 1; min-width: 0; font: inherit; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: #1b1b20; color: var(--text); }
+button { font: inherit; cursor: pointer; }
+.row button, .hud button { padding: 10px 14px; border-radius: 10px; border: 0; background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.hud button { padding: 6px 10px; font-size: 13px; background: rgb(255 255 255 / 0.12); color: var(--text); }
+kbd { font: 12px ui-monospace, monospace; border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; margin: 0 1px; }
+.hint.touch { display: none; }
+@media (hover: none) and (pointer: coarse) { .hint.desktop { display: none; } .hint.touch { display: block; } }
+.status { min-height: 1.5em; color: var(--accent); }
+.links { font-size: 13px; }
+
+.hud { position: fixed; top: max(12px, env(safe-area-inset-top)); left: 12px; right: 12px; display: flex; gap: 8px; align-items: center; z-index: 5; }
+.hud #hud-title { flex: 1; font-weight: 600; text-shadow: 0 1px 3px #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.info, .credits { right: 12px; top: 64px; width: min(380px, calc(100vw - 24px)); max-height: calc(100vh - 88px); overflow: auto; padding: 18px; z-index: 8; }
+.info img { width: 100%; border-radius: 8px; }
+.info h3 { margin: 10px 32px 4px 0; }
+.close { position: absolute; top: 6px; right: 10px; background: none; border: 0; color: var(--muted); font-size: 24px; }
+.evidence { font-size: 13px; background: rgb(255 255 255 / 0.06); border-radius: 8px; padding: 10px; overflow-wrap: anywhere; }
+.warn { color: var(--warn); }
+.muted { color: var(--muted); font-size: 13px; }
+.credits h2 { margin: 0 32px 6px 0; }
+.credits ul { padding-left: 18px; font-size: 13px; }
+.credits li { margin: 8px 0; overflow-wrap: anywhere; }
+
+.crosshair { position: fixed; left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: rgb(255 255 255 / 0.8); z-index: 4; pointer-events: none; }
+.touch-move { position: fixed; left: 16px; bottom: max(16px, env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 10px; z-index: 6; }
+.touch-move button { width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--line); background: rgb(255 255 255 / 0.12); color: var(--text); font-size: 22px; }

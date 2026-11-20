@@ -10,12 +10,26 @@ One search across **17 sources** for images, audio, video, HDRIs, textures, 3D m
 [![sanghyoLe/cc0-library MCP server](https://glama.ai/mcp/servers/sanghyoLe/cc0-library/badges/score.svg)](https://glama.ai/mcp/servers/sanghyoLe/cc0-library)
 
 - **Try it in the browser:** https://sanghyole.github.io/cc0-library/
+- **Walk through the CC0 Museum:** https://sanghyole.github.io/cc0-library/museum.html — a 3D gallery generated from CC0 assets for any theme
 - **Use it from Claude, Cursor, or any MCP client:** `claude mcp add cc0-library -- npx -y cc0-library-mcp`
 - **Listed in:** the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.sanghyoLe/cc0-library) (`io.github.sanghyoLe/cc0-library`) and [Glama](https://glama.ai/mcp/servers/sanghyoLe/cc0-library)
 
 [![cc0-library web gallery: CC0 search results for "cat" from Poly Haven, Cleveland Museum of Art and The Met](docs/screenshot.jpg)](https://sanghyole.github.io/cc0-library/?q=cat&strict=1)
 
 [한국어 안내는 아래에 있습니다.](#한국어)
+
+## CC0 Museum
+
+[![CC0 Museum: a 3D gallery hung with CC0 ocean photos](docs/museum.jpg)](https://sanghyole.github.io/cc0-library/museum.html?theme=ocean)
+
+Type a theme (cat, ocean, flowers…) and walk through a museum built at runtime from CC0 assets only:
+
+- **Paintings and photos** on the walls: Wikimedia Commons files whose own license is CC0, at most two per creator.
+- **Sculptures** on pedestals, the **floor** and the **lighting HDRI**: Poly Haven.
+- **Ambient sound**: an Openverse audio result whose own license is CC0.
+- Click any piece for its license evidence; the **Credits** panel lists every asset in the room.
+
+Built with [three.js](https://threejs.org) (MIT, loaded from jsDelivr at a pinned version). It runs entirely in the browser: desktop uses WASD and the mouse, phones use drag-to-look and walk buttons.
 
 ## Why
 
@@ -189,7 +203,7 @@ src/
   providers/wpphotos.ts
   providers/inaturalist.ts, gbif.ts, phylopic.ts, iconify.ts, zenodo.ts, blenderkit.ts
   providers/collections.ts   GitHub repositories and Hugging Face datasets
-web/                    browser gallery (GitHub Pages); scripts/build-site.mjs assembles it into _site/
+web/                    browser gallery and museum.html (3D CC0 Museum, three.js); scripts/build-site.mjs assembles them into _site/
 catalog/sources.json    curated CC0 source list (CC0 data)
 test/                   node:test unit tests
 scripts/smoke.mjs       live end-to-end check
@@ -226,6 +240,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 - `search_assets`는 17곳에서 찾습니다. 이미지·오디오·영상은 Openverse, 위키미디어 공용, 인터넷 아카이브, WordPress 사진 디렉터리, iNaturalist, GBIF, PhyloPic, Iconify, Zenodo에서 찾습니다. HDRI, 텍스처, 3D 모델은 Poly Haven, ambientCG, Sketchfab, BlenderKit에서 찾습니다. CC0 저장소·데이터셋 묶음(`collection`)은 GitHub와 Hugging Face에서 찾습니다. 미술품(`artwork`)은 Cleveland Museum of Art와 The Met에서 찾습니다.
 - 모든 결과에는 CC0 확인 근거(`licenseEvidence`)가 붙습니다. 근거에는 CC0를 누가 선언했는지(`declaredBy`)도 들어 있습니다. 제작사(`library`), 미술관(`institution`), 업로더(`uploader`) 중 하나입니다. 업로더가 선언한 CC0는 아무도 검토하지 않았으므로 직접 확인해야 합니다.
 - 웹에서 바로 검색할 수 있습니다: https://sanghyole.github.io/cc0-library/
+- **CC0 미술관**: 주제어를 넣으면 CC0 그림·조각·바닥·조명·배경음으로 3D 전시실을 만들어 걸어 다닐 수 있습니다. https://sanghyole.github.io/cc0-library/museum.html
 - `get_asset`은 다운로드 URL을 주기 전에 원본에서 CC0 여부를 다시 확인합니다.
 - `list_sources`는 검증한 CC0 자료원 97곳의 목록을 줍니다. 종류별로 이미지 61곳, 3D 21곳, 오디오 20곳, 텍스처 15곳, HDRI 5곳, 영상 6곳, 미술품 3곳, 폰트 2곳입니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
 

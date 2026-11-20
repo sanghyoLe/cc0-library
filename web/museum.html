@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CC0 Museum</title>
+  <meta name="description" content="Walk through a 3D museum built only from CC0 assets: paintings from Wikimedia Commons, sculptures, floors and sky from Poly Haven. Every piece shows its license evidence.">
+  <meta property="og:title" content="CC0 Museum — a 3D gallery made only of CC0 assets">
+  <meta property="og:description" content="Pick a theme and walk through a museum generated from CC0 paintings, sculptures and HDRIs. Every piece shows how its CC0 status was verified.">
+  <link rel="stylesheet" href="museum.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <div id="intro" class="panel intro">
+    <h1>CC0 Museum</h1>
+    <p>A 3D gallery generated from CC0 assets only. Paintings come from Wikimedia Commons (CC0 files), sculptures, floor and sky from Poly Haven.</p>
+    <form id="theme-form">
+      <label for="theme">Exhibition theme</label>
+      <div class="row">
+        <input id="theme" name="theme" maxlength="60" placeholder="e.g. cat, sea, flowers, portrait" autocomplete="off">
+        <button type="submit">Open exhibition</button>
+      </div>
+    </form>
+    <p class="hint desktop">Click to look around · <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to walk · click a painting for its license · <kbd>Esc</kbd> to release the mouse</p>
+    <p class="hint touch">Drag to look around · hold ▲ / ▼ to walk · tap a painting for its license</p>
+    <p id="status" class="status" aria-live="polite"></p>
+    <p class="links"><a href="./">← CC0 search</a> · <a href="https://github.com/sanghyoLe/cc0-library">source</a></p>
+  </div>
+
+  <div id="hud" class="hud" hidden>
+    <span id="hud-title"></span>
+    <button id="btn-credits" type="button">Credits</button>
+    <button id="btn-audio" type="button" hidden>♪ Sound</button>
+    <button id="btn-menu" type="button">New theme</button>
+  </div>
+
+  <div id="touch-move" class="touch-move" hidden>
+    <button id="fwd" type="button" aria-label="Walk forward">▲</button>
+    <button id="back" type="button" aria-label="Walk back">▼</button>
+  </div>
+
+  <aside id="info" class="panel info" hidden>
+    <button class="close" type="button" aria-label="Close">×</button>
+    <div id="info-body"></div>
+  </aside>
+
+  <aside id="credits" class="panel credits" hidden>
+    <button class="close" type="button" aria-label="Close">×</button>
+    <h2>Credits</h2>
+    <p class="muted">Every asset in this room is CC0 1.0. Credit is not required, but here is where each piece comes from and how its CC0 status was checked.</p>
+    <ul id="credits-list"></ul>
+  </aside>
+
+  <div id="crosshair" class="crosshair" hidden></div>
+
+  <script type="module" src="museum.js"></script>
+</body>
+</html>

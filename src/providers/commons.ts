@@ -88,7 +88,8 @@ const IMAGEINFO = {
   origin: "*",
   prop: "imageinfo",
   iiprop: "url|mime|size|extmetadata",
-  iiurlwidth: "320",
+  /** Wikimedia serves thumbnails only at standard widths (e.g. 330, 500, 960, 1280); others return HTTP 400. */
+  iiurlwidth: "330",
   iiextmetadatafilter: "License|LicenseShortName|Artist|ImageDescription",
 };
 
