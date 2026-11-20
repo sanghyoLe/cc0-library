@@ -29,7 +29,7 @@ for (const [kind, q] of Object.entries(QUERIES)) {
   check(r.assets.every((a) => a.licenseEvidence.license === "CC0-1.0"), `${kind} results all carry CC0 evidence`);
   for (const a of r.assets) if (!seenProviders.has(a.provider)) seenProviders.set(a.provider, a.id);
 }
-const ALL = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab"];
+const ALL = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab", "wpphotos"];
 check(ALL.every((p) => seenProviders.has(p)), `all ${ALL.length} providers returned results: ${[...seenProviders.keys()]}`);
 for (const [provider, id] of seenProviders) {
   const d = await call("get_asset", { id });

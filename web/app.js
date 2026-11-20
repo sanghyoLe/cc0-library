@@ -6,7 +6,7 @@ const PAGE_SIZE = 12;
 /** ambientCG sends no CORS headers; Cleveland's detail endpoint does not either. */
 const SKIP = ["ambientcg"];
 /** Providers whose CC0 label is set by whoever uploaded the item. */
-const UPLOADER_PROVIDERS = ["openverse", "commons", "archive", "sketchfab"];
+const UPLOADER_PROVIDERS = ["openverse", "commons", "archive", "sketchfab", "wpphotos"];
 const DECLARED = {
   library: "Declared CC0 by the studio that made it.",
   institution: "Declared CC0 by the museum that holds the work.",
@@ -20,7 +20,7 @@ const KINDS = [
 ];
 const PROVIDER_NAMES = {
   openverse: "Openverse", polyhaven: "Poly Haven", ambientcg: "ambientCG", cleveland: "Cleveland Museum",
-  met: "The Met", commons: "Wikimedia Commons", archive: "Internet Archive", sketchfab: "Sketchfab",
+  met: "The Met", commons: "Wikimedia Commons", archive: "Internet Archive", sketchfab: "Sketchfab", wpphotos: "WordPress Photos",
 };
 
 // Browsers may not send a custom User-Agent; Accept is CORS-safelisted.

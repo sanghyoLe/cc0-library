@@ -405,6 +405,54 @@
         "date": "2026-11-19",
         "evidence": "license guide describes 'CC0: Public Domain Dedication / No Rights Reserved'"
       }
+    },
+    {
+      "id": "wpphotos",
+      "name": "WordPress Photo Directory",
+      "url": "https://wordpress.org/photos/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": true,
+      "licensePage": "https://wordpress.org/photos/",
+      "notes": "Community photos, moderated before publishing. Searchable through the WordPress REST API without a key.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "directory page: 'All photos are CC0 licensed. No rights are reserved, so you are free to use the photos anywhere, for any purpose'"
+      }
+    },
+    {
+      "id": "flickr-cc0",
+      "name": "Flickr (CC0 filter)",
+      "url": "https://www.flickr.com/creativecommons/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.flickr.com/creativecommons/",
+      "notes": "Mixed licenses. Use the 'Public Domain Dedication (CC0)' group on the Creative Commons page. Uploaders choose the license; many CC0 Flickr photos are also reachable through Openverse search.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "Creative Commons page lists a 'Public Domain Dedication (CC0)' group (about 49.6 million photos), separate from 'Public Domain Mark'"
+      }
+    },
+    {
+      "id": "phylopic-cc0",
+      "name": "PhyloPic (CC0 filter)",
+      "url": "https://www.phylopic.org",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.phylopic.org",
+      "notes": "Silhouettes of organisms, searched by scientific name. Licenses vary per image (CC0, CC BY, CC BY-SA...); use only images whose license is CC0.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "API image records carry a license link; e.g. 'Felis chaus' and 'Felis nigripes' images link creativecommons.org/publicdomain/zero/1.0/ while another links by-sa/3.0"
+      }
     }
   ],
   "excluded": [
@@ -427,6 +475,11 @@
       "name": "SMK (National Gallery of Denmark)",
       "reason": "Its API marks public-domain works with the Public Domain Mark (PDM), not CC0.",
       "url": "https://open.smk.dk"
+    },
+    {
+      "name": "NASA",
+      "url": "https://www.nasa.gov",
+      "reason": "NASA's images-and-media page has no CC0 statement; NASA media follows NASA's own usage guidelines (generally not copyrighted, with restrictions such as no implied endorsement), which is not a CC0 dedication."
     }
   ],
   "pending": [
@@ -509,6 +562,51 @@
       "name": "Finnish National Gallery",
       "reason": "Open data page redirected; license not checked yet.",
       "url": "https://www.kansallisgalleria.fi"
+    },
+    {
+      "name": "Biodiversity Heritage Library",
+      "url": "https://www.biodiversitylibrary.org",
+      "reason": "Openverse labels some items CC0, but the permissions page returned HTTP 403, so the license could not be checked on the source."
+    },
+    {
+      "name": "SVG Silh",
+      "url": "https://svgsilh.com",
+      "reason": "Openverse labels items CC0, but the site returned HTTP 403 to verification requests."
+    },
+    {
+      "name": "DigitaltMuseum",
+      "url": "https://digitaltmuseum.no",
+      "reason": "Mixed licenses across Norwegian/Swedish museums; Openverse labels some items CC0, but the site returned HTTP 403."
+    },
+    {
+      "name": "Rawpixel (public domain section)",
+      "url": "https://www.rawpixel.com",
+      "reason": "Openverse labels items CC0, but the public-domain page returned HTTP 403."
+    },
+    {
+      "name": "StockSnap.io",
+      "url": "https://stocksnap.io",
+      "reason": "Openverse labels items CC0, but the license page returned HTTP 403."
+    },
+    {
+      "name": "Europeana",
+      "url": "https://www.europeana.eu",
+      "reason": "Aggregator with per-item rights statements (some CC0); the rights page returned HTTP 403 and the API needs a key."
+    },
+    {
+      "name": "Cooper Hewitt, Smithsonian Design Museum",
+      "url": "https://www.cooperhewitt.org",
+      "reason": "Openverse labels items CC0; the open-access page URL returned HTTP 404, so the policy could not be found."
+    },
+    {
+      "name": "New York Public Library Digital Collections",
+      "url": "https://digitalcollections.nypl.org",
+      "reason": "The about page has no CC0 statement; NYPL describes public-domain items with its own wording, which may not be a CC0 dedication."
+    },
+    {
+      "name": "Finnish Heritage Agency",
+      "url": "https://www.museovirasto.fi/en/",
+      "reason": "Openverse shows only a few CC0-labeled items; no CC0 statement found on the English home page."
     }
   ]
 }

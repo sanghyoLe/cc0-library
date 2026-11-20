@@ -10,6 +10,7 @@ import { getMet, searchMet } from "./providers/met.js";
 import { getCommons, searchCommons } from "./providers/commons.js";
 import { getArchive, searchArchive } from "./providers/archive.js";
 import { getSketchfab, searchSketchfab } from "./providers/sketchfab.js";
+import { getWpPhoto, searchWpPhotos } from "./providers/wpphotos.js";
 import type { Asset, AssetDetail, AssetKind, FetchLike, ProviderId } from "./types.js";
 
 export type SearchKind = AssetKind | "any";
@@ -67,6 +68,7 @@ export async function search(
     all.push({ name: "archive", run: () => searchArchive(fetchImpl, k, params) });
   }
   if (kind === "model" || kind === "any") all.push({ name: "sketchfab", run: () => searchSketchfab(fetchImpl, params) });
+  if (kind === "image" || kind === "any") all.push({ name: "wpphotos", run: () => searchWpPhotos(fetchImpl, params) });
 
   const skip = new Set<string>(options.skip ?? []);
   const run = all.filter((j) => !skip.has(j.name.split(":")[0]));
@@ -96,7 +98,7 @@ export function interleave<T>(lists: T[][]): T[] {
 /**
  * Resolves ids produced by `search`: `openverse:image:<uuid>`, `openverse:audio:<uuid>`,
  * `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`,
- * `commons:<pageid>`, `archive:<identifier>`, `sketchfab:<uid>`.
+ * `commons:<pageid>`, `archive:<identifier>`, `sketchfab:<uid>`, `wpphotos:<number>`.
  */
 export async function getAsset(fetchImpl: FetchLike, id: string): Promise<AssetDetail | null> {
   const parts = id.split(":");
@@ -110,6 +112,7 @@ export async function getAsset(fetchImpl: FetchLike, id: string): Promise<AssetD
   if (provider === "commons") return getCommons(fetchImpl, a);
   if (provider === "archive") return getArchive(fetchImpl, a);
   if (provider === "sketchfab") return getSketchfab(fetchImpl, a);
+  if (provider === "wpphotos") return getWpPhoto(fetchImpl, a);
   return null;
 }
 

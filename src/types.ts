@@ -10,7 +10,7 @@
 export const ASSET_KINDS = ["image", "audio", "video", "hdri", "texture", "model", "artwork"] as const;
 export type AssetKind = (typeof ASSET_KINDS)[number];
 
-export const PROVIDER_IDS = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab"] as const;
+export const PROVIDER_IDS = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab", "wpphotos"] as const;
 export type ProviderId = (typeof PROVIDER_IDS)[number];
 
 export const CC0_LICENSE_URL = "https://creativecommons.org/publicdomain/zero/1.0/";

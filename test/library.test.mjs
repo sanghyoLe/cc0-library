@@ -59,7 +59,8 @@ test("get_asset rejects malformed ids without calling the network", async () => 
   const f = fakeFetch({});
   for (const id of ["", "nope", "openverse:video:x", `openverse:image:../../etc`, "polyhaven:a/b", "polyhaven:a:b",
     "ambientcg:../x", "cleveland:12a", "met:1/2", "met:", "openverse:image",
-    "commons:File", "archive:a/b", "archive:../x", "sketchfab:XYZ", "sketchfab:7c23a1ba438d4306920229c12afcb5f"]) {
+    "commons:File", "archive:a/b", "archive:../x", "sketchfab:XYZ", "sketchfab:7c23a1ba438d4306920229c12afcb5f",
+    "wpphotos:abc", "wpphotos:1/2"]) {
     assert.equal(await getAsset(f, id), null, id);
   }
   assert.equal(f.calls.length, 0);
@@ -96,7 +97,7 @@ test("Poly Haven index is cached between calls", async () => {
   assert.equal(callsTo(f, "api.polyhaven.com", "/assets").length, 1);
 });
 
-test("kind=any queries all 9 provider jobs, interleaves them, and reports failing ones without dropping others", async () => {
+test("kind=any queries all 10 provider jobs, interleaves them, and reports failing ones without dropping others", async () => {
   resetPolyhavenCache();
   const f = fakeFetch({
     "https://api.openverse.org/v1/images/?": { result_count: 2, results: [ov("i1", "cc0"), ov("i2", "cc0")] },
@@ -107,7 +108,7 @@ test("kind=any queries all 9 provider jobs, interleaves them, and reports failin
   const r = await search(f, "x", "any", 10, 1);
   assert.deepEqual(r.assets.map((a) => a.id), ["openverse:image:i1", "polyhaven:sky", "openverse:image:i2"]);
   assert.deepEqual(r.errors.map((e) => e.split(":").slice(0, e.startsWith("openverse") ? 2 : 1).join(":")).sort(),
-    ["ambientcg", "archive", "cleveland", "commons", "met", "openverse:audio", "sketchfab"]);
+    ["ambientcg", "archive", "cleveland", "commons", "met", "openverse:audio", "sketchfab", "wpphotos"]);
   assert.match(r.errors.find((e) => e.startsWith("openverse:audio")), /Openverse returned HTTP 404/);
   assert.match(callsTo(f, "ambientcg.com")[0], /type=material%2Chdri%2C3d-model/);
   // one combined query each for Commons and Internet Archive
@@ -377,4 +378,45 @@ test("every provider states who declared CC0", async () => {
   const r = await search(f, "x", "any", 20, 1);
   const by = Object.fromEntries(r.assets.map((a) => [a.provider, a.licenseEvidence.declaredBy]));
   assert.deepEqual(by, { openverse: "uploader", polyhaven: "library", cleveland: "institution", archive: "uploader" });
+});
+
+const wpPhoto = (id, alt) => ({
+  id, link: `https://wordpress.org/photos/photo/${id}/`, title: { rendered: "Photo detail" }, content: { rendered: `<p>${alt}</p>` },
+  "photo-thumbnail-url": `t${id}.jpg`,
+  _embedded: { author: [{ name: "jane" }], "wp:featuredmedia": [{ source_url: `o${id}.jpg`, media_details: { width: 2000, height: 1000, filesize: 5, sizes: { medium: { source_url: `m${id}.jpg`, width: 300, height: 150 }, full: { source_url: `o${id}.jpg`, width: 2000, height: 1000 } } } }] },
+});
+
+test("WordPress Photo Directory: alt text becomes the title, whole-library CC0 declared by the uploader", async () => {
+  const long = "A ".repeat(80) + "end";
+  const f = fakeFetch({ "https://wordpress.org/photos/wp-json/wp/v2/photos?": [wpPhoto(7, "Red barn &amp; field"), wpPhoto(8, long)] });
+  const r = await search(f, "barn", "image", 5, 2);
+  const q = new URL(callsTo(f, "wordpress.org", "/photos/wp-json")[0]).searchParams;
+  assert.equal(q.get("search"), "barn");
+  assert.equal(q.get("page"), "2");
+  const w = r.assets.filter((a) => a.provider === "wpphotos");
+  assert.deepEqual(w.map((a) => a.id), ["wpphotos:7", "wpphotos:8"]);
+  assert.equal(w[0].title, "Red barn & field");
+  assert.ok(w[1].title.length <= 90 && w[1].title.endsWith("…"));
+  assert.equal(w[0].creator, "jane");
+  assert.deepEqual([w[0].licenseEvidence.method, w[0].licenseEvidence.declaredBy], ["whole-library-cc0", "uploader"]);
+});
+
+test("WordPress Photo Directory get_asset lists the original and resized files once", async () => {
+  const f = fakeFetch({ "https://wordpress.org/photos/wp-json/wp/v2/photos/7": wpPhoto(7, "Barn") });
+  const d = await getAsset(f, "wpphotos:7");
+  assert.deepEqual(d.files.map((x) => x.url), ["o7.jpg", "m7.jpg"]);
+});
+
+test("list_sources output matches its declared output schema (catalog fields stay in sync)", async () => {
+  const { createServer } = await import("../dist/server.js");
+  const { Client } = await import("@modelcontextprotocol/sdk/client/index.js");
+  const { InMemoryTransport } = await import("@modelcontextprotocol/sdk/inMemory.js");
+  const [a, b] = InMemoryTransport.createLinkedPair();
+  const server = createServer(fakeFetch({}));
+  const client = new Client({ name: "schema-check", version: "0" });
+  await Promise.all([server.connect(a), client.connect(b)]);
+  // The client validates structuredContent against outputSchema and throws on mismatch.
+  const r = await client.callTool({ name: "list_sources", arguments: {} });
+  assert.ok(r.structuredContent.sources.length > 0);
+  await client.close();
 });
