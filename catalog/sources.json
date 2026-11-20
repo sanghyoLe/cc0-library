@@ -760,6 +760,86 @@
         "date": "2026-11-20",
         "evidence": "search page offers a 'CC-0' license filter alongside CC-BY, CC-BY-SA, CC-BY-NC and others"
       }
+    },
+    {
+      "id": "bigsoundbank",
+      "name": "BigSoundBank",
+      "url": "https://bigsoundbank.com",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://bigsoundbank.com/",
+      "notes": "Sound effects library recorded by Joseph Sardin since 2005 (about 3,500 sounds).",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "home page: 'Free, royalty-free sounds (CC0)'"
+      }
+    },
+    {
+      "id": "osu-publicdomain",
+      "name": "Ohio State University Libraries public domain recordings",
+      "url": "https://library.osu.edu/site/publicdomain/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://library.osu.edu/site/publicdomain/",
+      "notes": "Recordings of public-domain music made by the library. CC0 applies unless a recording notes otherwise.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "page: 'Unless otherwise noted, these recordings will be dedicated to the public domain under the terms of Creative Commons (CC0) 1.0 Universal'"
+      }
+    },
+    {
+      "id": "doodle-icons",
+      "name": "Doodle Icons",
+      "url": "https://khushmeen.com/icons.html",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://khushmeen.com/icons.html",
+      "notes": "400+ hand-drawn icons (SVG, PNG, Figma) by Khushmeen Sidhu.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "page: 'Free icons for commercial and personal use under CC0 license - no attribution required'"
+      }
+    },
+    {
+      "id": "maki",
+      "name": "Maki (Mapbox POI icons)",
+      "url": "https://labs.mapbox.com/maki-icons/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/mapbox/maki",
+      "notes": "Map point-of-interest icons (15px SVG).",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository mapbox/maki declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "cc0-icons",
+      "name": "CC0 Icons",
+      "url": "https://cc0-icons.jonh.eu/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/cc0-icons/cc0-icons",
+      "notes": "Small open-source UI icon library.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository cc0-icons/cc0-icons declares license CC0-1.0"
+      }
     }
   ],
   "excluded": [
@@ -949,6 +1029,26 @@
       "name": "Thingiverse (CC0 filter)",
       "url": "https://www.thingiverse.com",
       "reason": "Has a public-domain license filter, but the site returned HTTP 403 to verification requests."
+    },
+    {
+      "name": "DroneStock",
+      "url": "https://dronestock.com",
+      "reason": "Blog lists claim CC0 drone footage, but no CC0 statement was found on the site."
+    },
+    {
+      "name": "Icons for free",
+      "url": "https://icons-for-free.com",
+      "reason": "Blog lists claim a CC0 icon set, but no CC0 statement was found on the home page."
+    },
+    {
+      "name": "GGBotNet fonts",
+      "url": "https://ggbot.itch.io",
+      "reason": "itch.io pages list CC0 pixel fonts, but the profile returned HTTP 429 (rate limited) during verification."
+    },
+    {
+      "name": "RouteNote Licensing CC0 collection",
+      "url": "https://licensing.routenote.com",
+      "reason": "Described as a CC0 collection behind sign-up; no CC0 statement on the public home page."
     }
   ]
 }
