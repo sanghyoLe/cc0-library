@@ -1293,6 +1293,119 @@
         "date": "2026-11-20",
         "evidence": "GitHub repository guacamoly/semantic-ui-kit-for-sketch declares license CC0-1.0"
       }
+    },
+    {
+      "id": "thorsten-voice",
+      "name": "Thorsten-Voice",
+      "url": "https://github.com/thorstenMueller/Thorsten-Voice",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/thorstenMueller/Thorsten-Voice",
+      "notes": "German speech recordings (TTS datasets), full 44 kHz set also on Hugging Face.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository thorstenMueller/Thorsten-Voice declares license CC0-1.0; README: 'I released ALL recordings in FULL samplerate (44kHz) ... Obviously again in CC0 license'"
+      }
+    },
+    {
+      "id": "godot-vfx-textures",
+      "name": "Godot particle and VFX textures",
+      "url": "https://github.com/RPicster/Godot-particle-and-vfx-textures",
+      "kinds": [
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/RPicster/Godot-particle-and-vfx-textures",
+      "notes": "Textures for lens flares, lights, particles and visual effects.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository RPicster/Godot-particle-and-vfx-textures declares license CC0-1.0; README: 'The whole project is licensed as CC0 ... No attribution is required'"
+      }
+    },
+    {
+      "id": "asl-mocap",
+      "name": "Sign Language Mocap Archive",
+      "url": "https://github.com/StudioGalt/Sign-Language-Mocap-Archive",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/StudioGalt/Sign-Language-Mocap-Archive",
+      "notes": "2,600+ American Sign Language motion-capture signs and fingerspelling as FBX and .blend.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository StudioGalt/Sign-Language-Mocap-Archive declares license CC0-1.0; README: 'Everything here is free under CC0'"
+      }
+    },
+    {
+      "id": "cc0-playing-cards",
+      "name": "Public Domain and CC0 Playing Cards",
+      "url": "https://github.com/AustinGabriel/Public-Domain-and-CC0-Playing-Cards",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/AustinGabriel/Public-Domain-and-CC0-Playing-Cards",
+      "notes": "Standard 54-card poker deck in SVG and PNG, built from public-domain/CC0 sources.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository AustinGabriel/Public-Domain-and-CC0-Playing-Cards declares license CC0-1.0; README: 'built entirely from public domain / CC0 sources and released for free, unrestricted use'"
+      }
+    },
+    {
+      "id": "colormaps",
+      "name": "ColorMaps",
+      "url": "https://github.com/Elairyx7301/ColorMaps",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/Elairyx7301/ColorMaps",
+      "notes": "50 color maps (color-grading lookup images) for games and projects.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository Elairyx7301/ColorMaps declares license CC0-1.0; README: 'Feel free to use them ... for commercial or private uses. Absolutely no need to credit (CC0 badge)'"
+      }
+    },
+    {
+      "id": "a6000-luts",
+      "name": "Sony a6000 LUTs",
+      "url": "https://github.com/jonmatifa/a6000-LUTs",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/jonmatifa/a6000-LUTs",
+      "notes": "Color-grading LUTs for Sony a6000 footage (DaVinci Resolve).",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository jonmatifa/a6000-LUTs declares license CC0-1.0; README: 'LUTs are based on Portrait picture profile'"
+      }
+    },
+    {
+      "id": "vibegif",
+      "name": "vibegif",
+      "url": "https://vibegif.direct-img.link",
+      "kinds": [
+        "image",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/direct-img/vibegif.direct-img.link",
+      "notes": "Gallery of animated GIFs and WebP files.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository direct-img/vibegif.direct-img.link declares license CC0-1.0; README: 'Every anim is CC0, hotlink away'"
+      }
     }
   ],
   "excluded": [
