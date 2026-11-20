@@ -453,6 +453,86 @@
         "date": "2026-11-20",
         "evidence": "API image records carry a license link; e.g. 'Felis chaus' and 'Felis nigripes' images link creativecommons.org/publicdomain/zero/1.0/ while another links by-sa/3.0"
       }
+    },
+    {
+      "id": "pxhere",
+      "name": "PxHere",
+      "url": "https://pxhere.com",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.pxhere.com/en/license",
+      "notes": "Stock photos uploaded by the community.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "license page: 'all photos on PxHere are licensed under the Creative Commons Zero (CC0) license'"
+      }
+    },
+    {
+      "id": "publicdomainvectors",
+      "name": "Public Domain Vectors",
+      "url": "https://publicdomainvectors.org",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://publicdomainvectors.org/",
+      "notes": "Vector graphics (SVG, EPS, AI).",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "home page: 'Every image on our platform is released under the Public Domain (CC0) license'"
+      }
+    },
+    {
+      "id": "freesvg",
+      "name": "FreeSVG",
+      "url": "https://freesvg.org",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freesvg.org/",
+      "notes": "SVG vectors and clip art (about 173,000 files).",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "home page: '173,167+ Free SVG Vectors • CC0 Public Domain (Free for Commercial Use)'"
+      }
+    },
+    {
+      "id": "picography",
+      "name": "Picography",
+      "url": "https://picography.co",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://picography.co/license/",
+      "notes": "High-resolution stock photos.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "license page title: 'Beautiful HD Free Stock Photos (CC0) | Picography'"
+      }
+    },
+    {
+      "id": "cgbookcase",
+      "name": "cgbookcase",
+      "url": "https://www.cgbookcase.com",
+      "kinds": [
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.cgbookcase.com/textures/",
+      "notes": "PBR textures with Blender and Unreal guides.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "textures page: 'The textures are published under the CC0 1.0 license, which means you can use them for free without giving credit'"
+      }
     }
   ],
   "excluded": [
@@ -544,11 +624,6 @@
       "url": "https://jaymantri.com"
     },
     {
-      "name": "cgbookcase",
-      "reason": "License page returned HTTP 404; the home page has no CC0 statement of its own.",
-      "url": "https://www.cgbookcase.com"
-    },
-    {
       "name": "Getty Open Content",
       "reason": "No CC0 text found on the program page.",
       "url": "https://www.getty.edu"
@@ -607,6 +682,26 @@
       "name": "Finnish Heritage Agency",
       "url": "https://www.museovirasto.fi/en/",
       "reason": "Openverse shows only a few CC0-labeled items; no CC0 statement found on the English home page."
+    },
+    {
+      "name": "Public Domain Pictures",
+      "url": "https://www.publicdomainpictures.net",
+      "reason": "Site returned HTTP 403 to verification requests."
+    },
+    {
+      "name": "Barn Images",
+      "url": "https://barnimages.com",
+      "reason": "License page returned HTTP 403."
+    },
+    {
+      "name": "Texture Ninja",
+      "url": "https://texture.ninja",
+      "reason": "No CC0 statement found on the home page."
+    },
+    {
+      "name": "Poly Pizza",
+      "url": "https://poly.pizza",
+      "reason": "Low-poly models under mixed licenses (CC0 and CC BY); the page is rendered by JavaScript and the API needs a key, so per-model licenses were not checked."
     }
   ]
 }
