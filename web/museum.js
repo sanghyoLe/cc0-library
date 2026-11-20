@@ -28,6 +28,8 @@ const FADE_SECONDS = 0.6;
 
 const $ = (s) => document.querySelector(s);
 const isTouch = matchMedia("(hover: none) and (pointer: coarse)").matches;
+/** ?joystick=1 shows the joystick on desktop too (for testing). */
+const showJoystick = isTouch || new URLSearchParams(location.search).get("joystick") === "1";
 
 let THREE, GLTFLoader, RGBELoader, renderer, scene, camera, exhibit, floorMat;
 const look = { yaw: 0, pitch: 0 };
@@ -454,7 +456,7 @@ function showRoom() {
   $("#intro").hidden = true;
   $("#hud").hidden = false;
   $("#crosshair").hidden = isTouch;
-  $("#touch-move").hidden = !isTouch;
+  $("#joystick").hidden = !showJoystick;
   renderProgress();
 }
 
@@ -630,7 +632,8 @@ const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const canvas = $("#scene");
 const keys = new Set();
-let touchMove = 0;
+/** Joystick deflection: x = strafe right, y = forward; each in [-1, 1]. */
+const joy = { x: 0, y: 0 };
 const view = { yaw: 0, pitch: 0, fov: CAM.fov, targetFov: CAM.fov };
 const velocity = { x: 0, z: 0 };
 const touchInertia = { yaw: 0, pitch: 0 };
@@ -688,29 +691,81 @@ canvas.addEventListener("wheel", (e) => {
   view.targetFov = Math.max(CAM.fovMin, Math.min(CAM.fovMax, view.targetFov + e.deltaY * 0.03));
 }, { passive: false });
 
-// Touch: drag to look, with a little inertia after the finger lifts.
+// Touch: drag to look, with a little inertia after the finger lifts. Only the finger that
+// started on the canvas turns the view, so a second finger on the joystick does not.
 let lastTouch = null;
 canvas.addEventListener("touchstart", (e) => {
-  lastTouch = e.touches[0];
+  if (lastTouch) return;
+  const t = e.changedTouches[0];
+  lastTouch = { id: t.identifier, x: t.clientX, y: t.clientY };
   touchInertia.yaw = touchInertia.pitch = 0;
 }, { passive: true });
 canvas.addEventListener("touchmove", (e) => {
-  const t = e.touches[0];
-  if (lastTouch) {
-    const dx = t.clientX - lastTouch.clientX, dy = t.clientY - lastTouch.clientY;
-    // The scene follows the finger, as with drag on desktop.
-    turn(-dx, -dy, CAM.touchSensitivity);
-    touchInertia.yaw = clampDelta(dx) * CAM.touchSensitivity * 30;
-    touchInertia.pitch = clampDelta(dy) * CAM.touchSensitivity * 30;
-  }
-  lastTouch = t;
+  if (!lastTouch) return;
+  const t = [...e.touches].find((x) => x.identifier === lastTouch.id);
+  if (!t) return;
+  const dx = t.clientX - lastTouch.x, dy = t.clientY - lastTouch.y;
+  // The scene follows the finger, as with drag on desktop.
+  turn(-dx, -dy, CAM.touchSensitivity);
+  touchInertia.yaw = clampDelta(dx) * CAM.touchSensitivity * 30;
+  touchInertia.pitch = clampDelta(dy) * CAM.touchSensitivity * 30;
+  lastTouch.x = t.clientX;
+  lastTouch.y = t.clientY;
 }, { passive: true });
-canvas.addEventListener("touchend", () => (lastTouch = null), { passive: true });
-for (const [id, dir] of [["#fwd", 1], ["#back", -1]]) {
-  const b = $(id);
-  b.addEventListener("pointerdown", () => (touchMove = dir));
-  for (const ev of ["pointerup", "pointerleave", "pointercancel"]) b.addEventListener(ev, () => (touchMove = 0));
+const endTouch = (e) => {
+  if (lastTouch && [...e.changedTouches].some((t) => t.identifier === lastTouch.id)) lastTouch = null;
+};
+canvas.addEventListener("touchend", endTouch, { passive: true });
+canvas.addEventListener("touchcancel", endTouch, { passive: true });
+
+// Virtual joystick (pointer events, so it also works with a mouse when forced on).
+// Deflection is analog: a small push walks slowly, a full push walks at full speed.
+const JOYSTICK = { radius: 46, deadZone: 0.12 };
+const stick = $("#joystick");
+const knob = $("#joystick-knob");
+let joyPointer = null;
+function setJoystick(clientX, clientY) {
+  const r = stick.getBoundingClientRect();
+  let dx = clientX - (r.left + r.width / 2), dy = clientY - (r.top + r.height / 2);
+  const d = Math.hypot(dx, dy);
+  if (d > JOYSTICK.radius) {
+    dx *= JOYSTICK.radius / d;
+    dy *= JOYSTICK.radius / d;
+  }
+  knob.style.transform = `translate(${dx}px, ${dy}px)`;
+  const nx = dx / JOYSTICK.radius, ny = -dy / JOYSTICK.radius;
+  const m = Math.hypot(nx, ny);
+  // Rescale past the dead zone so movement starts smoothly from zero.
+  const scale = m < JOYSTICK.deadZone ? 0 : (m - JOYSTICK.deadZone) / (1 - JOYSTICK.deadZone) / m;
+  joy.x = nx * scale;
+  joy.y = ny * scale;
 }
+function releaseJoystick() {
+  joyPointer = null;
+  joy.x = joy.y = 0;
+  knob.style.transform = "";
+  stick.classList.remove("active");
+}
+stick.addEventListener("pointerdown", (e) => {
+  e.preventDefault();
+  joyPointer = e.pointerId;
+  try {
+    stick.setPointerCapture(e.pointerId); // keep receiving moves when the finger leaves the circle
+  } catch {
+    /* capture can fail for synthetic or already-released pointers; moves on the stick still work */
+  }
+  stick.classList.add("active");
+  setJoystick(e.clientX, e.clientY);
+});
+stick.addEventListener("pointermove", (e) => {
+  if (e.pointerId === joyPointer) setJoystick(e.clientX, e.clientY);
+});
+for (const ev of ["pointerup", "pointercancel", "lostpointercapture"]) {
+  stick.addEventListener(ev, (e) => {
+    if (e.pointerId === joyPointer) releaseJoystick();
+  });
+}
+window.addEventListener("blur", releaseJoystick);
 
 let raycaster;
 function pick(e) {
@@ -749,16 +804,18 @@ function updateCamera(dt) {
   }
 
   // Wanted velocity from input, relative to where the camera faces.
-  let f = touchMove, s = 0;
+  let f = joy.y, s = joy.x;
   if (keys.has("KeyW") || keys.has("ArrowUp")) f += 1;
   if (keys.has("KeyS") || keys.has("ArrowDown")) f -= 1;
   if (keys.has("KeyD") || keys.has("ArrowRight")) s += 1;
   if (keys.has("KeyA") || keys.has("ArrowLeft")) s -= 1;
-  const len = Math.hypot(f, s) || 1;
+  // Direction from input, magnitude capped at 1: keys walk at full speed, the joystick is analog.
+  const mag = Math.hypot(f, s);
+  const amount = Math.min(1, mag) / (mag || 1);
   const speed = CAM.walkSpeed * (keys.has("ShiftLeft") || keys.has("ShiftRight") ? CAM.sprintFactor : 1);
   const sin = Math.sin(view.yaw), cos = Math.cos(view.yaw);
-  const wantX = ((-sin * f + cos * s) / len) * speed;
-  const wantZ = ((-cos * f - sin * s) / len) * speed;
+  const wantX = (-sin * f + cos * s) * amount * speed;
+  const wantZ = (-cos * f - sin * s) * amount * speed;
   const k = ease(f || s ? CAM.accel : CAM.decel, dt);
   velocity.x += (wantX - velocity.x) * k;
   velocity.z += (wantZ - velocity.z) * k;

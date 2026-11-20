@@ -32,7 +32,7 @@
       </div>
     </form>
     <p class="hint desktop">Drag (or click to lock the mouse) to look · <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to walk · <kbd>Shift</kbd> to hurry · scroll to zoom · click a painting for its license · <kbd>Esc</kbd> releases the mouse</p>
-    <p class="hint touch">Drag to look around · hold ▲ / ▼ to walk · tap a painting for its license</p>
+    <p class="hint touch">Joystick (bottom left) to walk · drag anywhere else to look · tap a painting for its license</p>
     <p id="engine" class="engine" aria-live="polite">Starting the 3D engine…</p>
     <p class="links"><a href="./">← CC0 search</a> · <a href="https://github.com/sanghyoLe/cc0-library">source</a></p>
   </div>
@@ -61,9 +61,8 @@
     <button id="btn-menu" type="button">New theme</button>
   </div>
 
-  <div id="touch-move" class="touch-move" hidden>
-    <button id="fwd" type="button" aria-label="Walk forward">▲</button>
-    <button id="back" type="button" aria-label="Walk back">▼</button>
+  <div id="joystick" class="joystick" hidden aria-label="Walk joystick: drag to move" role="application">
+    <div id="joystick-knob" class="joystick-knob"></div>
   </div>
 
   <aside id="info" class="panel info" hidden>
