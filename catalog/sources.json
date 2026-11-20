@@ -1486,6 +1486,24 @@
         "date": "2026-11-20",
         "evidence": "data/projects.json in ToxSam/open-source-3D-assets lists license 'CC0' for all 18 projects"
       }
+    },
+    {
+      "id": "huggingface-cc0",
+      "name": "Hugging Face Datasets (CC0 filter)",
+      "url": "https://huggingface.co/datasets?license=license:cc0-1.0",
+      "kinds": [
+        "image",
+        "audio",
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://huggingface.co/datasets?license=license:cc0-1.0",
+      "notes": "Datasets under mixed licenses; filter by license cc0-1.0 (1,000+ datasets, e.g. speech corpora, pixel-art atlases, GLB sets). The license tag is set by the uploader; check each dataset card.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "Hub API /api/datasets?filter=license:cc0-1.0 returns datasets tagged cc0-1.0 (e.g. facebook/voxpopuli, Angais/pixel-art-atlas-1.4m)"
+      }
     }
   ],
   "excluded": [
@@ -1538,6 +1556,11 @@
       "name": "unitedstates/images (Congress photos)",
       "url": "https://github.com/unitedstates/images",
       "reason": "Repository declares CC0-1.0, but the photos are official US government works described as public domain, which is not a CC0 dedication."
+    },
+    {
+      "name": "LibriVox",
+      "url": "https://librivox.org",
+      "reason": "Free audiobooks declared 'public domain (definitely in the USA, and maybe in your country)' rather than a CC0 dedication; outside the USA the status may differ."
     }
   ],
   "pending": [
@@ -1735,6 +1758,11 @@
       "name": "pmndrs market",
       "url": "https://market.pmnd.rs",
       "reason": "README describes CC0 models, textures and HDRIs, but the site returned HTTP 404 during verification."
+    },
+    {
+      "name": "Mozilla Common Voice",
+      "url": "https://commonvoice.mozilla.org/en/datasets",
+      "reason": "Speech dataset widely described as CC0, but the datasets page renders with JavaScript and no license statement was readable; the cv-dataset repository is MPL-2.0 (code)."
     }
   ]
 }
