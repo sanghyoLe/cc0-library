@@ -132,7 +132,7 @@
       "scope": "filter-only",
       "searchable": true,
       "licensePage": "https://github.com/metmuseum/openaccess",
-      "notes": "Collection API without a key. Only objects with isPublicDomain=true qualify. The v1 search endpoint was retired on 2026-10-01; this repo uses v1.1.",
+      "notes": "Collection API without a key. Only objects with isPublicDomain=true qualify. The v1 search endpoint was retired on 2026-10-01; this repo uses v1.1. Since February 2026 the Met also publishes 100+ 3D models of collection works; most are CC0 under the same Open Access program.",
       "verified": {
         "date": "2026-11-19",
         "evidence": "metmuseum/openaccess README: artworks covered by the Open Access policy are identified with the Creative Commons Zero (CC0) icon; metmuseum.github.io: datasets waived under CC0"
