@@ -29,7 +29,7 @@ Type a theme (cat, ocean, flowers…) and walk through a museum built at runtime
 - **Ambient sound**: an Openverse audio result whose own license is CC0.
 - Click any piece for its license evidence; the **Credits** panel lists every asset in the room.
 
-Rendered with **WebGPU** through three.js `WebGPURenderer` ([three.js](https://threejs.org), MIT, 0.170.0 pinned on jsDelivr), which falls back to WebGL2 in browsers without WebGPU; a badge shows which backend is active (`?renderer=webgl` forces the fallback for testing). It runs entirely in the browser: desktop uses WASD and the mouse, phones use drag-to-look and walk buttons.
+Rendered with **WebGPU** through three.js `WebGPURenderer` ([three.js](https://threejs.org), MIT, 0.170.0 pinned on jsDelivr), which falls back to WebGL2 in browsers without WebGPU; a badge shows which backend is active (`?renderer=webgl` forces the fallback for testing). It runs entirely in the browser. Camera input is eased: drag (or lock the mouse) to look, WASD to walk with gentle acceleration, Shift to hurry, scroll to zoom in on a painting; walls and pedestals are solid; a subtle head bob is turned off for `prefers-reduced-motion`. Phones use drag-to-look with inertia and walk buttons.
 
 Loading is progressive: a progress bar tracks four steps (finding works, floor and lighting, paintings, sculptures); empty frames appear first and each painting fades in when its image arrives; every image, model and HDRI has a time limit, so one slow asset leaves only its own slot empty; and switching themes cancels the previous load. You can enter the room as soon as the floor and lighting are ready.
 

@@ -20,7 +20,6 @@ const ROOM = { width: 14, length: 36, height: 6 };
 const SLOTS_PER_WALL = 8;
 const SLOTS = SLOTS_PER_WALL * 2;
 const EYE_HEIGHT = 1.65;
-const WALK_SPEED = 3.2; // m/s
 const PAINTING_MAX = { w: 3, h: 2.2 };
 const SCULPTURES = 3;
 /** Per-asset time limits; a slow asset leaves its slot empty instead of stalling the room. */
@@ -144,8 +143,10 @@ function resize() {
 
 function resetCamera() {
   camera.position.set(0, EYE_HEIGHT, ROOM.length / 2 - 2);
-  look.yaw = 0;
-  look.pitch = 0;
+  look.yaw = look.pitch = 0;
+  view.yaw = view.pitch = 0;
+  view.targetFov = view.fov = CAM.fov;
+  velocity.x = velocity.z = 0;
 }
 
 function buildRoom() {
@@ -239,6 +240,7 @@ function clearExhibit() {
   for (const obj of [...exhibit.children]) removeAndDispose(obj);
   clickable.length = 0;
   fading.length = 0;
+  obstacles.length = 0;
   credits = [];
 }
 
@@ -420,6 +422,7 @@ async function placeSculpture(asset, index, gen) {
   const holder = new THREE.Group();
   holder.add(pedestal, model);
   holder.position.set(0, 0, [-ROOM.length / 4, 0, ROOM.length / 4][index]);
+  obstacles.push({ x: holder.position.x, z: holder.position.z });
   holder.userData.asset = d;
   exhibit.add(holder);
   clickable.push(holder);
@@ -599,35 +602,110 @@ $("#theme-form").addEventListener("submit", (e) => {
 });
 
 // ---------------- controls ----------------
+// Input only moves a *target*; the frame loop eases the camera toward it, so mouse, touch and
+// keyboard all feel smooth. Movement accelerates and decelerates instead of starting and
+// stopping instantly.
+const CAM = {
+  mouseSensitivity: 0.0019, // radians per pixel
+  touchSensitivity: 0.0045,
+  dragSensitivity: 0.0032, // desktop drag-to-look without pointer lock
+  maxEventDelta: 120, // px; pointer lock occasionally reports huge spikes
+  lookEase: 24, // 1/s; higher = snappier
+  pitchLimit: 1.35,
+  walkSpeed: 3.0, // m/s
+  sprintFactor: 1.8, // Shift
+  accel: 12, // 1/s toward the wanted velocity
+  decel: 9,
+  touchInertiaDecay: 6, // 1/s
+  bobHeight: 0.028, // m
+  bobStride: 1.5, // m per bob cycle
+  fov: 70,
+  fovMin: 35,
+  fovMax: 80,
+  fovEase: 10,
+  wallMargin: 0.6,
+  pedestalRadius: 1.1,
+};
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 const canvas = $("#scene");
 const keys = new Set();
 let touchMove = 0;
-window.addEventListener("keydown", (e) => keys.add(e.code));
+const view = { yaw: 0, pitch: 0, fov: CAM.fov, targetFov: CAM.fov };
+const velocity = { x: 0, z: 0 };
+const touchInertia = { yaw: 0, pitch: 0 };
+let walked = 0;
+/** Pedestal centers (x, z) the camera must not walk through; filled as sculptures are placed. */
+const obstacles = [];
+
+const clampDelta = (d) => Math.max(-CAM.maxEventDelta, Math.min(CAM.maxEventDelta, d));
+function turn(dx, dy, sensitivity) {
+  look.yaw -= clampDelta(dx) * sensitivity;
+  look.pitch = Math.max(-CAM.pitchLimit, Math.min(CAM.pitchLimit, look.pitch - clampDelta(dy) * sensitivity));
+}
+
+window.addEventListener("keydown", (e) => {
+  if (e.target instanceof HTMLInputElement) return;
+  keys.add(e.code);
+});
 window.addEventListener("keyup", (e) => keys.delete(e.code));
+window.addEventListener("blur", () => keys.clear());
+
+const roomActive = () => renderer && $("#intro").hidden && $("#loading").hidden;
+
+// Desktop: drag to look without locking the mouse; a click that did not drag picks or locks.
+let drag = null;
+canvas.addEventListener("mousedown", (e) => {
+  if (e.button !== 0 || !roomActive() || document.pointerLockElement === canvas) return;
+  drag = { x: e.clientX, y: e.clientY, moved: 0 };
+});
+window.addEventListener("mouseup", () => setTimeout(() => (drag = null), 0));
+document.addEventListener("mousemove", (e) => {
+  if (document.pointerLockElement === canvas) return turn(e.movementX, e.movementY, CAM.mouseSensitivity);
+  if (!drag) return;
+  const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+  drag.moved += Math.abs(dx) + Math.abs(dy);
+  drag.x = e.clientX;
+  drag.y = e.clientY;
+  // Dragging moves the scene with the pointer (like Street View): the opposite of mouse-look.
+  turn(-dx, -dy, CAM.dragSensitivity);
+});
 
 canvas.addEventListener("click", (e) => {
-  if (!renderer || !$("#intro").hidden || !$("#loading").hidden) return;
+  if (!roomActive()) return;
+  if (drag && drag.moved > 6) return; // that was a drag, not a click
   const locked = document.pointerLockElement === canvas;
   // Locked: pick what the crosshair points at. Unlocked or touch: pick under the pointer,
   // and on desktop lock the mouse when the click hits no artwork.
   if (pick(locked ? null : e)) return;
-  if (!isTouch && !locked) canvas.requestPointerLock();
+  if (!isTouch && !locked) canvas.requestPointerLock?.();
 });
-document.addEventListener("mousemove", (e) => {
-  if (document.pointerLockElement !== canvas) return;
-  look.yaw -= e.movementX * 0.0022;
-  look.pitch = Math.max(-1.2, Math.min(1.2, look.pitch - e.movementY * 0.0022));
-});
+
+// Mouse wheel / trackpad: zoom by narrowing the field of view, to look closer at a painting.
+canvas.addEventListener("wheel", (e) => {
+  if (!roomActive()) return;
+  e.preventDefault();
+  view.targetFov = Math.max(CAM.fovMin, Math.min(CAM.fovMax, view.targetFov + e.deltaY * 0.03));
+}, { passive: false });
+
+// Touch: drag to look, with a little inertia after the finger lifts.
 let lastTouch = null;
-canvas.addEventListener("touchstart", (e) => (lastTouch = e.touches[0]), { passive: true });
+canvas.addEventListener("touchstart", (e) => {
+  lastTouch = e.touches[0];
+  touchInertia.yaw = touchInertia.pitch = 0;
+}, { passive: true });
 canvas.addEventListener("touchmove", (e) => {
   const t = e.touches[0];
   if (lastTouch) {
-    look.yaw -= (t.clientX - lastTouch.clientX) * 0.005;
-    look.pitch = Math.max(-1.2, Math.min(1.2, look.pitch - (t.clientY - lastTouch.clientY) * 0.005));
+    const dx = t.clientX - lastTouch.clientX, dy = t.clientY - lastTouch.clientY;
+    // The scene follows the finger, as with drag on desktop.
+    turn(-dx, -dy, CAM.touchSensitivity);
+    touchInertia.yaw = clampDelta(dx) * CAM.touchSensitivity * 30;
+    touchInertia.pitch = clampDelta(dy) * CAM.touchSensitivity * 30;
   }
   lastTouch = t;
 }, { passive: true });
+canvas.addEventListener("touchend", () => (lastTouch = null), { passive: true });
 for (const [id, dir] of [["#fwd", 1], ["#back", -1]]) {
   const b = $(id);
   b.addEventListener("pointerdown", () => (touchMove = dir));
@@ -648,23 +726,72 @@ function pick(e) {
 }
 
 // ---------------- frame loop ----------------
-let last = performance.now();
-function tick(now) {
-  const dt = Math.min((now - last) / 1000, 0.05);
-  last = now;
-  camera.rotation.set(look.pitch, look.yaw, 0, "YXZ");
+/** Frame-rate independent easing factor for a rate in 1/s. */
+const ease = (rate, dt) => 1 - Math.exp(-rate * dt);
+
+function updateCamera(dt) {
+  // Touch inertia keeps turning briefly after the finger lifts.
+  if (!lastTouch && (touchInertia.yaw || touchInertia.pitch)) {
+    look.yaw += touchInertia.yaw * dt;
+    look.pitch = Math.max(-CAM.pitchLimit, Math.min(CAM.pitchLimit, look.pitch + touchInertia.pitch * dt));
+    const k = Math.exp(-CAM.touchInertiaDecay * dt);
+    touchInertia.yaw = Math.abs(touchInertia.yaw * k) < 1e-3 ? 0 : touchInertia.yaw * k;
+    touchInertia.pitch = Math.abs(touchInertia.pitch * k) < 1e-3 ? 0 : touchInertia.pitch * k;
+  }
+  // Ease the view toward the look target.
+  const a = ease(CAM.lookEase, dt);
+  view.yaw += (look.yaw - view.yaw) * a;
+  view.pitch += (look.pitch - view.pitch) * a;
+  view.fov += (view.targetFov - view.fov) * ease(CAM.fovEase, dt);
+  if (Math.abs(camera.fov - view.fov) > 0.01) {
+    camera.fov = view.fov;
+    camera.updateProjectionMatrix();
+  }
+
+  // Wanted velocity from input, relative to where the camera faces.
   let f = touchMove, s = 0;
   if (keys.has("KeyW") || keys.has("ArrowUp")) f += 1;
   if (keys.has("KeyS") || keys.has("ArrowDown")) f -= 1;
   if (keys.has("KeyD") || keys.has("ArrowRight")) s += 1;
   if (keys.has("KeyA") || keys.has("ArrowLeft")) s -= 1;
-  if (f || s) {
-    const sin = Math.sin(look.yaw), cos = Math.cos(look.yaw);
-    camera.position.x += (-sin * f + cos * s) * WALK_SPEED * dt;
-    camera.position.z += (-cos * f - sin * s) * WALK_SPEED * dt;
-    camera.position.x = Math.max(-ROOM.width / 2 + 0.6, Math.min(ROOM.width / 2 - 0.6, camera.position.x));
-    camera.position.z = Math.max(-ROOM.length / 2 + 0.6, Math.min(ROOM.length / 2 - 0.6, camera.position.z));
+  const len = Math.hypot(f, s) || 1;
+  const speed = CAM.walkSpeed * (keys.has("ShiftLeft") || keys.has("ShiftRight") ? CAM.sprintFactor : 1);
+  const sin = Math.sin(view.yaw), cos = Math.cos(view.yaw);
+  const wantX = ((-sin * f + cos * s) / len) * speed;
+  const wantZ = ((-cos * f - sin * s) / len) * speed;
+  const k = ease(f || s ? CAM.accel : CAM.decel, dt);
+  velocity.x += (wantX - velocity.x) * k;
+  velocity.z += (wantZ - velocity.z) * k;
+  if (Math.hypot(velocity.x, velocity.z) < 0.01) velocity.x = velocity.z = 0;
+
+  const p = camera.position;
+  p.x += velocity.x * dt;
+  p.z += velocity.z * dt;
+  // Slide along walls and around pedestals instead of stopping dead.
+  p.x = Math.max(-ROOM.width / 2 + CAM.wallMargin, Math.min(ROOM.width / 2 - CAM.wallMargin, p.x));
+  p.z = Math.max(-ROOM.length / 2 + CAM.wallMargin, Math.min(ROOM.length / 2 - CAM.wallMargin, p.z));
+  for (const o of obstacles) {
+    const dx = p.x - o.x, dz = p.z - o.z, d = Math.hypot(dx, dz);
+    if (d < CAM.pedestalRadius) {
+      const push = (CAM.pedestalRadius - d) / (d || 1);
+      p.x += dx * push;
+      p.z += dz * push;
+    }
   }
+
+  // Gentle head bob while walking (off for reduced motion).
+  const moving = Math.hypot(velocity.x, velocity.z);
+  walked += moving * dt;
+  const bob = reducedMotion ? 0 : Math.sin((walked / CAM.bobStride) * Math.PI * 2) * CAM.bobHeight * Math.min(1, moving / CAM.walkSpeed);
+  p.y = EYE_HEIGHT + bob;
+  camera.rotation.set(view.pitch, view.yaw, 0, "YXZ");
+}
+
+let last = performance.now();
+function tick(now) {
+  const dt = Math.min((now - last) / 1000, 0.05);
+  last = now;
+  updateCamera(dt);
   for (let i = fading.length - 1; i >= 0; i--) {
     const item = fading[i];
     item.t += dt / FADE_SECONDS;
