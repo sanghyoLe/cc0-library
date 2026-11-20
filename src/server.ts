@@ -8,10 +8,13 @@ import { ASSET_KINDS, CATALOG_KINDS, PROVIDER_IDS, type FetchLike } from "./type
 const MAX_FILES_IN_REPLY = 60;
 
 const KIND_HELP =
-  "Asset type. image, audio, video: Openverse, Wikimedia Commons, Internet Archive (image also: WordPress Photo Directory). " +
-  "hdri, texture: Poly Haven, ambientCG. model: Poly Haven, ambientCG, Sketchfab. " +
-  "artwork: photos of public-domain works from the Cleveland Museum of Art and The Met. " +
-  "any (default): all of the above, interleaved.";
+  "Asset type. image: Openverse, Wikimedia Commons, Internet Archive, WordPress Photo Directory, iNaturalist and GBIF " +
+  "(nature photos), PhyloPic (organism silhouettes; search by taxon name), Iconify (CC0 icon sets), Zenodo (research figures). " +
+  "audio: Openverse, Commons, Internet Archive. video: Commons, Internet Archive, Zenodo. " +
+  "hdri, texture: Poly Haven, ambientCG, BlenderKit. model: Poly Haven, ambientCG, Sketchfab, BlenderKit. " +
+  "artwork: public-domain works from the Cleveland Museum of Art and The Met. " +
+  "collection: whole CC0 GitHub repositories and Hugging Face datasets (only when asked for; not part of 'any'). " +
+  "any (default): every kind except collection, interleaved.";
 
 // ---------- output schemas: every returned field is documented here ----------
 
@@ -102,19 +105,19 @@ const result = (value: object) => ({
 const fail = (message: string) => ({ content: [{ type: "text" as const, text: message }], isError: true });
 
 export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
-  const server = new McpServer({ name: "cc0-library", version: "0.1.2" });
+  const server = new McpServer({ name: "cc0-library", version: "0.2.0" });
 
   server.registerTool(
     "search_assets",
     {
-      title: "Search CC0 assets across 9 sources",
+      title: "Search CC0 assets across 17 sources",
       description:
         "Find CC0 1.0 (public-domain dedication) images, audio, video, HDRIs, textures, 3D models and museum artworks by keyword, " +
         "returning only items whose CC0 status was checked. " +
         "Use it first to discover candidates; then call get_asset for download files and a fresh license re-check. " +
         "Use list_sources instead to answer which sites are CC0. Do not use it for CC BY, CC BY-SA or other 'free' licenses: they are filtered out. " +
         "Behavior: read-only, no API key, live HTTPS calls to each source (usually 2-10 s). A failing source is listed in `errors` while the others still return. " +
-        "Results from uploader-driven sites (Openverse, Commons, Internet Archive, Sketchfab, WordPress Photo Directory) carry licenseEvidence.declaredBy='uploader': " +
+        "Results from uploader-driven sites (Openverse, Commons, Internet Archive, Sketchfab, WordPress Photo Directory, iNaturalist, PhyloPic, Zenodo, BlenderKit, GitHub, Hugging Face) carry licenseEvidence.declaredBy='uploader': " +
         "tell the user to confirm the uploader owns the work. Show each item's servedBy credit with the results.",
       inputSchema: {
         query: z.string().min(1).max(200).describe("Keywords in any language, matched against titles and tags, e.g. 'rainy street' or 'brick wall'"),
@@ -157,7 +160,9 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
           .max(120)
           .describe(
             "Asset id exactly as returned by search_assets: openverse:image:<uuid>, openverse:audio:<uuid>, polyhaven:<slug>, " +
-              "ambientcg:<assetId>, cleveland:<number>, met:<number>, commons:<pageid>, archive:<identifier>, sketchfab:<uid> or wpphotos:<number>",
+              "ambientcg:<assetId>, cleveland:<number>, met:<number>, commons:<pageid>, archive:<identifier>, sketchfab:<uid>, wpphotos:<number>, " +
+              "inaturalist:<number>, gbif:<number>, phylopic:<uuid>, iconify:<set>:<icon>, zenodo:<number>, github:<owner>/<repo>, " +
+              "huggingface:<owner>/<dataset> or blenderkit:<uuid>",
           ),
       },
       outputSchema: getOutput,

@@ -2,18 +2,18 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.sanghyoLe/cc0-library",
   "title": "CC0 Library",
-  "description": "Search CC0-only images, audio, video, 3D, textures and museum art from 8 sources, with evidence.",
+  "description": "Search CC0-only images, audio, video, 3D, HDRIs and museum art from 17 sources, with evidence.",
   "repository": {
     "url": "https://github.com/sanghyoLe/cc0-library",
     "source": "github"
   },
   "websiteUrl": "https://sanghyole.github.io/cc0-library/",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "cc0-library-mcp",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "transport": {
         "type": "stdio"
       }

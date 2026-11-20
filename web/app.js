@@ -3,10 +3,10 @@
 import { search, getAsset } from "./lib/search.js";
 
 const PAGE_SIZE = 12;
-/** ambientCG sends no CORS headers; Cleveland's detail endpoint does not either. */
-const SKIP = ["ambientcg"];
+/** ambientCG and BlenderKit send no CORS headers; Cleveland's detail endpoint does not either. */
+const SKIP = ["ambientcg", "blenderkit"];
 /** Providers whose CC0 label is set by whoever uploaded the item. */
-const UPLOADER_PROVIDERS = ["openverse", "commons", "archive", "sketchfab", "wpphotos"];
+const UPLOADER_PROVIDERS = ["openverse", "commons", "archive", "sketchfab", "wpphotos", "inaturalist", "phylopic", "zenodo", "blenderkit", "github", "huggingface"];
 const DECLARED = {
   library: "Declared CC0 by the studio that made it.",
   institution: "Declared CC0 by the museum that holds the work.",
@@ -16,15 +16,17 @@ const NO_DETAIL_FETCH = new Set(["cleveland"]);
 
 const KINDS = [
   ["any", "All"], ["image", "Images"], ["audio", "Audio"], ["video", "Video"],
-  ["hdri", "HDRIs"], ["texture", "Textures"], ["model", "3D models"], ["artwork", "Artworks"],
+  ["hdri", "HDRIs"], ["texture", "Textures"], ["model", "3D models"], ["artwork", "Artworks"], ["collection", "Collections"],
 ];
 const PROVIDER_NAMES = {
   openverse: "Openverse", polyhaven: "Poly Haven", ambientcg: "ambientCG", cleveland: "Cleveland Museum",
   met: "The Met", commons: "Wikimedia Commons", archive: "Internet Archive", sketchfab: "Sketchfab", wpphotos: "WordPress Photos",
+  inaturalist: "iNaturalist", gbif: "GBIF", phylopic: "PhyloPic", iconify: "Iconify", zenodo: "Zenodo",
+  github: "GitHub", huggingface: "Hugging Face", blenderkit: "BlenderKit",
 };
 
 // Browsers may not send a custom User-Agent; Accept is CORS-safelisted.
-const browserFetch = (url) => fetch(url, { headers: { Accept: "application/json" } });
+const browserFetch = (url, init) => fetch(url, { headers: { Accept: "application/json", ...init?.headers } });
 
 const $ = (sel) => document.querySelector(sel);
 const state = { q: "", kind: "any", page: 1, seen: new Set(), loading: false, strict: false };

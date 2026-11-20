@@ -29,7 +29,19 @@ for (const [kind, q] of Object.entries(QUERIES)) {
   check(r.assets.every((a) => a.licenseEvidence.license === "CC0-1.0"), `${kind} results all carry CC0 evidence`);
   for (const a of r.assets) if (!seenProviders.has(a.provider)) seenProviders.set(a.provider, a.id);
 }
-const ALL = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab", "wpphotos"];
+// Providers whose results depend on specific words get a targeted query.
+const TARGETED = [
+  ["fox", "image", "inaturalist"], ["fox", "image", "gbif"], ["vulpes", "image", "phylopic"], ["heart", "image", "iconify"],
+  ["bird", "image", "zenodo"], ["chair", "model", "blenderkit"], ["sprites", "collection", "github"], ["pixel", "collection", "huggingface"],
+];
+for (const [q, kind, provider] of TARGETED) {
+  const r = await call("search_assets", { query: q, kind, limit: 20 });
+  const hit = r.assets.find((a) => a.provider === provider);
+  check(!!hit, `search ${kind} "${q}" includes ${provider}${hit ? ` (${hit.id})` : ""}`);
+  if (hit && !seenProviders.has(provider)) seenProviders.set(provider, hit.id);
+}
+const ALL = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab", "wpphotos",
+  "inaturalist", "gbif", "phylopic", "iconify", "zenodo", "blenderkit", "github", "huggingface"];
 check(ALL.every((p) => seenProviders.has(p)), `all ${ALL.length} providers returned results: ${[...seenProviders.keys()]}`);
 for (const [provider, id] of seenProviders) {
   const d = await call("get_asset", { id });

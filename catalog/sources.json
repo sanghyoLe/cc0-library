@@ -446,9 +446,9 @@
         "image"
       ],
       "scope": "filter-only",
-      "searchable": false,
+      "searchable": true,
       "licensePage": "https://www.phylopic.org",
-      "notes": "Silhouettes of organisms, searched by scientific name. Licenses vary per image (CC0, CC BY, CC BY-SA...); use only images whose license is CC0.",
+      "notes": "Silhouettes of organisms, searched by scientific name. Licenses vary per image (CC0, CC BY, CC BY-SA...); use only images whose license is CC0. Searchable here.",
       "verified": {
         "date": "2026-11-20",
         "evidence": "API image records carry a license link; e.g. 'Felis chaus' and 'Felis nigripes' images link creativecommons.org/publicdomain/zero/1.0/ while another links by-sa/3.0"
@@ -640,9 +640,9 @@
         "hdri"
       ],
       "scope": "filter-only",
-      "searchable": false,
+      "searchable": true,
       "licensePage": "https://www.blenderkit.com/docs/licenses/",
-      "notes": "Blender add-on library of models, materials and HDRIs under two licenses (Royalty Free and CC0). Use only assets marked CC0.",
+      "notes": "Blender add-on library of models, materials and HDRIs under two licenses (Royalty Free and CC0). Use only assets marked CC0. Searchable here.",
       "verified": {
         "date": "2026-11-20",
         "evidence": "license page lists 'CC0 - No Rights Reserved' as one of its asset licenses"
@@ -1497,12 +1497,96 @@
         "model"
       ],
       "scope": "filter-only",
-      "searchable": false,
+      "searchable": true,
       "licensePage": "https://huggingface.co/datasets?license=license:cc0-1.0",
-      "notes": "Datasets under mixed licenses; filter by license cc0-1.0 (1,000+ datasets, e.g. speech corpora, pixel-art atlases, GLB sets). The license tag is set by the uploader; check each dataset card.",
+      "notes": "Datasets under mixed licenses; filter by license cc0-1.0 (1,000+ datasets, e.g. speech corpora, pixel-art atlases, GLB sets). The license tag is set by the uploader; check each dataset card. Searchable here.",
       "verified": {
         "date": "2026-11-20",
         "evidence": "Hub API /api/datasets?filter=license:cc0-1.0 returns datasets tagged cc0-1.0 (e.g. facebook/voxpopuli, Angais/pixel-art-atlas-1.4m)"
+      }
+    },
+    {
+      "id": "inaturalist-cc0",
+      "name": "iNaturalist (CC0 photos)",
+      "url": "https://www.inaturalist.org/observations?photo_license=cc0",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": true,
+      "licensePage": "https://www.inaturalist.org/pages/terms",
+      "notes": "Nature observation photos; observers choose a license per photo. Searchable here; only photos whose license_code is cc0 are used.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "API photos carry license_code 'cc0' with attribution 'no rights reserved' (photo_license=cc0 filter)"
+      }
+    },
+    {
+      "id": "gbif-cc0",
+      "name": "GBIF (CC0 occurrence images)",
+      "url": "https://www.gbif.org/occurrence/gallery?license=CC0_1_0",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": true,
+      "licensePage": "https://www.gbif.org/terms",
+      "notes": "Specimen and field images from museums and herbaria worldwide. Searchable here; record and image licenses must both be CC0.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "API occurrence license http://creativecommons.org/publicdomain/zero/1.0/legalcode and media license .../publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "id": "iconify-cc0",
+      "name": "Iconify (CC0 icon sets)",
+      "url": "https://icon-sets.iconify.design/?license=CC0-1.0",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": true,
+      "licensePage": "https://api.iconify.design/collections",
+      "notes": "Searchable here across the icon sets whose license is CC0-1.0 (e.g. Maki, Temaki, Pinhead, Osmic, Simple Icons, CoreUI Brands). Logo sets remain trademarks.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "/collections reports license.spdx 'CC0-1.0' for 10 of 280 icon sets"
+      }
+    },
+    {
+      "id": "zenodo-cc0",
+      "name": "Zenodo (CC0 records)",
+      "url": "https://zenodo.org/search?q=metadata.rights.id%3Acc0-1.0",
+      "kinds": [
+        "image",
+        "video"
+      ],
+      "scope": "filter-only",
+      "searchable": true,
+      "licensePage": "https://about.zenodo.org/terms/",
+      "notes": "Research figures, photos and videos. Searchable here; records must report license cc-zero.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "API records matching metadata.rights.id:cc0-1.0 report metadata.license.id 'cc-zero'"
+      }
+    },
+    {
+      "id": "github-cc0",
+      "name": "GitHub (CC0 repositories)",
+      "url": "https://github.com/search?q=license%3Acc0-1.0&type=repositories",
+      "kinds": [
+        "image",
+        "audio",
+        "model",
+        "texture"
+      ],
+      "scope": "filter-only",
+      "searchable": true,
+      "licensePage": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories#search-by-license",
+      "notes": "Whole asset repositories whose detected license is CC0-1.0. Searchable here with kind=collection. Check each README: contents can carry other licenses.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "search qualifier license:cc0-1.0; repository API reports license.spdx_id 'CC0-1.0'"
       }
     }
   ],

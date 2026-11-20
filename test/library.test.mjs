@@ -5,6 +5,8 @@ import { search, getAsset, interleave, loadCatalog } from "../dist/library.js";
 import { resetPolyhavenCache, flattenFiles } from "../dist/providers/polyhaven.js";
 import { sanitizeQuery } from "../dist/providers/archive.js";
 import { stripHtml } from "../dist/providers/commons.js";
+import { resetIconifyCache } from "../dist/providers/iconify.js";
+import { resetPhylopicCache } from "../dist/providers/phylopic.js";
 
 function fakeFetch(routes) {
   const calls = [];
@@ -60,7 +62,8 @@ test("get_asset rejects malformed ids without calling the network", async () => 
   for (const id of ["", "nope", "openverse:video:x", `openverse:image:../../etc`, "polyhaven:a/b", "polyhaven:a:b",
     "ambientcg:../x", "cleveland:12a", "met:1/2", "met:", "openverse:image",
     "commons:File", "archive:a/b", "archive:../x", "sketchfab:XYZ", "sketchfab:7c23a1ba438d4306920229c12afcb5f",
-    "wpphotos:abc", "wpphotos:1/2"]) {
+    "wpphotos:abc", "wpphotos:1/2", "inaturalist:x", "gbif:1a", "phylopic:nope", "iconify:a", "iconify:A_B:c",
+    "zenodo:x", "github:noslash", "github:a/b/c", "huggingface:../x", "blenderkit:123"]) {
     assert.equal(await getAsset(f, id), null, id);
   }
   assert.equal(f.calls.length, 0);
@@ -97,7 +100,7 @@ test("Poly Haven index is cached between calls", async () => {
   assert.equal(callsTo(f, "api.polyhaven.com", "/assets").length, 1);
 });
 
-test("kind=any queries all 10 provider jobs, interleaves them, and reports failing ones without dropping others", async () => {
+test("kind=any queries all 16 provider jobs, interleaves them, and reports failing ones without dropping others", async () => {
   resetPolyhavenCache();
   const f = fakeFetch({
     "https://api.openverse.org/v1/images/?": { result_count: 2, results: [ov("i1", "cc0"), ov("i2", "cc0")] },
@@ -108,7 +111,7 @@ test("kind=any queries all 10 provider jobs, interleaves them, and reports faili
   const r = await search(f, "x", "any", 10, 1);
   assert.deepEqual(r.assets.map((a) => a.id), ["openverse:image:i1", "polyhaven:sky", "openverse:image:i2"]);
   assert.deepEqual(r.errors.map((e) => e.split(":").slice(0, e.startsWith("openverse") ? 2 : 1).join(":")).sort(),
-    ["ambientcg", "archive", "cleveland", "commons", "met", "openverse:audio", "sketchfab", "wpphotos"]);
+    ["ambientcg", "archive", "blenderkit", "cleveland", "commons", "gbif", "iconify", "inaturalist", "met", "openverse:audio", "phylopic", "sketchfab", "wpphotos", "zenodo"]);
   assert.match(r.errors.find((e) => e.startsWith("openverse:audio")), /Openverse returned HTTP 404/);
   assert.match(callsTo(f, "ambientcg.com")[0], /type=material%2Chdri%2C3d-model/);
   // one combined query each for Commons and Internet Archive
@@ -419,4 +422,86 @@ test("list_sources output matches its declared output schema (catalog fields sta
   const r = await client.callTool({ name: "list_sources", arguments: {} });
   assert.ok(r.structuredContent.sources.length > 0);
   await client.close();
+});
+
+const CC0 = "http://creativecommons.org/publicdomain/zero/1.0/";
+
+test("iNaturalist uses only cc0 photos and requests photo_license=cc0", async () => {
+  const obs = (id, codes) => ({ id, uri: `https://www.inaturalist.org/observations/${id}`, taxon: { name: "Vulpes vulpes", preferred_common_name: "Red Fox" },
+    user: { login: "u" }, photos: codes.map((c, i) => ({ id: i, license_code: c, url: `https://x/photos/${id}${i}/square.jpg` })) });
+  const f = fakeFetch({ "https://api.inaturalist.org/v1/observations?": { total_results: 2, results: [obs(1, ["cc-by", "cc0"]), obs(2, ["cc-by"])] } });
+  const r = await search(f, "fox", "image", 20, 1);
+  const a = r.assets.filter((x) => x.provider === "inaturalist");
+  assert.deepEqual(a.map((x) => x.id), ["inaturalist:1"]);
+  assert.equal(a[0].fileUrl, "https://x/photos/11/original.jpg");
+  assert.equal(a[0].title, "Red Fox (Vulpes vulpes)");
+  assert.equal(new URL(callsTo(f, "api.inaturalist.org")[0]).searchParams.get("photo_license"), "cc0");
+});
+
+test("GBIF needs a CC0 record and a CC0 (or unstated) image license", async () => {
+  const occ = (key, lic, mlic) => ({ key, scientificName: "Vulpes", license: lic, media: [{ type: "StillImage", identifier: `https://img/${key}.jpg`, ...(mlic ? { license: mlic } : {}) }] });
+  const f = fakeFetch({ "https://api.gbif.org/v1/occurrence/search?": { count: 4, results: [
+    occ(1, CC0 + "legalcode", CC0), occ(2, CC0 + "legalcode"), occ(3, CC0 + "legalcode", "http://creativecommons.org/licenses/by/4.0/"), occ(4, "http://creativecommons.org/licenses/by/4.0/legalcode", CC0),
+  ] } });
+  const r = await search(f, "fox", "image", 20, 1);
+  assert.deepEqual(r.assets.filter((x) => x.provider === "gbif").map((x) => x.id), ["gbif:1", "gbif:2"]);
+});
+
+test("PhyloPic keeps only images whose license link is CC0", async () => {
+  resetPhylopicCache();
+  const img = (uuid, lic) => ({ uuid, _links: { license: { href: lic }, self: { href: "", title: "Vulpes" }, rasterFiles: [{ href: `r-${uuid}`, sizes: "512x512" }], thumbnailFiles: [{ href: `t-${uuid}`, sizes: "64x64" }] } });
+  const u1 = "11111111-1111-1111-1111-111111111111", u2 = "22222222-2222-2222-2222-222222222222";
+  const f = fakeFetch({
+    "https://api.phylopic.org/images?": { _embedded: { items: [img(u1, "https://creativecommons.org/publicdomain/zero/1.0/"), img(u2, "https://creativecommons.org/publicdomain/mark/1.0/")] } },
+    "https://api.phylopic.org/": { build: 9 },
+  });
+  const r = await search(f, "Vulpes!", "image", 20, 1);
+  assert.deepEqual(r.assets.filter((x) => x.provider === "phylopic").map((x) => x.id), [`phylopic:${u1}`]);
+  const q = new URL(callsTo(f, "api.phylopic.org", "/images")[0]).searchParams;
+  assert.deepEqual([q.get("build"), q.get("filter_name")], ["9", "vulpes"]);
+});
+
+test("Iconify searches only icon sets whose license is CC0-1.0", async () => {
+  resetIconifyCache();
+  const f = fakeFetch({
+    "https://api.iconify.design/collections": { maki: { name: "Maki", license: { spdx: "CC0-1.0" } }, mdi: { name: "MDI", license: { spdx: "Apache-2.0" } } },
+    "https://api.iconify.design/search?": { icons: ["maki:heart", "mdi:heart"], total: 2 },
+  });
+  const r = await search(f, "heart", "image", 20, 1);
+  assert.equal(new URL(callsTo(f, "api.iconify.design", "/search")[0]).searchParams.get("prefixes"), "maki");
+  assert.deepEqual(r.assets.filter((x) => x.provider === "iconify").map((x) => x.id), ["iconify:maki:heart"]);
+  assert.equal((await getAsset(f, "iconify:mdi:heart")), null);
+});
+
+test("Zenodo requires the CC0 rights clause and a cc-zero record license", async () => {
+  const rec = (id, lic) => ({ id, links: {}, metadata: { title: `R${id}`, license: { id: lic }, resource_type: { type: "image" } }, files: [{ key: "a.png", links: { self: `f${id}` } }] });
+  const f = fakeFetch({ "https://zenodo.org/api/records?": { hits: { total: 2, hits: [rec(1, "cc-zero"), rec(2, "cc-by-4.0")] } } });
+  const r = await search(f, 'bird) OR (x', "image", 20, 1);
+  assert.equal(new URL(callsTo(f, "zenodo.org")[0]).searchParams.get("q"), "(bird x) AND metadata.rights.id:cc0-1.0");
+  assert.deepEqual(r.assets.filter((x) => x.provider === "zenodo").map((x) => x.id), ["zenodo:1"]);
+});
+
+test("BlenderKit keeps only cc_zero public assets and maps asset types to kinds", async () => {
+  const bk = (id, lic, type, priv = false) => ({ id, name: id, assetType: type, license: lic, isPrivate: priv });
+  const ids = ["a", "b", "c", "d"].map((c) => c.repeat(8) + "-0000-0000-0000-000000000000");
+  const f = fakeFetch({ "https://www.blenderkit.com/api/v1/search/?": { count: 4, results: [bk(ids[0], "cc_zero", "material"), bk(ids[1], "royalty_free", "model"), bk(ids[2], "cc_zero", "model", true), bk(ids[3], "cc_zero", "hdr")] } });
+  const r = await search(f, "wood", "texture", 20, 1);
+  assert.match(new URL(callsTo(f, "www.blenderkit.com")[0]).searchParams.get("query"), /^wood license:cc_zero asset_type:material$/);
+  assert.deepEqual(r.assets.filter((x) => x.provider === "blenderkit").map((x) => [x.id.slice(11, 12), x.kind]), [["a", "texture"], ["d", "hdri"]]);
+});
+
+test("collections: only kind=collection queries GitHub and Hugging Face, and both re-check CC0", async () => {
+  const f = fakeFetch({
+    "https://api.github.com/search/repositories?": { total_count: 2, items: [
+      { full_name: "a/x", html_url: "https://github.com/a/x", description: "", license: { spdx_id: "CC0-1.0" } },
+      { full_name: "b/y", html_url: "https://github.com/b/y", description: "", license: { spdx_id: "MIT" } },
+    ] },
+    "https://huggingface.co/api/datasets?": [{ id: "o/d1", tags: ["license:cc0-1.0", "modality:image"] }, { id: "o/d2", tags: ["license:mit"] }],
+  });
+  const any = await search(f, "sprites", "any", 20, 1);
+  assert.ok(!any.assets.some((a) => a.kind === "collection"));
+  assert.equal(callsTo(f, "api.github.com").length, 0);
+  const r = await search(f, "sprites license:mit", "collection", 20, 1);
+  assert.equal(new URL(callsTo(f, "api.github.com")[0]).searchParams.get("q"), "sprites license mit license:cc0-1.0");
+  assert.deepEqual(r.assets.map((a) => a.id).sort(), ["github:a/x", "huggingface:o/d1"]);
 });

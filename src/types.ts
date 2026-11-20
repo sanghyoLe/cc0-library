@@ -6,15 +6,20 @@
  * confirmed, so a caller can re-check it instead of trusting this library.
  */
 
-/** `artwork` = photos of public-domain museum works (Cleveland Museum of Art, The Met). */
-export const ASSET_KINDS = ["image", "audio", "video", "hdri", "texture", "model", "artwork"] as const;
+/**
+ * `artwork` = photos of public-domain museum works (Cleveland Museum of Art, The Met).
+ * `collection` = a pack of many assets in one place (a CC0 GitHub repository or Hugging Face dataset).
+ */
+export const ASSET_KINDS = ["image", "audio", "video", "hdri", "texture", "model", "artwork", "collection"] as const;
 export type AssetKind = (typeof ASSET_KINDS)[number];
 
 /** Kinds a catalog source may list. `font` is catalog-only: no search provider serves fonts. */
 export const CATALOG_KINDS = [...ASSET_KINDS, "font"] as const;
 export type CatalogKind = (typeof CATALOG_KINDS)[number];
 
-export const PROVIDER_IDS = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab", "wpphotos"] as const;
+export const PROVIDER_IDS = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab", "wpphotos",
+  "inaturalist", "gbif", "phylopic", "iconify", "zenodo", "huggingface", "github", "blenderkit",
+] as const;
 export type ProviderId = (typeof PROVIDER_IDS)[number];
 
 export const CC0_LICENSE_URL = "https://creativecommons.org/publicdomain/zero/1.0/";

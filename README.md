@@ -1,7 +1,7 @@
 # cc0-library
 
 **CC0 assets only. With receipts.**
-One search across 9 sources for images, audio, video, HDRIs, textures, 3D models, and museum artworks, plus a hand-verified catalog of **92 CC0 sources**. Every result shows *how* its CC0 status was verified and *who* declared it.
+One search across **17 sources** for images, audio, video, HDRIs, textures, 3D models, museum artworks and whole asset collections, plus a hand-verified catalog of **97 CC0 sources**. Every result shows *how* its CC0 status was verified and *who* declared it.
 
 [![ci](https://github.com/sanghyoLe/cc0-library/actions/workflows/ci.yml/badge.svg)](https://github.com/sanghyoLe/cc0-library/actions/workflows/ci.yml)
 ![license: MIT](https://img.shields.io/badge/code-MIT-blue)
@@ -23,12 +23,12 @@ One search across 9 sources for images, audio, video, HDRIs, textures, 3D models
 
 | | Openverse search alone | cc0-library |
 |---|---|---|
-| Sources | Openverse index (Flickr, Freesound, Commons, museums…) | Openverse **plus** Commons, Internet Archive, WordPress Photo Directory, Poly Haven, ambientCG, Sketchfab, Cleveland, The Met |
+| Sources | Openverse index (Flickr, Freesound, Commons, museums…) | Openverse **plus** 16 more: Commons, Internet Archive, WordPress Photo Directory, iNaturalist, GBIF, PhyloPic, Iconify, Zenodo, Poly Haven, ambientCG, BlenderKit, Sketchfab, Cleveland, The Met, GitHub, Hugging Face |
 | CC0 filter | `license=cc0` query parameter | Query filter **and** a check of each item's own license field |
 | Who declared CC0 | Not shown | `declaredBy`: studio, museum, or uploader |
 | Re-check before download | — | `get_asset` re-checks CC0 at the source |
 | "Looks free but isn't" list | — | Unsplash, Pixabay, Pexels, SMK (Public Domain Mark), NASA |
-| Asset types | Images, audio | Images, audio, video, HDRIs, textures, 3D models, artworks |
+| Asset types | Images, audio | Images, audio, video, HDRIs, textures, 3D models, artworks, whole collections |
 | AI assistant access | REST API | MCP server (`search_assets`, `get_asset`, `list_sources`) |
 
 ### Who declared CC0?
@@ -37,24 +37,24 @@ Every result has `licenseEvidence.declaredBy`:
 
 | Value | Meaning | Providers |
 |---|---|---|
-| `library` | The studio that made the asset publishes everything as CC0. | Poly Haven, ambientCG |
-| `institution` | A museum marks a work in its own collection as CC0. | Cleveland Museum of Art, The Met |
-| `uploader` | A site user set the CC0 label. Nobody reviewed it, and it can be wrong (for example, someone else's work uploaded as CC0). | Openverse, Wikimedia Commons, Internet Archive, Sketchfab, WordPress Photo Directory |
+| `library` | The studio or project that made the asset publishes it as CC0. | Poly Haven, ambientCG, Iconify CC0 icon sets |
+| `institution` | A museum or research institution marks a work in its own collection as CC0. | Cleveland Museum of Art, The Met, GBIF publishers |
+| `uploader` | A site user set the CC0 label. Nobody reviewed it, and it can be wrong (for example, someone else's work uploaded as CC0). | Openverse, Wikimedia Commons, Internet Archive, Sketchfab, WordPress Photo Directory, iNaturalist, PhyloPic, Zenodo, BlenderKit, GitHub, Hugging Face |
 
 The web gallery has a "rights holder only" switch that drops `uploader` results. MCP clients can filter on the field.
 
 ## The catalog
 
-[`catalog/sources.json`](catalog/sources.json) lists sites and collections that are CC0, each verified on the source's own license page, repository license or README, with the quoted evidence and a date. Browse it in the [web gallery's Sources tab](https://sanghyole.github.io/cc0-library/) or with the `list_sources` tool.
+[`catalog/sources.json`](catalog/sources.json) lists 97 sites and collections that are CC0 (17 of them searchable), each verified on the source's own license page, repository license or README, with the quoted evidence and a date. Browse it in the [web gallery's Sources tab](https://sanghyole.github.io/cc0-library/) or with the `list_sources` tool.
 
 | Asset type | Sources | Examples |
 |---|---|---|
-| Images, photos, illustrations, icons | 56 | PxHere, freestocks.org, Open Peeps, Health Icons, Simple Icons, 3dicons, FreeSVG |
-| 3D models and animation | 20 | Kenney, Quaternius, KayKit, The Base Mesh, Sign Language Mocap Archive, BlenderKit (CC0 filter) |
-| Audio, music, samples | 19 | BigSoundBank, VCSL, AKWF waveforms, Wyzowl SFX kit, Freesound (CC0 filter) |
-| Textures and materials | 14 | ambientCG, cgbookcase, ShareTextures, 3DTextures.me, Godot VFX textures |
+| Images, photos, illustrations, icons | 61 | PxHere, freestocks.org, Open Peeps, Health Icons, Simple Icons, 3dicons, FreeSVG |
+| 3D models and animation | 21 | Kenney, Quaternius, KayKit, The Base Mesh, Sign Language Mocap Archive, BlenderKit (CC0 filter) |
+| Audio, music, samples | 20 | BigSoundBank, VCSL, AKWF waveforms, Wyzowl SFX kit, Freesound (CC0 filter) |
+| Textures and materials | 15 | ambientCG, cgbookcase, ShareTextures, 3DTextures.me, Godot VFX textures |
 | HDRIs | 5 | Poly Haven, Open HDRI, ambientCG |
-| Video | 5 | ISO Republic, Free Nature Stock, Internet Archive (CC0 items) |
+| Video | 6 | ISO Republic, Free Nature Stock, Internet Archive (CC0 items) |
 | Museum artworks | 3 | Cleveland Museum of Art, The Met, Rijksmuseum (CC0 items) |
 | Fonts | 2 | Beedii, C64 keyboard font |
 
@@ -73,6 +73,14 @@ The catalog also keeps two honest lists:
 | [Internet Archive](https://archive.org) | video, audio, image | The query requires a CC0 `licenseurl`. Each item's own `licenseurl` must be the CC0 1.0 deed. User text is stripped of query operators so it cannot bypass this clause. |
 | [WordPress Photo Directory](https://wordpress.org/photos/) | image | Every photo in the directory is CC0 ("All photos are CC0 licensed"). |
 | [Sketchfab](https://sketchfab.com) | model | The query uses `license=cc0`. Each model's own license must be "CC0 Public Domain". Age-restricted models are dropped. |
+| [iNaturalist](https://www.inaturalist.org) | image | The query uses `photo_license=cc0`. Only photos whose own `license_code` is `cc0` are used. |
+| [GBIF](https://www.gbif.org) | image | The query uses `license=CC0_1_0`. The occurrence license must be CC0, and the image's own license must be CC0 or unstated. |
+| [PhyloPic](https://www.phylopic.org) | image | Each silhouette's license link must be the CC0 deed. Search matches taxon names (e.g. `vulpes`). |
+| [Iconify](https://iconify.design) | image | Search covers only icon sets whose license in `/collections` is `CC0-1.0`. |
+| [Zenodo](https://zenodo.org) | image, video | The query requires `metadata.rights.id:cc0-1.0`; each record must report license `cc-zero`. |
+| [BlenderKit](https://www.blenderkit.com) | model, texture, hdri | The query uses `license:cc_zero`; each asset must report `cc_zero` and be public. Downloads need a free BlenderKit account. |
+| [GitHub](https://github.com) | collection | Repositories whose detected license is `CC0-1.0`. Check the README for contents under other licenses. |
+| [Hugging Face](https://huggingface.co/datasets) | collection | Datasets tagged `license:cc0-1.0`. |
 | [ambientCG](https://ambientcg.com) | hdri, texture, model | Every asset in the library is CC0 ([license](https://docs.ambientcg.com/license/)). |
 | [Cleveland Museum of Art](https://www.clevelandart.org/open-access) | artwork | The query uses `cc0=1`. Each item must also have `share_license_status === "CC0"`. |
 | [The Met](https://github.com/metmuseum/openaccess) | artwork | Each object must have `isPublicDomain === true` (Open Access works are CC0) and an image. |
@@ -117,8 +125,8 @@ claude mcp add cc0-library -- node "$PWD/dist/index.js"
 
 | Tool | Input | Returns |
 |---|---|---|
-| `search_assets` | `query`, `kind` (`image`·`audio`·`video`·`hdri`·`texture`·`model`·`artwork`·`any`, default `any`), `limit` 1–20, `page` 1–12 | CC0 assets, per-provider totals, per-provider errors |
-| `get_asset` | `id` from `search_assets` (`openverse:image:<uuid>`, `openverse:audio:<uuid>`, `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`, `commons:<pageid>`, `archive:<identifier>`, `sketchfab:<uid>`, `wpphotos:<number>`) | Details plus download URLs (Poly Haven: up to 60 map/resolution/format files; Sketchfab: model page only, because downloads need the user's own login) |
+| `search_assets` | `query`, `kind` (`image`·`audio`·`video`·`hdri`·`texture`·`model`·`artwork`·`collection`·`any`, default `any`; `any` excludes `collection`), `limit` 1–20, `page` 1–12 | CC0 assets, per-provider totals, per-provider errors |
+| `get_asset` | `id` from `search_assets` (`openverse:image:<uuid>`, `openverse:audio:<uuid>`, `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`, `commons:<pageid>`, `archive:<identifier>`, `sketchfab:<uid>`, `wpphotos:<number>`, `inaturalist:<n>`, `gbif:<n>`, `phylopic:<uuid>`, `iconify:<set>:<icon>`, `zenodo:<n>`, `blenderkit:<uuid>`, `github:<owner>/<repo>`, `huggingface:<owner>/<dataset>`) | Details plus download URLs (Poly Haven: up to 60 map/resolution/format files; Sketchfab: model page only, because downloads need the user's own login) |
 | `list_sources` | `kind` (optional) | Curated catalog, the non-CC0 list, and the pending-verification list |
 
 If one provider fails, `search_assets` still returns results from the other providers and lists the failure in `errors`. Gateway errors (HTTP 502/503/504) are retried once.
@@ -179,6 +187,8 @@ src/
   providers/archive.ts
   providers/sketchfab.ts
   providers/wpphotos.ts
+  providers/inaturalist.ts, gbif.ts, phylopic.ts, iconify.ts, zenodo.ts, blenderkit.ts
+  providers/collections.ts   GitHub repositories and Hugging Face datasets
 web/                    browser gallery (GitHub Pages); scripts/build-site.mjs assembles it into _site/
 catalog/sources.json    curated CC0 source list (CC0 data)
 test/                   node:test unit tests
@@ -213,11 +223,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 
 **cc0-library**는 CC0 1.0 자료만 찾아 주는 오픈소스 MCP 서버이자 CC0 자료원 목록입니다.
 
-- `search_assets`는 이미지, 오디오, 영상을 Openverse, 위키미디어 공용, 인터넷 아카이브, WordPress 사진 디렉터리에서 찾습니다. HDRI, 텍스처, 3D 모델은 Poly Haven, ambientCG, Sketchfab에서 찾습니다. 미술품(`artwork`)은 Cleveland Museum of Art와 The Met에서 찾습니다.
+- `search_assets`는 17곳에서 찾습니다. 이미지·오디오·영상은 Openverse, 위키미디어 공용, 인터넷 아카이브, WordPress 사진 디렉터리, iNaturalist, GBIF, PhyloPic, Iconify, Zenodo에서 찾습니다. HDRI, 텍스처, 3D 모델은 Poly Haven, ambientCG, Sketchfab, BlenderKit에서 찾습니다. CC0 저장소·데이터셋 묶음(`collection`)은 GitHub와 Hugging Face에서 찾습니다. 미술품(`artwork`)은 Cleveland Museum of Art와 The Met에서 찾습니다.
 - 모든 결과에는 CC0 확인 근거(`licenseEvidence`)가 붙습니다. 근거에는 CC0를 누가 선언했는지(`declaredBy`)도 들어 있습니다. 제작사(`library`), 미술관(`institution`), 업로더(`uploader`) 중 하나입니다. 업로더가 선언한 CC0는 아무도 검토하지 않았으므로 직접 확인해야 합니다.
 - 웹에서 바로 검색할 수 있습니다: https://sanghyole.github.io/cc0-library/
 - `get_asset`은 다운로드 URL을 주기 전에 원본에서 CC0 여부를 다시 확인합니다.
-- `list_sources`는 검증한 CC0 자료원 92곳의 목록을 줍니다. 종류별로 이미지 56곳, 3D 20곳, 오디오 19곳, 텍스처 14곳, HDRI 5곳, 영상 5곳, 미술품 3곳, 폰트 2곳입니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
+- `list_sources`는 검증한 CC0 자료원 97곳의 목록을 줍니다. 종류별로 이미지 61곳, 3D 21곳, 오디오 20곳, 텍스처 15곳, HDRI 5곳, 영상 6곳, 미술품 3곳, 폰트 2곳입니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
 
 - 매주 자동 점검이 목록의 라이선스 페이지를 다시 확인하고 새 후보를 찾습니다.
 - 버전 태그를 올리면 npm과 MCP 공식 레지스트리에 자동으로 배포됩니다.

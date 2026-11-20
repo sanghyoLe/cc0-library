@@ -11,6 +11,13 @@ import { getCommons, searchCommons } from "./providers/commons.js";
 import { getArchive, searchArchive } from "./providers/archive.js";
 import { getSketchfab, searchSketchfab } from "./providers/sketchfab.js";
 import { getWpPhoto, searchWpPhotos } from "./providers/wpphotos.js";
+import { getINaturalist, searchINaturalist } from "./providers/inaturalist.js";
+import { getGbif, searchGbif } from "./providers/gbif.js";
+import { getPhylopic, searchPhylopic } from "./providers/phylopic.js";
+import { getIconify, searchIconify } from "./providers/iconify.js";
+import { getZenodo, searchZenodo } from "./providers/zenodo.js";
+import { getGithub, getHuggingface, searchGithub, searchHuggingface } from "./providers/collections.js";
+import { getBlenderkit, searchBlenderkit } from "./providers/blenderkit.js";
 import type { Asset, AssetDetail, AssetKind, FetchLike, ProviderId } from "./types.js";
 
 export type SearchKind = AssetKind | "any";
@@ -68,7 +75,26 @@ export async function search(
     all.push({ name: "archive", run: () => searchArchive(fetchImpl, k, params) });
   }
   if (kind === "model" || kind === "any") all.push({ name: "sketchfab", run: () => searchSketchfab(fetchImpl, params) });
-  if (kind === "image" || kind === "any") all.push({ name: "wpphotos", run: () => searchWpPhotos(fetchImpl, params) });
+  if (kind === "image" || kind === "any") {
+    all.push({ name: "wpphotos", run: () => searchWpPhotos(fetchImpl, params) });
+    all.push({ name: "inaturalist", run: () => searchINaturalist(fetchImpl, params) });
+    all.push({ name: "gbif", run: () => searchGbif(fetchImpl, params) });
+    all.push({ name: "phylopic", run: () => searchPhylopic(fetchImpl, params) });
+    all.push({ name: "iconify", run: () => searchIconify(fetchImpl, params) });
+  }
+  if (kind === "image" || kind === "video" || kind === "any") {
+    const k = kind === "any" ? "all" : kind;
+    all.push({ name: "zenodo", run: () => searchZenodo(fetchImpl, k, params) });
+  }
+  if (kind === "hdri" || kind === "texture" || kind === "model" || kind === "any") {
+    const k = kind === "any" ? "all" : kind;
+    all.push({ name: "blenderkit", run: () => searchBlenderkit(fetchImpl, k, params) });
+  }
+  // Collections only on request: GitHub allows 10 unauthenticated searches a minute.
+  if (kind === "collection") {
+    all.push({ name: "github", run: () => searchGithub(fetchImpl, params) });
+    all.push({ name: "huggingface", run: () => searchHuggingface(fetchImpl, params) });
+  }
 
   const skip = new Set<string>(options.skip ?? []);
   const run = all.filter((j) => !skip.has(j.name.split(":")[0]));
@@ -98,12 +124,15 @@ export function interleave<T>(lists: T[][]): T[] {
 /**
  * Resolves ids produced by `search`: `openverse:image:<uuid>`, `openverse:audio:<uuid>`,
  * `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`,
- * `commons:<pageid>`, `archive:<identifier>`, `sketchfab:<uid>`, `wpphotos:<number>`.
+ * `commons:<pageid>`, `archive:<identifier>`, `sketchfab:<uid>`, `wpphotos:<number>`,
+ * `inaturalist:<number>`, `gbif:<number>`, `phylopic:<uuid>`, `iconify:<set>:<icon>`, `zenodo:<number>`,
+ * `github:<owner>/<repo>`, `huggingface:<owner>/<dataset>`, `blenderkit:<uuid>`.
  */
 export async function getAsset(fetchImpl: FetchLike, id: string): Promise<AssetDetail | null> {
   const parts = id.split(":");
   const [provider, a, b] = parts;
   if (parts.length === 3 && provider === "openverse" && (a === "image" || a === "audio") && b) return getOpenverse(fetchImpl, a, b);
+  if (parts.length === 3 && provider === "iconify" && a && b) return getIconify(fetchImpl, a, b);
   if (parts.length !== 2 || !a) return null;
   if (provider === "polyhaven") return getPolyhaven(fetchImpl, a);
   if (provider === "ambientcg") return getAmbientcg(fetchImpl, a);
@@ -113,6 +142,13 @@ export async function getAsset(fetchImpl: FetchLike, id: string): Promise<AssetD
   if (provider === "archive") return getArchive(fetchImpl, a);
   if (provider === "sketchfab") return getSketchfab(fetchImpl, a);
   if (provider === "wpphotos") return getWpPhoto(fetchImpl, a);
+  if (provider === "inaturalist") return getINaturalist(fetchImpl, a);
+  if (provider === "gbif") return getGbif(fetchImpl, a);
+  if (provider === "phylopic") return getPhylopic(fetchImpl, a);
+  if (provider === "zenodo") return getZenodo(fetchImpl, a);
+  if (provider === "github") return getGithub(fetchImpl, a);
+  if (provider === "huggingface") return getHuggingface(fetchImpl, a);
+  if (provider === "blenderkit") return getBlenderkit(fetchImpl, a);
   return null;
 }
 
