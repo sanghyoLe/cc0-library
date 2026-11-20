@@ -135,7 +135,7 @@ test("interleave alternates lists of unequal length", () => {
 
 test("catalog: every source has a license page, verification and valid kinds", () => {
   const c = loadCatalog();
-  const kinds = new Set(["image", "audio", "video", "hdri", "texture", "model", "artwork"]);
+  const kinds = new Set(["image", "audio", "video", "hdri", "texture", "model", "artwork", "font"]);
   const ids = new Set();
   for (const s of c.sources) {
     assert.ok(!ids.has(s.id), `duplicate id ${s.id}`);

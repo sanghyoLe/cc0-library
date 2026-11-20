@@ -44,6 +44,9 @@ check(new Set(any.assets.map((a) => a.provider)).size >= 2, `kind=any mixes prov
 const src = await call("list_sources", { kind: "audio" });
 check(src.sources.length > 0 && src.notCc0.length > 0 && src.pendingVerification.length > 0, `list_sources audio -> ${src.sources.map((s) => s.id).join(", ")}`);
 
+const fonts = await call("list_sources", { kind: "font" });
+check(fonts.sources.length > 0 && fonts.sources.every((s) => s.kinds.includes("font")), `list_sources font -> ${fonts.sources.map((s) => s.id).join(", ")}`);
+
 const bad = await client.callTool({ name: "get_asset", arguments: { id: "polyhaven:does_not_exist_xyz" } });
 check(bad.isError === true, "unknown id returns isError");
 

@@ -10,6 +10,10 @@
 export const ASSET_KINDS = ["image", "audio", "video", "hdri", "texture", "model", "artwork"] as const;
 export type AssetKind = (typeof ASSET_KINDS)[number];
 
+/** Kinds a catalog source may list. `font` is catalog-only: no search provider serves fonts. */
+export const CATALOG_KINDS = [...ASSET_KINDS, "font"] as const;
+export type CatalogKind = (typeof CATALOG_KINDS)[number];
+
 export const PROVIDER_IDS = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab", "wpphotos"] as const;
 export type ProviderId = (typeof PROVIDER_IDS)[number];
 

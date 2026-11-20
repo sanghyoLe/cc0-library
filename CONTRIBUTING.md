@@ -43,7 +43,7 @@ Thanks for helping. The project's promise is **CC0 only, with receipts**: every 
    }
    ```
 
-   Allowed `kinds`: `image`, `audio`, `video`, `hdri`, `texture`, `model`, `artwork`.
+   Allowed `kinds`: `image`, `audio`, `video`, `hdri`, `texture`, `model`, `artwork`, `font` (fonts are listed in the catalog only; search does not cover them).
 4. If the site is free but **not** CC0 (its own license, CC BY, Public Domain Mark, "no known restrictions"), add it to `excluded` with `name`, `url` and `reason`.
 5. If you cannot verify the license (the page blocks you, the wording is unclear), add it to `pending` with `name`, `url` and `reason`.
 6. Run `npm test`. The catalog test checks required fields, ids, dates, kinds and duplicates.

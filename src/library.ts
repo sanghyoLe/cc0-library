@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import type { AssetKind } from "./types.js";
+import type { CatalogKind } from "./types.js";
 
 export { search, getAsset, interleave, type SearchKind, type SearchResult, type SearchOptions } from "./search.js";
 
@@ -8,7 +8,7 @@ export interface CatalogSource {
   id: string;
   name: string;
   url: string;
-  kinds: AssetKind[];
+  kinds: CatalogKind[];
   scope: "whole-library" | "filter-only";
   searchable: boolean;
   licensePage: string;

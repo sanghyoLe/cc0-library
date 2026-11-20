@@ -1130,6 +1130,87 @@
         "date": "2026-11-20",
         "evidence": "GitHub repository sheepla/wallpapers declares license CC0-1.0"
       }
+    },
+    {
+      "id": "mesh2motion-assets",
+      "name": "Mesh2Motion assets",
+      "url": "https://github.com/Mesh2Motion/mesh2motion-assets",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/Mesh2Motion/mesh2motion-assets",
+      "notes": "3D models, animations and source art files from the Mesh2Motion project.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository Mesh2Motion/mesh2motion-assets declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "open-duelyst",
+      "name": "Open Duelyst",
+      "url": "https://github.com/open-duelyst/duelyst",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/open-duelyst/duelyst",
+      "notes": "Full source and art of the card game Duelyst, released as CC0. Ready-made Godot sprite frames: github.com/Jordyfel/duelyst-animated-sprites-godot.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository open-duelyst/duelyst declares license CC0-1.0; README: 'OpenDuelyst is licensed under the Creative Commons Zero v1.0 Universal license'"
+      }
+    },
+    {
+      "id": "pixvoxelassets",
+      "name": "PixVoxelAssets",
+      "url": "https://github.com/tommyettinger/PixVoxelAssets",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/tommyettinger/PixVoxelAssets",
+      "notes": "Pixel-art game sprites rendered from 3D voxel models.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository tommyettinger/PixVoxelAssets declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "beedii",
+      "name": "Beedii hand-drawn emoji",
+      "url": "https://webkul.github.io/beedii",
+      "kinds": [
+        "image",
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/webkul/beedii",
+      "notes": "Hand-drawn emoji set, also as a font.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository webkul/beedii declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "c64-keyboard-font",
+      "name": "C64 keyboard font",
+      "url": "https://szabadkai.github.io/c64-keyboard-font/",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/szabadkai/c64-keyboard-font",
+      "notes": "Reconstruction of Commodore 64 keycap lettering as desktop fonts.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository szabadkai/c64-keyboard-font declares license CC0-1.0"
+      }
     }
   ],
   "excluded": [

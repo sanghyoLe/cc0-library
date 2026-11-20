@@ -2,7 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { defaultFetch } from "./http.js";
 import { getAsset, loadCatalog, search } from "./library.js";
-import { ASSET_KINDS, PROVIDER_IDS, type FetchLike } from "./types.js";
+import { ASSET_KINDS, CATALOG_KINDS, PROVIDER_IDS, type FetchLike } from "./types.js";
 
 /** Poly Haven textures can list 100+ map/resolution/format files; keep replies readable. */
 const MAX_FILES_IN_REPLY = 60;
@@ -82,7 +82,7 @@ const listOutput = {
         id: z.string(),
         name: z.string(),
         url: z.string().describe("Where to browse the source"),
-        kinds: z.array(z.enum(ASSET_KINDS)),
+        kinds: z.array(z.enum(CATALOG_KINDS)),
         scope: z.enum(["whole-library", "filter-only"]).describe("whole-library: everything is CC0; filter-only: only CC0-labeled items qualify"),
         searchable: z.boolean().describe("true if search_assets queries this source"),
         licensePage: z.string(),
@@ -186,9 +186,9 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
         "Behavior: reads a bundled JSON file, so no network access, instant and deterministic.",
       inputSchema: {
         kind: z
-          .enum([...ASSET_KINDS, "any"])
+          .enum([...CATALOG_KINDS, "any"])
           .default("any")
-          .describe("Keep only sources offering this asset type; 'any' (default) returns all. Does not filter the notCc0 and pending lists"),
+          .describe("Keep only sources offering this asset type ('font' is catalog-only); 'any' (default) returns all. Does not filter the notCc0 and pending lists"),
       },
       outputSchema: listOutput,
       annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
