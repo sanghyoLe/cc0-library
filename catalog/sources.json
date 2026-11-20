@@ -1406,6 +1406,54 @@
         "date": "2026-11-20",
         "evidence": "GitHub repository direct-img/vibegif.direct-img.link declares license CC0-1.0; README: 'Every anim is CC0, hotlink away'"
       }
+    },
+    {
+      "id": "pride-flags",
+      "name": "Pride Flags (Yellow Dog Man)",
+      "url": "https://github.com/Yellow-Dog-Man/PrideFlags",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/Yellow-Dog-Man/PrideFlags",
+      "notes": "LGBTQ+ pride flags, badges and icons.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository Yellow-Dog-Man/PrideFlags declares license CC0-1.0; README: 'CC0 doesn't require attribution'"
+      }
+    },
+    {
+      "id": "homebrew-vgm",
+      "name": "Homebrew VGM (Beatscribe)",
+      "url": "https://github.com/Beatscribe/homebrew_vgm",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/Beatscribe/homebrew_vgm",
+      "notes": "Video game music for homebrew and retro game projects.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository Beatscribe/homebrew_vgm declares license CC0-1.0; README: 'All this is availabe under the CC0 license'"
+      }
+    },
+    {
+      "id": "seoshop-flags",
+      "name": "SEOshop Flags",
+      "url": "https://github.com/hiddevdploeg/SEOshop-Flags",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/hiddevdploeg/SEOshop-Flags",
+      "notes": "Country flag icon set.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository hiddevdploeg/SEOshop-Flags declares license CC0-1.0"
+      }
     }
   ],
   "excluded": [
