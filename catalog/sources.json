@@ -696,6 +696,38 @@
         "date": "2026-11-20",
         "evidence": "home page: 'cc0 download transhumans — open source illustrations'"
       }
+    },
+    {
+      "id": "freestocks",
+      "name": "freestocks.org",
+      "url": "https://freestocks.org",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freestocks.org/terms-of-use",
+      "notes": "Stock photos. The terms add a restriction on reselling the photos as-is, which goes beyond plain CC0; read the terms before redistributing.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "terms of use: 'All photos on freestocks.org are free and licensed under CC0 (Creative Commons Zero)'"
+      }
+    },
+    {
+      "id": "rijksmuseum-cc0",
+      "name": "Rijksmuseum (CC0 items)",
+      "url": "https://www.rijksmuseum.nl/en/collection",
+      "kinds": [
+        "artwork"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://data.rijksmuseum.nl/policy",
+      "notes": "Mixed: items carry a Public Domain Mark, CC0, CC BY 4.0 or a copyright notice. Use only items whose notice is CC0.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "policy: 'you will find a Public Domain or Creative Commons Zero (CC0) Public Domain Dedication under the copyright notice'"
+      }
     }
   ],
   "excluded": [
@@ -723,6 +755,16 @@
       "name": "NASA",
       "url": "https://www.nasa.gov",
       "reason": "NASA's images-and-media page has no CC0 statement; NASA media follows NASA's own usage guidelines (generally not copyrighted, with restrictions such as no implied endorsement), which is not a CC0 dedication."
+    },
+    {
+      "name": "Pixnio",
+      "url": "https://pixnio.com",
+      "reason": "Uses its own 'Pixnio License' (pixnio.com/license), not CC0."
+    },
+    {
+      "name": "FreePD",
+      "url": "https://freepd.com",
+      "reason": "Service taken offline (closure notice on the site); no license to verify."
     }
   ],
   "pending": [
@@ -730,11 +772,6 @@
       "name": "National Gallery of Art (US)",
       "reason": "Metadata repo (github.com/NationalGalleryOfArt/opendata) is CC0. The image policy page returned HTTP 403, so image licensing is unverified.",
       "url": "https://www.nga.gov"
-    },
-    {
-      "name": "Rijksmuseum",
-      "reason": "Object records link both the Public Domain Mark and CC0; which one covers the images is unverified.",
-      "url": "https://www.rijksmuseum.nl"
     },
     {
       "name": "Smithsonian Open Access",
@@ -772,13 +809,8 @@
       "url": "https://www.birminghammuseums.org.uk"
     },
     {
-      "name": "FreePD",
-      "reason": "No CC0 text found on the home page.",
-      "url": "https://freepd.com"
-    },
-    {
       "name": "Life of Pix",
-      "reason": "No CC0 text found on the license page.",
+      "reason": "The page renders its text with JavaScript; no license statement was readable by a plain request.",
       "url": "https://www.lifeofpix.com"
     },
     {
@@ -859,22 +891,12 @@
     {
       "name": "Texture Ninja",
       "url": "https://texture.ninja",
-      "reason": "No CC0 statement found on the home page."
+      "reason": "The page renders its text with JavaScript; no license statement was readable by a plain request."
     },
     {
       "name": "Poly Pizza",
       "url": "https://poly.pizza",
       "reason": "Low-poly models under mixed licenses (CC0 and CC BY); the page is rendered by JavaScript and the API needs a key, so per-model licenses were not checked."
-    },
-    {
-      "name": "Pixnio",
-      "url": "https://pixnio.com",
-      "reason": "No CC0 statement found on the home page."
-    },
-    {
-      "name": "freestocks.org",
-      "url": "https://freestocks.org",
-      "reason": "No CC0 statement found on the home page."
     },
     {
       "name": "GameArt2D freebies",
