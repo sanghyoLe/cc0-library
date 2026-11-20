@@ -840,6 +840,215 @@
         "date": "2026-11-20",
         "evidence": "GitHub repository cc0-icons/cc0-icons declares license CC0-1.0"
       }
+    },
+    {
+      "id": "simple-icons",
+      "name": "Simple Icons",
+      "url": "https://simpleicons.org",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/simple-icons/simple-icons",
+      "notes": "SVG icons for 3,000+ brands. The SVG files are CC0, but the logos are trademarks of their owners; follow each brand's guidelines.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository simple-icons/simple-icons declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "cryptocurrency-icons",
+      "name": "Cryptocurrency Icons",
+      "url": "https://github.com/spothq/cryptocurrency-icons",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/spothq/cryptocurrency-icons",
+      "notes": "Icons for cryptocurrencies in several styles. Logos remain trademarks of their projects.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository spothq/cryptocurrency-icons declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "game-icon-pack",
+      "name": "Nieobie game icon pack",
+      "url": "https://nieobie.itch.io/free-icons",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/Nieobie/game-icon-pack",
+      "notes": "800+ rounded-style game icons.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository Nieobie/game-icon-pack declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "small-n-flat",
+      "name": "small-n-flat",
+      "url": "https://github.com/paomedia/small-n-flat",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/paomedia/small-n-flat",
+      "notes": "Flat SVG icons on a 24px grid.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository paomedia/small-n-flat declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "8x8me",
+      "name": "8x8.me patterns",
+      "url": "https://github.com/ace-dent/8x8.me",
+      "kinds": [
+        "image",
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/ace-dent/8x8.me",
+      "notes": "Monotone 8×8px fill patterns.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository ace-dent/8x8.me declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "project-cordon-sprites",
+      "name": "Project Cordon sprites",
+      "url": "https://github.com/doficia/project-cordon-sprites",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/doficia/project-cordon-sprites",
+      "notes": "Community pixel-art sprites for indie games.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository doficia/project-cordon-sprites declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "sfx-kit",
+      "name": "Wyzowl SFX kit",
+      "url": "https://github.com/wyzowl/sfx-kit",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/wyzowl/sfx-kit",
+      "notes": "320 original sound effects for videos, animations and interfaces.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository wyzowl/sfx-kit declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "pixelart-icons",
+      "name": "pixelart-icons",
+      "url": "https://github.com/tstamborski/pixelart-icons",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/tstamborski/pixelart-icons",
+      "notes": "Growing set of pixel-art icons.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository tstamborski/pixelart-icons declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "ferris3d",
+      "name": "Ferris 3D",
+      "url": "https://github.com/RayMarch/ferris3d",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/RayMarch/ferris3d",
+      "notes": "3D model of Ferris, the Rust mascot.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository RayMarch/ferris3d declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "sfxmint",
+      "name": "SFXMint",
+      "url": "https://sfxmint.com",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://sfxmint.com/",
+      "notes": "Game and UI sound effects in WAV/MP3, no sign-up. Sounds are AI-generated or procedurally synthesized.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "home page title: 'Free Sound Effects — CC0 WAV & MP3, No Signup'"
+      }
+    },
+    {
+      "id": "bioicons-cc0",
+      "name": "Bioicons (CC0 filter)",
+      "url": "https://bioicons.com",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://bioicons.com/",
+      "notes": "Science and biology illustration icons under mixed licenses (BSD, CC0, CC BY, CC BY-SA, MIT). Use the CC0 license filter.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "site offers a license filter listing 'BSD, CC0, CC BY 3.0, CC BY 4.0, CC BY-SA 3.0, CC BY-SA 4.0, MIT'"
+      }
+    },
+    {
+      "id": "3dicons",
+      "name": "3dicons",
+      "url": "https://3dicons.co",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://3dicons.co/",
+      "notes": "5,000+ rendered 3D-style icons.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "FAQ: 'The current version of 3dicons is under CC0 - Creative Commons License'"
+      }
+    },
+    {
+      "id": "openhdri",
+      "name": "Open HDRI",
+      "url": "https://openhdri.org",
+      "kinds": [
+        "hdri"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://openhdri.org/",
+      "notes": "Real-world captured HDRIs in unclipped, high-resolution form.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "page title: 'Free CC0 HDRIs (29K) – Ultra-High Resolution • Open HDRI'"
+      }
     }
   ],
   "excluded": [
@@ -877,6 +1086,11 @@
       "name": "FreePD",
       "url": "https://freepd.com",
       "reason": "Service taken offline (closure notice on the site); no license to verify."
+    },
+    {
+      "name": "Library of Congress: Free to Use",
+      "url": "https://www.loc.gov/free-to-use/",
+      "reason": "Items are described as free to use and reuse (public domain or no known restrictions); this is not a CC0 dedication."
     }
   ],
   "pending": [
@@ -1049,6 +1263,16 @@
       "name": "RouteNote Licensing CC0 collection",
       "url": "https://licensing.routenote.com",
       "reason": "Described as a CC0 collection behind sign-up; no CC0 statement on the public home page."
+    },
+    {
+      "name": "Free Gophers Pack",
+      "url": "https://github.com/MariaLetta/free-gophers-pack",
+      "reason": "The repository declares CC0-1.0, but the Go gopher design it builds on was created by Renee French under CC BY 3.0, so attribution to the original design may still be required."
+    },
+    {
+      "name": "Open Doodles",
+      "url": "https://www.opendoodles.com",
+      "reason": "Listed as CC0 by curated lists, but the home page renders its text with JavaScript and no CC0 statement was readable."
     }
   ]
 }
