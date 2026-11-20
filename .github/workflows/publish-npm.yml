@@ -41,6 +41,15 @@ jobs:
           else
             npm publish --access public
           fi
+      - name: Wait until npm serves this version (the MCP Registry checks it)
+        run: |
+          v="$(node -p "require('./package.json').version")"
+          for i in $(seq 1 30); do
+            npm view "cc0-library-mcp@$v" version >/dev/null 2>&1 && exit 0
+            sleep 10
+          done
+          echo "cc0-library-mcp@$v did not appear on npm within 5 minutes" >&2
+          exit 1
       - name: Install cosign
         uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
       - name: Download and verify mcp-publisher
