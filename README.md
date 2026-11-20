@@ -189,7 +189,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 - 모든 결과에는 CC0 확인 근거(`licenseEvidence`)가 붙습니다. 근거에는 CC0를 누가 선언했는지(`declaredBy`)도 들어 있습니다. 제작사(`library`), 미술관(`institution`), 업로더(`uploader`) 중 하나입니다. 업로더가 선언한 CC0는 아무도 검토하지 않았으므로 직접 확인해야 합니다.
 - 웹에서 바로 검색할 수 있습니다: https://sanghyole.github.io/cc0-library/
 - `get_asset`은 다운로드 URL을 주기 전에 원본에서 CC0 여부를 다시 확인합니다.
-- `list_sources`는 검증한 CC0 자료원 44곳의 목록을 줍니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
+- `list_sources`는 검증한 CC0 자료원 46곳의 목록을 줍니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
 
 설치 (Claude Code):
 

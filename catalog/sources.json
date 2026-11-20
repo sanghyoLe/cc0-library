@@ -728,6 +728,38 @@
         "date": "2026-11-20",
         "evidence": "policy: 'you will find a Public Domain or Creative Commons Zero (CC0) Public Domain Dedication under the copyright notice'"
       }
+    },
+    {
+      "id": "jangafx-vdb",
+      "name": "JangaFX free VDB volumes",
+      "url": "https://jangafx.com/software/embergen/download/free-vdb-animations/",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://jangafx.com/software/embergen/download/free-vdb-animations/",
+      "notes": "OpenVDB volume simulations (smoke, fire, explosions) for Blender, Houdini and other renderers.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "page: 'These free VDB simulations are licensed as CC0 (Public Domain) so you are free to use them however you want'"
+      }
+    },
+    {
+      "id": "blendswap-cc0",
+      "name": "Blend Swap (CC-0 filter)",
+      "url": "https://www.blendswap.com/search?keyword=+&blendLicense=CC-0",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.blendswap.com/search?keyword=+&blendLicense=CC-0",
+      "notes": "Community Blender models under mixed licenses (CC-0, CC-BY, CC-BY-SA, NC variants, GAL). Use the CC-0 license filter.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "search page offers a 'CC-0' license filter alongside CC-BY, CC-BY-SA, CC-BY-NC and others"
+      }
     }
   ],
   "excluded": [
@@ -907,6 +939,16 @@
       "name": "HoliznaCC0",
       "url": "https://holiznacc0.bandcamp.com",
       "reason": "Artist name says CC0, but the album page checked ('Public Domain Lo-Fi 2') links creativecommons.org/licenses/by/4.0/ (CC BY 4.0). Check each release's license."
+    },
+    {
+      "name": "3D Models CC0",
+      "url": "https://www.3dmodelscc0.com",
+      "reason": "Listed in awesome-cc0, but no CC0 statement was found on the home page."
+    },
+    {
+      "name": "Thingiverse (CC0 filter)",
+      "url": "https://www.thingiverse.com",
+      "reason": "Has a public-domain license filter, but the site returned HTTP 403 to verification requests."
     }
   ]
 }
