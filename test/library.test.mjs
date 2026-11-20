@@ -19,6 +19,11 @@ function fakeFetch(routes) {
   return fn;
 }
 
+/** Exact hostname of a recorded request URL (avoids substring matching on URLs). */
+const hostOf = (u) => new URL(u).hostname;
+/** Recorded calls sent to `host`, optionally filtered to a path prefix. */
+const callsTo = (f, host, pathPrefix = "") => f.calls.filter((u) => hostOf(u) === host && new URL(u).pathname.startsWith(pathPrefix));
+
 const ov = (id, license, extra = {}) => ({
   id, title: `t-${id}`, foreign_landing_url: `https://x/${id}`, url: `https://x/${id}.jpg`,
   creator: "c", license, source: "flickr", tags: [{ name: "a" }], ...extra,
@@ -77,7 +82,7 @@ test("Poly Haven search maps slugs to assets in score order and credits Poly Hav
   assert.equal(r.assets[1].kind, "hdri");
   assert.match(r.assets[0].servedBy, /Poly Haven/);
   assert.equal(r.assets[0].landingUrl, "https://polyhaven.com/a/brick_wall");
-  assert.match(f.calls.find((u) => u.includes("/search")), /t=textures/);
+  assert.match(callsTo(f, "api.polyhaven.com", "/search")[0], /t=textures/);
 });
 
 test("Poly Haven index is cached between calls", async () => {
@@ -88,7 +93,7 @@ test("Poly Haven index is cached between calls", async () => {
   });
   await search(f, "a", "model", 5, 1);
   await search(f, "b", "model", 5, 1);
-  assert.equal(f.calls.filter((u) => u.startsWith("https://api.polyhaven.com/assets")).length, 1);
+  assert.equal(callsTo(f, "api.polyhaven.com", "/assets").length, 1);
 });
 
 test("kind=any queries all 9 provider jobs, interleaves them, and reports failing ones without dropping others", async () => {
@@ -104,11 +109,11 @@ test("kind=any queries all 9 provider jobs, interleaves them, and reports failin
   assert.deepEqual(r.errors.map((e) => e.split(":").slice(0, e.startsWith("openverse") ? 2 : 1).join(":")).sort(),
     ["ambientcg", "archive", "cleveland", "commons", "met", "openverse:audio", "sketchfab"]);
   assert.match(r.errors.find((e) => e.startsWith("openverse:audio")), /Openverse returned HTTP 404/);
-  assert.match(f.calls.find((u) => u.includes("ambientcg")), /type=material%2Chdri%2C3d-model/);
+  assert.match(callsTo(f, "ambientcg.com")[0], /type=material%2Chdri%2C3d-model/);
   // one combined query each for Commons and Internet Archive
-  assert.equal(f.calls.filter((u) => u.includes("commons.wikimedia.org")).length, 1);
-  assert.doesNotMatch(f.calls.find((u) => u.includes("commons.wikimedia.org")), /filetype/);
-  assert.match(new URL(f.calls.find((u) => u.includes("advancedsearch"))).searchParams.get("q"), /mediatype:\(image OR audio OR movies\)/);
+  assert.equal(callsTo(f, "commons.wikimedia.org").length, 1);
+  assert.doesNotMatch(callsTo(f, "commons.wikimedia.org")[0], /filetype/);
+  assert.match(new URL(callsTo(f, "archive.org", "/advancedsearch.php")[0]).searchParams.get("q"), /mediatype:\(image OR audio OR movies\)/);
 });
 
 test("flattenFiles turns nested Poly Haven files into labeled rows and skips 'include'", () => {
@@ -168,7 +173,7 @@ test("ambientCG maps v3 types to kinds and requests the right type filter", asyn
     },
   });
   const r = await search(f, "wood", "texture", 3, 2);
-  const url = f.calls.find((u) => u.includes("ambientcg"));
+  const url = callsTo(f, "ambientcg.com")[0];
   assert.match(url, /type=material&/);
   assert.match(url, /offset=3/);
   const acg = r.assets.filter((a) => a.provider === "ambientcg");
@@ -190,7 +195,7 @@ test("Cleveland keeps only share_license_status=CC0 items with an image", async 
   assert.deepEqual(c.map((a) => a.id), ["cleveland:1"]);
   assert.equal(c[0].creator, "Painter (1800)");
   assert.equal(c[0].fileUrl, "p1.jpg");
-  assert.match(f.calls.find((u) => u.includes("clevelandart")), /cc0=1/);
+  assert.match(callsTo(f, "openaccess-api.clevelandart.org")[0], /cc0=1/);
 });
 
 test("Cleveland get_asset returns null for a non-CC0 work", async () => {
@@ -244,7 +249,7 @@ test("a gateway error (504) is retried once; a second failure is reported", asyn
 test("a client error (404) is not retried", async () => {
   const f = fakeFetch({});
   await search(f, "cat", "image", 5, 1);
-  assert.equal(f.calls.filter((u) => u.startsWith("https://api.openverse.org/")).length, 1);
+  assert.equal(callsTo(f, "api.openverse.org").length, 1);
 });
 
 const commonsPage = (pageid, license, mime = "image/jpeg", index = 1) => ({
@@ -260,7 +265,7 @@ test("Commons searches Category:CC-Zero with a filetype filter and keeps only Li
     },
   });
   const r = await search(f, "rain", "video", 5, 2);
-  const url = decodeURIComponent(f.calls.find((u) => u.includes("commons")).replace(/\+/g, " "));
+  const url = decodeURIComponent(callsTo(f, "commons.wikimedia.org")[0].replace(/\+/g, " "));
   assert.match(url, /gsrsearch=rain incategory:CC-Zero filetype:video/);
   assert.match(url, /gsroffset=5/);
   const c = r.assets.filter((a) => a.provider === "commons");
@@ -294,7 +299,7 @@ test("Internet Archive: query is sanitized so users cannot bypass the CC0 clause
     },
   });
   const r = await search(f, 'rain) OR (licenseurl:*', "video", 5, 1);
-  const q = new URL(f.calls.find((u) => u.includes("advancedsearch"))).searchParams.get("q");
+  const q = new URL(callsTo(f, "archive.org", "/advancedsearch.php")[0]).searchParams.get("q");
   assert.match(q, /^\(rain licenseurl\) AND mediatype:movies AND \(licenseurl:"http:\/\/creativecommons\.org\/publicdomain\/zero\/1\.0\/" OR /);
   assert.deepEqual(r.assets.filter((a) => a.provider === "archive").map((a) => [a.id, a.kind]), [["archive:ok1", "video"]]);
 });
@@ -332,7 +337,7 @@ test("Sketchfab keeps only CC0 models, skips age-restricted ones, credits the cr
     ] },
   });
   const r = await search(f, "chair", "model", 4, 3);
-  assert.match(f.calls.find((u) => u.includes("sketchfab")), /license=cc0.*cursor=8|cursor=8.*license=cc0/);
+  assert.match(callsTo(f, "api.sketchfab.com")[0], /license=cc0.*cursor=8|cursor=8.*license=cc0/);
   const s = r.assets.filter((a) => a.provider === "sketchfab");
   assert.deepEqual(s.map((a) => a.id), [`sketchfab:${UID_A}`]);
   assert.equal(s[0].creator, "The Smithsonian Institution (@smithsonian)");
@@ -348,7 +353,7 @@ test("search options.skip leaves providers out (browser gallery skips ambientCG)
   resetPolyhavenCache();
   const f = fakeFetch({});
   const r = await search(f, "wood", "texture", 5, 1, { skip: ["ambientcg"] });
-  assert.equal(f.calls.filter((u) => u.includes("ambientcg")).length, 0);
+  assert.equal(callsTo(f, "ambientcg.com").length, 0);
   assert.ok(!r.errors.some((e) => e.startsWith("ambientcg")));
 });
 
