@@ -664,6 +664,38 @@
         "date": "2026-11-20",
         "evidence": "home page: 'Every asset pack from Screaming Brain Studios has been released under the CC0 / Public Domain license'"
       }
+    },
+    {
+      "id": "thebasemesh",
+      "name": "The Base Mesh",
+      "url": "https://www.thebasemesh.com",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.thebasemesh.com/faq",
+      "notes": "Base meshes (simple starting 3D models) for modeling and sculpting.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "FAQ: 'these models are under the CC0 license'; submissions are released under CC0"
+      }
+    },
+    {
+      "id": "transhumans",
+      "name": "Transhumans",
+      "url": "https://transhumans.xyz",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://transhumans.xyz/",
+      "notes": "Sci-fi character illustrations by Pablo Stanley.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "home page: 'cc0 download transhumans — open source illustrations'"
+      }
     }
   ],
   "excluded": [
@@ -848,6 +880,11 @@
       "name": "GameArt2D freebies",
       "url": "https://www.gameart2d.com/freebies.html",
       "reason": "No CC0 statement found on the freebies page."
+    },
+    {
+      "name": "HoliznaCC0",
+      "url": "https://holiznacc0.bandcamp.com",
+      "reason": "Artist name says CC0, but the album page checked ('Public Domain Lo-Fi 2') links creativecommons.org/licenses/by/4.0/ (CC BY 4.0). Check each release's license."
     }
   ]
 }
