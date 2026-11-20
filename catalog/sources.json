@@ -1211,6 +1211,88 @@
         "date": "2026-11-20",
         "evidence": "GitHub repository szabadkai/c64-keyboard-font declares license CC0-1.0"
       }
+    },
+    {
+      "id": "pmndrs-assets",
+      "name": "pmndrs/assets",
+      "url": "https://github.com/pmndrs/assets",
+      "kinds": [
+        "hdri",
+        "texture",
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://github.com/pmndrs/assets",
+      "notes": "Base64-packed HDRIs, matcaps, normal maps, textures and models for three.js / react-three-fiber, installable from npm. The fonts folder carries its own LICENSE.txt (Inter font), so fonts are not CC0.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository pmndrs/assets declares license CC0-1.0; src/fonts has a separate LICENSE.txt"
+      }
+    },
+    {
+      "id": "cc0-public-domain-sounds",
+      "name": "CC0 Public Domain Sounds (lavenderdotpet)",
+      "url": "https://github.com/lavenderdotpet/CC0-Public-Domain-Sounds",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/lavenderdotpet/CC0-Public-Domain-Sounds",
+      "notes": "Collection of CC0 sound-effect packs (SFX, loops, retro synth, water, wood and metal).",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository lavenderdotpet/CC0-Public-Domain-Sounds declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "devtextures",
+      "name": "DevTextures",
+      "url": "https://github.com/Nolram12345/DevTextures",
+      "kinds": [
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/Nolram12345/DevTextures",
+      "notes": "Placeholder textures and surface imperfections for graphics development.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository Nolram12345/DevTextures declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "tailwind-figma-ui-kit",
+      "name": "Tailwind Figma UI kit (Flowbite)",
+      "url": "https://github.com/themesberg/tailwind-figma-ui-kit",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/themesberg/tailwind-figma-ui-kit",
+      "notes": "Figma UI components and page designs for Tailwind CSS.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository themesberg/tailwind-figma-ui-kit declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "semantic-ui-kit-sketch",
+      "name": "Semantic UI kit for Sketch",
+      "url": "https://github.com/guacamoly/semantic-ui-kit-for-sketch",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/guacamoly/semantic-ui-kit-for-sketch",
+      "notes": "Sketch UI kit for mockups (archived). Needs the Lato font, which has its own license.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository guacamoly/semantic-ui-kit-for-sketch declares license CC0-1.0"
+      }
     }
   ],
   "excluded": [
@@ -1258,6 +1340,11 @@
       "name": "Rosé Pine wallpapers",
       "url": "https://github.com/rose-pine/wallpapers",
       "reason": "Repository declares CC0-1.0, but its README states 'All photographs below are licensed as CC BY-SA 4.0'. The content license wins; not CC0."
+    },
+    {
+      "name": "unitedstates/images (Congress photos)",
+      "url": "https://github.com/unitedstates/images",
+      "reason": "Repository declares CC0-1.0, but the photos are official US government works described as public domain, which is not a CC0 dedication."
     }
   ],
   "pending": [
