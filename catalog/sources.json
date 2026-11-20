@@ -1049,6 +1049,87 @@
         "date": "2026-11-20",
         "evidence": "page title: 'Free CC0 HDRIs (29K) – Ultra-High Resolution • Open HDRI'"
       }
+    },
+    {
+      "id": "svglogos",
+      "name": "SVG Logos (gilbarbara/logos)",
+      "url": "https://svglogos.dev",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/gilbarbara/logos",
+      "notes": "1,800+ SVG logos of tech brands and tools. The files are CC0, but logos remain trademarks of their owners.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository gilbarbara/logos declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "superpowers-asset-packs",
+      "name": "Superpowers asset packs",
+      "url": "https://sparklinlabs.itch.io/superpowers",
+      "kinds": [
+        "image",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/sparklinlabs/superpowers-asset-packs",
+      "notes": "Game asset packs (sprites, tiles, sounds, music) from the Superpowers game engine project.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository sparklinlabs/superpowers-asset-packs declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "akwf",
+      "name": "Adventure Kid Wave Forms (AKWF)",
+      "url": "https://www.adventurekid.se/akrt/waveforms/adventure-kid-waveforms/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE",
+      "notes": "Thousands of single-cycle waveforms for synthesizers and samplers.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository KristofferKarlAxelEkstrand/AKWF-FREE declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "osmic",
+      "name": "Osmic map icons",
+      "url": "https://gitlab.com/gmgeo/osmic",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/gmgeo/osmic",
+      "notes": "SVG map icons for OpenStreetMap-style maps (mirror of the GitLab repository).",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository gmgeo/osmic declares license CC0-1.0"
+      }
+    },
+    {
+      "id": "sheepla-wallpapers",
+      "name": "Minimal wallpapers (sheepla)",
+      "url": "https://github.com/sheepla/wallpapers",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/sheepla/wallpapers",
+      "notes": "Minimal-design desktop wallpapers.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository sheepla/wallpapers declares license CC0-1.0"
+      }
     }
   ],
   "excluded": [
@@ -1091,6 +1172,11 @@
       "name": "Library of Congress: Free to Use",
       "url": "https://www.loc.gov/free-to-use/",
       "reason": "Items are described as free to use and reuse (public domain or no known restrictions); this is not a CC0 dedication."
+    },
+    {
+      "name": "Rosé Pine wallpapers",
+      "url": "https://github.com/rose-pine/wallpapers",
+      "reason": "Repository declares CC0-1.0, but its README states 'All photographs below are licensed as CC BY-SA 4.0'. The content license wins; not CC0."
     }
   ],
   "pending": [
@@ -1273,6 +1359,16 @@
       "name": "Open Doodles",
       "url": "https://www.opendoodles.com",
       "reason": "Listed as CC0 by curated lists, but the home page renders its text with JavaScript and no CC0 statement was readable."
+    },
+    {
+      "name": "Chaos sticker collection",
+      "url": "https://github.com/mwarning/chaos-sticker-collection",
+      "reason": "Repository declares CC0-1.0, but it collects stickers made by many different people and groups; each sticker's own license needs checking."
+    },
+    {
+      "name": "Gopherkon",
+      "url": "https://github.com/quasilyte/gopherkon",
+      "reason": "Repository declares CC0-1.0, but the Go gopher design it builds on was created by Renee French under CC BY 3.0."
     }
   ]
 }

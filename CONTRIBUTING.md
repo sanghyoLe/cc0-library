@@ -50,6 +50,8 @@ Thanks for helping. The project's promise is **CC0 only, with receipts**: every 
 
 Public Domain Mark (PDM), "no known copyright restrictions" and "public domain" without a CC0 dedication are **not** CC0. List those under `excluded`.
 
+A repository's declared license is not enough when its README or files say otherwise. For example, a repository can declare CC0-1.0 while its README says the photos are CC BY-SA. The content's own license wins.
+
 ## Adding a searchable provider
 
 1. Add `src/providers/<name>.ts`. Return `Asset` objects (`src/types.ts`) only after a CC0 check:
