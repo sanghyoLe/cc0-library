@@ -1,15 +1,17 @@
 # cc0-library
 
 **CC0 assets only. With receipts.**
-One search across 9 sources for images, audio, video, HDRIs, textures, 3D models, and museum artworks. Every result shows *how* its CC0 status was verified and *who* declared it.
+One search across 9 sources for images, audio, video, HDRIs, textures, 3D models, and museum artworks, plus a hand-verified catalog of **92 CC0 sources**. Every result shows *how* its CC0 status was verified and *who* declared it.
 
 [![ci](https://github.com/sanghyoLe/cc0-library/actions/workflows/ci.yml/badge.svg)](https://github.com/sanghyoLe/cc0-library/actions/workflows/ci.yml)
 ![license: MIT](https://img.shields.io/badge/code-MIT-blue)
 ![catalog: CC0](https://img.shields.io/badge/catalog-CC0-green)
 [![npm](https://img.shields.io/npm/v/cc0-library-mcp)](https://www.npmjs.com/package/cc0-library-mcp)
+[![sanghyoLe/cc0-library MCP server](https://glama.ai/mcp/servers/sanghyoLe/cc0-library/badges/score.svg)](https://glama.ai/mcp/servers/sanghyoLe/cc0-library)
 
 - **Try it in the browser:** https://sanghyole.github.io/cc0-library/
 - **Use it from Claude, Cursor, or any MCP client:** `claude mcp add cc0-library -- npx -y cc0-library-mcp`
+- **Listed in:** the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.sanghyoLe/cc0-library) (`io.github.sanghyoLe/cc0-library`) and [Glama](https://glama.ai/mcp/servers/sanghyoLe/cc0-library)
 
 [![cc0-library web gallery: CC0 search results for "cat" from Poly Haven, Cleveland Museum of Art and The Met](docs/screenshot.jpg)](https://sanghyole.github.io/cc0-library/?q=cat&strict=1)
 
@@ -40,6 +42,26 @@ Every result has `licenseEvidence.declaredBy`:
 | `uploader` | A site user set the CC0 label. Nobody reviewed it, and it can be wrong (for example, someone else's work uploaded as CC0). | Openverse, Wikimedia Commons, Internet Archive, Sketchfab, WordPress Photo Directory |
 
 The web gallery has a "rights holder only" switch that drops `uploader` results. MCP clients can filter on the field.
+
+## The catalog
+
+[`catalog/sources.json`](catalog/sources.json) lists sites and collections that are CC0, each verified on the source's own license page, repository license or README, with the quoted evidence and a date. Browse it in the [web gallery's Sources tab](https://sanghyole.github.io/cc0-library/) or with the `list_sources` tool.
+
+| Asset type | Sources | Examples |
+|---|---|---|
+| Images, photos, illustrations, icons | 56 | PxHere, freestocks.org, Open Peeps, Health Icons, Simple Icons, 3dicons, FreeSVG |
+| 3D models and animation | 20 | Kenney, Quaternius, KayKit, The Base Mesh, Sign Language Mocap Archive, BlenderKit (CC0 filter) |
+| Audio, music, samples | 19 | BigSoundBank, VCSL, AKWF waveforms, Wyzowl SFX kit, Freesound (CC0 filter) |
+| Textures and materials | 14 | ambientCG, cgbookcase, ShareTextures, 3DTextures.me, Godot VFX textures |
+| HDRIs | 5 | Poly Haven, Open HDRI, ambientCG |
+| Video | 5 | ISO Republic, Free Nature Stock, Internet Archive (CC0 items) |
+| Museum artworks | 3 | Cleveland Museum of Art, The Met, Rijksmuseum (CC0 items) |
+| Fonts | 2 | Beedii, C64 keyboard font |
+
+The catalog also keeps two honest lists:
+
+- **Not CC0 (11):** popular "free" sources with their own licenses or public-domain statements, such as Unsplash, Pixabay, Pexels, Pixnio, SMK (Public Domain Mark), NASA and LibriVox, each with the reason.
+- **Pending (40):** candidates that could not be verified yet, usually because the site blocks automated requests. A person can check them in a browser and open a pull request.
 
 ## How each provider is checked
 
@@ -164,6 +186,12 @@ scripts/smoke.mjs       live end-to-end check
 scripts/discover.mjs    weekly catalog re-check and Openverse candidate discovery
 ```
 
+## Automation
+
+- **Weekly source check** ([`discover.yml`](.github/workflows/discover.yml)): every Monday it re-checks every catalog license page and lists new CC0 candidates from Openverse in the [`source-check`](https://github.com/sanghyoLe/cc0-library/issues?q=label%3Asource-check) issue. A person verifies each candidate before it enters the catalog.
+- **Releases** ([`publish-npm.yml`](.github/workflows/publish-npm.yml)): pushing a `v*` tag runs the tests, publishes to npm with [trusted publishing](https://docs.npmjs.com/trusted-publishers/) (signed provenance, no stored token), and publishes `server.json` to the MCP Registry with GitHub OIDC.
+- **Quality gates:** CI on Node 20, 22 and 24, CodeQL code scanning, Dependabot, and a protected `main` branch.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
@@ -189,7 +217,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 - 모든 결과에는 CC0 확인 근거(`licenseEvidence`)가 붙습니다. 근거에는 CC0를 누가 선언했는지(`declaredBy`)도 들어 있습니다. 제작사(`library`), 미술관(`institution`), 업로더(`uploader`) 중 하나입니다. 업로더가 선언한 CC0는 아무도 검토하지 않았으므로 직접 확인해야 합니다.
 - 웹에서 바로 검색할 수 있습니다: https://sanghyole.github.io/cc0-library/
 - `get_asset`은 다운로드 URL을 주기 전에 원본에서 CC0 여부를 다시 확인합니다.
-- `list_sources`는 검증한 CC0 자료원 92곳의 목록을 줍니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
+- `list_sources`는 검증한 CC0 자료원 92곳의 목록을 줍니다. 종류별로 이미지 56곳, 3D 20곳, 오디오 19곳, 텍스처 14곳, HDRI 5곳, 영상 5곳, 미술품 3곳, 폰트 2곳입니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
+
+- 매주 자동 점검이 목록의 라이선스 페이지를 다시 확인하고 새 후보를 찾습니다.
+- 버전 태그를 올리면 npm과 MCP 공식 레지스트리에 자동으로 배포됩니다.
+- Glama 품질 등급은 A입니다.
 
 설치 (Claude Code):
 
