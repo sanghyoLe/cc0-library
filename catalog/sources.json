@@ -1454,6 +1454,38 @@
         "date": "2026-11-20",
         "evidence": "GitHub repository hiddevdploeg/SEOshop-Flags declares license CC0-1.0"
       }
+    },
+    {
+      "id": "vcsl",
+      "name": "Versilian Community Sample Library (VCSL)",
+      "url": "https://github.com/sgossner/VCSL",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/sgossner/VCSL",
+      "notes": "General-purpose instrument sample library (orchestral, percussion, keys) with SFZ mappings.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "GitHub repository declares CC0-1.0; README: 'This collection is under a Creative Commons 0 license ... no royalties, no credit, no special terms'"
+      }
+    },
+    {
+      "id": "opensource3dassets",
+      "name": "Open Source 3D Assets",
+      "url": "https://www.opensource3dassets.com",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/ToxSam/open-source-3D-assets",
+      "notes": "Directory of ~991 GLB models from metaverse projects, with a JSON database linking to the original files.",
+      "verified": {
+        "date": "2026-11-20",
+        "evidence": "data/projects.json in ToxSam/open-source-3D-assets lists license 'CC0' for all 18 projects"
+      }
     }
   ],
   "excluded": [
@@ -1698,6 +1730,11 @@
       "name": "Gopherkon",
       "url": "https://github.com/quasilyte/gopherkon",
       "reason": "Repository declares CC0-1.0, but the Go gopher design it builds on was created by Renee French under CC BY 3.0."
+    },
+    {
+      "name": "pmndrs market",
+      "url": "https://market.pmnd.rs",
+      "reason": "README describes CC0 models, textures and HDRIs, but the site returned HTTP 404 during verification."
     }
   ]
 }
