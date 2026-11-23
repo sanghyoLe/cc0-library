@@ -5,6 +5,8 @@ name: publish npm
 # npmjs.com settings must list this repository and this workflow file
 # (publish-npm.yml) as a trusted publisher.
 # The MCP Registry step logs in with GitHub OIDC (no stored token).
+# Last, it creates the GitHub release for the tag with generated notes, unless
+# a release for that tag already exists (for example one written by hand).
 # Docs: https://docs.npmjs.com/trusted-publishers/
 #       https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/github-actions.mdx
 on:
@@ -17,6 +19,9 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # create the GitHub release
+      id-token: write # npm trusted publishing and MCP Registry login
     env:
       # Pinned on purpose; bump deliberately (the Sigstore check below is tied to this tag).
       MCP_PUBLISHER_VERSION: v1.8.9
@@ -76,3 +81,13 @@ jobs:
         run: |
           ./mcp-publisher login github-oidc
           ./mcp-publisher publish
+      - name: Create the GitHub release (skipped if it exists)
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "Release $GITHUB_REF_NAME already exists; skipping."
+          else
+            gh release create "$GITHUB_REF_NAME" --verify-tag --generate-notes --title "$GITHUB_REF_NAME"
+          fi
