@@ -2432,6 +2432,588 @@
         "date": "2026-11-23",
         "evidence": "CC0 page: 'Illustrations of works ... no longer protected by copyright have been freely available under CC0 licences since summer 2019.'"
       }
+    },
+    {
+      "id": "pinhead",
+      "name": "Pinhead map icons",
+      "url": "https://pinhead.ink",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/waysidemapping/pinhead",
+      "notes": "More than 2,700 map-pin icons.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'since they're licensed **CC0**, you can use them anywhere for free'; LICENSE is CC0 1.0"
+      }
+    },
+    {
+      "id": "sjjb-map-icons",
+      "name": "SJJB SVG Map Icons",
+      "url": "https://www.sjjb.co.uk/mapicons/introduction",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.sjjb.co.uk/mapicons/introduction",
+      "notes": "Cartographic icons based on OpenStreetMap tags.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'To the extent possible under law, SJJB Management has waived all copyright and related or neighboring rights to SJJB SVG Map Icons' linking the CC0 deed"
+      }
+    },
+    {
+      "id": "ocha-humanitarian-icons",
+      "name": "UN OCHA Humanitarian Icons",
+      "url": "https://github.com/UN-OCHA/humanitarian-icons",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/UN-OCHA/humanitarian-icons/blob/HEAD/LICENSE",
+      "notes": "Pictograms for humanitarian topics (shelter, water, health, disasters).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "LICENSE: 'Creative Commons Legal Code CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "linea-iconset",
+      "name": "Linea Iconset",
+      "url": "https://github.com/linea-io/Linea-Iconset",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/linea-io/Linea-Iconset/blob/HEAD/LICENSE",
+      "notes": "730+ outline icons. The old linea.io domain no longer belongs to the project; use the repository.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "cssicon",
+      "name": "CSSicon",
+      "url": "https://github.com/wentin/cssicon",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/wentin/cssicon/blob/HEAD/LICENSE",
+      "notes": "Icons drawn in pure CSS (no image files).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "miniflatflags",
+      "name": "MiniFlatFlags",
+      "url": "https://github.com/stebrech/MiniFlatFlags",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/stebrech/MiniFlatFlags",
+      "notes": "Minimal flag icons.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'The icons are free and available under the CC0 license. Attribution is very welcome but not needed.'"
+      }
+    },
+    {
+      "id": "tie-font",
+      "name": "Tie (Finnish road-sign typeface)",
+      "url": "https://github.com/thevangelist/tie",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/thevangelist/tie",
+      "notes": "Typeface from 1960s Finnish traffic-sign lettering.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'the conversation in Twitter lead to a CC0 release of the original typeface drawn in 1960's'; LICENSE is CC0 1.0"
+      }
+    },
+    {
+      "id": "not-jam-font-pack",
+      "name": "Not Jam Font Pack",
+      "url": "https://not-jam.itch.io/not-jam-font-pack",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://not-jam.itch.io/not-jam-font-pack",
+      "notes": "28 pixel and retro fonts (TTF).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'contains 28 free CC0-licenced fonts in .ttf format'; itch.io asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "mypaint-brushes",
+      "name": "MyPaint Brushes",
+      "url": "https://github.com/mypaint/mypaint-brushes",
+      "kinds": [
+        "artwork"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/mypaint/mypaint-brushes",
+      "notes": "Official MyPaint brush presets. Preview images may carry another license.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'Only public domain (or Creative Commons 1.0 Universal) is an acceptable license for the official mypaint-brushes package'; COPYING is CC0 1.0"
+      }
+    },
+    {
+      "id": "nylnook-krita-brushes",
+      "name": "Nylnook Krita Brushes",
+      "url": "https://github.com/nylnook/nylnook-krita-brushes",
+      "kinds": [
+        "artwork"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/nylnook/nylnook-krita-brushes",
+      "notes": "Krita painting brush presets.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'License CC-0 / Public Domain.'; LICENSE is CC0 1.0"
+      }
+    },
+    {
+      "id": "metbrewer",
+      "name": "MetBrewer color palettes",
+      "url": "https://github.com/BlakeRMills/MetBrewer",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/BlakeRMills/MetBrewer/blob/HEAD/LICENSE.md",
+      "notes": "Color palettes drawn from Met artworks, for R and Python.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "LICENSE.md: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "budgie-backgrounds",
+      "name": "Budgie Backgrounds",
+      "url": "https://github.com/BuddiesOfBudgie/budgie-backgrounds",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/BuddiesOfBudgie/budgie-backgrounds",
+      "notes": "Desktop wallpapers; each image was reviewed for CC0 compliance.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'Budgie Backgrounds is licensed under the CC0-1.0 license, which waives all copyright'"
+      }
+    },
+    {
+      "id": "lisp-alien-wallpapers",
+      "name": "Lisp Alien Wallpapers",
+      "url": "https://github.com/t-sin/lisp-alien-wallpapers",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/t-sin/lisp-alien-wallpapers",
+      "notes": "Small wallpaper set.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'These wallpapers are licensed under CC0. Feel free to use or modify these.'"
+      }
+    },
+    {
+      "id": "landsat-wallpapers",
+      "name": "Landsat Wallpapers (Leonardo Uieda)",
+      "url": "https://github.com/leouieda/landsat-wallpapers",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/leouieda/landsat-wallpapers",
+      "notes": "Wallpapers made from Landsat satellite images. The code folder is MIT.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'All other files are distributed under the CC0 license (see LICENSE-CC0.txt).'"
+      }
+    },
+    {
+      "id": "open-exercise-illustrations",
+      "name": "Open Exercise Illustrations",
+      "url": "https://github.com/hitmanrepo/open-exercise-illustrations",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/hitmanrepo/open-exercise-illustrations",
+      "notes": "415 exercise illustrations with metadata.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README License: 'CC0 1.0 Universal — public domain ... no attribution required'"
+      }
+    },
+    {
+      "id": "inkscape-hatch-patterns",
+      "name": "Inkscape Hatch Patterns",
+      "url": "https://github.com/zirafa/inkscape-hatch-patterns",
+      "kinds": [
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/zirafa/inkscape-hatch-patterns/blob/HEAD/LICENSE",
+      "notes": "SVG hatch fill patterns for technical drawings.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "piratenation-art",
+      "name": "Pirate Nation art archive",
+      "url": "https://github.com/proofofplay/piratenation-art",
+      "kinds": [
+        "artwork",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/proofofplay/piratenation-art/blob/HEAD/LICENSE",
+      "notes": "Game art from Pirate Nation. Avoid the game's name and logo, which are trademarks.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "vapor-kit",
+      "name": "Vapor-Kit retro UI mockups",
+      "url": "https://github.com/darriagada/Vapor-Kit",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/darriagada/Vapor-Kit",
+      "notes": "Retro operating-system UI mockups.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'This work is published under the CC0 1.0 license.'"
+      }
+    },
+    {
+      "id": "nappy",
+      "name": "Nappy",
+      "url": "https://nappy.co",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://nappy.co/license",
+      "notes": "Stock photos of Black and Brown people.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "license page: 'All photos posted on Nappy are licensed under the Creative Commons Zero (CC0) license'"
+      }
+    },
+    {
+      "id": "cupcake-photos",
+      "name": "Cupcake (Jonas Nilsson Lee)",
+      "url": "https://cupcake.nilssonlee.se/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://cupcake.nilssonlee.se/",
+      "notes": "Photo collection.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "home page: 'All photos on available on Cupcake are licensed under the Creative Commons license CC0'"
+      }
+    },
+    {
+      "id": "vimeo-cc0",
+      "name": "Vimeo (Public Domain Dedication videos)",
+      "url": "https://vimeo.com/creativecommons/cc0",
+      "kinds": [
+        "video"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://vimeo.com/creativecommons/cc0",
+      "notes": "Videos whose uploaders chose the CC0 Public Domain Dedication; the label is set by each uploader.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "category page 'Creative Commons - Public Domain Dedication' links 'View License' to creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "id": "signature-sounds",
+      "name": "Signature Sounds",
+      "url": "https://signaturesounds.org/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://signaturesounds.org/",
+      "notes": "Free packs of ambience, field recordings and foley; some sounds come from other CC0 packs.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "home page: '100% royalty-free (CC0) — no credit required'"
+      }
+    },
+    {
+      "id": "elbolilloduro-psx",
+      "name": "ElBolilloDuro PSX-style 3D packs",
+      "url": "https://elbolilloduro.itch.io/",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://elbolilloduro.itch.io/gas-station",
+      "notes": "Low-poly PSX-style buildings, vehicles and interiors. Check the license line on each pack page.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Gas Station pack: 'The models in this package are under the CC0 license'"
+      }
+    },
+    {
+      "id": "tiny-treats",
+      "name": "Tiny Treats 3D sets",
+      "url": "https://tinytreats.itch.io/",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://tinytreats.itch.io/pretty-park",
+      "notes": "Stylized interior and exterior sets; some sets are paid. Check each set's license.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Pretty Park page: 'Free for personal and commercial use, no attribution required. (CC0 Licensed)'"
+      }
+    },
+    {
+      "id": "makehuman-core-assets",
+      "name": "MakeHuman core assets",
+      "url": "https://www.makehumancommunity.org/",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://static.makehumancommunity.org/about/license.html",
+      "notes": "Base mesh, targets and proxies of the human generator. The software is AGPL; community assets can be CC BY.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "license page: 'All core assets are shared under Creative Commons, CC0.'"
+      }
+    },
+    {
+      "id": "not-jam-music-pack",
+      "name": "Not Jam Music Pack",
+      "url": "https://not-jam.itch.io/not-jam-music-pack",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://not-jam.itch.io/not-jam-music-pack",
+      "notes": "Game music tracks.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'To the extent possible under law, Not Jam has waived all copyright and related or neighboring rights to Not Jam Music Pack.'"
+      }
+    },
+    {
+      "id": "nihil-existentia-audio",
+      "name": "Free Audio Asset Collection (nihil-existentia)",
+      "url": "https://nihil-existentia.itch.io/free-audio-asset-collection",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://nihil-existentia.itch.io/free-audio-asset-collection",
+      "notes": "Dark ambient soundscapes, piano pieces and industrial ambiences.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'All of the sounds here fall under the CC0 license.'"
+      }
+    },
+    {
+      "id": "openscore-lieder",
+      "name": "OpenScore Lieder Corpus",
+      "url": "https://github.com/OpenScore/Lieder",
+      "kinds": [
+        "collection",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/OpenScore/Lieder",
+      "notes": "1,200+ 19th-century song scores in MuseScore format (export to MIDI or MusicXML).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'These scores are released under Creative Commons Zero (CC0). See LICENSE.txt.'"
+      }
+    },
+    {
+      "id": "nst-speech",
+      "name": "NST speech databases (Språkbanken)",
+      "url": "https://www.nb.no/sprakbanken/",
+      "kinds": [
+        "audio",
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://data.norge.no/en/datasets/813152f3-a3b7-353f-ba92-e3107208a56f/nst-norwegian-asr-database-16-khz-reorganized",
+      "notes": "Norwegian, Swedish and Danish read-speech recordings. Check each dataset's license field.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "data.norge.no record for the NST Norwegian ASR database: 'License : https://creativecommons.org/publicdomain/zero/1.0/'"
+      }
+    },
+    {
+      "id": "loyalty-freak-music",
+      "name": "Loyalty Freak Music",
+      "url": "https://loyaltyfreakmusic.com/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://loyaltyfreakmusic.com/music/",
+      "notes": "Game and video music by one composer. Use the CC-0 license filter on the music page.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "site badge: 'Public Domain Creative Commons 0 licensed music'; music page license filter 'CC-0'"
+      }
+    },
+    {
+      "id": "osaka-city-library",
+      "name": "Osaka City Library Digital Archive (大阪市立図書館)",
+      "url": "https://image.oml.city.osaka.lg.jp/da/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.oml.city.osaka.lg.jp/index.php?page_id=1633",
+      "notes": "Meiji–Taisho postcards and old maps of Osaka. Only items whose notes field shows the CC0 notice qualify.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "open data page: 'CC0（CC0 1.0 全世界 パブリック・ドメイン提供） で提供いたします'"
+      }
+    },
+    {
+      "id": "gunma-prefectural-library",
+      "name": "Gunma Prefectural Library Digital Library (群馬県立図書館)",
+      "url": "https://www1.library.pref.gunma.jp/digi/opac/search-detail.do?lang=ja",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.library.pref.gunma.jp/%E6%8E%A2%E3%81%99%E3%83%BB%E8%AA%BF%E3%81%B9%E3%82%8B/%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%83%BC/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%81%AE%E4%BA%8C%E6%AC%A1%E5%88%A9%E7%94%A8",
+      "notes": "Old maps, photographs, postcards and sericulture documents.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "reuse page: '群馬県立図書館デジタルライブラリー掲載の画像データは、CC0（CC0 1.0 全世界 パブリック・ドメイン提供）の下に提供されています'"
+      }
+    },
+    {
+      "id": "thorvaldsens-museum",
+      "name": "Thorvaldsens Museum catalogue photographs",
+      "url": "https://kataloget.thorvaldsensmuseum.dk/en",
+      "kinds": [
+        "artwork",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://kataloget.thorvaldsensmuseum.dk/en/colophon/copyright",
+      "notes": "Photos of the museum's own artworks are CC0; photos of works held elsewhere are not.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "copyright page: 'Thorvaldsens Museum and photographer Jakob Faurvig have dedicated their photographs to the Public Domain under the license Creative Commons Zero (CC0)'"
+      }
+    },
+    {
+      "id": "nivaagaard",
+      "name": "Nivaagaard Collection (Nivaagaards Malerisamling)",
+      "url": "https://nivaagaard.dk/en/the-collection/",
+      "kinds": [
+        "artwork",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://nivaagaard.dk/en/fri-download/",
+      "notes": "Renaissance, Baroque and Danish 19th-century paintings.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "free download page: images 'marked with' Creative Commons' Public Domain dedication, linking creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "id": "cdf-montevideo",
+      "name": "Centro de Fotografía de Montevideo",
+      "url": "https://cdf.montevideo.gub.uy",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://montevideo.gub.uy/noticias/cultura/el-cdf-es-tuyo",
+      "notes": "3,000+ municipal historical photos in high resolution. Donated photos follow other rules; use photos labelled CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "municipality page: photos captioned 'Licencia CC0 1.0 Dominio Público'"
+      }
+    },
+    {
+      "id": "japanese-cc-archive",
+      "name": "Japanese CC Archive (scpowl)",
+      "url": "https://scpowl.github.io/",
+      "kinds": [
+        "image",
+        "video"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://scpowl.github.io/",
+      "notes": "Photos taken in Japan, hosted on Flickr. The site's CC0 filter also includes Public Domain Mark items; check the license on each Flickr page.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "home page: '写真をすべて日本国内で撮影し、CC0またはCC BY（2.0 / 4.0）の下で公開しています'"
+      }
     }
   ],
   "excluded": [
@@ -2534,6 +3116,11 @@
       "name": "Gratisography",
       "url": "https://gratisography.com/license/",
       "reason": "Uses 'The Free Gratisography Photo License', which forbids redistribution; CC0 is not mentioned."
+    },
+    {
+      "name": "Web umenia (Slovak National Gallery)",
+      "url": "https://www.webumenia.sk/en",
+      "reason": "Open-art lists call it CC0, but item pages link the Public Domain Mark 1.0, not CC0."
     }
   ],
   "pending": [
@@ -2821,6 +3408,56 @@
       "name": "Blender demo files and asset bundles",
       "url": "https://www.blender.org/download/demo-files/",
       "reason": "Asset bundles are reported as CC0, but the page returned HTTP 403."
+    },
+    {
+      "name": "Travel Coffee Book",
+      "url": "https://travelcoffeebook.com/",
+      "reason": "Often listed as CC0, but the site returned HTTP 403."
+    },
+    {
+      "name": "Moveast",
+      "url": "https://moveast.me/",
+      "reason": "Often listed as CC0, but the site returned HTTP 403."
+    },
+    {
+      "name": "Wirtualne Muzea Małopolski 3D scans",
+      "url": "https://sketchfab.com/WirtualneMuzeaMalopolski",
+      "reason": "About 1,300 museum scans with per-model licenses (mostly CC0); the model pages render with JavaScript, so the license was not readable in plain HTML. Its CC0 models are reachable through the Sketchfab search."
+    },
+    {
+      "name": "Finnish Museum of Photography (CC0 selections)",
+      "url": "https://valokuvataiteenmuseo.finna.fi/",
+      "reason": "The museum says selected sets use CC0, but the Finna portal returned HTTP 403."
+    },
+    {
+      "name": "PublicDomainQ",
+      "url": "https://publicdomainq.net/",
+      "reason": "Japanese image site with a CC0 tag; the site returned HTTP 403."
+    },
+    {
+      "name": "VRoid Studio sample avatars",
+      "url": "https://vroid.com/en/studio",
+      "reason": "Some older sample avatars are reported as CC0, but the official help page returned HTTP 403 and the base models are not CC0."
+    },
+    {
+      "name": "Printables (CC0 filter)",
+      "url": "https://www.printables.com/model",
+      "reason": "3D-print models with per-item licenses; the site returned HTTP 403."
+    },
+    {
+      "name": "University of Tokyo Archives Digital Archive",
+      "url": "https://uta.u-tokyo.ac.jp/uta/s/da/",
+      "reason": "CC0 is stated for catalogue data; the images are described only as public domain."
+    },
+    {
+      "name": "National Museum in Kraków online collection",
+      "url": "https://zbiory.mnk.pl/en/",
+      "reason": "Lists label items CC0 or PDM, but the portal renders with JavaScript and no CC0 text was readable."
+    },
+    {
+      "name": "Pickupimage",
+      "url": "https://www.pickupimage.com/",
+      "reason": "Often listed as CC0, but the site returned HTTP 403."
     }
   ]
 }
