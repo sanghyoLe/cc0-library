@@ -1,7 +1,7 @@
 # cc0-library
 
 **CC0 assets only. With receipts.**
-One search across **17 sources** for images, audio, video, HDRIs, textures, 3D models, museum artworks and whole asset collections, plus a hand-verified catalog of **105 CC0 sources**. Every result shows *how* its CC0 status was verified and *who* declared it.
+One search across **17 sources** for images, audio, video, HDRIs, textures, 3D models, museum artworks and whole asset collections, plus a hand-verified catalog of **111 CC0 sources**. Every result shows *how* its CC0 status was verified and *who* declared it.
 
 [![ci](https://github.com/sanghyoLe/cc0-library/actions/workflows/ci.yml/badge.svg)](https://github.com/sanghyoLe/cc0-library/actions/workflows/ci.yml)
 ![license: MIT](https://img.shields.io/badge/code-MIT-blue)
@@ -62,7 +62,7 @@ The web gallery has a "rights holder only" switch that drops `uploader` results.
 
 ## The catalog
 
-[`catalog/sources.json`](catalog/sources.json) lists 105 sites and collections that are CC0 (17 of them searchable), each verified on the source's own license page, repository license or README, with the quoted evidence and a date. Browse it in the [web gallery's Sources tab](https://sanghyole.github.io/cc0-library/) or with the `list_sources` tool.
+[`catalog/sources.json`](catalog/sources.json) lists 111 sites and collections that are CC0 (17 of them searchable), each verified on the source's own license page, repository license or README, with the quoted evidence and a date. Browse it in the [web gallery's Sources tab](https://sanghyole.github.io/cc0-library/) or with the `list_sources` tool.
 
 | Asset type | Sources | Examples |
 |---|---|---|
@@ -245,7 +245,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 - 웹에서 바로 검색할 수 있습니다: https://sanghyole.github.io/cc0-library/
 - **CC0 미술관**: 주제어를 넣으면 CC0 그림·조각·바닥·조명·배경음으로 3D 전시실을 만들어 걸어 다닐 수 있습니다. WebGPU로 그리고, WebGPU가 없는 브라우저에서는 WebGL2로 자동 전환합니다. https://sanghyole.github.io/cc0-library/museum.html
 - `get_asset`은 다운로드 URL을 주기 전에 원본에서 CC0 여부를 다시 확인합니다.
-- `list_sources`는 검증한 CC0 자료원 105곳의 목록을 줍니다. 종류별로 이미지 64곳, 3D 22곳, 오디오 20곳, 텍스처 16곳, HDRI 5곳, 영상 6곳, 미술품 3곳, 폰트 6곳입니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
+- `list_sources`는 검증한 CC0 자료원 111곳의 목록을 줍니다. 종류별로 이미지 69곳, 3D 22곳, 오디오 23곳, 텍스처 16곳, HDRI 5곳, 영상 6곳, 미술품 3곳, 폰트 6곳입니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
 
 - 매주 자동 점검이 목록의 라이선스 페이지를 다시 확인하고 새 후보를 찾습니다.
 - 버전 태그를 올리면 npm과 MCP 공식 레지스트리에 자동으로 배포됩니다.

@@ -1717,6 +1717,104 @@
         "date": "2026-11-23",
         "evidence": "page: 'Monogram is a monospace bitmap font, free and CC0!'; itch.io asset license field: 'Creative Commons Zero v1.0 Universal'"
       }
+    },
+    {
+      "id": "dungeontileset-ii",
+      "name": "16x16 DungeonTileset II (0x72)",
+      "url": "https://0x72.itch.io/dungeontileset-ii",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://0x72.itch.io/dungeontileset-ii",
+      "notes": "Pixel-art dungeon tiles, heroes and monsters. The bundled code is MIT.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'You can use this tileset for whatever you like (CC-0)'; itch.io asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "pixel-adventure",
+      "name": "Pixel Adventure (Pixel Frog)",
+      "url": "https://pixelfrog-assets.itch.io/pixel-adventure-1",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://pixelfrog-assets.itch.io/pixel-adventure-1",
+      "notes": "Pixel-art platformer characters, terrain and items (PNG).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'These assets are released under a Creative Commons Zero (CC0) license'"
+      }
+    },
+    {
+      "id": "ninja-adventure",
+      "name": "Ninja Adventure asset pack (pixel-boy)",
+      "url": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+      "kinds": [
+        "image",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+      "notes": "Top-down pixel-art RPG pack with characters, tiles, music and sound effects.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'They are released under the Creative Commons Zero (CC0) license'; itch.io asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "brackeys-platformer-bundle",
+      "name": "Brackeys' Platformer Bundle",
+      "url": "https://brackeysgames.itch.io/brackeys-platformer-bundle",
+      "kinds": [
+        "image",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://brackeysgames.itch.io/brackeys-platformer-bundle",
+      "notes": "Pixel-art platformer sprites, music and sound effects.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'LICENSE: These assets are released under a Creative Commons Zero (CC0) license.'"
+      }
+    },
+    {
+      "id": "sunnyland",
+      "name": "SunnyLand pixel game art (ansimuz)",
+      "url": "https://ansimuz.itch.io/sunny-land-pixel-game-art",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://ansimuz.itch.io/sunny-land-pixel-game-art",
+      "notes": "16-bit style platformer sprites and tilesets.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "tallbeard-music-loops",
+      "name": "Music Loop Bundle (Tallbeard Studios / Abstraction)",
+      "url": "https://tallbeard.itch.io/music-loop-bundle",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://tallbeard.itch.io/music-loop-bundle",
+      "notes": "Loopable game music tracks.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'LICENSE CC-0 (Public Domain) To the extent possible under law, Abstraction Music and Tallbeard Studios ...'"
+      }
     }
   ],
   "excluded": [
