@@ -1815,6 +1815,70 @@
         "date": "2026-11-23",
         "evidence": "page: 'LICENSE CC-0 (Public Domain) To the extent possible under law, Abstraction Music and Tallbeard Studios ...'"
       }
+    },
+    {
+      "id": "luizmelo-martial-hero",
+      "name": "Martial Hero sprites (LuizMelo)",
+      "url": "https://luizmelo.itch.io/martial-hero",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://luizmelo.itch.io/martial-hero",
+      "notes": "Animated pixel-art fighter. The author's other character packs link from this page; check each one's license field.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'This package can be used freely and commercially - CC0(creative commons zero)'; itch.io asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "grafxkid-sprite-pack-1",
+      "name": "Sprite Pack 1 (GrafxKid)",
+      "url": "https://grafxkid.itch.io/sprite-pack-1",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://grafxkid.itch.io/sprite-pack-1",
+      "notes": "Animated pixel-art platformer characters.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field: 'Creative Commons Zero v1.0 Universal'; page: 'Crediting is optional'"
+      }
+    },
+    {
+      "id": "foozle-void-main-ship",
+      "name": "Void - Main Ship (Foozle)",
+      "url": "https://foozlecc.itch.io/void-main-ship",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://foozlecc.itch.io/void-main-ship",
+      "notes": "Pixel-art space shooter ship with engine, weapon and damage sprites. Foozle publishes more packs; check each one's license field.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'License: (Creative Commons Zero, CC0) http://creativecommons.org/publicdomain/zero/1.0/'"
+      }
+    },
+    {
+      "id": "warped-caves",
+      "name": "Warped Caves (ansimuz)",
+      "url": "https://ansimuz.itch.io/warped-caves",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://ansimuz.itch.io/warped-caves",
+      "notes": "16-bit style metroidvania tileset and sprites.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
     }
   ],
   "excluded": [
@@ -1872,6 +1936,21 @@
       "name": "LibriVox",
       "url": "https://librivox.org",
       "reason": "Free audiobooks declared 'public domain (definitely in the USA, and maybe in your country)' rather than a CC0 dedication; outside the USA the status may differ."
+    },
+    {
+      "name": "Coverr",
+      "url": "https://coverr.co/license",
+      "reason": "Curated lists still call it CC0, but the license page describes the Coverr license and says Coverr only 'started as CC0'."
+    },
+    {
+      "name": "Burst (Shopify)",
+      "url": "https://burst.shopify.com/licenses/shopify-some-rights-reserved",
+      "reason": "Uses its own 'Shopify - Some Rights Reserved' license, which restricts redistribution; not CC0."
+    },
+    {
+      "name": "Unminus",
+      "url": "https://www.unminus.com/license",
+      "reason": "Listed as CC0 by curated lists, but the license page describes Unminus's own royalty-free music license."
     }
   ],
   "pending": [
@@ -2094,6 +2173,16 @@
       "name": "Khronos glTF Sample Assets",
       "url": "https://github.com/KhronosGroup/glTF-Sample-Assets",
       "reason": "Each model carries its own license (CC0, CC BY and others); no per-model CC0 filter has been checked."
+    },
+    {
+      "name": "Good Free Photos",
+      "url": "https://www.goodfreephotos.com",
+      "reason": "Mixes public-domain, CC0 and other photos; the license page linked from curated lists returned HTTP 404."
+    },
+    {
+      "name": "SoundBible",
+      "url": "https://soundbible.com/",
+      "reason": "Sound clips carry per-item licenses (public domain, CC BY and others) and there is no CC0 filter."
     }
   ]
 }
