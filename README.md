@@ -8,11 +8,12 @@ One search across **17 sources** for images, audio, video, HDRIs, textures, 3D m
 ![catalog: CC0](https://img.shields.io/badge/catalog-CC0-green)
 [![npm](https://img.shields.io/npm/v/cc0-library-mcp)](https://www.npmjs.com/package/cc0-library-mcp)
 [![sanghyoLe/cc0-library MCP server](https://glama.ai/mcp/servers/sanghyoLe/cc0-library/badges/score.svg)](https://glama.ai/mcp/servers/sanghyoLe/cc0-library)
+[![CC0 Library MCP server](https://mcprush.com/badge/cc0-library-mcp/card.svg)](https://mcprush.com/to/cc0-library-mcp?ref=badge)
 
 - **Try it in the browser:** https://sanghyole.github.io/cc0-library/
 - **Walk through the CC0 Museum:** https://sanghyole.github.io/cc0-library/museum.html — a 3D gallery generated from CC0 assets for any theme
 - **Use it from Claude, Cursor, or any MCP client:** `claude mcp add cc0-library -- npx -y cc0-library-mcp`
-- **Listed in:** the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.sanghyoLe/cc0-library) (`io.github.sanghyoLe/cc0-library`) and [Glama](https://glama.ai/mcp/servers/sanghyoLe/cc0-library)
+- **Listed in:** the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.sanghyoLe/cc0-library) (`io.github.sanghyoLe/cc0-library`), [Glama](https://glama.ai/mcp/servers/sanghyoLe/cc0-library) and [mcprush](https://mcprush.com/to/cc0-library-mcp?ref=badge)
 
 [![cc0-library web gallery: CC0 search results for "cat" from Poly Haven, Cleveland Museum of Art and The Met](docs/screenshot.jpg)](https://sanghyole.github.io/cc0-library/?q=cat&strict=1)
 
