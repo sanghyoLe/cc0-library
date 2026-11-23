@@ -3014,6 +3014,694 @@
         "date": "2026-11-23",
         "evidence": "home page: '写真をすべて日本国内で撮影し、CC0またはCC BY（2.0 / 4.0）の下で公開しています'"
       }
+    },
+    {
+      "id": "subspaceaudio",
+      "name": "Juhani Junkala / SubspaceAudio sound and music",
+      "url": "https://opengameart.org/users/subspaceaudio",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/512-sound-effects-8-bit-style",
+      "notes": "512 8-bit sound effects and chiptune music packs; five packs checked, all CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "OpenGameArt license field: 'CC0' (links creativecommons.org/publicdomain/zero/1.0/)"
+      }
+    },
+    {
+      "id": "armm1998-zelda-like",
+      "name": "Zelda-like tilesets and sprites (ArMM1998)",
+      "url": "https://opengameart.org/content/zelda-like-tilesets-and-sprites",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/zelda-like-tilesets-and-sprites",
+      "notes": "Original top-down RPG tiles and sprites.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "OpenGameArt license field: 'CC0' (links creativecommons.org/publicdomain/zero/1.0/)"
+      }
+    },
+    {
+      "id": "dungeon-crawl-tiles",
+      "name": "Dungeon Crawl 32x32 tiles",
+      "url": "https://opengameart.org/content/dungeon-crawl-32x32-tiles",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/dungeon-crawl-32x32-tiles",
+      "notes": "The Dungeon Crawl Stone Soup tile set; the supplemental set is also CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "OpenGameArt license field: 'CC0' (links creativecommons.org/publicdomain/zero/1.0/)"
+      }
+    },
+    {
+      "id": "artisticdude",
+      "name": "artisticdude sound packs and tiles",
+      "url": "https://opengameart.org/users/artisticdude",
+      "kinds": [
+        "audio",
+        "image",
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/rpg-sound-pack",
+      "notes": "RPG sound pack, retro sounds, isometric tiles and a bitmap font; five uploads checked, all CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "OpenGameArt license field: 'CC0' (links creativecommons.org/publicdomain/zero/1.0/)"
+      }
+    },
+    {
+      "id": "cynicmusic",
+      "name": "cynicmusic game music",
+      "url": "https://opengameart.org/users/cynicmusic",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/battle-theme-a",
+      "notes": "Battle themes, ambient and synthwave loops; check each track's license field.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "OpenGameArt license field: 'CC0' (links creativecommons.org/publicdomain/zero/1.0/)"
+      }
+    },
+    {
+      "id": "codemanu-vfx",
+      "name": "CodeManu pixel VFX packs",
+      "url": "https://opengameart.org/content/free-pixel-effects-pack",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/free-pixel-effects-pack",
+      "notes": "Only the VFX packs are CC0; this creator's music packs are CC BY 3.0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "OpenGameArt license field: 'CC0' (links creativecommons.org/publicdomain/zero/1.0/)"
+      }
+    },
+    {
+      "id": "glitch-game-art",
+      "name": "Glitch game art (Tiny Speck)",
+      "url": "https://github.com/tinyspeck/glitch-items",
+      "kinds": [
+        "image",
+        "artwork"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/tinyspeck/glitch-items",
+      "notes": "Items, locations and avatars from the game Glitch (glitch-items, glitch-locations, glitch-avatars). The Glitch name and logo are trademarks.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: files provided by Tiny Speck under CC0 (links creativecommons.org/publicdomain/zero/1.0/legalcode)"
+      }
+    },
+    {
+      "id": "ghostpixxells",
+      "name": "Ghostpixxells pixel packs",
+      "url": "https://ghostpixxells.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://ghostpixxells.itch.io/pixelfood",
+      "notes": "Pixel food and shop items; some packs show no license.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field on Free Pixel Foods: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "henry-software",
+      "name": "Henry Software pixel packs",
+      "url": "https://henrysoftware.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://henrysoftware.itch.io/pixel-food",
+      "notes": "Pixel food, mobs and effects; three free packs checked, all CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field on Pixel Food: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "urizen-tileset",
+      "name": "Urizen 1Bit Tileset (vurmux)",
+      "url": "https://vurmux.itch.io/urizen-onebit-tileset",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://vurmux.itch.io/urizen-onebit-tileset",
+      "notes": "5,500+ 12x12 one-bit tiles.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field on Urizen 1Bit Tileset: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "merchant-shade",
+      "name": "Merchant Shade 16x16 packs",
+      "url": "https://merchant-shade.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://merchant-shade.itch.io/16x16-mixed-rpg-icons",
+      "notes": "RPG icons, Puny World and Puny Characters are CC0; Puny Dungeon is CC BY 4.0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field on 16x16 Mixed RPG Icons: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "fertile-soil",
+      "name": "Fertile Soil Productions packs",
+      "url": "https://fertile-soil-productions.itch.io/",
+      "kinds": [
+        "model",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://fertile-soil-productions.itch.io/modular-village-pack",
+      "notes": "PSX-style 3D packs, blocks and sprites; some packs show no license.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field on Modular Village Pack: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "binbun3d",
+      "name": "Binbun3D skies and VFX",
+      "url": "https://binbun3d.itch.io/",
+      "kinds": [
+        "texture",
+        "image",
+        "hdri"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://binbun3d.itch.io/godot-skies",
+      "notes": "Sky textures and effect sprites; three packs checked, all CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field on Godot Skies: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "foxtex",
+      "name": "Foxtex texture packs (foxh3ad)",
+      "url": "https://foxh3ad.itch.io/",
+      "kinds": [
+        "texture",
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://foxh3ad.itch.io/foxtexcom",
+      "notes": "Texture packs and a few weapon models; real-world product names may appear.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field on Foxtex: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "caffinate-fonts",
+      "name": "Caffinate pixel fonts",
+      "url": "https://caffinate.itch.io/",
+      "kinds": [
+        "font"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://caffinate.itch.io/abaddon",
+      "notes": "Abaddon and Snide Asides fonts; the creator's other pages are games.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field on Abaddon: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "kevins-moms-house",
+      "name": "Kevin's Mom's House pixel tilesets",
+      "url": "https://kevins-moms-house.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://kevins-moms-house.itch.io/four-seasons-platformer-tileset",
+      "notes": "Four Seasons Platformer and BitByBit are CC0; some packs show no license.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field on Four Seasons Platformer Tileset: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "shackhal-multi-platformer",
+      "name": "Multi Platformer Tileset (Shackhal)",
+      "url": "https://shackhal.itch.io/multi-platformer-tileset",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://shackhal.itch.io/multi-platformer-tileset",
+      "notes": "Platformer tiles; this creator's minisprites pack is CC BY 4.0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field on Multi Platformer Tileset: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "moma-collection-data",
+      "name": "MoMA collection data",
+      "url": "https://github.com/MuseumofModernArt/collection",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/MuseumofModernArt/collection",
+      "notes": "Metadata only (CSV/JSON); no images are included and images are not covered.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'This datasets are placed in the public domain using a CC0 License'"
+      }
+    },
+    {
+      "id": "tate-collection-data",
+      "name": "Tate collection metadata",
+      "url": "https://github.com/tategallery/collection",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/tategallery/collection",
+      "notes": "Metadata only (CSV/JSON); no images are included and images are not covered.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'The metadata here is released under the Creative Commons Public Domain CC0 licence.'"
+      }
+    },
+    {
+      "id": "whitney-open-access-data",
+      "name": "Whitney Museum open-access datasets",
+      "url": "https://github.com/whitneymuseum/open-access",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/whitneymuseum/open-access",
+      "notes": "Metadata only (CSV/JSON); no images are included and images are not covered.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'These datasets are placed in the public domain using a CC0 License'"
+      }
+    },
+    {
+      "id": "mia-collection-data",
+      "name": "Minneapolis Institute of Art collection metadata",
+      "url": "https://github.com/artsmia/collection",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/artsmia/collection",
+      "notes": "Metadata only (CSV/JSON); no images are included and images are not covered.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "readme: 'we've published metadata for our artworks as JSON under a CC0 license'"
+      }
+    },
+    {
+      "id": "nga-opendata",
+      "name": "National Gallery of Art open data",
+      "url": "https://github.com/NationalGalleryOfArt/opendata",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/NationalGalleryOfArt/opendata",
+      "notes": "Metadata only (CSV/JSON); no images are included and images are not covered. Image licensing is listed separately as pending.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: released 'under the Creative Commons Zero designation'"
+      }
+    },
+    {
+      "id": "wikidata",
+      "name": "Wikidata",
+      "url": "https://www.wikidata.org",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "notes": "Structured data only; linked Commons media keep their own licenses.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "licensing page: 'All structured data ... is released into the public domain under Creative Commons Zero'"
+      }
+    },
+    {
+      "id": "musicbrainz-core",
+      "name": "MusicBrainz core data",
+      "url": "https://musicbrainz.org",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://musicbrainz.org/doc/About/Data_License",
+      "notes": "Music metadata. Only the core data is CC0; supplementary data is CC BY-NC-SA. No audio.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "data license page: 'The core data of the database is licensed under the CC0'"
+      }
+    },
+    {
+      "id": "discogs-dumps",
+      "name": "Discogs monthly data dumps",
+      "url": "https://data.discogs.com/",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://data.discogs.com/",
+      "notes": "Release, artist and label XML dumps. Cover images are not included and are not CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'This data is made available under the CC0 No Rights Reserved license'"
+      }
+    },
+    {
+      "id": "openalex",
+      "name": "OpenAlex",
+      "url": "https://openalex.org",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/ourresearch/openalex-docs",
+      "notes": "Scholarly works metadata; no media.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "docs README: 'Our complete dataset is free under the CC0 license'"
+      }
+    },
+    {
+      "id": "borealis",
+      "name": "Borealis (Canadian Dataverse Repository)",
+      "url": "https://borealisdata.ca",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://borealisdata.ca/api/licenses",
+      "notes": "Research datasets; CC0 1.0 is the default license. Filter with license \"CC0 1.0\".",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "licenses API: 'CC0 1.0' 'Creative Commons CC0 1.0 Universal Public Domain Dedication.' marked isDefault"
+      }
+    },
+    {
+      "id": "dataversenl",
+      "name": "DataverseNL",
+      "url": "https://dataverse.nl",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://dataverse.nl/api/licenses",
+      "notes": "Dutch research datasets; CC0-1.0 is the default license. Filter with license \"CC0-1.0\".",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "licenses API: 'CC0-1.0' 'Creative Commons CC0 1.0 Universal Public Domain Dedication.'"
+      }
+    },
+    {
+      "id": "osf",
+      "name": "OSF (Open Science Framework)",
+      "url": "https://osf.io/search",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://help.osf.io/article/148-licensing",
+      "notes": "Research projects and files; use the License facet for CC0 1.0 Universal.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "licensing help page lists 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "kaggle-cc0",
+      "name": "Kaggle datasets (CC0: Public Domain)",
+      "url": "https://www.kaggle.com/datasets",
+      "kinds": [
+        "collection",
+        "image",
+        "audio",
+        "video"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.kaggle.com/datasets",
+      "notes": "Uploaders choose the label and some scraped datasets are mislabeled; check each dataset's license and source.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "datasets API returns per-dataset license 'CC0: Public Domain'"
+      }
+    },
+    {
+      "id": "openscore-string-quartets",
+      "name": "OpenScore String Quartet Corpus",
+      "url": "https://github.com/OpenScore/StringQuartets",
+      "kinds": [
+        "collection",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/OpenScore/StringQuartets",
+      "notes": "String quartet scores in MuseScore/MusicXML.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'These scores are released under Creative Commons Zero (CC0). See LICENSE.txt.'"
+      }
+    },
+    {
+      "id": "adafruit-sound-samples",
+      "name": "Adafruit Sound Samples",
+      "url": "https://github.com/adafruit/Adafruit-Sound-Samples",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/adafruit/Adafruit-Sound-Samples",
+      "notes": "Short 22 kHz WAV clips.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: each folder marked 'CC0 / Public Domain'"
+      }
+    },
+    {
+      "id": "diffusiondb",
+      "name": "DiffusionDB",
+      "url": "https://github.com/poloclub/diffusiondb",
+      "kinds": [
+        "image",
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/poloclub/diffusiondb",
+      "notes": "14 million AI-generated (Stable Diffusion) images with prompts.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'The DiffusionDB dataset is available under the CC0 1.0 License'"
+      }
+    },
+    {
+      "id": "voxpopuli",
+      "name": "VoxPopuli speech corpus",
+      "url": "https://github.com/facebookresearch/voxpopuli",
+      "kinds": [
+        "audio",
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/facebookresearch/voxpopuli",
+      "notes": "European Parliament speech recordings. The README also points to the European Parliament legal notice.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README license table: 'VoxPopuli Data | CC0'"
+      }
+    },
+    {
+      "id": "keenan-crane-models",
+      "name": "Keenan Crane 3D Model Repository",
+      "url": "https://www.cs.cmu.edu/~kmcrane/Projects/ModelRepository/",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.cs.cmu.edu/~kmcrane/Projects/ModelRepository/",
+      "notes": "Test meshes for geometry processing; at least one model is CC BY 4.0, so check each model's notice.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Model and associated data is dedicated under CC0 1.0 Universal.'"
+      }
+    },
+    {
+      "id": "lantmateriet-open-data",
+      "name": "Lantmäteriet open geodata (Sweden)",
+      "url": "https://www.lantmateriet.se/en/geodata/our-products/open-data/",
+      "kinds": [
+        "image",
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.lantmateriet.se/en/geodata/our-products/open-data/",
+      "notes": "Orthophotos, historical maps and other open data products; only products listed as open data are CC0. Downloads need a free Geotorget account.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "open data page: 'Our open spatial data is available under the open data license Creative Commons, CC0'"
+      }
+    },
+    {
+      "id": "bdcyl",
+      "name": "Biblioteca Digital de Castilla y León",
+      "url": "https://bibliotecadigital.jcyl.es/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://bibliotecadigital.jcyl.es/es/consulta/registro.do?id=3",
+      "notes": "Digitized books, maps and prints; item rights fields link to CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "item page rights field links http://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    },
+    {
+      "id": "museum-wales",
+      "name": "Amgueddfa Cymru – Museum Wales images",
+      "url": "https://imagelibrary.museumwales.ac.uk/",
+      "kinds": [
+        "artwork",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://museum.wales/news/1417/Access-to-Wales-national-collection-extended-with-launch-of-digital-image-library----",
+      "notes": "Images are labelled CC0 or CC BY-SA; use those labelled CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "announcement: 'make images of its out-of-copyright collections freely available under a Creative Commons CC0 Universal Public Domain Dedication'"
+      }
+    },
+    {
+      "id": "folger-reference-images",
+      "name": "Folger Shakespeare Library Reference Image Collection",
+      "url": "https://luna.folger.edu/luna/servlet/FOLGER~5~5",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://folger.edu/blogs/collation/reference-image-collection",
+      "notes": "Only the Reference Image Collection and items whose Rights field says CC0; the main Digital Image Collection is mostly CC BY-SA.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Folger page: 'These images are shared under the CC0 1.0 Universal Public Domain Dedication License (CC0 1.0)'"
+      }
+    },
+    {
+      "id": "tu-berlin-architekturmuseum",
+      "name": "Architekturmuseum der TU Berlin",
+      "url": "https://architekturmuseum.ub.tu-berlin.de/",
+      "kinds": [
+        "artwork",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://architekturmuseum.ub.tu-berlin.de/P/160419.php",
+      "notes": "Architectural drawings and photos; each item states its rights.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "item page: 'Werk und Digitalisat sind gemeinfrei (CC0 1.0 Universal, https://creativecommons.org/publicdomain/zero/1.0/)'"
+      }
+    },
+    {
+      "id": "digitalna-nbs",
+      "name": "National Library of Serbia Digital Library",
+      "url": "https://www.digitalna.nb.rs/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.digitalna.nb.rs/",
+      "notes": "Each item has a usage-rights field (Право коришћења); use items marked CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "item 'Fotografije o migracijama 20': 'Право коришћења CC0'"
+      }
+    },
+    {
+      "id": "smithsonian-libraries",
+      "name": "Smithsonian Libraries and Archives",
+      "url": "https://library.si.edu/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://library.si.edu/copyright",
+      "notes": "Public-domain items carry a CC0 marker; others use 'No Copyright - United States' or other statements.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "copyright page: 'the Smithsonian Institution has adopted the use of a CC0 marker for public domain material.'"
+      }
     }
   ],
   "excluded": [
@@ -3121,6 +3809,21 @@
       "name": "Web umenia (Slovak National Gallery)",
       "url": "https://www.webumenia.sk/en",
       "reason": "Open-art lists call it CC0, but item pages link the Public Domain Mark 1.0, not CC0."
+    },
+    {
+      "name": "Royal Botanic Garden Edinburgh Herbarium images",
+      "url": "https://data.rbge.org.uk/herb",
+      "reason": "Aggregators count its records as CC0, but the herbarium page says 'Data: CC0 1.0 Images CC BY 4.0'."
+    },
+    {
+      "name": "MuIS (Estonian museums)",
+      "url": "https://www.muis.ee/",
+      "reason": "Aggregators mark many items CC0, but MuIS applies CC0 to metadata only; images may be restricted."
+    },
+    {
+      "name": "Rijkswaterstaat images",
+      "url": "https://www.rijkswaterstaat.nl/copyright",
+      "reason": "Site text is CC0, but the copyright page says 'De CC0-verklaring geldt niet voor beeld.'"
     }
   ],
   "pending": [
@@ -3458,6 +4161,56 @@
       "name": "Pickupimage",
       "url": "https://www.pickupimage.com/",
       "reason": "Often listed as CC0, but the site returned HTTP 403."
+    },
+    {
+      "name": "Figshare",
+      "url": "https://figshare.com",
+      "reason": "CC0 is a license option, but no working CC0 search filter was found and the search page returned a challenge."
+    },
+    {
+      "name": "Mendeley Data",
+      "url": "https://data.mendeley.com",
+      "reason": "CC0 is a deposit option, but the site renders with JavaScript and no license filter was confirmed."
+    },
+    {
+      "name": "National Library of Scotland digitisations",
+      "url": "https://digital.nls.uk/",
+      "reason": "The copyright page reportedly waives rights in digitisations with CC0, but it returned HTTP 403."
+    },
+    {
+      "name": "museum-digital (CC0 image filter)",
+      "url": "https://global.museum-digital.org/",
+      "reason": "Has a CC0 image-license filter across German museums, but the site's TLS certificate failed verification."
+    },
+    {
+      "name": "Naturalis BioPortal",
+      "url": "https://bioportal.naturalis.nl/",
+      "reason": "Reported to apply CC0 unless stated otherwise; the page renders with JavaScript and returned HTTP 403."
+    },
+    {
+      "name": "Digital Repository of Ireland",
+      "url": "https://repository.dri.ie/",
+      "reason": "Has a CC0 licence facet, but the site returned a Cloudflare challenge."
+    },
+    {
+      "name": "National Library of Wales",
+      "url": "https://www.library.wales/",
+      "reason": "The copyright page returned HTTP 403."
+    },
+    {
+      "name": "Het Utrechts Archief",
+      "url": "https://hetutrechtsarchief.nl/",
+      "reason": "Europeana lists CC0 items, but the archive's site returned HTTP 403."
+    },
+    {
+      "name": "Brandenburgisches Landeshauptarchiv",
+      "url": "https://blha-recherche.brandenburg.de/",
+      "reason": "Digitized items are CC0 in Europeana/DDB, but the archive's own pages show no license text."
+    },
+    {
+      "name": "Erfgoed Leiden Beeldbank",
+      "url": "https://www.erfgoedleiden.nl/",
+      "reason": "CC0 appears only on the national data portal record; it may cover metadata only."
     }
   ]
 }
