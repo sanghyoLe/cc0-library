@@ -10,7 +10,7 @@ One search across **17 sources** for images, audio, video, HDRIs, textures, 3D m
 [![sanghyoLe/cc0-library MCP server](https://glama.ai/mcp/servers/sanghyoLe/cc0-library/badges/score.svg)](https://glama.ai/mcp/servers/sanghyoLe/cc0-library)
 [![CC0 Library MCP server](https://mcprush.com/badge/cc0-library-mcp/card.svg)](https://mcprush.com/to/cc0-library-mcp?ref=badge)
 
-- **Try it in the browser:** https://sanghyole.github.io/cc0-library/
+- **Try it in the browser:** https://sanghyole.github.io/cc0-library/ — browse shelves of museum paintings, wildlife photos, HDRIs, textures, 3D models, sounds, icons and datasets, or search all sources
 - **Walk through the CC0 Museum:** https://sanghyole.github.io/cc0-library/museum.html — a 3D gallery generated from CC0 assets for any theme
 - **Use it from Claude, Cursor, or any MCP client:** `claude mcp add cc0-library -- npx -y cc0-library-mcp`
 - **Listed in:** the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.sanghyoLe/cc0-library) (`io.github.sanghyoLe/cc0-library`), [Glama](https://glama.ai/mcp/servers/sanghyoLe/cc0-library) and [mcprush](https://mcprush.com/to/cc0-library-mcp?ref=badge)
@@ -62,7 +62,7 @@ The web gallery has a "rights holder only" switch that drops `uploader` results.
 
 ## The catalog
 
-[`catalog/sources.json`](catalog/sources.json) lists 148 sites and collections that are CC0 (17 of them searchable), each verified on the source's own license page, repository license or README, with the quoted evidence and a date. Browse it in the [web gallery's Sources tab](https://sanghyole.github.io/cc0-library/) or with the `list_sources` tool.
+[`catalog/sources.json`](catalog/sources.json) lists 148 sites and collections that are CC0 (17 of them searchable), each verified on the source's own license page, repository license or README, with the quoted evidence and a date. Browse it on the [web gallery's Browse tab](https://sanghyole.github.io/cc0-library/) (by type, with the evidence for each source) or with the `list_sources` tool.
 
 | Asset type | Sources | Examples |
 |---|---|---|

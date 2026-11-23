@@ -19,7 +19,8 @@
         cc0-library
       </a>
       <nav class="tabs" role="tablist">
-        <button role="tab" data-tab="search" aria-selected="true">Search</button>
+        <button role="tab" data-tab="browse" aria-selected="true">Browse</button>
+        <button role="tab" data-tab="search" aria-selected="false">Search</button>
         <button role="tab" data-tab="sources" aria-selected="false">Sources</button>
         <button role="tab" data-tab="mcp" aria-selected="false">Use with AI</button>
       </nav>
@@ -29,7 +30,29 @@
   </header>
 
   <main class="wrap">
-    <section id="tab-search" class="tab">
+    <section id="tab-browse" class="tab">
+      <div class="hero">
+        <h1>A library of CC0 assets.</h1>
+        <p>Walk the shelves: museum paintings, wildlife photos, HDRIs, textures, 3D models, sounds and icons — every piece CC0 1.0, every piece with its license evidence. Looking for something specific? <a href="#" data-goto="search">Search</a>.</p>
+      </div>
+      <div class="topics" aria-label="Browse by topic">
+        <span class="topics-label">Topics</span>
+        <div id="topics" class="topics-row"></div>
+      </div>
+      <div id="shelves"></div>
+
+      <section class="shelf catalog-shelf" aria-labelledby="catalog-title">
+        <div class="shelf-head">
+          <h2 id="catalog-title">The catalog: <span id="catalog-count">verified</span> CC0 sources</h2>
+          <a href="#" data-goto="sources">Full table →</a>
+        </div>
+        <p class="muted shelf-sub">Sites, museums and collections checked against their own license pages. Pick a type, then open a source to see the evidence.</p>
+        <div id="catalog-kinds" class="kinds" role="radiogroup" aria-label="Source type"></div>
+        <div id="catalog-grid" class="source-grid"></div>
+      </section>
+    </section>
+
+    <section id="tab-search" class="tab" hidden>
       <div class="hero">
         <h1>CC0 assets only. With receipts.</h1>
         <p>One search across 17 sources: Openverse, Wikimedia Commons, Internet Archive, WordPress Photo Directory, iNaturalist, GBIF, PhyloPic, Iconify, Zenodo, Poly Haven, Sketchfab, Cleveland Museum of Art, The Met, GitHub and Hugging Face — plus ambientCG and BlenderKit through the MCP server. Each result shows <em>how</em> its CC0 status was verified.</p>

@@ -60,8 +60,166 @@ function showTab(name) {
   for (const b of document.querySelectorAll(".tabs button")) b.setAttribute("aria-selected", String(b.dataset.tab === name));
   for (const s of document.querySelectorAll(".tab")) s.hidden = s.id !== `tab-${name}`;
   if (name === "sources") loadSources();
+  if (name === "browse") startBrowse();
 }
 for (const b of document.querySelectorAll(".tabs button")) b.addEventListener("click", () => showTab(b.dataset.tab));
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("[data-goto]");
+  if (!a) return;
+  e.preventDefault();
+  showTab(a.dataset.goto);
+  window.scrollTo({ top: 0 });
+});
+
+/** Opens the search tab and runs a query (used by shelves and topics). */
+function searchFor(q, kind = "any") {
+  state.q = q;
+  state.kind = kind;
+  $("#q").value = q;
+  renderKinds();
+  showTab("search");
+  window.scrollTo({ top: 0 });
+  runSearch(true);
+}
+
+// ---------- browse (library shelves) ----------
+const ALL_PROVIDERS = Object.keys(PROVIDER_NAMES);
+/** Skip list that leaves only the given providers. */
+const only = (...ids) => ALL_PROVIDERS.filter((p) => !ids.includes(p));
+
+/**
+ * Each shelf runs one small search. Queries rotate by day so the shelves change
+ * while a day's results stay cacheable; the ↻ button steps to the next query.
+ * Provider choices: sources that are fast, have thumbnails, and send CORS headers.
+ */
+const SHELVES = [
+  { id: "art", title: "Museum paintings", sub: "The Met and the Cleveland Museum of Art, declared CC0 by the museums.", kind: "artwork", skip: [], queries: ["landscape", "portrait", "flowers", "sea", "night", "garden", "horse"] },
+  { id: "wildlife", title: "Wildlife photos", sub: "iNaturalist observations whose photographers chose CC0.", kind: "image", skip: only("inaturalist"), queries: ["owl", "fox", "butterfly", "frog", "jellyfish", "hummingbird", "mushroom"] },
+  { id: "photos", title: "Everyday photos", sub: "The WordPress Photo Directory, every photo CC0.", kind: "image", skip: only("wpphotos"), queries: ["coffee", "street", "mountain", "beach", "flower", "city", "food"] },
+  { id: "hdri", title: "HDRI skies and studios", sub: "Poly Haven HDRIs for lighting 3D scenes.", kind: "hdri", skip: only("polyhaven"), queries: ["sunset", "studio", "forest", "city", "night", "sky", "indoor"] },
+  { id: "textures", title: "PBR textures", sub: "Poly Haven materials with color, normal and roughness maps.", kind: "texture", skip: only("polyhaven"), queries: ["wood", "brick", "stone", "metal", "fabric", "ground", "concrete"] },
+  { id: "models", title: "3D models", sub: "Poly Haven and Sketchfab models released under CC0.", kind: "model", skip: only("polyhaven", "sketchfab"), queries: ["chair", "rock", "plant", "car", "tree", "lamp", "skull"] },
+  { id: "sounds", title: "Sounds", sub: "CC0 recordings through Openverse (Freesound, Jamendo and others).", kind: "audio", skip: only("openverse"), queries: ["rain", "birds", "footsteps", "bell", "wind", "door", "piano"] },
+  { id: "icons", title: "Icons", sub: "CC0 icon sets through Iconify.", kind: "image", skip: only("iconify"), queries: ["home", "heart", "star", "arrow", "music", "camera", "leaf"] },
+  { id: "specimens", title: "Natural history specimens", sub: "Museum and herbarium specimen photos shared through GBIF under CC0.", kind: "image", skip: only("gbif"), queries: ["beetle", "orchid", "butterfly", "lichen", "bee", "spider", "dragonfly"] },
+  { id: "commons", title: "From Wikimedia Commons", sub: "Files in Commons' CC0 category: maps, posters, places and more.", kind: "image", skip: only("commons"), queries: ["map", "poster", "castle", "fossil", "train", "lighthouse", "bridge"] },
+  { id: "datasets", title: "Datasets", sub: "Hugging Face datasets tagged CC0.", kind: "collection", skip: only("huggingface"), queries: ["images", "audio", "text", "speech", "art", "3d"] },
+];
+const TOPICS = ["cat", "ocean", "space", "city", "flowers", "food", "winter", "music", "robot", "forest", "map", "castle"];
+const SHELF_SIZE = 12;
+const today = Math.floor(Date.now() / 86_400_000);
+const shelfQuery = new Map(SHELVES.map((s, i) => [s.id, (today + i) % s.queries.length]));
+
+function cacheGet(key) {
+  try { const v = sessionStorage.getItem(key); return v ? JSON.parse(v) : null; } catch { return null; }
+}
+function cacheSet(key, value) {
+  try { sessionStorage.setItem(key, JSON.stringify(value)); } catch { /* storage full or blocked: skip caching */ }
+}
+
+let browseStarted = false;
+function startBrowse() {
+  if (browseStarted) return;
+  browseStarted = true;
+  $("#topics").replaceChildren(...TOPICS.map((t) => el("button", { type: "button", class: "topic", onclick: () => searchFor(t) }, t)));
+  const io = "IntersectionObserver" in window
+    ? new IntersectionObserver((entries) => {
+        for (const en of entries) if (en.isIntersecting) { io.unobserve(en.target); loadShelf(en.target.dataset.shelf); }
+      }, { rootMargin: "300px 0px" })
+    : null;
+  $("#shelves").replaceChildren(...SHELVES.map((s) => {
+    const node = el("section", { class: "shelf", "data-shelf": s.id, "aria-labelledby": `shelf-${s.id}` },
+      el("div", { class: "shelf-head" },
+        el("h2", { id: `shelf-${s.id}` }, s.title, " ", el("span", { class: "shelf-q" })),
+        el("div", { class: "shelf-actions" },
+          el("button", { type: "button", class: "icon-btn", title: "Another theme", "aria-label": `Another ${s.title} theme`, onclick: () => nextShelf(s.id) }, "↻"),
+          el("a", { href: "#", class: "see-all", onclick: (e) => { e.preventDefault(); searchFor(currentQuery(s), s.kind); } }, "See all →"))),
+      el("p", { class: "muted shelf-sub" }, s.sub),
+      el("div", { class: "shelf-row", role: "list" }));
+    if (io) io.observe(node); else loadShelf(s.id);
+    return node;
+  }));
+  loadCatalogShelf();
+}
+
+const shelfOf = (id) => SHELVES.find((s) => s.id === id);
+const currentQuery = (s) => s.queries[shelfQuery.get(s.id)];
+
+function nextShelf(id) {
+  const s = shelfOf(id);
+  shelfQuery.set(id, (shelfQuery.get(id) + 1) % s.queries.length);
+  loadShelf(id);
+}
+
+async function loadShelf(id) {
+  const s = shelfOf(id);
+  const node = document.querySelector(`.shelf[data-shelf="${id}"]`);
+  const row = node.querySelector(".shelf-row");
+  const q = currentQuery(s);
+  node.querySelector(".shelf-q").textContent = `· ${q}`;
+  const key = `shelf:${s.id}:${q}`;
+  const token = Symbol(q);
+  node.loadToken = token;
+  let assets = cacheGet(key);
+  if (!assets) {
+    row.replaceChildren(...Array.from({ length: 6 }, () => el("div", { class: "card skeleton", "aria-hidden": "true" })));
+    try {
+      const r = await search(browserFetch, q, s.kind, SHELF_SIZE, 1, { skip: [...new Set([...SKIP, ...s.skip])] });
+      assets = r.assets;
+      if (assets.length) cacheSet(key, assets);
+    } catch {
+      assets = [];
+    }
+  }
+  if (node.loadToken !== token) return; // a newer theme was requested meanwhile
+  row.replaceChildren(...(assets.length
+    ? assets.map((a) => el("div", { role: "listitem" }, card(a)))
+    : [el("p", { class: "muted empty" }, "This shelf is empty right now — the source did not answer. Try ↻.")]));
+}
+
+// ---------- browse: catalog of verified sources ----------
+const KIND_LABELS = { image: "Images", audio: "Audio", video: "Video", hdri: "HDRIs", texture: "Textures", model: "3D", artwork: "Artworks", font: "Fonts", collection: "Data" };
+let catalog = null;
+let catalogKind = "all";
+async function loadCatalogShelf() {
+  try {
+    catalog = await (await fetch("catalog/sources.json")).json();
+  } catch {
+    $("#catalog-grid").replaceChildren(el("p", { class: "muted" }, "The catalog could not be loaded."));
+    return;
+  }
+  $("#catalog-count").textContent = String(catalog.sources.length);
+  renderCatalogShelf();
+}
+function renderCatalogShelf() {
+  const counts = {};
+  for (const s of catalog.sources) for (const k of s.kinds) counts[k] = (counts[k] ?? 0) + 1;
+  const kinds = [["all", `All ${catalog.sources.length}`], ...Object.entries(KIND_LABELS).filter(([k]) => counts[k]).map(([k, l]) => [k, `${l} ${counts[k]}`])];
+  $("#catalog-kinds").replaceChildren(...kinds.map(([k, label]) =>
+    el("button", { type: "button", role: "radio", "aria-checked": String(catalogKind === k), onclick: () => { catalogKind = k; renderCatalogShelf(); } }, label)));
+  const list = catalog.sources.filter((s) => catalogKind === "all" || s.kinds.includes(catalogKind));
+  $("#catalog-grid").replaceChildren(...list.map((s) =>
+    el("button", { type: "button", class: "source-card", onclick: () => openSource(s) },
+      el("span", { class: "source-name" }, s.name),
+      el("span", { class: "source-meta" },
+        s.kinds.map((k) => KIND_LABELS[k] ?? k).join(" · "),
+        s.searchable ? el("span", { class: "badge" }, "searchable") : null,
+        el("span", { class: "badge" }, s.scope === "whole-library" ? "all CC0" : "CC0 items only")))));
+}
+function openSource(s) {
+  $("#detail-body").replaceChildren(
+    el("h3", {}, s.name),
+    el("p", { class: "muted" }, s.kinds.map((k) => KIND_LABELS[k] ?? k).join(" · ")),
+    s.notes ? el("p", {}, s.notes) : null,
+    el("div", { class: "evidence" },
+      el("strong", {}, s.scope === "whole-library" ? "Everything here is CC0. " : "Only items labeled CC0 qualify. "),
+      el("br"), "Evidence (", s.verified.date, "): ", s.verified.evidence),
+    el("p", {},
+      el("a", { href: s.url, target: "_blank", rel: "noopener" }, "Open the source ↗"), " · ",
+      el("a", { href: s.licensePage, target: "_blank", rel: "noopener" }, "License page ↗")),
+  );
+  $("#detail").showModal();
+}
 
 // ---------- kinds ----------
 function renderKinds() {
@@ -245,5 +403,8 @@ renderKinds();
 if (params.get("q")) {
   state.q = params.get("q").slice(0, 200);
   $("#q").value = state.q;
+  showTab("search");
   runSearch(true);
+} else {
+  showTab("browse");
 }
