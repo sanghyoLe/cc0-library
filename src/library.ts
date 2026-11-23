@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import type { CatalogKind } from "./types.js";
 
-export { search, getAsset, interleave, type SearchKind, type SearchResult, type SearchOptions } from "./search.js";
+export { search, getAsset, interleave, rank, relevance, type SearchKind, type SearchResult, type SearchOptions } from "./search.js";
 
 export interface CatalogSource {
   id: string;

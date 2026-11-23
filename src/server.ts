@@ -105,7 +105,7 @@ const result = (value: object) => ({
 const fail = (message: string) => ({ content: [{ type: "text" as const, text: message }], isError: true });
 
 export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
-  const server = new McpServer({ name: "cc0-library", version: "0.2.4" });
+  const server = new McpServer({ name: "cc0-library", version: "0.2.5" });
 
   server.registerTool(
     "search_assets",
@@ -128,7 +128,7 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
           .min(1)
           .max(20)
           .default(10)
-          .describe("Maximum results to return, 1-20. With kind 'any' the sources are interleaved, so each contributes a few"),
+          .describe("Maximum results to return, 1-20. Results are ranked by how many query words appear in the title or tags; ties alternate between sources"),
         page: z
           .number()
           .int()
@@ -136,11 +136,21 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
           .max(12)
           .default(1)
           .describe("1-based page; each source paginates independently. Request page 2+ only if `totals` shows more matches"),
+        providers: z
+          .array(z.enum(PROVIDER_IDS))
+          .min(1)
+          .max(PROVIDER_IDS.length)
+          .optional()
+          .describe(
+            "Search only these sources. Leave out to search every source for `kind`. Useful picks: ['iconify'] for icons, " +
+              "['polyhaven','ambientcg'] for studio-made textures and HDRIs, ['inaturalist','gbif'] for wildlife and specimens, " +
+              "['cleveland','met'] for museum art, ['openverse'] for sound effects",
+          ),
       },
       outputSchema: searchOutput,
       annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
     },
-    async ({ query, kind, limit, page }) => result(await search(fetchImpl, query, kind, limit, page)),
+    async ({ query, kind, limit, page, providers }) => result(await search(fetchImpl, query, kind, limit, page, { providers })),
   );
 
   server.registerTool(

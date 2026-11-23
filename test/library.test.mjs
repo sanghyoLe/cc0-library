@@ -1,9 +1,9 @@
 // Unit tests with a fake fetch: no network access.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { search, getAsset, interleave, loadCatalog } from "../dist/library.js";
+import { search, getAsset, interleave, rank, relevance, loadCatalog } from "../dist/library.js";
 import { resetPolyhavenCache, flattenFiles } from "../dist/providers/polyhaven.js";
-import { sanitizeQuery } from "../dist/providers/archive.js";
+import { sanitizeQuery, isPackedFile } from "../dist/providers/archive.js";
 import { stripHtml } from "../dist/providers/commons.js";
 import { resetIconifyCache } from "../dist/providers/iconify.js";
 import { resetPhylopicCache } from "../dist/providers/phylopic.js";
@@ -129,6 +129,44 @@ test("flattenFiles turns nested Poly Haven files into labeled rows and skips 'in
     { label: "hdri / 1k / hdr", url: "u1", sizeBytes: 10 },
     { label: "gltf / 1k / gltf", url: "u2", sizeBytes: 5 },
   ]);
+});
+
+test("relevance scores title words over tags, handles plurals, prefixes and Korean", () => {
+  assert.equal(relevance("footsteps", { title: "footstep on wood foley.wav", tags: [] }), 2);
+  assert.equal(relevance("pixel sprite", { title: "Hero sprites", tags: ["pixelart"] }), 1.5);
+  assert.equal(relevance("shopping cart", { title: "water oak (Quercus nigra)", tags: [] }), 0);
+  assert.equal(relevance("the cat", { title: "Cat", tags: [] }), 2);
+  assert.equal(relevance("고양이", { title: "나무 위의 고양이.jpg", tags: [] }), 2);
+  assert.equal(relevance("...", { title: "anything", tags: [] }), 0);
+});
+
+test("rank puts matching items first and keeps the order of ties", () => {
+  const items = [{ id: 1, title: "Pisum sativum", tags: [] }, { id: 2, title: "Cart icon", tags: [] },
+    { id: 3, title: "Oak", tags: [] }, { id: 4, title: "Basket", tags: ["cart"] }];
+  assert.deepEqual(rank("cart", items).map((a) => a.id), [2, 4, 1, 3]);
+});
+
+test("providers option runs only the named providers", async () => {
+  const f = fakeFetch({ "https://api.openverse.org/v1/images/?": { result_count: 1, results: [ov("i1", "cc0")] } });
+  const r = await search(f, "x", "image", 5, 1, { providers: ["openverse"] });
+  assert.deepEqual(r.assets.map((a) => a.id), ["openverse:image:i1"]);
+  assert.deepEqual(r.errors, []);
+  assert.equal(callsTo(f, "wikimedia.org").length + callsTo(f, "archive.org").length + callsTo(f, "iconify").length, 0);
+});
+
+test("PhyloPic 404 for an unknown name is an empty result, not an error", async () => {
+  resetPhylopicCache();
+  const f = fakeFetch({ "https://api.phylopic.org/": { build: 9 } }); // /images has no route -> 404
+  const r = await search(f, "shopping cart", "image", 5, 1, { providers: ["phylopic"] });
+  assert.deepEqual(r.errors, []);
+  assert.deepEqual(r.assets, []);
+});
+
+test("Internet Archive items titled like archive files are dropped", () => {
+  assert.equal(isPackedFile({ title: "TRANSCENDANT 9 8 2026.7z" }), true);
+  assert.equal(isPackedFile({ title: ["Pack.ZIP"] }), true);
+  assert.equal(isPackedFile({ title: "Winter Landscape" }), false);
+  assert.equal(isPackedFile({}), false);
 });
 
 test("interleave alternates lists of unequal length", () => {

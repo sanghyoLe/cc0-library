@@ -29,15 +29,16 @@ for (const [kind, q] of Object.entries(QUERIES)) {
   check(r.assets.every((a) => a.licenseEvidence.license === "CC0-1.0"), `${kind} results all carry CC0 evidence`);
   for (const a of r.assets) if (!seenProviders.has(a.provider)) seenProviders.set(a.provider, a.id);
 }
-// Providers whose results depend on specific words get a targeted query.
+// Providers whose results depend on specific words get a targeted query, restricted
+// to that provider so the check does not depend on how the mixed results rank.
 const TARGETED = [
   ["fox", "image", "inaturalist"], ["fox", "image", "gbif"], ["vulpes", "image", "phylopic"], ["heart", "image", "iconify"],
   ["bird", "image", "zenodo"], ["chair", "model", "blenderkit"], ["sprites", "collection", "github"], ["pixel", "collection", "huggingface"],
 ];
 for (const [q, kind, provider] of TARGETED) {
-  const r = await call("search_assets", { query: q, kind, limit: 20 });
+  const r = await call("search_assets", { query: q, kind, limit: 20, providers: [provider] });
   const hit = r.assets.find((a) => a.provider === provider);
-  check(!!hit, `search ${kind} "${q}" includes ${provider}${hit ? ` (${hit.id})` : ""}`);
+  check(!!hit && r.assets.every((a) => a.provider === provider), `search ${kind} "${q}" with providers=[${provider}] -> ${provider} only${hit ? ` (${hit.id})` : ""}`);
   if (hit && !seenProviders.has(provider)) seenProviders.set(provider, hit.id);
 }
 const ALL = ["openverse", "polyhaven", "ambientcg", "cleveland", "met", "commons", "archive", "sketchfab", "wpphotos",

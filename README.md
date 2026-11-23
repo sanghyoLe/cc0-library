@@ -142,9 +142,11 @@ claude mcp add cc0-library -- node "$PWD/dist/index.js"
 
 | Tool | Input | Returns |
 |---|---|---|
-| `search_assets` | `query`, `kind` (`image`·`audio`·`video`·`hdri`·`texture`·`model`·`artwork`·`collection`·`any`, default `any`; `any` excludes `collection`), `limit` 1–20, `page` 1–12 | CC0 assets, per-provider totals, per-provider errors |
+| `search_assets` | `query`, `kind` (`image`·`audio`·`video`·`hdri`·`texture`·`model`·`artwork`·`collection`·`any`, default `any`; `any` excludes `collection`), `limit` 1–20, `page` 1–12, optional `providers` (e.g. `["iconify"]` for icons) | CC0 assets ranked by query words in title and tags, per-provider totals, per-provider errors |
 | `get_asset` | `id` from `search_assets` (`openverse:image:<uuid>`, `openverse:audio:<uuid>`, `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`, `commons:<pageid>`, `archive:<identifier>`, `sketchfab:<uid>`, `wpphotos:<number>`, `inaturalist:<n>`, `gbif:<n>`, `phylopic:<uuid>`, `iconify:<set>:<icon>`, `zenodo:<n>`, `blenderkit:<uuid>`, `github:<owner>/<repo>`, `huggingface:<owner>/<dataset>`) | Details plus download URLs (Poly Haven: up to 60 map/resolution/format files; Sketchfab: model page only, because downloads need the user's own login) |
 | `list_sources` | `kind` (optional) | Curated catalog, the non-CC0 list, and the pending-verification list |
+
+Results are ranked by how many query words appear in each item's title (weight 2) or tags (weight 1); ties alternate between providers. Loose matches, such as a GBIF record that mentions the word only in its locality, sink below exact ones.
 
 If one provider fails, `search_assets` still returns results from the other providers and lists the failure in `errors`. Gateway errors (HTTP 502/503/504) are retried once.
 

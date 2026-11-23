@@ -28,6 +28,8 @@ export interface SearchOptions {
    * sends no CORS headers.
    */
   skip?: ProviderId[];
+  /** When set, only these providers run (applied after `skip`). */
+  providers?: ProviderId[];
 }
 
 export interface SearchResult {
@@ -42,9 +44,12 @@ export interface SearchResult {
 }
 
 /**
- * Runs one search across the providers that serve `kind`. With kind "any",
- * results from each provider are interleaved so one provider cannot crowd
- * out the others.
+ * Runs one search across the providers that serve `kind`. Results are first
+ * interleaved by provider, so one provider cannot crowd out the others, and
+ * then stably sorted by `relevance`: items whose title or tags contain the
+ * query words come first. Providers that match loosely (taxon or full-text
+ * search) return items that share no word with the query; those sink to the
+ * end instead of filling the first page.
  */
 export async function search(
   fetchImpl: FetchLike,
@@ -97,7 +102,11 @@ export async function search(
   }
 
   const skip = new Set<string>(options.skip ?? []);
-  const run = all.filter((j) => !skip.has(j.name.split(":")[0]));
+  const only = options.providers?.length ? new Set<string>(options.providers) : null;
+  const run = all.filter((j) => {
+    const id = j.name.split(":")[0];
+    return !skip.has(id) && (!only || only.has(id));
+  });
   const settled = await Promise.allSettled(run.map((j) => j.run()));
   const totals: Record<string, number> = {};
   const errors: string[] = [];
@@ -111,7 +120,46 @@ export async function search(
     }
   });
 
-  return { query, kind, page, assets: interleave(lists).slice(0, limit), totals, errors };
+  return { query, kind, page, assets: rank(query, interleave(lists)).slice(0, limit), totals, errors };
+}
+
+/** Words of two or more letters or digits, lowercased; works for any script. */
+function words(text: string): string[] {
+  return text.toLowerCase().match(/[\p{L}\p{N}]{2,}/gu) ?? [];
+}
+
+/** Drops a plural "s"/"es" so "footsteps" matches "footstep" and "boxes" matches "box". */
+function stem(w: string): string {
+  if (w.length > 4 && w.endsWith("es")) return w.slice(0, -2);
+  if (w.length > 3 && w.endsWith("s") && !w.endsWith("ss")) return w.slice(0, -1);
+  return w;
+}
+
+const STOPWORDS = new Set(["a", "an", "and", "the", "of", "for", "with", "in", "on", "to", "or"]);
+
+/**
+ * Share of the query's words found in the asset's title (weight 2) or tags
+ * (weight 1), from 0 to 2. A word matches when an asset word starts with its
+ * stem, so "sprite" matches "sprites" and "pixel" matches "pixelart".
+ * Scripts without spaces (e.g. Korean "고양이") also match as substrings.
+ */
+export function relevance(query: string, asset: Pick<Asset, "title" | "tags">): number {
+  const q = [...new Set(words(query).filter((w) => !STOPWORDS.has(w)).map(stem))];
+  if (!q.length) return 0;
+  const title = words(asset.title);
+  const tags = words(asset.tags.join(" "));
+  const hit = (list: string[], w: string) => list.some((t) => t.startsWith(w) || (w.length >= 2 && !/^[a-z0-9]+$/.test(w) && t.includes(w)));
+  let score = 0;
+  for (const w of q) score += hit(title, w) ? 2 : hit(tags, w) ? 1 : 0;
+  return score / q.length;
+}
+
+/** Stable sort by relevance; ties keep the interleaved provider order. */
+export function rank<T extends Pick<Asset, "title" | "tags">>(query: string, assets: T[]): T[] {
+  return assets
+    .map((a, i) => ({ a, i, s: relevance(query, a) }))
+    .sort((x, y) => y.s - x.s || x.i - y.i)
+    .map((x) => x.a);
 }
 
 export function interleave<T>(lists: T[][]): T[] {

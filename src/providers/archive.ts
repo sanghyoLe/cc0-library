@@ -43,6 +43,14 @@ export function sanitizeQuery(q: string): string {
   return q.replace(/[^\p{L}\p{N}\s]/gu, " ").replace(/\b(AND|OR|NOT|TO)\b/g, " ").replace(/\s+/g, " ").trim();
 }
 
+/**
+ * Items titled like an archive or disk image (e.g. "pack 2026.7z") have no
+ * viewable media of their own, even when filed under an image or audio mediatype.
+ */
+export function isPackedFile(doc: Pick<SearchDoc, "title">): boolean {
+  return /\.(7z|zip|rar|tar|gz|tgz|bz2|xz|iso|img|exe|dmg|bin)$/i.test((first(doc.title) ?? "").trim());
+}
+
 export function isCc0(doc: Pick<SearchDoc, "licenseurl">): boolean {
   return !!doc.licenseurl && CC0_URL_RE.test(doc.licenseurl);
 }
@@ -87,7 +95,8 @@ export async function searchArchive(
     "Internet Archive",
     `${BASE}/advancedsearch.php?${qs}`,
   );
-  return { total: data.response.numFound, assets: data.response.docs.filter(isCc0).map(toAsset) };
+  const assets = data.response.docs.filter((d) => isCc0(d) && !isPackedFile(d)).map(toAsset);
+  return { total: data.response.numFound, assets };
 }
 
 export async function getArchive(fetchImpl: FetchLike, identifier: string): Promise<AssetDetail | null> {

@@ -1,4 +1,4 @@
-import { getJson } from "../http.js";
+import { UpstreamError, getJson } from "../http.js";
 import { CC0_LICENSE_URL, type Asset, type AssetDetail, type FetchLike, type SearchParams } from "../types.js";
 
 /**
@@ -98,7 +98,14 @@ export async function searchPhylopic(fetchImpl: FetchLike, params: SearchParams)
     page: String(params.page - 1),
     embed_items: "true",
   });
-  const data = await getJson<{ totalItems?: number; _embedded?: { items?: PhyloImage[] } }>(fetchImpl, "PhyloPic", `${BASE}/images?${qs}`, ACCEPT);
+  let data: { totalItems?: number; _embedded?: { items?: PhyloImage[] } };
+  try {
+    data = await getJson(fetchImpl, "PhyloPic", `${BASE}/images?${qs}`, ACCEPT);
+  } catch (e) {
+    // The API answers 404 when no taxon has this name: that is "no results", not a failure.
+    if (e instanceof UpstreamError && e.status === 404) return { total: 0, assets: [] };
+    throw e;
+  }
   const items = (data._embedded?.items ?? []).filter(isCc0).slice(0, params.limit);
   return { total: data.totalItems ?? items.length, assets: items.map(toAsset) };
 }
