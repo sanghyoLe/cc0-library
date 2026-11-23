@@ -32,7 +32,7 @@ for (const [kind, q] of Object.entries(QUERIES)) {
 // Providers whose results depend on specific words get a targeted query, restricted
 // to that provider so the check does not depend on how the mixed results rank.
 const TARGETED = [
-  ["fox", "image", "inaturalist"], ["fox", "image", "gbif"], ["vulpes", "image", "phylopic"], ["heart", "image", "iconify"],
+  ["fox", "image", "inaturalist"], ["fox", "image", "gbif"], ["cat", "image", "wpphotos"], ["vulpes", "image", "phylopic"], ["heart", "image", "iconify"],
   ["bird", "image", "zenodo"], ["chair", "model", "blenderkit"], ["sprites", "collection", "github"], ["pixel", "collection", "huggingface"],
 ];
 for (const [q, kind, provider] of TARGETED) {

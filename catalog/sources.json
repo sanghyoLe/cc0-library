@@ -4670,6 +4670,988 @@
         "date": "2026-11-23",
         "evidence": "app info: 'mit dem Upload als Creative Commons Zero (CC0) lizenziert'"
       }
+    },
+    {
+      "id": "lix",
+      "name": "Lix",
+      "url": "https://www.lixgame.com/",
+      "kinds": [
+        "image",
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.lixgame.com/",
+      "notes": "Lemmings-like game; sprites, terrain and levels are CC0. doc/copying.txt lists exceptions (djvusans.ttf, music/rubix is CC BY 4.0).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "home page: 'It's free and open-source software, placed in the public domain via CC0.'"
+      }
+    },
+    {
+      "id": "anarch-assets",
+      "name": "Anarch game assets (drummyfish)",
+      "url": "https://opengameart.org/content/anarch-oldschool-fps-resources",
+      "kinds": [
+        "image",
+        "texture",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/anarch-oldschool-fps-resources",
+      "notes": "Doom-style sprites, textures and sounds made from the author's own photos and recordings.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'I release them all under CC0 1.0, public domain, for any use whatsoever.'"
+      }
+    },
+    {
+      "id": "gdquest-game-sprites",
+      "name": "GDQuest game-sprites",
+      "url": "https://github.com/gdquest/game-sprites",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/gdquest/game-sprites",
+      "notes": "Sprite library for prototyping.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'Everything here is under the CC0 - public domain license.'"
+      }
+    },
+    {
+      "id": "wareya-255-tiles",
+      "name": "Versatile 255-Tile Pixel Art Pack (wareya)",
+      "url": "https://wareya.itch.io/versatile-255-tile-pixel-art-pack",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://wareya.itch.io/versatile-255-tile-pixel-art-pack",
+      "notes": "255 tiles at 16x16.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'License: Creative commons zero, public domain! No credit needed'"
+      }
+    },
+    {
+      "id": "tornio-duva-tokens",
+      "name": "Tornio Duva TTRPG assets",
+      "url": "https://tornioduva.itch.io/dd-tokens-start-set",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://tornioduva.itch.io/dd-tokens-start-set",
+      "notes": "Fantasy tokens. The creator re-licensed all assets as CC0; older pack pages may still show the previous license.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'IGNORE THE OLD LICENSE ON THE PAGES ... It predates my decision to release all my assets as CC0 v.1.0 Universal'"
+      }
+    },
+    {
+      "id": "mark-gosbell-map-assets",
+      "name": "Mark Gosbell TTRPG map assets",
+      "url": "https://markgosbell.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://markgosbell.itch.io/hand-drawn-isometric-dungeon-assets",
+      "notes": "Hand-drawn dungeon map assets and RPG item icons; check each pack page.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "pack page: 'Over 50 assets. All these assets are under CC0'"
+      }
+    },
+    {
+      "id": "getgo-fonts",
+      "name": "GetGo fonts (FontLab)",
+      "url": "https://github.com/fontlabcom/getgo-fonts",
+      "kinds": [
+        "font"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://github.com/fontlabcom/getgo-fonts",
+      "notes": "Only families whose fonts.json entry says \"license\": \"CC-0\" qualify (11 families); others are Apache or OFL.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'The fonts are licensed under CC-0 (public domain), Apache or OFL'"
+      }
+    },
+    {
+      "id": "comigo-fantasy-icons",
+      "name": "CC0 Hand-drawn Fantasy Icon Pack (CoMiGo)",
+      "url": "https://comigo.itch.io/fantasy-icons-ink",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://comigo.itch.io/fantasy-icons-ink",
+      "notes": "Ink icons in PNG and SVG.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Here are my hand-drawn icons. These are CC0'"
+      }
+    },
+    {
+      "id": "limofeus-dungeon-icons",
+      "name": "Hand drawn dungeon icon pack (Limofeus)",
+      "url": "https://limofeus.itch.io/handdrawniconpack",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://limofeus.itch.io/handdrawniconpack",
+      "notes": "455 scanned hand-drawn icons in old-map style.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'It's CC0 ! You can use the icons however you want'"
+      }
+    },
+    {
+      "id": "jfred-pixel-cards",
+      "name": "Pixel Cards (Jfred)",
+      "url": "https://jfredd.itch.io/pixel-cards",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://jfredd.itch.io/pixel-cards",
+      "notes": "52 cards, 10 backs, joker and tilesets at 50x75.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Licensed under CC0 (entirely free to use)'"
+      }
+    },
+    {
+      "id": "mreliptik-cards",
+      "name": "Playing cards pack (MrEliptik)",
+      "url": "https://mreliptik.itch.io/playing-cards-packs-52-cards",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://mreliptik.itch.io/playing-cards-packs-52-cards",
+      "notes": "52-card deck in PNG and SVG, white and black.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'This work is distributed under the CC0 license'"
+      }
+    },
+    {
+      "id": "openrtp-tiles",
+      "name": "OpenRTP tiles (finalbossblues)",
+      "url": "https://finalbossblues.itch.io/openrtp-tiles",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://finalbossblues.itch.io/openrtp-tiles",
+      "notes": "Large RPG Maker-compatible tileset.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'The art in this pack is released to the public domain under a CC0 license'"
+      }
+    },
+    {
+      "id": "foozle",
+      "name": "Foozle asset packs",
+      "url": "https://foozle.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://foozlecc.itch.io/green-valley-tileset",
+      "notes": "Pixel tilesets, characters and effects (Lucifer, Scallywag Pirates, Sci-fi Lab and others).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "pack page: 'License: (Creative Commons Zero, CC0)'"
+      }
+    },
+    {
+      "id": "matt-walkden-free-packs",
+      "name": "Matt Walkden free packs",
+      "url": "https://mattwalkden.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://mattwalkden.itch.io/free-robot-warfare-pack",
+      "notes": "Free packs (Robot Warfare, Space Runner, Lunar Battle) are CC0; paid packs are not.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "pack page: 'These assets are released in to the public domain under the Creative Commons 0 license.'"
+      }
+    },
+    {
+      "id": "adve-tileset",
+      "name": "ADVE 8x8 tileset (egordorichev)",
+      "url": "https://egordorichev.itch.io/adve",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://egordorichev.itch.io/adve",
+      "notes": "100+ tiles with a Tiled example.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'These assets are public domain ... (aka CC0 license )'"
+      }
+    },
+    {
+      "id": "hexany-ives",
+      "name": "Hexany Ives 1-bit packs",
+      "url": "https://hexany-ives.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://hexany-ives.itch.io/hexanys-roguelike-tiles",
+      "notes": "Roguelike tiles, Monster Menagerie and other 1-bit packs; check each pack page.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "pack page: 'The tileset is under CC0 1.0 Universal license'"
+      }
+    },
+    {
+      "id": "loregret-portraits",
+      "name": "Pixel-Art Portrait Pack (Loregret)",
+      "url": "https://loregret.itch.io/pixel-art-portrait-pack",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://loregret.itch.io/pixel-art-portrait-pack",
+      "notes": "100 portraits plus an Aseprite file.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'CC0 license. This pack contains 100 portraits.'"
+      }
+    },
+    {
+      "id": "stealthix",
+      "name": "Stealthix pixel packs",
+      "url": "https://stealthix.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://stealthix.itch.io/rpg-nature-tileset",
+      "notes": "Free tilesets and props are CC-0; paid packs are not marked CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "pack page: 'Feel free to use it however you want (CC-0).'"
+      }
+    },
+    {
+      "id": "alexs-assets",
+      "name": "Alex's Assets",
+      "url": "https://alexs-assets.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://alexs-assets.itch.io/16x16-rpg-item-pack",
+      "notes": "RPG items and weapons. License stated in the creator's reply on the page.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "comment reply: 'CC0 as listed under the \"More information\" section. My previous assets are CC0 as well.'"
+      }
+    },
+    {
+      "id": "generic-dungeon-pack",
+      "name": "Generic Dungeon Pack (bakudas)",
+      "url": "https://bakudas.itch.io/generic-dungeon-pack",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://bakudas.itch.io/generic-dungeon-pack",
+      "notes": "Metroidvania tiles and sprites.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "overworld-autotiles",
+      "name": "Overworld Autotiles (dandelion dino)",
+      "url": "https://dandeliondino.itch.io/overworld-autotiles",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://dandeliondino.itch.io/overworld-autotiles",
+      "notes": "Godot-ready terrain autotiles.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'This tileset and associated files are CC0 (public domain).'"
+      }
+    },
+    {
+      "id": "elesrech-pixel-monsters",
+      "name": "Pixel Monsters (elesrech)",
+      "url": "https://elesrech.itch.io/pixel-monsters-enemies-asset-pack",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://elesrech.itch.io/pixel-monsters-enemies-asset-pack",
+      "notes": "20 animated monsters with colour variants.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Licence: Public Domain ( CC0 ).'"
+      }
+    },
+    {
+      "id": "illlustrations-legacy",
+      "name": "Illlustrations legacy packs",
+      "url": "https://illlustrations.co/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://illlustrations.co/license",
+      "notes": "Only the legacy static illustration packs are CC0; Premium and Builder assets are not.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "license page: 'Legacy Open Source Illustrations (CC0): Older, static illustration packs that are explicitly marked as CC0.'"
+      }
+    },
+    {
+      "id": "dront-px",
+      "name": "Dront PX font",
+      "url": "https://pomabug.itch.io/dront-px",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://pomabug.itch.io/dront-px",
+      "notes": "Pixel sans font.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Dront PX is marked with CC0 1.0'"
+      }
+    },
+    {
+      "id": "devils-workshop-pixel-font",
+      "name": "Devil's Workshop Pixel Font",
+      "url": "https://devilsworkshop.itch.io/pixel-font",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://devilsworkshop.itch.io/pixel-font",
+      "notes": "Pixel font.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'License CC0 1.0 Universal (CC0 1.0)'"
+      }
+    },
+    {
+      "id": "tiny-caverns",
+      "name": "Tiny Caverns (prototyped)",
+      "url": "https://prototyped.itch.io/tiny-caverns",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://prototyped.itch.io/tiny-caverns",
+      "notes": "Small cave tileset with water and firefly sprite sheets.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'This pack is under CC0 1.0 universal license'"
+      }
+    },
+    {
+      "id": "butterhands-1bit-kits",
+      "name": "1-Bit Doom kits (Butterhands)",
+      "url": "https://butterhands.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://butterhands.itch.io/doomgeon-kit",
+      "notes": "Doomgeon, Doomcrypt, Doomhold and other 1-bit kits; check each kit page.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "kit page: '1-Bit Doomgeon Kit by BUTTERHANDS is marked with CC0 1.0'"
+      }
+    },
+    {
+      "id": "digital-atlas-ancient-life",
+      "name": "Digital Atlas of Ancient Life (PRI)",
+      "url": "https://www.digitalatlasofancientlife.org/vc/",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.digitalatlasofancientlife.org/vc/",
+      "notes": "600+ fossil photogrammetry models on Sketchfab; the Plantae page is CC BY-SA.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'All of the models have Creative Commons 0 (CC0) licensing and may be freely viewed, downloaded, 3D printed'"
+      }
+    },
+    {
+      "id": "ffish-asia",
+      "name": "ffish.asia / floraZia 3D scans",
+      "url": "https://sketchfab.com/ffishAsia-and-floraZia",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=ffishAsia-and-floraZia",
+      "notes": "600+ scans of fish, plants, fruit and flowers. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "noe-3d",
+      "name": "Niederösterreich 3D",
+      "url": "https://sketchfab.com/www.noe-3d.at",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=www.noe-3d.at",
+      "notes": "Scans of Lower Austrian monuments and buildings; the account also has CC BY models. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "galway3d",
+      "name": "Galway3D (Digital Heritage Age)",
+      "url": "https://sketchfab.com/galway3d",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=galway3d",
+      "notes": "Irish monuments and church stones; sister accounts (roscommon3d and others) also have CC0 models. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "mnhn-chile-3d",
+      "name": "Museo Nacional de Historia Natural de Chile 3D",
+      "url": "https://sketchfab.com/MNHNcl",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=MNHNcl",
+      "notes": "Natural-history, fossil and archaeology specimens. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "hunt-museum-3d",
+      "name": "The Hunt Museum 3D",
+      "url": "https://sketchfab.com/TheHuntMuseum",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=TheHuntMuseum",
+      "notes": "Museum objects; the account also has CC BY models. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "cable-center-3d",
+      "name": "The Cable Center 3D",
+      "url": "https://sketchfab.com/thecablecenter",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=thecablecenter",
+      "notes": "Scans of cable-TV hardware and remotes. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "morbase",
+      "name": "Morbase – Museu Virtual",
+      "url": "https://sketchfab.com/carpetudo",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=carpetudo",
+      "notes": "Spanish heritage scans; the account mixes licenses. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "northern-heritage-network",
+      "name": "Northern Heritage Network 3D",
+      "url": "https://sketchfab.com/cineg",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=cineg",
+      "notes": "Heritage and building scans. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "rmo-leiden-3d",
+      "name": "Rijksmuseum van Oudheden 3D",
+      "url": "https://sketchfab.com/rmo_leiden",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=rmo_leiden",
+      "notes": "Antiquities. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "nasa-astromaterials-3d",
+      "name": "NASA Astromaterials 3D",
+      "url": "https://sketchfab.com/Astromaterials3D",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=Astromaterials3D",
+      "notes": "Meteorite and lunar sample scans. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "lwl-archaeologie-3d",
+      "name": "LWL-Archäologie für Westfalen 3D",
+      "url": "https://sketchfab.com/LWL-Archaeologie",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=LWL-Archaeologie",
+      "notes": "Archaeological finds; some models are CC BY. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "savn-3d",
+      "name": "Faroe Islands National Museum (Savn) 3D",
+      "url": "https://sketchfab.com/Savn",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=Savn",
+      "notes": "Museum objects. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "misiones-coloniales-3d",
+      "name": "Misiones coloniales 3D",
+      "url": "https://sketchfab.com/misionescoloniales",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=misionescoloniales",
+      "notes": "Colonial mission churches and architecture. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "rla-archaeology-3d",
+      "name": "UNC Research Labs of Archaeology 3D",
+      "url": "https://sketchfab.com/rla-archaeology",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=rla-archaeology",
+      "notes": "Most of the account's 900+ models use other licenses. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "varldskulturmuseerna-3d",
+      "name": "Världskulturmuseerna 3D",
+      "url": "https://sketchfab.com/varldskulturmuseerna",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=varldskulturmuseerna",
+      "notes": "Objects from the Swedish museums of world culture. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "arms-museum-3d",
+      "name": "Arms Museum 3D",
+      "url": "https://sketchfab.com/ArmsMuseum",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=ArmsMuseum",
+      "notes": "Swords and sabres. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "dundee-museums-3d",
+      "name": "University of Dundee Museum Collections 3D",
+      "url": "https://sketchfab.com/uod_museums",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=uod_museums",
+      "notes": "Zoology skulls and specimens. Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "artsmia-3d",
+      "name": "Minneapolis Institute of Art 3D models",
+      "url": "https://sketchfab.com/artsmia",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=artsmia",
+      "notes": "Sculptures and objects (200+). Use only models labelled CC0 on Sketchfab.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Sketchfab search API with license=cc0 returns this account's models labelled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "scottish-maritime-museum-3d",
+      "name": "Scottish Maritime Museum 3D",
+      "url": "https://sketchfab.com/ScottishMaritimeMuseum",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.goindustrial.co.uk/our-blog/blog-post/scanning-the-horizon",
+      "notes": "Ship scans, a point cloud of MV Spartan and artefacts; some models are CC BY-NC.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "museum blog: 'released a vast majority of our 3D content into the public domain under the CC0 license'"
+      }
+    },
+    {
+      "id": "lsu-point-clouds",
+      "name": "LSU Point Cloud Repository",
+      "url": "https://xyz.cct.lsu.edu/",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://xyz.cct.lsu.edu/",
+      "notes": "LiDAR point clouds (laz/e57/ply) of heritage trees, plantations and plants.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'The point clouds are released under the Creative Commons Zero public domain dedication.'"
+      }
+    },
+    {
+      "id": "padadu-voxel-fantasy",
+      "name": "Voxel Models Fantasy Bundle (padadu)",
+      "url": "https://padadu.itch.io/voxel-models-fantasybundle",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://padadu.itch.io/voxel-models-fantasybundle",
+      "notes": "Voxel (.vox) weapons, dragons and enemies.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'The license is completely free CC0, so use and modify them as you wish!'"
+      }
+    },
+    {
+      "id": "humane-basics",
+      "name": "Humane Basics (oudarya)",
+      "url": "https://oudarya.itch.io/human-basics",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://oudarya.itch.io/human-basics",
+      "notes": "Rigged character with FBX animations (idle, fall, hit, death).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'CC0 (Free for both personal and commercial use.)'"
+      }
+    },
+    {
+      "id": "3dbenchy",
+      "name": "#3DBenchy",
+      "url": "https://www.3dbenchy.com/",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.3dbenchy.com/license/",
+      "notes": "3D-printer calibration model (STL/STEP).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "license page: '#3DBenchy by CreativeTools is licensed under a Creative Commons CC0 1.0 Universal license'"
+      }
+    },
+    {
+      "id": "azdle-printables",
+      "name": "azdle printables",
+      "url": "https://github.com/azdle/printables",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://github.com/azdle/printables",
+      "notes": "Printable CAD designs; some depend on third-party code under other licenses.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'I've dedicated all these works to the public domain using the CC0 dedication'"
+      }
+    },
+    {
+      "id": "tokyo-fuji-art-museum",
+      "name": "Tokyo Fuji Art Museum collection",
+      "url": "https://www.fujibi.or.jp/collection/",
+      "kinds": [
+        "artwork",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.fujibi.or.jp/collection/artwork/01430/",
+      "notes": "About 2,100 artwork images are marked CC0; check each item's license badge.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "item page: 'CC 0 自由に利用可' ... 'パブリックドメインに提供していることを意味します'"
+      }
+    },
+    {
+      "id": "ishikawa-library-rare",
+      "name": "Ishikawa Prefectural Library rare materials",
+      "url": "https://www.library.pref.ishikawa.lg.jp/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.library.pref.ishikawa.lg.jp/shosho/detail/orgn/B602001414",
+      "notes": "Classical books and design pattern books; about 1,700 items are CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "item page: 'クレジット表記：不要 自由に二次利用可能。クリエイティブ・コモンズ・ライセンスのCC0に該当。'"
+      }
+    },
+    {
+      "id": "digital-sagamihara",
+      "name": "Digital Sagamihara",
+      "url": "https://digital-sagamihara.jp/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://digital-sagamihara.jp/terms",
+      "notes": "City record photos, mostly Showa era; about 68,000 items have 権利 CC0. Newsletter data is CC BY-ND.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "item page rights field: '権利 CC0'"
+      }
+    },
+    {
+      "id": "shinshu-dcommons",
+      "name": "Shinshu Digital Commons",
+      "url": "https://www.ro-da.jp/shinshu-dcommons/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.knowledge.pref.nagano.lg.jp/documents/175/dcommons_unyoukitei.pdf",
+      "notes": "Nagano Prefectural Library and Nagano Prefectural Museum of History: classical books and maps whose copyright has expired.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "operating rules art. 9: '著作権の保護期間を満了している場合は、原則として該当コンテンツをCC0（クリエイティブコモンズライセンス０）として公開する。'"
+      }
+    },
+    {
+      "id": "osaka-univ-museum",
+      "name": "Osaka University Museum digital archive",
+      "url": "https://da.museum.osaka-u.ac.jp/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://da.museum.osaka-u.ac.jp/page/howtouse",
+      "notes": "Includes electron microscope photos; content is CC0 or CC BY per item.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "usage page: '利用条件 「CC0コンテンツ」 複製、公衆送信、翻訳・変形等の翻案等、自由に利用できます。商用利用も可能です。'"
+      }
+    },
+    {
+      "id": "miyagi-mingu",
+      "name": "Miyagi Folk Commons: Miyagi folk tools",
+      "url": "https://jmapps.ne.jp/mmc/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://jmapps.ne.jp/mmc/det.html?data_id=689",
+      "notes": "About 1,800 folk tool photos; images are CC0, metadata is CC BY.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "item page: '画像利用条件 CC0 ※可能な限り所蔵を表示して下さい'"
+      }
+    },
+    {
+      "id": "npm-taiwan-open-data",
+      "name": "National Palace Museum (Taiwan) open data",
+      "url": "https://digitalarchive.npm.gov.tw/",
+      "kinds": [
+        "artwork",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://theme.npm.edu.tw/opendata/",
+      "notes": "About 410,000 low-resolution (1 MP) images are CC0; the 6 MP images are CC BY 4.0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "open data page: '開放院藏書畫類、器物類、織品類文物低階圖像（100萬畫素）計約41萬幅，以「公眾領域貢獻宣告」（CC0）規範，不須註明出處。'"
+      }
+    },
+    {
+      "id": "indicsuperb",
+      "name": "IndicSUPERB / Kathbath speech (AI4Bharat)",
+      "url": "https://github.com/AI4Bharat/IndicSUPERB",
+      "kinds": [
+        "audio",
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/AI4Bharat/IndicSUPERB",
+      "notes": "1,684 hours of read speech in 12 Indian languages. Code is MIT.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'AI4Bharat has waived all copyright and related or neighboring rights to the IndicSUPERB dataset.'"
+      }
+    },
+    {
+      "id": "korean-architecture-nature",
+      "name": "Korean Architecture and Nature photos (Hugging Face)",
+      "url": "https://huggingface.co/datasets/koreaman1010/korean-architecture-nature",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://huggingface.co/datasets/koreaman1010/korean-architecture-nature",
+      "notes": "30 DSLR photos of Korean architecture and nature with Korean and English descriptions.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'This dataset is released under the CC0 1.0 Universal (Public Domain Dedication)'"
+      }
     }
   ],
   "excluded": [
@@ -4867,6 +5849,136 @@
       "name": "National Herbarium of NSW",
       "url": "https://registry.opendata.aws/nsw-herbarium/",
       "reason": "Images are CC BY 4.0, not CC0."
+    },
+    {
+      "name": "FreeGameSprites",
+      "url": "https://freegamesprites.com/about",
+      "reason": "Labels sprites CC0, but says the catalog includes many AI-generated images."
+    },
+    {
+      "name": "Durin's Asset Pack (Veih)",
+      "url": "https://veih.itch.io/durins-asset-pack",
+      "reason": "Says CC0 but also 'You may not redistribute it or resell it.'"
+    },
+    {
+      "name": "game-icons.net",
+      "url": "https://game-icons.net/about.html",
+      "reason": "Icons are CC BY 3.0: attribution is required."
+    },
+    {
+      "name": "Plain Pixel font (Burpy Fresh)",
+      "url": "https://burpyfresh.itch.io/plain-pixel",
+      "reason": "CC BY 4.0, not CC0."
+    },
+    {
+      "name": "Galmuri (Hangul pixel font)",
+      "url": "https://github.com/quiple/galmuri",
+      "reason": "SIL Open Font License 1.1, not CC0."
+    },
+    {
+      "name": "Ark Pixel Font",
+      "url": "https://github.com/TakWolf/ark-pixel-font",
+      "reason": "SIL Open Font License 1.1, not CC0."
+    },
+    {
+      "name": "Cavernas (Adam Saltsman)",
+      "url": "https://adamatomic.itch.io/cavernas",
+      "reason": "Says public domain but names no CC0 dedication."
+    },
+    {
+      "name": "Tiny Swords (Pixel Frog)",
+      "url": "https://pixelfrog-assets.itch.io/tiny-swords",
+      "reason": "Only an old-version zip is CC0; the current pack is not."
+    },
+    {
+      "name": "OSU ACCAD Open Motion Project",
+      "url": "https://accad.osu.edu/research/motion-lab/system-data",
+      "reason": "Motion capture data is CC BY 3.0, not CC0."
+    },
+    {
+      "name": "Bandai Namco Research Motion dataset",
+      "url": "https://github.com/BandaiNamcoResearchInc/Bandai-Namco-Research-Motiondataset",
+      "reason": "CC BY-NC 4.0: non-commercial only."
+    },
+    {
+      "name": "100STYLE motion capture",
+      "url": "https://ianxmason.github.io/100style/",
+      "reason": "CC BY 4.0, not CC0."
+    },
+    {
+      "name": "African Fossils",
+      "url": "https://africanfossils.org/",
+      "reason": "CC BY-NC-SA, not CC0."
+    },
+    {
+      "name": "Avoyd voxel models (enkisoftware)",
+      "url": "https://github.com/enkisoftware/voxel-models",
+      "reason": "Assets are CC BY 4.0; only template files are CC0."
+    },
+    {
+      "name": "e뮤지엄 (Korean national museums)",
+      "url": "https://www.emuseum.go.kr/copyright",
+      "reason": "Uses KOGL (공공누리) terms, not CC0."
+    },
+    {
+      "name": "서울역사아카이브",
+      "url": "https://museum.seoul.go.kr/archive/archiveGuide/arcvGuide.jsp",
+      "reason": "KOGL Type 1 (attribution required), not CC0."
+    },
+    {
+      "name": "Korea.net Flickr",
+      "url": "https://www.flickr.com/photos/koreanet/",
+      "reason": "Photos are CC BY-SA 4.0."
+    },
+    {
+      "name": "Neo둥근모 font",
+      "url": "https://github.com/neodgm/neodgm",
+      "reason": "SIL Open Font License 1.1, not CC0."
+    },
+    {
+      "name": "Silver font (Poppy Works)",
+      "url": "https://poppyworks.itch.io/silver",
+      "reason": "CC BY 4.0, not CC0."
+    },
+    {
+      "name": "M+ (Hong Kong) collection data",
+      "url": "https://github.com/mplusmuseum/collection-data",
+      "reason": "CC0 covers metadata only; no images."
+    },
+    {
+      "name": "PAKUTASO",
+      "url": "https://www.pakutaso.com/userpolicy.html",
+      "reason": "Own terms; the site says its photos are not CC0."
+    },
+    {
+      "name": "Hiroshima Shudo University digital archive",
+      "url": "https://da.shudo-u.ac.jp/ja/page/reuse",
+      "reason": "Images carry the Public Domain Mark; only metadata is CC0."
+    },
+    {
+      "name": "Yaizu City OpenPhoto",
+      "url": "https://www.city.yaizu.lg.jp/life/digital-cityoffice/open-data.html",
+      "reason": "CC BY 4.0, not CC0."
+    },
+    {
+      "name": "Te Papa",
+      "url": "https://www.tepapa.govt.nz/about/collections/all-te-papa-websites/copyright-and-terms-use",
+      "reason": "Images are no known restrictions or CC BY-NC-ND, not CC0."
+    },
+    {
+      "name": "Australian War Memorial",
+      "url": "https://www.awm.gov.au/about/organisation/corporate/copyright",
+      "reason": "'No known copyright restrictions' is not a CC0 dedication."
+    },
+    {
+      "name": "CSIRO ScienceImage",
+      "url": "https://www.csiro.au/en/about/policies/legal/copyright",
+      "reason": "CC BY, not CC0."
+    },
+    {
+      "name": "State Library of NSW",
+      "url": "https://www.sl.nsw.gov.au/copyright",
+      "reason": "Library content is CC BY 4.0."
     }
   ],
   "pending": [
@@ -5284,6 +6396,46 @@
       "name": "NHM London data portal",
       "url": "https://data.nhm.ac.uk/",
       "reason": "Returned HTTP 403; images are likely CC BY."
+    },
+    {
+      "name": "Vonwaon Bitmap font",
+      "url": "https://timothyqiu.itch.io/vonwaon-bitmap",
+      "reason": "Marked CC0, but a comment says the glyphs derive from a commercial Windows bitmap font."
+    },
+    {
+      "name": "Crumpaloo packs",
+      "url": "https://crumpaloo.itch.io/",
+      "reason": "Links CC0, but an earlier page also said the assets may not be sold."
+    },
+    {
+      "name": "Kitbitz",
+      "url": "https://kitbitz.com/",
+      "reason": "Reported as CC0 assets; the license text is only in the JavaScript-rendered page."
+    },
+    {
+      "name": "Kiri Engine Fruit and Veg scans",
+      "url": "https://www.kiriengine.app/",
+      "reason": "Reported CC0 by CG Channel; not confirmed on Kiri's own page, and downloads need an account."
+    },
+    {
+      "name": "Scan the World (MyMiniFactory)",
+      "url": "https://www.myminifactory.com/scantheworld/",
+      "reason": "The site returned HTTP 403."
+    },
+    {
+      "name": "Kanazawa Museum Plus",
+      "url": "https://kanazawa-mplus.jp/",
+      "reason": "Japan Search lists about 1,900 CC0 items; the site renders only with JavaScript."
+    },
+    {
+      "name": "Sekigahara history archive",
+      "url": "https://sekigahara-archive.geoa.tech/",
+      "reason": "Japan Search lists 805 CC0 items; the site renders only with JavaScript."
+    },
+    {
+      "name": "Hokkaido Digital Museum (Tomakomai)",
+      "url": "https://hokkaido-digital-museum.jp/",
+      "reason": "Japan Search lists 280 CC0 items; the site renders only with JavaScript."
     }
   ]
 }
