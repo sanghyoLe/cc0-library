@@ -3702,6 +3702,974 @@
         "date": "2026-11-23",
         "evidence": "copyright page: 'the Smithsonian Institution has adopted the use of a CC0 marker for public domain material.'"
       }
+    },
+    {
+      "id": "pbrpx",
+      "name": "PBRPX",
+      "url": "https://pbrpx.com/",
+      "kinds": [
+        "model",
+        "texture",
+        "hdri"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://pbrpx.com/",
+      "notes": "Small CC0 library of PBR materials, HDRIs and models. No separate license page.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "home page: 'CC0 Asset Library' ... 'You can use these assets for any purpose without worrying about copyright issues.'"
+      }
+    },
+    {
+      "id": "cgees",
+      "name": "CGEES HDRIs",
+      "url": "https://cgees.com/",
+      "kinds": [
+        "hdri"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://cgees.com/",
+      "notes": "HDRIs up to 24K by Elvis Posa, successor to iHDRI.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "FAQ: '100% free under the Creative Commons Zero (CC0) license'"
+      }
+    },
+    {
+      "id": "jean-charpentier-lowpoly",
+      "name": "CC0 LowPoly Pack (Jean Charpentier)",
+      "url": "https://jeancharpentier.itch.io/cc0-lowpoly-pack",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://jeancharpentier.itch.io/cc0-lowpoly-pack",
+      "notes": "Low-poly FBX props with one retro palette material.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'CC0 LICENCE You can use all of this assets for personnal, educational or commercial purposes'"
+      }
+    },
+    {
+      "id": "revoy-krita-brushes-2025",
+      "name": "David Revoy Krita brushes 2025-01",
+      "url": "https://davidrevoy.com/article1060/krita-brushes-2025-01-bundle",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://davidrevoy.com/article1060/krita-brushes-2025-01-bundle",
+      "notes": "Krita brush bundle. The brushes are CC0; the article text itself is CC BY.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'These brushes are licensed under CC-0 Public domain'"
+      }
+    },
+    {
+      "id": "revoy-chaos-evolutions",
+      "name": "David Revoy Chaos&Evolutions brush kit",
+      "url": "https://davidrevoy.com/article29/free-brush-kit-for-chaos-and-evolutions",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://davidrevoy.com/article29/free-brush-kit-for-chaos-and-evolutions",
+      "notes": "Older GIMP 2.6 and MyPaint brush kit.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Chaos&Evolutions brushkit fell in public domain or CC-0'"
+      }
+    },
+    {
+      "id": "raghukamath-krita-brushes",
+      "name": "Raghukamath Brush Pack for Krita v2.0",
+      "url": "https://raghukamath.com/brush-pack-for-krita-v20/",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://raghukamath.com/brush-pack-for-krita-v20/",
+      "notes": "Texture-based Krita brushes. The same author's seamless textures are CC BY-SA, not CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'I am sharing these with CC0 licence, that means you can do whatever you want with them.'"
+      }
+    },
+    {
+      "id": "gimp-brushbox",
+      "name": "The Gimp BrushBox v2.1 (GrindGod)",
+      "url": "https://www.deviantart.com/grindgod/art/The-Gimp-BrushBox-v2-1-382881674",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.deviantart.com/grindgod/art/The-Gimp-BrushBox-v2-1-382881674",
+      "notes": "Large GIMP brush set.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'The content is free to use commercial and non-commercial (CC-0).'"
+      }
+    },
+    {
+      "id": "mocu-xcursor",
+      "name": "mocu-xcursor",
+      "url": "https://github.com/sevmeyer/mocu-xcursor",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/sevmeyer/mocu-xcursor",
+      "notes": "X11 cursor theme in black/white and left/right-handed variants, sizes 24-96.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'Distributed under the [CC0].'"
+      }
+    },
+    {
+      "id": "egonelbre-gophers",
+      "name": "Free gophers (egonelbre)",
+      "url": "https://github.com/egonelbre/gophers",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/egonelbre/gophers",
+      "notes": "Large set of Go gopher illustrations (SVG and PNG).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'The images and art-work in this repository are under CC0 license.'"
+      }
+    },
+    {
+      "id": "decay-textures",
+      "name": "Decay Textures (darriagada)",
+      "url": "https://github.com/darriagada/Decay-Textures",
+      "kinds": [
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/darriagada/Decay-Textures/blob/master/LICENSE",
+      "notes": "Raster and vector grunge textures.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "LICENSE file: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "rheagrass",
+      "name": "RheaGrass (Unity URP grass shader)",
+      "url": "https://github.com/Ryan-Gee/RheaGrass",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/Ryan-Gee/RheaGrass",
+      "notes": "Geometry-shader grass for Unity URP.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'Use of this asset is under the CC0 Creative Commons License'"
+      }
+    },
+    {
+      "id": "corgifx",
+      "name": "CorgiFX (ReShade shaders)",
+      "url": "https://github.com/originalnicodr/CorgiFX",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/originalnicodr/CorgiFX/blob/master/LICENSE",
+      "notes": "ReShade shaders for virtual photography.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "LICENSE file: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "godot-color-dither",
+      "name": "Godot Color Dither",
+      "url": "https://github.com/Donitzo/godot-color-dither",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://github.com/Donitzo/godot-color-dither",
+      "notes": "Dither shader and palettes. dither_palette_generator.gd is MIT; all other files are CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'All other files in the project are licensed under CC0.'"
+      }
+    },
+    {
+      "id": "brackeys-vfx-bundle",
+      "name": "Brackeys VFX Bundle",
+      "url": "https://brackeysgames.itch.io/brackeys-vfx-bundle",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://brackeysgames.itch.io/brackeys-vfx-bundle",
+      "notes": "Particle textures, flipbooks and sprite sheets.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'These assets are released under a Creative Commons Zero (CC0) license.'"
+      }
+    },
+    {
+      "id": "unity-vfx-flipbooks",
+      "name": "Unity Labs VFX image sequences",
+      "url": "https://unity.com/blog/engine-platform/free-vfx-image-sequences-flipbooks",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://unity.com/blog/engine-platform/free-vfx-image-sequences-flipbooks",
+      "notes": "Houdini-made smoke, fire and explosion sequences (EXR/TGA) from 2016.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "blog: 'Here are some image sequences we want to share with you under CC0 license.'"
+      }
+    },
+    {
+      "id": "pvfx-foundry",
+      "name": "PVFX Foundry",
+      "url": "https://nerijs.itch.io/pvfx-foundry",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://nerijs.itch.io/pvfx-foundry",
+      "notes": "253 pixel-art effect sprite sheets. The page discloses AI assistance for code and text only.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'PVFX Foundry is a free CC0 library of 253 game effects'"
+      }
+    },
+    {
+      "id": "ui-prototype-base",
+      "name": "UI Prototype Base (VerzatileDev)",
+      "url": "https://verzatiledev.itch.io/ui-prototype-base",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://verzatiledev.itch.io/ui-prototype-base",
+      "notes": "43 UI buttons and 12 UI elements.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Asset License: CC0 - Public domain, use the asset as you need crediting is not required'"
+      }
+    },
+    {
+      "id": "pomme-plate",
+      "name": "Pomme Plate device mockups",
+      "url": "https://github.com/ephread/PommePlate",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://github.com/ephread/PommePlate",
+      "notes": "Flat Apple device mockups. The logo is CC BY-NC 4.0, not CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'Pomme Plate mockups (SVG, PNG and sketch project files) are licensed under a CC0 1.0 Universal License.'"
+      }
+    },
+    {
+      "id": "vsco2-community",
+      "name": "VSCO-2 Community Edition",
+      "url": "https://versilian-studios.com/vsco-community/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://versilian-studios.com/vsco-community/",
+      "notes": "About 3 GB of orchestral samples.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'The library is under a Creative Commons 0 (i.e. public domain) license.'"
+      }
+    },
+    {
+      "id": "virtuosity-drums",
+      "name": "Virtuosity Drums",
+      "url": "https://versilian-studios.com/virtuosity-drums/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://versilian-studios.com/virtuosity-drums/",
+      "notes": "Multisampled jazz drum kit.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Virtuosity Drums is an open source (Creative Commons 0) contemporary Jazz drum kit library'"
+      }
+    },
+    {
+      "id": "john-oestmann",
+      "name": "John Oestmann music",
+      "url": "https://johnoestmannmusic.com/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://johnoestmannmusic.com/",
+      "notes": "Electronic/IDM tracks with WAV files and project sources.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "release entries: 'License: CC0 / Public Domain'"
+      }
+    },
+    {
+      "id": "songs-for-humanity",
+      "name": "Songs For Humanity (Aleksi Tuomela)",
+      "url": "https://soundcloud.com/projectsfh",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://soundcloud.com/projectsfh",
+      "notes": "Original compositions, 2019-2023.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "profile: 'All music here is public domain! (CC0)'"
+      }
+    },
+    {
+      "id": "komiku",
+      "name": "Komiku (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/Komiku/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/Komiku/Its_time_for_adventure_",
+      "notes": "Game-style albums; check each album's license line. A few tracks have had YouTube Content ID claims.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "album page: 'The songs in this album are licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "monplaisir",
+      "name": "Monplaisir (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/Monplaisir/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/Monplaisir/Loops_1260",
+      "notes": "About 10 albums; check each album's license line.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "album page: 'The songs in this album are licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "skyetunes",
+      "name": "SKYETUNES (Skye Ash)",
+      "url": "https://skyeash.itch.io/skyetunes",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://skyeash.itch.io/skyetunes",
+      "notes": "Almost 7 hours of game music.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'This is being released under a Creative Commons 0 license'"
+      }
+    },
+    {
+      "id": "hydrogene-16bit",
+      "name": "HydroGene 16-bit RPG Music",
+      "url": "https://hydrogene.itch.io/high-quality-16-bit-music",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://hydrogene.itch.io/high-quality-16-bit-music",
+      "notes": "Seamless loops in mp3, ogg and wav.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Note that these music are under CC0'"
+      }
+    },
+    {
+      "id": "kronbits-sfx",
+      "name": "Kronbits 200 Free SFX",
+      "url": "https://kronbits.itch.io/freesfx",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://kronbits.itch.io/freesfx",
+      "notes": "200 retro sound effects.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "jhawk-music",
+      "name": "JHawk Studios Free Music Store",
+      "url": "https://jhawk-studios.itch.io/free-music-store",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://jhawk-studios.itch.io/free-music-store",
+      "notes": "Atmospheric and metroidvania music.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'This work is marked CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "tom-feldmann",
+      "name": "Tom Feldmann free music packs",
+      "url": "https://tomfeldmann.itch.io/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://tomfeldmann.itch.io/old-cartoon-music-pack",
+      "notes": "Only the free packs are CC0; paid packs are not.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "Old Cartoon pack: 'License: CC0, full commercial use, no credit required'"
+      }
+    },
+    {
+      "id": "ragnar-random-chiptune",
+      "name": "Ragnar Random Fakebit/Chiptune Music",
+      "url": "https://ragnarrandom.itch.io/retro-game-music",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://ragnarrandom.itch.io/retro-game-music",
+      "notes": "Chiptune songs.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'All of these songs are CC0 License'"
+      }
+    },
+    {
+      "id": "rosko-piano",
+      "name": "Cinematic Piano BGM (rosko vair)",
+      "url": "https://roskovair.itch.io/cinematic-piano-bgm",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://roskovair.itch.io/cinematic-piano-bgm",
+      "notes": "15 piano tracks.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Released under CC0 license as part of Society of Play's Asset Pack Jam'"
+      }
+    },
+    {
+      "id": "hyperpixel-chiptune",
+      "name": "33 Free Chiptune Loops (hyperpixel)",
+      "url": "https://hyperpixel.itch.io/33-free-chiptune-loops",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://hyperpixel.itch.io/33-free-chiptune-loops",
+      "notes": "33 ambient chiptune loops.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'These 33 Free Chiptune Loops by hyperpixel are marked CC0 1.0'"
+      }
+    },
+    {
+      "id": "jonathan-so-creatorpack",
+      "name": "The Game Creator's Pack (Jonathan So)",
+      "url": "https://jonathan-so.itch.io/creatorpack",
+      "kinds": [
+        "audio",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://jonathan-so.itch.io/creatorpack",
+      "notes": "Retro music and graphics.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'This Creative-Commons-Zero [CC-0] asset package contains authentic retro-style graphic assets and music'"
+      }
+    },
+    {
+      "id": "ichbinsoftware",
+      "name": "ichbinsoftware songs and stems",
+      "url": "https://ichbinsoftware.itch.io/hydrogen",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://ichbinsoftware.itch.io/hydrogen",
+      "notes": "Full songs with stems (Hydrogen, Lithium and others).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'All audio stems, artwork, lyrics, and information in this repository are released under Creative Commons Zero v1.0 Universal (CC0 1.0)'"
+      }
+    },
+    {
+      "id": "dancramp-8bit",
+      "name": "8 Bit Retro RPG Music (dancramp)",
+      "url": "https://dancramp.itch.io/8-bit-retro-rpg-music-asset-pack",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://dancramp.itch.io/8-bit-retro-rpg-music-asset-pack",
+      "notes": "WAV loops.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'All tracks on a CC0 licence'"
+      }
+    },
+    {
+      "id": "blue-lava-autumn",
+      "name": "Melodic Autumn (Blue Lava)",
+      "url": "https://blue-lava.itch.io/melodic-autumn-free-music-pack",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://blue-lava.itch.io/melodic-autumn-free-music-pack",
+      "notes": "8 hybrid-orchestral pieces.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Release music files to Public Domain (Creative Commons CC0)'"
+      }
+    },
+    {
+      "id": "obsydianx-interface-sfx",
+      "name": "Interface SFX Pack 1 (ObsydianX)",
+      "url": "https://obsydianx.itch.io/interface-sfx-pack-1",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://obsydianx.itch.io/interface-sfx-pack-1",
+      "notes": "UI sounds in WAV and OGG.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'These are CC0 licensed and are free'"
+      }
+    },
+    {
+      "id": "r-sfx",
+      "name": "R-SFX (Tiny Archive)",
+      "url": "https://rmocci.itch.io/r-sfx",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://rmocci.itch.io/r-sfx",
+      "notes": "Random sound effects and loops.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'R-SFX is a collection of random sounds FX (and loops) released with a CC0 license.'"
+      }
+    },
+    {
+      "id": "polar34-sfx",
+      "name": "Polar_34 sound effects",
+      "url": "https://polar-34.itch.io/sound-effects",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://polar-34.itch.io/sound-effects",
+      "notes": "Magic, UI, futuristic, ambient and material sound packs.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "kurz-retro-sfx",
+      "name": "100 Free Retro Sound Effects (Kurz)",
+      "url": "https://kurz.itch.io/100-free-retro-sound-effects",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://kurz.itch.io/100-free-retro-sound-effects",
+      "notes": "100 retro sound effects.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "uisfx",
+      "name": "UI SFX (uisfx)",
+      "url": "https://github.com/romainsimon/uisfx",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://github.com/romainsimon/uisfx",
+      "notes": "Procedurally generated UI sounds. Audio is CC0; the code is MIT.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "README: 'MIT code, CC0 audio, and CC0 sound-pack art'"
+      }
+    },
+    {
+      "id": "super-16bit-sounds",
+      "name": "Super 16-Bit Sounds (Dylan Taylor)",
+      "url": "https://dylanntaylor.itch.io/super-16bit-sounds",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://dylanntaylor.com/license",
+      "notes": "Only this product is CC0; the rest of the catalogue uses the author's Standard License.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "license page: 'Super 16-Bit Sounds is separately dedicated under CC0 1.0 and is not restricted by this license.'"
+      }
+    },
+    {
+      "id": "mantissa-vj-loops",
+      "name": "Mantissa free VJ loops",
+      "url": "https://mantissa.xyz/vj.html",
+      "kinds": [
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://mantissa.xyz/vj.html",
+      "notes": "Motion-graphics loops with Blender source files.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Free VJ loops for all your projects, licensed CC0 (Public Domain)'"
+      }
+    },
+    {
+      "id": "wenrexa-footage",
+      "name": "Wenrexa free footage and SFX",
+      "url": "https://wenrexa.itch.io/",
+      "kinds": [
+        "video",
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://wenrexa.itch.io/universe",
+      "notes": "Free items (Universe 4k, Explosion Energy 2k, FX sound pack) are CC0; paid items are not.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "wikipathways",
+      "name": "WikiPathways",
+      "url": "https://www.wikipathways.org/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.wikipathways.org/terms.html",
+      "notes": "Biological pathway diagrams as PNG and SVG.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "terms: 'WikiPathways has adopted the Creative Commons CC0 waiver.'"
+      }
+    },
+    {
+      "id": "emdb",
+      "name": "EMDB (Electron Microscopy Data Bank)",
+      "url": "https://www.ebi.ac.uk/emdb/",
+      "kinds": [
+        "model",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.ebi.ac.uk/pdbe/about/public-data-access-statement",
+      "notes": "3D electron microscopy maps and images at EMBL-EBI.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "statement: '(PDBe, EMDB and EMPIAR) are committed to place all primary and derived data in the public domain' in accordance with CC0"
+      }
+    },
+    {
+      "id": "cellpainting-gallery",
+      "name": "Cell Painting Gallery (Broad Institute)",
+      "url": "https://registry.opendata.aws/cellpainting-gallery/",
+      "kinds": [
+        "image",
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://registry.opendata.aws/cellpainting-gallery/",
+      "notes": "Very large fluorescence microscopy image sets on AWS. Citation requested, not required.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "registry: 'License CC0 1.0 Universal (CC0 1.0) Public Domain Dedication'"
+      }
+    },
+    {
+      "id": "isic-archive",
+      "name": "ISIC Archive (dermoscopy images)",
+      "url": "https://www.isic-archive.com/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://registry.opendata.aws/isic-archive/",
+      "notes": "License is per image; the 2016-2018 challenge sets are CC-0, later sets CC BY-NC.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "registry: 'Creative Commons licenses (CC-0, CC-BY, or CC-BY-NC) are defined per-image.'"
+      }
+    },
+    {
+      "id": "cfa-harvard",
+      "name": "Center for Astrophysics | Harvard & Smithsonian images",
+      "url": "https://www.cfa.harvard.edu/",
+      "kinds": [
+        "image",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://cfa.harvard.edu/news/image-use-policy",
+      "notes": "Astronomy images and video; follows Smithsonian Open Access.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "image use policy: 'follows the Smithsonian Institution's Open Access (CC0) policy'"
+      }
+    },
+    {
+      "id": "deography",
+      "name": "Deography (Dylan O'Donnell astrophotography)",
+      "url": "https://deography.com/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://deography.com/yes-its-free/",
+      "notes": "Individual astrophotographer; most, not all, photos are CC0.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Most of my photography here is Public Domain. https://creativecommons.org/publicdomain/zero/1.0/'"
+      }
+    },
+    {
+      "id": "insects-unlocked",
+      "name": "Insects Unlocked (UT Austin) on Flickr",
+      "url": "https://www.flickr.com/photos/131104726@N02/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.flickr.com/photos/131104726@N02/23224315185/",
+      "notes": "Insect macro photos. Most are CC0; some are Public Domain Mark or all rights reserved, so check each photo.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "photo page license link: 'CC0 (Public Domain Dedication)'"
+      }
+    },
+    {
+      "id": "scot-nelson-plant-pathology",
+      "name": "Scot Nelson plant pathology photos (Flickr)",
+      "url": "https://www.flickr.com/photos/scotnelson/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.flickr.com/photos/scotnelson/49784095553/",
+      "notes": "Plant disease and pest photos; check each photo's license.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "photo page license link: 'CC0 (Public Domain Dedication)'"
+      }
+    },
+    {
+      "id": "mushroom-observer",
+      "name": "Mushroom Observer",
+      "url": "https://mushroomobserver.org/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://mushroomobserver.org/info/how_to_use",
+      "notes": "Fungi photos. Default license is CC BY-SA; only images set to CC0 qualify.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "license options: 'CC0 – No Copyright/Public Domain'"
+      }
+    },
+    {
+      "id": "arctic-data-center",
+      "name": "Arctic Data Center",
+      "url": "https://arcticdata.io/",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://arcticdata.io/submit/",
+      "notes": "Polar datasets, some with imagery; each dataset is CC0 or CC BY.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "submit page: 'released under either the CC-0 Public Domain Dedication or the Creative Commons Attribution 4.0'"
+      }
+    },
+    {
+      "id": "edi-repository",
+      "name": "EDI Data Repository",
+      "url": "https://edirepository.org/",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://edirepository.org/resources/licensing-data",
+      "notes": "Ecological datasets, mostly tabular; check each package's license.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "licensing page: 'you are encouraged to select the CC0 waiver.'"
+      }
+    },
+    {
+      "id": "crystalls",
+      "name": "Crystalls.info",
+      "url": "https://ru.crystalls.info/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://ru.crystalls.info/Crystal:Лицензия",
+      "notes": "Russian crystal-growing wiki with crystal photos.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "license page: 'Все страницы сайта размещаются под лицензией PublicDomain' linking the CC0 1.0 deed"
+      }
+    },
+    {
+      "id": "aen-parana",
+      "name": "Agência Estadual de Notícias do Paraná",
+      "url": "https://www.aen.pr.gov.br/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.parana.pr.gov.br/aen/Galerias",
+      "notes": "Brazilian state government news photo galleries.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "gallery page: 'Todas as imagens desta página estão em domínio público, licenciadas sob Creative Commons CC0'"
+      }
+    },
+    {
+      "id": "moda-taiwan",
+      "name": "Ministry of Digital Affairs, Taiwan",
+      "url": "https://moda.gov.tw/",
+      "kinds": [
+        "image",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://moda.gov.tw/announcement/publicdeclare/951",
+      "notes": "Site photos, video and text.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "declaration: '刊載之所有資料與素材，其得受著作權保護之範圍，採「公眾領域貢獻宣告」（CC0 1.0）'"
+      }
+    },
+    {
+      "id": "tweede-kamer-opendata",
+      "name": "Tweede Kamer open data",
+      "url": "https://opendata.tweedekamer.nl/",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://opendata.tweedekamer.nl/disclaimer",
+      "notes": "Dutch House of Representatives documents and data via API, unless stated otherwise.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "disclaimer: 'Creative Commons Universeel (CC0 1.0) Publiek Domeinverklaring'"
+      }
+    },
+    {
+      "id": "landauf-landapp-bw",
+      "name": "Landauf, LandApp BW",
+      "url": "https://www.spotteron.com/landappbw",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.spotteron.com/assets/map/config/landappbw/partials/info/desktop/de-DE.html",
+      "notes": "Citizen photos of monuments and landscapes in Baden-Württemberg (Landesarchiv BW project).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "app info: 'mit dem Upload als Creative Commons Zero (CC0) lizenziert'"
+      }
     }
   ],
   "excluded": [
@@ -3824,6 +4792,81 @@
       "name": "Rijkswaterstaat images",
       "url": "https://www.rijkswaterstaat.nl/copyright",
       "reason": "Site text is CC0, but the copyright page says 'De CC0-verklaring geldt niet voor beeld.'"
+    },
+    {
+      "name": "CGHEVEN",
+      "url": "https://cgheven.com/licensing",
+      "reason": "Titled 'CC0 & Pro Royalty-Free License', but its own rules forbid redistribution and AI training."
+    },
+    {
+      "name": "Figma Community files",
+      "url": "https://help.figma.com/hc/en-us/articles/360042296374",
+      "reason": "Default license is CC BY 4.0: 'This isn't a public domain license.'"
+    },
+    {
+      "name": "Hero Patterns",
+      "url": "https://heropatterns.com/",
+      "reason": "CC BY 4.0: attribution is required."
+    },
+    {
+      "name": "3Dassets.one",
+      "url": "https://3dassets.one/about-site",
+      "reason": "Aggregator with mixed licenses; only its 'Public Domain Only' filter points to CC0 sites."
+    },
+    {
+      "name": "LJ Speech Dataset",
+      "url": "https://keithito.com/LJ-Speech-Dataset/",
+      "reason": "Public-domain claim, not a CC0 dedication."
+    },
+    {
+      "name": "Mutopia Project",
+      "url": "https://www.mutopiaproject.org/legal.html",
+      "reason": "Own public-domain option plus CC BY and CC BY-SA; no CC0."
+    },
+    {
+      "name": "Voxengo impulse responses",
+      "url": "https://www.voxengo.com/impulses/",
+      "reason": "Custom royalty-free license that also bans resale."
+    },
+    {
+      "name": "BeachFront B-Roll",
+      "url": "https://beachfrontbroll.com/",
+      "reason": "Clips are CC BY 3.0: attribution is required."
+    },
+    {
+      "name": "Field Museum images",
+      "url": "https://www.fieldmuseum.org/image-licensing",
+      "reason": "Collections data is CC0; multimedia is CC BY-NC."
+    },
+    {
+      "name": "Riksarkivet digitized images",
+      "url": "https://sok.riksarkivet.se/en/data-api/api/anvandarvillkor-api",
+      "reason": "CC0 covers inventories and metadata; digitized images carry the Public Domain Mark."
+    },
+    {
+      "name": "PANGAEA",
+      "url": "https://www.pangaea.de/about/terms.php",
+      "reason": "'CC0 for metadata and CC-BY for data'."
+    },
+    {
+      "name": "NEON data",
+      "url": "https://data.neonscience.org/data-api/data-use-policy/",
+      "reason": "Was CC0; now CC BY 4.0."
+    },
+    {
+      "name": "Rijksoverheid (Dutch government sites)",
+      "url": "https://www.rijksoverheid.nl/copyright",
+      "reason": "CC0 covers site text; the same page says photos and video may almost never be reused."
+    },
+    {
+      "name": "Netherlands Ministry of Defence",
+      "url": "https://english.defensie.nl/copyright",
+      "reason": "Now CC BY-SA 4.0, though Commons still tags it CC0."
+    },
+    {
+      "name": "National Herbarium of NSW",
+      "url": "https://registry.opendata.aws/nsw-herbarium/",
+      "reason": "Images are CC BY 4.0, not CC0."
     }
   ],
   "pending": [
@@ -4211,6 +5254,36 @@
       "name": "Erfgoed Leiden Beeldbank",
       "url": "https://www.erfgoedleiden.nl/",
       "reason": "CC0 appears only on the national data portal record; it may cover metadata only."
+    },
+    {
+      "name": "Mozilla Data Collective CC0 speech datasets",
+      "url": "https://mozilladatacollective.com/",
+      "reason": "Kathleen 1.0 says CC-0, but the same page adds a condition (do not identify the speaker); needs review."
+    },
+    {
+      "name": "godotshaders.com",
+      "url": "https://godotshaders.com/",
+      "reason": "Per-shader CC0 option reported; the site was not reachable from the checking network."
+    },
+    {
+      "name": "KVR Canyon Soundings impulse responses",
+      "url": "https://www.kvraudio.com/product/canyon-soundings-by-cthonophonic",
+      "reason": "Reported CC0; the page returned HTTP 403."
+    },
+    {
+      "name": "SciDraw",
+      "url": "https://scidraw.io/",
+      "reason": "Drawings are CC0 or CC BY; the license text is only in the JavaScript-rendered page."
+    },
+    {
+      "name": "Yale Peabody Museum",
+      "url": "https://peabody.yale.edu/",
+      "reason": "Reported CC0 for data and images; the policy page now returns 404."
+    },
+    {
+      "name": "NHM London data portal",
+      "url": "https://data.nhm.ac.uk/",
+      "reason": "Returned HTTP 403; images are likely CC BY."
     }
   ]
 }

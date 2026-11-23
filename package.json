@@ -1,6 +1,6 @@
 {
   "name": "cc0-library-mcp",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "mcpName": "io.github.sanghyoLe/cc0-library",
   "description": "MCP server and web gallery for CC0-only assets (images, audio, video, HDRIs, textures, 3D models, museum art) from 8 sources, with license evidence per result.",
   "license": "MIT",
