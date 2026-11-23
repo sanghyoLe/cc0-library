@@ -1588,6 +1588,87 @@
         "date": "2026-11-20",
         "evidence": "search qualifier license:cc0-1.0; repository API reports license.spdx_id 'CC0-1.0'"
       }
+    },
+    {
+      "id": "dicebear-cc0",
+      "name": "DiceBear avatar styles (CC0 styles)",
+      "url": "https://www.dicebear.com/styles/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.dicebear.com/licenses/",
+      "notes": "Procedural avatar styles; each style has its own license. Use only the styles listed under CC0 1.0 on the licenses page.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "licenses page: 'CC0 1.0 42 styles These styles use the CC0 1.0 Public Domain Dedication'"
+      }
+    },
+    {
+      "id": "open-source-avatars",
+      "name": "Open Source Avatars (ToxSam)",
+      "url": "https://www.opensourceavatars.com/",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.opensourceavatars.com/",
+      "notes": "300+ VRM avatars for games, VR and VTubing.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "site footer: 'All avatars CC0.'; meta description: 'CC0 licensed open-source avatars for any project. No attribution required.'"
+      }
+    },
+    {
+      "id": "freestocktextures",
+      "name": "Free Stock Textures",
+      "url": "https://freestocktextures.com/",
+      "kinds": [
+        "texture",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freestocktextures.com/license/",
+      "notes": "Photographic textures (wood, stone, metal, paper).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "license page: 'All photos published on FreeStockTextures are licensed under Creative Commons Zero'"
+      }
+    },
+    {
+      "id": "pico8-font-palette",
+      "name": "PICO-8 font and palette",
+      "url": "https://www.lexaloffle.com/pico-8.php",
+      "kinds": [
+        "font"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.lexaloffle.com/pico-8.php?page=faq",
+      "notes": "Only the PICO-8 font and 16-colour palette are CC0; the PICO-8 program and its other content are not.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "FAQ: 'The palette and font are both available under a CC-0 license. -- zep'"
+      }
+    },
+    {
+      "id": "public-domain-archive",
+      "name": "Public Domain Archive",
+      "url": "https://publicdomainarchive.com/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://publicdomainarchive.com/",
+      "notes": "Vintage and modern stock photos added weekly.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "home page meta description: 'Images released under CC0 1.0 Universal Public Domain Dedication.'"
+      }
     }
   ],
   "excluded": [
@@ -1847,6 +1928,26 @@
       "name": "Mozilla Common Voice",
       "url": "https://commonvoice.mozilla.org/en/datasets",
       "reason": "Speech dataset widely described as CC0, but the datasets page renders with JavaScript and no license statement was readable; the cv-dataset repository is MPL-2.0 (code)."
+    },
+    {
+      "name": "Startup Stock Photos",
+      "url": "https://startupstockphotos.com/",
+      "reason": "Only the page metadata says '(CC0)'; no license page or visible CC0 statement was found."
+    },
+    {
+      "name": "Open Goldberg Variations (Kimiko Ishizaka)",
+      "url": "https://www.opengoldbergvariations.org/",
+      "reason": "The site calls the recording and score 'public domain' but shows no CC0 dedication."
+    },
+    {
+      "name": "100Avatars (Polygonal Mind)",
+      "url": "https://github.com/PolygonalMind/100Avatars",
+      "reason": "Repository has no detected license and the README states no CC0; some avatars appear in Open Source Avatars, which is listed."
+    },
+    {
+      "name": "Khronos glTF Sample Assets",
+      "url": "https://github.com/KhronosGroup/glTF-Sample-Assets",
+      "reason": "Each model carries its own license (CC0, CC BY and others); no per-model CC0 filter has been checked."
     }
   ]
 }
