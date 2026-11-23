@@ -1669,6 +1669,54 @@
         "date": "2026-11-23",
         "evidence": "home page meta description: 'Images released under CC0 1.0 Universal Public Domain Dedication.'"
       }
+    },
+    {
+      "id": "pixel-operator",
+      "name": "Pixel Operator font (Jayvee Enaguas)",
+      "url": "https://www.dafont.com/pixel-operator.font",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.dafont.com/pixel-operator.font",
+      "notes": "Bitmap-style TTF family (15 files: regular, bold, mono, small caps).",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "font notes: 'licensed under a Creative Commons Zero (CC0) 1.0'; changelog 2018.10.04-1: 'Changed licence to Creative Commons Zero (CC0) 1.0'"
+      }
+    },
+    {
+      "id": "m5x7",
+      "name": "m5x7 font (Daniel Linssen)",
+      "url": "https://managore.itch.io/m5x7",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://managore.itch.io/m5x7",
+      "notes": "5x7 pixel font for games.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "itch.io asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "monogram-font",
+      "name": "Monogram font (datagoblin)",
+      "url": "https://datagoblin.itch.io/monogram",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datagoblin.itch.io/monogram",
+      "notes": "Monospace bitmap font with TTF and game-ready versions.",
+      "verified": {
+        "date": "2026-11-23",
+        "evidence": "page: 'Monogram is a monospace bitmap font, free and CC0!'; itch.io asset license field: 'Creative Commons Zero v1.0 Universal'"
+      }
     }
   ],
   "excluded": [
