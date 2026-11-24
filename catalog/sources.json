@@ -8715,6 +8715,1920 @@
         "date": "2026-11-24",
         "evidence": "Freesound search: 130 of 139 sounds by IENBA carry the 'Creative Commons 0' license"
       }
+    },
+    {
+      "id": "itch-ankersassets-household",
+      "name": "Low Poly Household Items Pack (Anker's Assets)",
+      "url": "https://ankersassets.itch.io/low-poly-household-item-pack",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://ankersassets.itch.io/low-poly-household-item-pack",
+      "notes": "100+ low-poly FBX furniture and household props. itch.io page discloses no generative AI.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Asset license Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-axiomyth-retro-cave",
+      "name": "GB Retro Cave 48x48 Tileset (Axiomyth Games)",
+      "url": "https://axiomyth.itch.io/retro-cave-tileset-2d-pixel-art",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://axiomyth.itch.io/retro-cave-tileset-2d-pixel-art",
+      "notes": "Game Boy-style 2D platformer cave tileset with hazards, traps and animated platforms.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'License: CC0 This tileset is free to use however you wish'"
+      }
+    },
+    {
+      "id": "itch-breadmachine-drumbrute",
+      "name": "Drumbrute Impact Samples #1 (BREADMACHINE)",
+      "url": "https://breadmachine.itch.io/samples-drumbrute-impact",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://breadmachine.itch.io/samples-drumbrute-impact",
+      "notes": "Analog drum machine one-shot samples sorted by type.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Asset license Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-colefoster-voxel-forest-ruins",
+      "name": "Voxel Forest Ruins Sprites & Tiles (Cole Foster)",
+      "url": "https://colefoster.itch.io/voxel-forest-ruins-pack",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://colefoster.itch.io/voxel-forest-ruins-pack",
+      "notes": "24 animated creature sprite sheets plus 283 32x32 ruin tiles with autotile sets, Tiled and Godot 4 files.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Free under CC0. Use, edit and redistribute it in personal or commercial projects.'"
+      }
+    },
+    {
+      "id": "itch-crabcrabcrabs-pixelsquare",
+      "name": "pixelSquare Font (crabcrabcrabs)",
+      "url": "https://crabcrabcrabs.itch.io/pixelsquare-font",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://crabcrabcrabs.itch.io/pixelsquare-font",
+      "notes": "Small square pixel font.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'the font is free to use for personal and commercial projects CC0'"
+      }
+    },
+    {
+      "id": "itch-dogobongocat-ui-pack-2",
+      "name": "UI Assets Pack 2 (Dogobongocat)",
+      "url": "https://dogobongocat.itch.io/ui-assets-pack-2",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://dogobongocat.itch.io/ui-assets-pack-2",
+      "notes": "Pixel UI kit: book/notebook/letter frames, ribbons, cursors, icons, weather and cooking UI. Updates the creator's earlier UI assets pack.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'License: Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-duckhive-bunny",
+      "name": "Bunny 16-bit Animated Character (Duckhive)",
+      "url": "https://duckhive.itch.io/bunny",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://duckhive.itch.io/bunny",
+      "notes": "64x64 pixel-art character with idle, walk and turn animations.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'CC0 license. Hip Hop can be used however you want'"
+      }
+    },
+    {
+      "id": "itch-edfaygo-pulse-streets",
+      "name": "Pulse Everyday Streets 16x16 Tileset (Pulse Games)",
+      "url": "https://edfaygo.itch.io/pulse-everyday-streets-1616",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://edfaygo.itch.io/pulse-everyday-streets-1616",
+      "notes": "Modern-day interior and street tileset with day/night palettes, 47-tile autotiles, props and 2 NPCs. Tiles are procedurally drawn with code; page discloses no generative AI.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Asset license Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-essssam-rocky-roads",
+      "name": "Rocky Roads Asset Pack (Essssam)",
+      "url": "https://essssam.itch.io/rocky-roads",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://essssam.itch.io/rocky-roads",
+      "notes": "16x16 platformer tilemaps, seamless scrolling backgrounds, enemies, FX animations and UI elements across five biomes.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'no attribution required (Creative Commons Zero, CC0)'"
+      }
+    },
+    {
+      "id": "itch-essssam-pixel-ae-font",
+      "name": "Pixel AE Font (Essssam)",
+      "url": "https://essssam.itch.io/pixel-ae",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://essssam.itch.io/pixel-ae",
+      "notes": "8px pixel font covering both English and Arabic, regular and bold.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Asset license Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-fliflifly-hearts-health-bar",
+      "name": "Hearts and Health Bar (VampireGirl)",
+      "url": "https://fliflifly.itch.io/hearts-and-health-bar",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://fliflifly.itch.io/hearts-and-health-bar",
+      "notes": "Small pixel HUD set: health bar and two animated hearts.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Health bar + 2 animated hearts CC-0'"
+      }
+    },
+    {
+      "id": "itch-floi-ultimate-image-dictionary",
+      "name": "Ultimate Image Dictionary (Floi)",
+      "url": "https://floi.itch.io/ultimate-image-dictionary",
+      "kinds": [
+        "texture",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://floi.itch.io/ultimate-image-dictionary",
+      "notes": "3,000+ 1024x1024 abstract/stylized textures, growing toward 10,000.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'All assets in this pack have been released under the Public Domain (CC0) license'"
+      }
+    },
+    {
+      "id": "itch-frosty-rabbid-rpg-ability-icons",
+      "name": "RPG Ability Icons Collection (frosty_rabbid)",
+      "url": "https://frosty-rabbid.itch.io/rpg-ability-icons",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://frosty-rabbid.itch.io/rpg-ability-icons",
+      "notes": "100 24x24 pixel ability/skill icons.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'license CC0 (included in downloadable file(s))'"
+      }
+    },
+    {
+      "id": "itch-fuchsia-potato-chips",
+      "name": "Low Poly Potato Chip Model Pack (Fuchsia The Jellyfish)",
+      "url": "https://fuchsia-da-jellyfish.itch.io/potato-chip-model-pack",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://fuchsia-da-jellyfish.itch.io/potato-chip-model-pack",
+      "notes": "Low-poly chip bag models in FBX/OBJ/GLB with Blender source; label art uses public-domain and Wikimedia Commons material per the page.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Asset license Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-gamepip-low-poly",
+      "name": "GamePip Studio Low Poly Packs",
+      "url": "https://gamepip.itch.io/low-poly-nature-pack-vol2-30-assets-free-cc0",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://gamepip.itch.io/low-poly-nature-pack-vol2-30-assets-free-cc0",
+      "notes": "30 low-poly nature models (GLB/FBX/OBJ); creator also offers a CC0 street & city props pack.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Free for any use (CC0 / public domain).'"
+      }
+    },
+    {
+      "id": "itch-gobkit-free-packs",
+      "name": "Gobkit Free Rigged Low-Poly Packs",
+      "url": "https://gobkit.itch.io/gobkit-free-animal-pack-vol-8",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://gobkit.itch.io/gobkit-free-animal-pack-vol-8",
+      "notes": "Series of free rigged and animated GLB animal, character, dinosaur and minion packs; check each pack page. Page discloses no generative AI.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: '10 free CC0 rigged & animated low-poly animals (GLB)'"
+      }
+    },
+    {
+      "id": "itch-hylsy-64px-character",
+      "name": "64x64 Pixel Art Character (Hylsy)",
+      "url": "https://hylsy.itch.io/64x64-pixel-art-character1",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://hylsy.itch.io/64x64-pixel-art-character1",
+      "notes": "Layered 64x64 walking sprite sheet with hurt and dead variants, plus Piskel source.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Asset license Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-hyohnoo-keyboard-controller-keys",
+      "name": "Keyboard/Controller Keys (Hyohnoo)",
+      "url": "https://hyohnoo.itch.io/keyboard-controller-keys",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://hyohnoo.itch.io/keyboard-controller-keys",
+      "notes": "Pixel keyboard keys and Xbox/PS4 button prompts. Console button shapes may be trademarks of their owners.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Asset license Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-jm93-britain-photos",
+      "name": "JM93's Image Resources - Britain",
+      "url": "https://jman1993.itch.io/british-referencetexture-photos",
+      "kinds": [
+        "image",
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://jman1993.itch.io/british-referencetexture-photos",
+      "notes": "Photos taken across the UK (castles, forests, beaches, industrial decay) for textures and reference.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'have been released under the CC0/Public Domain license'"
+      }
+    },
+    {
+      "id": "itch-josemancharo-ducks",
+      "name": "Ducks and a Goose (josemancharo)",
+      "url": "https://josemancharo.itch.io/ducks-and-a-goose",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://josemancharo.itch.io/ducks-and-a-goose",
+      "notes": "Animated mallard and goose sprite sheets with JSON and Aseprite source.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'LICENSE: CC0 - No warranty'"
+      }
+    },
+    {
+      "id": "itch-juliocacko-input-prompts",
+      "name": "Free Input Prompts Pack (JulioCacko)",
+      "url": "https://juliocacko.itch.io/free-input-prompts",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://juliocacko.itch.io/free-input-prompts",
+      "notes": "1500+ 128px gamepad, mouse and keyboard prompt icons in 5 colors. Console button designs may be trademarks of their owners.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'License: CC0 1.0 Universal.'"
+      }
+    },
+    {
+      "id": "itch-kabgames-1bit-sprites",
+      "name": "400+ 1-Bit Sprites Pack 9x9 (KabGames)",
+      "url": "https://kaboff.itch.io/400-sprites-1-bits-pack-9x9",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://kaboff.itch.io/400-sprites-1-bits-pack-9x9",
+      "notes": "400+ 9x9 1-bit sprites in four color styles. Creator's cursor packs use CC BY, not CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Asset license Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-karsiori-woods",
+      "name": "Pixel Art Woods Tileset and Background (karsiori)",
+      "url": "https://karsiori.itch.io/woods-tileset-and-background",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://karsiori.itch.io/woods-tileset-and-background",
+      "notes": "7-layer 512x288 parallax background plus 86 32x32 tiles; creator also has a CC0 pixel flower pack.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'License info: CC0, you can use this asset pack however you want'"
+      }
+    },
+    {
+      "id": "itch-mrbreakfast-prompts",
+      "name": "Mr. Breakfast's Free Prompts",
+      "url": "https://mrbreakfastsdelight.itch.io/mr-breakfasts-free-prompts",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://mrbreakfastsdelight.itch.io/mr-breakfasts-free-prompts",
+      "notes": "400+ SVG/PNG input prompts (Switch, Xbox, PS5, Steam Deck, keyboard). Console logos remain trademarks of their owners.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Asset license Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-o-lobster-dungeon-crawler",
+      "name": "Simple Dungeon Crawler 16x16 Pack (o_lobster)",
+      "url": "https://o-lobster.itch.io/simple-dungeon-crawler-16x16-pixel-pack",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://o-lobster.itch.io/simple-dungeon-crawler-16x16-pixel-pack",
+      "notes": "16x16 dungeon tileset with characters.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Asset license Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "itch-polyhangar",
+      "name": "polyhangar Low-Poly Kits",
+      "url": "https://polyhangar.itch.io/quiet-grove-low-poly-nature-kit-cc0",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://polyhangar.itch.io/quiet-grove-low-poly-nature-kit-cc0",
+      "notes": "Flat-colour low-poly GLB/OBJ nature kit; creator also has a CC0 sci-fi props kit.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'License: CC0 1.0, commercial use OK, no attribution needed.'"
+      }
+    },
+    {
+      "id": "itch-smithygames-crow",
+      "name": "Crow Sprite (Smithy Games)",
+      "url": "https://smithygames.itch.io/crow-sprite",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://smithygames.itch.io/crow-sprite",
+      "notes": "Animated crow/raven sprite sheet (fly, walk, perch, eat, sit, lie). Author asks users not to pass it off as their own work.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Licensed under CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.'"
+      }
+    },
+    {
+      "id": "itch-taha-mohamed-ultimate-alphas",
+      "name": "Ultimate Alphas (TahaMohamed)",
+      "url": "https://taha-mohamed.itch.io/ultimate-alphas",
+      "kinds": [
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://taha-mohamed.itch.io/ultimate-alphas",
+      "notes": "Alpha/brush maps for sculpting and texture painting: grunge, fabric, organic, hard-surface details.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'This project is FREE For all uses (CC0-No attribution required)'"
+      }
+    },
+    {
+      "id": "itch-theseus-pixel-space-pack",
+      "name": "Pixel Space Pack (Theseus Interactive Studio)",
+      "url": "https://theseusinteractivestudio.itch.io/memoryblock-galactic-pack-first-release",
+      "kinds": [
+        "image",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://theseusinteractivestudio.itch.io/memoryblock-galactic-pack-first-release",
+      "notes": "Pixel ships, rockets, items, 8 seamless space backgrounds and 6 8-bit SFX.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'These assets are distributed under the Creative Commons Zero (CC0) license'"
+      }
+    },
+    {
+      "id": "itch-thisbutdragons",
+      "name": "This But Dragons Platformer Assets",
+      "url": "https://thisbutdragons.itch.io/crypt-platformer-enemy-assets",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://thisbutdragons.itch.io/crypt-platformer-enemy-assets",
+      "notes": "Hand-drawn animated platformer enemies with .ase sources; creator also has a CC0 platformer explorer pack.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Free CC0 platformer crypt enemy assets with animations.'"
+      }
+    },
+    {
+      "id": "itch-unreached-lands",
+      "name": "UNREACHED LANDS Pixel Assets",
+      "url": "https://unreached-lands.itch.io/lifebar-pixelart-sprites-16x16",
+      "kinds": [
+        "image",
+        "texture"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://unreached-lands.itch.io/lifebar-pixelart-sprites-16x16",
+      "notes": "16x16 pixel life bars; creator also publishes CC0 grainy grunge 256px textures.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'since it is CC0 asset'"
+      }
+    },
+    {
+      "id": "itch-zed-hanok-scifi-ui",
+      "name": "Sci-fi UI Pixel Art (Zed Hanok)",
+      "url": "https://zed-hanok.itch.io/lcars-ui-pixel-art",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://zed-hanok.itch.io/lcars-ui-pixel-art",
+      "notes": "24x24 LCARS-style sci-fi UI tileset.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'It is licensed CC0.'"
+      }
+    },
+    {
+      "id": "itch-vrtxrry-dungeonfont",
+      "name": "DungeonFont (vrtxrry)",
+      "url": "https://vrtxrry.itch.io/dungeonfont",
+      "kinds": [
+        "font"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://vrtxrry.itch.io/dungeonfont",
+      "notes": "TrueType conversion of 0x72's DungeonUI pixel font with added glyphs (English, French, Spanish, Turkish).",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'License: CC0'"
+      }
+    },
+    {
+      "id": "interaapps-flag-icons",
+      "name": "InteraApps Flag Icons",
+      "url": "https://github.com/interaapps/flag-icons",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/interaapps/flag-icons/blob/HEAD/LICENSE",
+      "notes": "About 336 square flat SVG flags (plus PNGs) of sovereign states, former states such as Soviet republics, and regions.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "mp-comp",
+      "name": "MP_Comp Blender compositor asset library",
+      "url": "https://github.com/MomoPTFL/mp_comp",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/MomoPTFL/mp_comp/blob/HEAD/LICENSE",
+      "notes": "Blender asset library of 100+ procedural compositor effects as node groups in .blend files (Blender 5.0+).",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "get-social-icon-font",
+      "name": "Get Social - Social Media Font (Haeck Design)",
+      "url": "https://github.com/HaeckDesign/Get-Social-Social-Media-Font",
+      "kinds": [
+        "font",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/HaeckDesign/Get-Social-Social-Media-Font/blob/HEAD/README.md",
+      "notes": "Icon font plus 88 SVG/PNG social media icons. Logos remain trademarks of their owners.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'Offered w/ a Creative Commons Zero (CC0 1.0) license.'"
+      }
+    },
+    {
+      "id": "shapespark-assets",
+      "name": "Shapespark assets",
+      "url": "https://github.com/shapespark/shapespark-assets",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/shapespark/shapespark-assets/blob/HEAD/README.md",
+      "notes": "Low-poly interior and exterior plant kits and other real-time 3D models in glTF/FBX/Blend/SKP; stored with git-lfs.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'License type: [CC0 1.0](https://creativecommons.org/share-your-work/public-domain/cc0/), no rights reserved.'"
+      }
+    },
+    {
+      "id": "free-vgms",
+      "name": "Free VGMs (Sega Genesis music)",
+      "url": "https://github.com/jerellsworth/free_vgms",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/jerellsworth/free_vgms/blob/HEAD/LICENSE",
+      "notes": "49 original Sega Genesis/Mega Drive tracks as WAV renders plus VGM and DefleMask (.dmf) source files.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "moonbirds-assets",
+      "name": "Moonbirds assets (PROOF)",
+      "url": "https://github.com/yuga-labs/proofxyz-moonbirds-assets",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/yuga-labs/proofxyz-moonbirds-assets/blob/HEAD/LICENSE",
+      "notes": "10,000 Moonbirds pixel-art bird images in SVG and 42x42 PNG plus trait layers; artwork of an NFT collection released under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "mck-sample-packs",
+      "name": "MckSamplePacks drum machine samples",
+      "url": "https://github.com/MckAudio/MckSamplePacks",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/MckAudio/MckSamplePacks/blob/HEAD/LICENSE",
+      "notes": "About 470 WAV one-shots recorded from DR5, TR8 and RX5 drum machines.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "glyph-generator",
+      "name": "Glyph Generator images (Robert Winslow)",
+      "url": "https://github.com/RobertWinslow/glyph-generator",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/RobertWinslow/glyph-generator/blob/HEAD/README.md",
+      "notes": "About 11,000 generated visually distinct glyph images (PNG/SVG) built from public-domain fonts and original backgrounds.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'All resources in this repo are released into the public domain under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/),'"
+      }
+    },
+    {
+      "id": "nilicons",
+      "name": "Nilicons",
+      "url": "https://github.com/barepants/nilicons",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/barepants/nilicons/blob/HEAD/LICENSE",
+      "notes": "About 50 simple SVG UI icons.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "warfork-free-soundpacks",
+      "name": "Warfork free soundpacks (Team Forbidden)",
+      "url": "https://github.com/TeamForbiddenLLC/warfork-free-soundpacks",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://github.com/TeamForbiddenLLC/warfork-free-soundpacks/blob/HEAD/README.md",
+      "notes": "Arena-shooter weapon, item and announcer sound packs; only the cc0 folder is CC0, the other folders are CC BY-SA 3.0 US / 4.0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'Creative Commons — CC0 1.0 Universal (Public Domain) by Caine and MaxCarnage'"
+      }
+    },
+    {
+      "id": "warfork-free-textures",
+      "name": "Warfork free textures (Team Forbidden)",
+      "url": "https://github.com/TeamForbiddenLLC/warfork-free-textures",
+      "kinds": [
+        "texture"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://github.com/TeamForbiddenLLC/warfork-free-textures/blob/HEAD/README.md",
+      "notes": "Arena-shooter texture set; only the roughly 100 files listed in the README are CC0, the rest are CC BY-SA 4.0 Warsow textures.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'The following files are licensed as CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.'"
+      }
+    },
+    {
+      "id": "ars-goetia-sigils",
+      "name": "Ars Goetia 72 sigils (SVG)",
+      "url": "https://github.com/kvgrimorium/ars-goetia-svg-sigils",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/kvgrimorium/ars-goetia-svg-sigils/blob/HEAD/LICENSE",
+      "notes": "Vectorized SVG and PNG versions of the 72 seals from the 1904 Mathers/Crowley Goetia.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal — Public Domain Dedication'"
+      }
+    },
+    {
+      "id": "cybernetic-samples",
+      "name": "Cybernetic Orchestra sample bank",
+      "url": "https://github.com/dktr0/cybernetic-samples",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/dktr0/cybernetic-samples/blob/HEAD/README.md",
+      "notes": "About 340 WAV samples contributed by the Cybernetic Orchestra laptop ensemble (McMaster University).",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'CC0 sample bank created by the Cybernetic Orchestra'"
+      }
+    },
+    {
+      "id": "estuary-samples",
+      "name": "Estuary sample bank",
+      "url": "https://github.com/dktr0/estuary-samples",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/dktr0/estuary-samples/blob/HEAD/README.md",
+      "notes": "About 230 WAV samples for the Estuary live-coding platform.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'CC0 sample bank meant for estuary'"
+      }
+    },
+    {
+      "id": "supercontinent-samples",
+      "name": "Supercontinent sample library",
+      "url": "https://github.com/dktr0/supercontinent",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/dktr0/supercontinent/blob/HEAD/README.md",
+      "notes": "About 2,000 WAV samples made by the supercontinent live-coding ensemble.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'CC0 sample bank created by and for the supercontinent ensemble'"
+      }
+    },
+    {
+      "id": "bioicons-id",
+      "name": "ID & Immunology Icons (apsmunro)",
+      "url": "https://github.com/apsmunro/bioicons-id",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/apsmunro/bioicons-id/blob/HEAD/README.md",
+      "notes": "About 420 SVG illustrations of pathogens, immune cells, molecules and treatments in full-colour and single-colour versions; separate from bioicons.com.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: '[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/): dedicated to the public domain.'"
+      }
+    },
+    {
+      "id": "noundry-voxels",
+      "name": "NOUNDRY voxel library",
+      "url": "https://github.com/0x572f00/NOUNDRY",
+      "kinds": [
+        "model",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/0x572f00/NOUNDRY/blob/HEAD/LICENSE",
+      "notes": "Large library of Nouns-style voxel parts and characters as MagicaVoxel (.vox-family), OBJ, glTF and PNG renders.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "art-colors",
+      "name": "art-colors palettes (meodai)",
+      "url": "https://github.com/meodai/art-colors",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/meodai/art-colors/blob/HEAD/README.md",
+      "notes": "Color palettes with color shares for about 41,000 CC0 artworks from the Art Institute of Chicago and Cleveland Museum of Art, as JSON and CSV.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'The data is released under [CC0](LICENSE)'"
+      }
+    },
+    {
+      "id": "omi-sample-pack-vol-1",
+      "name": "OMI Sample Pack Vol. 1 (Yale Open Music Initiative)",
+      "url": "https://github.com/Yale-OMI/sample-pack-vol-1",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/Yale-OMI/sample-pack-vol-1/blob/HEAD/LICENSE",
+      "notes": "71 WAV synth samples recorded at a Yale OMI workshop (Novation Peak, Korg Monotron Delay, Stylophone Beatbox).",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "simple-space-assets",
+      "name": "Simple Space Assets (tarrend)",
+      "url": "https://github.com/tarrend/Simple-Space-Assets",
+      "kinds": [
+        "image",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/tarrend/Simple-Space-Assets/blob/HEAD/LICENSE",
+      "notes": "About 50 space-themed 2D game sprites plus a few sound effects.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "looch-vector-art",
+      "name": "Looch Labs vector game art",
+      "url": "https://github.com/loochlabs/vector_art",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/loochlabs/vector_art/blob/HEAD/LICENSE",
+      "notes": "About 6,000 PNG game sprites and atlases with Flash (.fla) sources from a 2D game.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "djkuhleb-lowpoly-models",
+      "name": "LowPolyModels (DJKuhleb)",
+      "url": "https://github.com/DJKuhleb/LowPolyModels",
+      "kinds": [
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/DJKuhleb/LowPolyModels/blob/HEAD/LICENSE",
+      "notes": "41 low-poly FBX models with Unity prefabs and materials.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "efface-royalty-free-music-pack",
+      "name": "Royalty Free Music Pack (Efface Studios)",
+      "url": "https://github.com/effacestudios/Royalty-Free-Music-Pack",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/effacestudios/Royalty-Free-Music-Pack/blob/HEAD/LICENSE",
+      "notes": "41 MP3 game music tracks.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "LICENSE: 'CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "freesound-cat-fox-alex",
+      "name": "CAT-FOX_ALEX sounds (Freesound)",
+      "url": "https://freesound.org/people/CAT-FOX_ALEX/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22CAT-FOX_ALEX%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Large library of drum loops, one-shots, synth hits, horror ambiences and foley. 6352 of 6377 uploads are CC0; use the license filter.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 6352 of 6377 sounds by CAT-FOX_ALEX carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-josefpres",
+      "name": "josefpres sounds (Freesound)",
+      "url": "https://freesound.org/people/josefpres/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22josefpres%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Thousands of piano and instrument music loops at labeled tempos. All 5103 uploads are CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 5103 of 5103 sounds by josefpres carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-gis-sweden",
+      "name": "gis_sweden sounds (Freesound)",
+      "url": "https://freesound.org/people/gis_sweden/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22gis_sweden%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Synth textures, rhythmic backgrounds, drones and experimental electronic sounds. 1107 of 1143 uploads are CC0; use the license filter.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 1107 of 1143 sounds by gis_sweden carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-awaka",
+      "name": "awaka sounds (Freesound)",
+      "url": "https://freesound.org/people/awaka/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22awaka%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Experimental electronic and modular-synth recordings. All 893 uploads are CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 893 of 893 sounds by awaka carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-szegvari",
+      "name": "szegvari sounds (Freesound)",
+      "url": "https://freesound.org/people/szegvari/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22szegvari%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Ambient soundscapes, horror atmospheres and short music pieces. 838 of 852 uploads are CC0; use the license filter.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 838 of 852 sounds by szegvari carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-rutgermuller",
+      "name": "RutgerMuller sounds (Freesound)",
+      "url": "https://freesound.org/people/RutgerMuller/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22RutgerMuller%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Field recordings and foley: weather, sirens, traffic, household objects. All 663 uploads are CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 663 of 663 sounds by RutgerMuller carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-mihacappy",
+      "name": "Mihacappy sounds (Freesound)",
+      "url": "https://freesound.org/people/Mihacappy/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22Mihacappy%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Mechanical and everyday sound effects: switches, relays, vehicles, ambiences. All 366 uploads are CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 366 of 366 sounds by Mihacappy carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-martian",
+      "name": "martian sounds (Freesound)",
+      "url": "https://freesound.org/people/martian/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22martian%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Horror and spooky effects, foley and vehicle recordings. 344 of 353 uploads are CC0; use the license filter.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 344 of 353 sounds by martian carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-kvgarlic",
+      "name": "kvgarlic sounds (Freesound)",
+      "url": "https://freesound.org/people/kvgarlic/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22kvgarlic%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Outdoor field recordings: parks, wind, leaves, neighborhood ambiences. 297 of 300 uploads are CC0; use the license filter.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 297 of 300 sounds by kvgarlic carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-richwise",
+      "name": "richwise sounds (Freesound)",
+      "url": "https://freesound.org/people/richwise/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22richwise%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "UK field recordings: room tones, rain, beaches, trains, church bells. 277 of 279 uploads are CC0; use the license filter.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 277 of 279 sounds by richwise carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-splicesound",
+      "name": "SpliceSound sounds (Freesound)",
+      "url": "https://freesound.org/people/SpliceSound/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22SpliceSound%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Field recordings and foley: city ambiences, vehicles, impacts, alarms. All 242 uploads are CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 242 of 242 sounds by SpliceSound carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-seth-makes-sounds",
+      "name": "Seth_Makes_Sounds sounds (Freesound)",
+      "url": "https://freesound.org/people/Seth_Makes_Sounds/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22Seth_Makes_Sounds%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Beats, drones, cinematic background music and noise textures. All 240 uploads are CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 240 of 240 sounds by Seth_Makes_Sounds carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-bernhoftbret",
+      "name": "bernhoftbret sounds (Freesound)",
+      "url": "https://freesound.org/people/bernhoftbret/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22bernhoftbret%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Synth drones, warbles, sci-fi effects and household foley. All 227 uploads are CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 227 of 227 sounds by bernhoftbret carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-harrisonlace",
+      "name": "harrisonlace sounds (Freesound)",
+      "url": "https://freesound.org/people/harrisonlace/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22harrisonlace%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Synth loops, game UI sounds and foley. All 173 uploads are CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 173 of 173 sounds by harrisonlace carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "freesound-moxobna",
+      "name": "moxobna sounds (Freesound)",
+      "url": "https://freesound.org/people/moxobna/sounds/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://freesound.org/search/?f=username:%22moxobna%22+license:%22Creative+Commons+0%22&g=1",
+      "notes": "Field recordings and foley: voices, laughter, rain, traffic, fire. All 165 uploads are CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Freesound search: 165 of 165 sounds by moxobna carry the 'Creative Commons 0' license"
+      }
+    },
+    {
+      "id": "oga-haeldb",
+      "name": "HaelDB (OpenGameArt)",
+      "url": "https://opengameart.org/users/haeldb",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/ui-sounds-0",
+      "notes": "Game sound packs: UI sounds, footsteps, grunts, card-game sounds and guitar licks. 29 of the 30 most recent submissions are CC0; check each submission's license field.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page license field: 'CC0'; user art feed: 29/30 items list 'CC0'"
+      }
+    },
+    {
+      "id": "oga-joth",
+      "name": "Joth (OpenGameArt)",
+      "url": "https://opengameart.org/users/joth",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/technovillain-0",
+      "notes": "Chiptune and electronic game music tracks plus menu/level-up sound effects. 29 of the 29 most recent submissions are CC0; check each submission's license field.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page license field: 'CC0'; user art feed: 29/29 items list 'CC0'"
+      }
+    },
+    {
+      "id": "oga-centurionofwar",
+      "name": "Centurion_of_war (OpenGameArt)",
+      "url": "https://opengameart.org/users/centurionofwar",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/80s-hidden-lab",
+      "notes": "Game music tracks and jingles across synthwave, orchestral and ambient styles. 28 of the 30 most recent submissions are CC0; check each submission's license field.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page license field: 'CC0'; user art feed: 28/30 items list 'CC0'"
+      }
+    },
+    {
+      "id": "oga-stumpystrust",
+      "name": "StumpyStrust (OpenGameArt)",
+      "url": "https://opengameart.org/users/stumpystrust",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/bronc",
+      "notes": "Electronic game music tracks and a sound effect pack. 28 of the 30 most recent submissions are CC0; check each submission's license field.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page license field: 'CC0'; user art feed: 28/30 items list 'CC0'"
+      }
+    },
+    {
+      "id": "oga-spiderdave",
+      "name": "SpiderDave (OpenGameArt)",
+      "url": "https://opengameart.org/users/spiderdave",
+      "kinds": [
+        "image",
+        "texture"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/crystals-2",
+      "notes": "Pixel-art tiles, sprites and game graphics. 30 of the 30 most recent submissions are CC0; check each submission's license field.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page license field: 'CC0'; user art feed: 30/30 items list 'CC0'"
+      }
+    },
+    {
+      "id": "oga-cdmir",
+      "name": "CDmir (OpenGameArt)",
+      "url": "https://opengameart.org/users/cdmir",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/cavemen-sprite-sheet",
+      "notes": "2D character sprite sheets, props and environment decorations. 29 of the 29 most recent submissions are CC0; check each submission's license field.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page license field: 'CC0'; user art feed: 29/29 items list 'CC0'"
+      }
+    },
+    {
+      "id": "oga-hreikin",
+      "name": "hreikin (OpenGameArt)",
+      "url": "https://opengameart.org/users/hreikin",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/modular-medieval-house-pack-06",
+      "notes": "Modular medieval house 3D model packs for the FreeRPG project. 29 of the 30 most recent submissions are CC0; check each submission's license field.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page license field: 'CC0'; user art feed: 29/30 items list 'CC0'"
+      }
+    },
+    {
+      "id": "oga-para",
+      "name": "para (OpenGameArt)",
+      "url": "https://opengameart.org/users/para",
+      "kinds": [
+        "model",
+        "texture",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://opengameart.org/content/fps-arms-rigged-only",
+      "notes": "Low-poly 3D models, rigged FPS arms, textures and animated particle effects. 22 of the 22 most recent submissions are CC0; check each submission's license field.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page license field: 'CC0'; user art feed: 22/22 items list 'CC0'"
+      }
+    },
+    {
+      "id": "fma-superare",
+      "name": "SUPERARE (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/superare/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/superare/24",
+      "notes": "Electronic and instrumental tracks. 12 of 12 albums checked state CC0 1.0 Universal; check each release.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "fma-tadz",
+      "name": "Tadz (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/tadz/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/tadz/2020-2",
+      "notes": "Instrumental releases. 12 of 12 albums checked state CC0 1.0 Universal; check each release.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "fma-trg-banks",
+      "name": "TRG Banks (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/TRG_Banks/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/TRG_Banks/Bills_Adventures",
+      "notes": "Instrumental and electronic releases. 12 of 12 albums checked state CC0 1.0 Universal; check each release.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "fma-xik6-1",
+      "name": "xik (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/xik6-1/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/xik6-1/audio-songs-from-video-files",
+      "notes": "Electronic and experimental releases; a second profile (xik6) also posts CC0 albums. 12 of 12 albums checked state CC0 1.0 Universal; check each release.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "fma-soft-and-furious",
+      "name": "Soft and Furious (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/Soft_and_Furious/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/Soft_and_Furious/Bae",
+      "notes": "Electronic and ambient albums. 9 of 9 albums checked state CC0 1.0 Universal; check each release.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "fma-oji",
+      "name": "oji (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/oji/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/oji/depuis-ma-chambre-ep-de-quarantaine",
+      "notes": "Lo-fi and instrumental EPs. 10 of 11 albums checked state CC0 1.0 Universal; check each release.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "fma-koi-discovery",
+      "name": "Koi-discovery (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/koi-discovery/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/koi-discovery/ante-chrysalide",
+      "notes": "Instrumental and ambient albums. 10 of 12 albums checked state CC0 1.0 Universal; check each release.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "fma-john-bartmann",
+      "name": "John Bartmann (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/John_Bartmann/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/John_Bartmann/100-ambient-atmospheric-soundtracks-straylight-drones-collection",
+      "notes": "Production music: ambient soundtracks, drones and genre collections. 9 of 12 albums checked state CC0 1.0 Universal; check each release.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "fma-art-flower",
+      "name": "Art Flower (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/art-flower/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/art-flower/all-that-jazz",
+      "notes": "Jazz and instrumental albums. 7 of 7 albums checked state CC0 1.0 Universal; check each release.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "fma-kimiko-ishizaka",
+      "name": "Kimiko Ishizaka (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/Kimiko_Ishizaka/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://freemusicarchive.org/music/Kimiko_Ishizaka/The_Open_Goldberg_Variations",
+      "notes": "Piano recordings of Bach, including The Open Goldberg Variations. 1 of 1 albums checked state CC0 1.0 Universal; check each release.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'licensed under: CC0 1.0 Universal'"
+      }
+    },
+    {
+      "id": "ia-genetic-trance",
+      "name": "Genetic Trance netlabel (Internet Archive)",
+      "url": "https://archive.org/details/genetic-trance",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://archive.org/advancedsearch.php?q=collection%3Agenetic-trance+AND+licenseurl%3A%22http%3A%2F%2Fcreativecommons.org%2Fpublicdomain%2Fzero%2F1.0%2F%22&fl%5B%5D=identifier&fl%5B%5D=licenseurl&rows=1000&output=json",
+      "notes": "Trance and electronic netlabel releases. 571 of 949 items carry a CC0 license URL; others use different CC licenses.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Internet Archive API: 571 of 949 items in collection genetic-trance have licenseurl 'http://creativecommons.org/publicdomain/zero/1.0/'"
+      }
+    },
+    {
+      "id": "ia-sputnikrecords",
+      "name": "Sputnik Records netlabel (Internet Archive)",
+      "url": "https://archive.org/details/sputnikrecords",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://archive.org/advancedsearch.php?q=collection%3Asputnikrecords+AND+licenseurl%3A%22http%3A%2F%2Fcreativecommons.org%2Fpublicdomain%2Fzero%2F1.0%2F%22&fl%5B%5D=identifier&fl%5B%5D=licenseurl&rows=1000&output=json",
+      "notes": "CIS netlabel: lo-fi, noise and 8-bit releases. 38 of 78 items carry the http CC0 license URL and 22 more use its https form; others use different CC licenses.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Internet Archive API: 38 of 78 items in collection sputnikrecords have licenseurl 'http://creativecommons.org/publicdomain/zero/1.0/'"
+      }
+    },
+    {
+      "id": "green-turtle-popoff-camera-videos",
+      "name": "Green sea turtle pop-off camera videos (San Diego, Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.05qfttf9t",
+      "kinds": [
+        "collection",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.05qfttf9t",
+      "notes": "Animal-borne camera video footage (~106 GB) of green turtles (Chelonia mydas) at a San Diego foraging site. Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "polynoid-annelid-swimming-videos",
+      "name": "Polynoid annelid swimming and crawling videos (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.0rxwdbs0b",
+      "kinds": [
+        "collection",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.0rxwdbs0b",
+      "notes": "Video recordings of polynoid scale worms swimming and crawling (~2.8 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "photuris-firefly-display-video",
+      "name": "Photuris frontalis firefly collective display video (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.3n5tb2rmb",
+      "kinds": [
+        "collection",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.3n5tb2rmb",
+      "notes": "Continuous high-resolution video of synchronous firefly flashing recorded at Congaree National Park, South Carolina (~51 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "auburn-soybean-disease-leaf-images",
+      "name": "Auburn soybean disease leaf images (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.41ns1rnj3",
+      "kinds": [
+        "collection",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.41ns1rnj3",
+      "notes": "Field and controlled-background photographs of diseased soybean leaves taken with a DSLR and a smartphone (~43 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "cerro-patlachique-carved-monuments",
+      "name": "Carved monuments from Cerro Patlachique, Teotihuacan Valley (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.4f4qrfjp0",
+      "kinds": [
+        "collection",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.4f4qrfjp0",
+      "notes": "Documentation imagery of 34 previously unpublished carved stone monuments and a summit shrine in the Teotihuacan Valley, Mexico (~11 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "curacao-coral-2d-3d-models",
+      "name": "2D and 3D coral models imaged in Curacao (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.5x69p8d2x",
+      "kinds": [
+        "collection",
+        "model",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.5x69p8d2x",
+      "notes": "Photogrammetric 3D models and 2D images of reef-building corals from Curacao (George, Mullinix et al., PeerJ 2021; ~3 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "north-pacific-killer-whale-hf-audio",
+      "name": "North Pacific killer whale high-frequency signal recordings (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.8cz8w9h7f",
+      "kinds": [
+        "collection",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.8cz8w9h7f",
+      "notes": "Hydrophone audio files of high-frequency modulated killer whale signals from ship-based arrays and autonomous recorders (~6 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "ubeidiya-limestone-spheroid-3d-models",
+      "name": "Limestone spheroid 3D models from 'Ubeidiya (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.9ghx3ffp3",
+      "kinds": [
+        "collection",
+        "model"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.9ghx3ffp3",
+      "notes": "3D scans of Lower Palaeolithic limestone spheroids from the site of 'Ubeidiya (~3.3 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "openapepose-ape-photographs",
+      "name": "OpenApePose annotated ape photographs (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.c59zw3rds",
+      "kinds": [
+        "collection",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.c59zw3rds",
+      "notes": "Large database of annotated photographs of chimpanzees, bonobos, gorillas, orangutans and gibbons for pose estimation (~175 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "mesopelagic-fish-specimen-photo-library",
+      "name": "Mesopelagic fish reference specimen photographic library (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.cc2fqz6bp",
+      "kinds": [
+        "collection",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.cc2fqz6bp",
+      "notes": "Reference photographs of mesopelagic fish specimens for identification (~0.7 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "eastern-north-american-bird-recordings",
+      "name": "Annotated audio recordings of Eastern North American birds (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.d2547d81z",
+      "kinds": [
+        "collection",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.d2547d81z",
+      "notes": "Soundscape recordings with species, time and frequency annotations of Eastern North American birds (~1.2 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "ndege-zetu-mt-kenya-bird-dataset",
+      "name": "Ndege Zetu: Mt Kenya bird monitoring audio dataset (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.d51c5b0c7",
+      "kinds": [
+        "collection",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.d51c5b0c7",
+      "notes": "Acoustic recordings used to compare bird species monitoring approaches in the Mt Kenya ecosystem (~1.2 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "mandrillus-face-database",
+      "name": "Mandrillus face database: wild mandrill portraits from Bakoumba, Gabon (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.gtht76hqb",
+      "kinds": [
+        "collection",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.gtht76hqb",
+      "notes": "Portrait photographs of a wild mandrill population (~4.3 GB). Photos depict animals only. Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "rijksmuseum-terracotta-putto-ct-models",
+      "name": "CT reconstructions and 3D models of a Rijksmuseum terracotta sculpture (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.j0zpc86mc",
+      "kinds": [
+        "collection",
+        "model",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.j0zpc86mc",
+      "notes": "Micro-CT TIFF stacks and Wavefront OBJ surface models of impressions on Laurent Delvaux's terracotta 'Study for a Hovering Putto' (Rijksmuseum). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "trionychid-turtle-osteology-photographs",
+      "name": "Trionychid turtle osteology photographs (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.jq2bvq8m2",
+      "kinds": [
+        "collection",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.jq2bvq8m2",
+      "notes": "Photographs of skeletal material of 608 softshell turtle specimens held in natural history collections worldwide (~56 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "coral-reef-soundscapes-spatial-audio-360-video",
+      "name": "Coral reef soundscapes with spatial audio and 360-degree video (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.mcvdnckcp",
+      "kinds": [
+        "collection",
+        "audio",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.mcvdnckcp",
+      "notes": "Spatial audio recordings and 360-degree underwater video used to identify fish sounds on coral reefs (~3.6 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "urmp-multitrack-classical-music",
+      "name": "URMP multi-track classical music performance dataset (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.ng3r749",
+      "kinds": [
+        "collection",
+        "audio",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.ng3r749",
+      "notes": "44 multi-instrument classical pieces with MIDI scores, isolated per-track audio recordings and videos of the performances (~12 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "gombe-chimpanzee-vocalization-archive",
+      "name": "Gombe chimpanzee longitudinal vocalization recordings (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.sd15m",
+      "kinds": [
+        "collection",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.sd15m",
+      "notes": "Archive of field recordings of vocalizations of adult free-living chimpanzees at Gombe collected by Frans X. Plooij and Hetty van de Rijt-Plooij (~3.9 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "samburu-elephant-vocalization-recordings",
+      "name": "Animal-borne recordings of African elephant vocalizations, Samburu (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.xd2547dz3",
+      "kinds": [
+        "collection",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.xd2547dz3",
+      "notes": "Annotated animal-borne acoustic recordings of African elephants in Samburu National Reserve, Kenya (~3.9 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "neotropical-katydid-soundscapes",
+      "name": "Neotropical forest soundscapes with katydid call identifications (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.zw3r2288b",
+      "kinds": [
+        "collection",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.zw3r2288b",
+      "notes": "Canopy soundscape recordings from Barro Colorado Island, Panama, with identified katydid calls (~3.1 GB). Dryad publishes all data under CC0.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "mvtd-maritime-visual-tracking",
+      "name": "MVTD: Maritime Visual Tracking Dataset",
+      "url": "https://huggingface.co/datasets/AhsanBB/Maritime_Visual_Tracking_Dataset_MVTD",
+      "kinds": [
+        "collection",
+        "image",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://huggingface.co/datasets/AhsanBB/Maritime_Visual_Tracking_Dataset_MVTD/raw/main/README.md",
+      "notes": "182 annotated maritime video sequences (~150,000 frames) of vessels and other sea objects, published with a Pattern Recognition paper (Bakht et al.). License stated in the dataset card metadata.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'license: cc0-1.0'"
+      }
+    },
+    {
+      "id": "seatizen-atlas-image-dataset",
+      "name": "Seatizen Atlas Image Dataset (underwater images)",
+      "url": "https://huggingface.co/datasets/lombardata/seatizen_atlas_image_dataset",
+      "kinds": [
+        "collection",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://huggingface.co/datasets/lombardata/seatizen_atlas_image_dataset/raw/main/README.md",
+      "notes": "14,492 annotated underwater images of reefs, algae and seagrass collected by citizen and scientific marine platforms (Seatizen Atlas, Scientific Data 2024).",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: '**License:** cc0-1.0'"
+      }
+    },
+    {
+      "id": "neyshekar-persian-speech",
+      "name": "Neyshekar Persian speech dataset",
+      "url": "https://huggingface.co/datasets/shekar-ai/Neyshekar",
+      "kinds": [
+        "collection",
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://huggingface.co/datasets/shekar-ai/Neyshekar/raw/main/README.md",
+      "notes": "Crowdsourced Persian speech recordings from volunteer native speakers via ney.shekar.io (60k+ clips, 16 kHz).",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'This dataset is released under the **CC0 1.0 Universal** license.'"
+      }
+    },
+    {
+      "id": "hasegawa-japan-deer-videos",
+      "name": "Japan deer videos (Hasegawa1111)",
+      "url": "https://huggingface.co/datasets/Hasegawa1111/Japan_deer_video01",
+      "kinds": [
+        "collection",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://huggingface.co/datasets/Hasegawa1111/Japan_deer_video01/raw/main/README.md",
+      "notes": "Original video clips of deer in Japan recorded by the uploader.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'All videos were recorded by the uploader and are released under the CC0-1.0 license.'"
+      }
+    },
+    {
+      "id": "hasegawa-urban-highway-videos",
+      "name": "Urban highway videos (Hasegawa1111)",
+      "url": "https://huggingface.co/datasets/Hasegawa1111/Urban_highway_video01",
+      "kinds": [
+        "collection",
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://huggingface.co/datasets/Hasegawa1111/Urban_highway_video01/raw/main/README.md",
+      "notes": "Original urban highway traffic video clips recorded by the uploader in Japan.",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'All videos were recorded by the uploader and are released under the CC0 1.0 license.'"
+      }
+    },
+    {
+      "id": "wildwing-deployment-drone-videos",
+      "name": "WildWing autonomous drone deployment videos (Imageomics)",
+      "url": "https://huggingface.co/datasets/imageomics/wildwingdeployment",
+      "kinds": [
+        "collection",
+        "video",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://huggingface.co/datasets/imageomics/wildwingdeployment/raw/main/README.md",
+      "notes": "Drone video, frames and telemetry from WildWing UAS missions filming endangered species at The Wilds, Ohio (July 2024).",
+      "verified": {
+        "date": "2026-11-24",
+        "evidence": "README.md: 'Creative Commons Zero 1.0 universal'"
+      }
     }
   ],
   "excluded": [
@@ -9101,7 +11015,7 @@
     {
       "name": "Aegis Icons",
       "url": "https://github.com/aegis-icons/aegis-icons",
-      "reason": "CC0 repository, but it consists of trademarked third-party brand logos."
+      "reason": "README disclaimer says CC0 applies only to templates, texts, code and some of the icons; other icons are under other licenses or owned by trademark holders."
     },
     {
       "name": "Nasjonalmuseet (Norway)",
@@ -9412,6 +11326,371 @@
       "name": "Arkeologisk Museum, University of Stavanger (Sketchfab)",
       "url": "https://sketchfab.com/arkeologiskmuseum",
       "reason": "Only 9 CC0 models, below the 10-model threshold."
+    },
+    {
+      "name": "PtDesigns isometric pixel prop packs",
+      "url": "https://ptdesigns.itch.io/interplanetary-truck-stop-pixel-art-props-tiles",
+      "reason": "Pages carry itch.io AI Disclosure 'AI Assisted, Graphics'."
+    },
+    {
+      "name": "Keimori Lab Wafu Town tileset / screentones",
+      "url": "https://keimori-lab.itch.io/wafu-town-16x16-tileset",
+      "reason": "itch.io AI Disclosure marks the packs as AI Assisted (graphics)."
+    },
+    {
+      "name": "spritecanvas CC0 sprite sheets",
+      "url": "https://spritecanvas.itch.io/free-cc0-fantasy-sprite-sheets",
+      "reason": "itch.io AI Disclosure marks the packs as AI Assisted (graphics)."
+    },
+    {
+      "name": "squigglyfish Godot VFX samplers",
+      "url": "https://squigglyfish.itch.io/godot-earth-water-wind-spells-vfx-sfx-sampler",
+      "reason": "itch.io AI Disclosure marks the packs as AI Assisted."
+    },
+    {
+      "name": "skulitom pixel FX",
+      "url": "https://skulitom.itch.io/sword-slash-pixel-fx",
+      "reason": "itch.io AI Disclosure marks the packs as AI Assisted (graphics)."
+    },
+    {
+      "name": "willyee pixel packs and VN backgrounds",
+      "url": "https://willyee.itch.io/xianxia-pixel-pack",
+      "reason": "itch.io AI Disclosure marks the packs as AI Assisted (graphics)."
+    },
+    {
+      "name": "cs5475 GB Studio / gun effects",
+      "url": "https://cs5475.itch.io/free-gb-studio-effects",
+      "reason": "itch.io AI Disclosure marks the packs as AI Assisted."
+    },
+    {
+      "name": "Cosmic Lotus Free CC0 Tileset",
+      "url": "https://cosmic-lotus.itch.io/free-cc0-tileset",
+      "reason": "itch.io AI Disclosure marks the pack as AI Assisted (graphics)."
+    },
+    {
+      "name": "lazydev-oh Pixel Village Pack",
+      "url": "https://lazydev-oh.itch.io/pixel-village-pack",
+      "reason": "itch.io AI Disclosure marks the pack as AI Assisted (graphics)."
+    },
+    {
+      "name": "paleto pixel palettes",
+      "url": "https://paleto.itch.io/paleto-vol01",
+      "reason": "itch.io AI Disclosure marks the packs as AI Assisted (graphics)."
+    },
+    {
+      "name": "leftitrunning low-poly kits",
+      "url": "https://leftitrunning.itch.io/winter-village-christmas-market-kit",
+      "reason": "Page states the kits were built by an AI and carries AI Assisted disclosure."
+    },
+    {
+      "name": "kkyqr Scitizia low-poly kits",
+      "url": "https://kkyqr.itch.io/low-poly-city-kit",
+      "reason": "itch.io AI Disclosure marks the packs as AI Assisted (code, graphics)."
+    },
+    {
+      "name": "zaddyfi voxel model packs",
+      "url": "https://zaddyfi.itch.io/chibi-adventurers",
+      "reason": "AI Assisted disclosure and 'don't resell the assets themselves' restriction."
+    },
+    {
+      "name": "zblogda [1GB] CC0 Game Assets",
+      "url": "https://zblogda.itch.io/1gb-cc0-game-assets",
+      "reason": "itch.io AI Disclosure marks the bundle as AI Assisted."
+    },
+    {
+      "name": "Other AI-assisted CC0 packs (gravyassets, gidedin, ummjackson, yoogameart, toshi-riu, qvantor, not-xanz, playpolymancer, luzbilliardsgames, buildsnikita, algumacoisaqq, akashjikadra, haotianhuang)",
+      "url": "https://gravyassets.itch.io/psx-grass",
+      "reason": "Each page carries itch.io AI Disclosure 'AI Assisted'."
+    },
+    {
+      "name": "Kinemiq free animations",
+      "url": "https://kinemiq.itch.io/free-game-animations",
+      "reason": "Freemium funnel for a video/text-to-animation generator; animations likely machine-generated."
+    },
+    {
+      "name": "codingcreature City Props Kit",
+      "url": "https://codingcreature.itch.io/city-props-kit-1",
+      "reason": "Says CC0 but adds 'don't resell unmodified versions' condition."
+    },
+    {
+      "name": "CucurbitaPepo Girl Sprites for Visual Novels",
+      "url": "https://cucurbitapepo.itch.io/girl-sprites-for-visual-novel",
+      "reason": "CC0 license field but description says 'Do not resell these directly'."
+    },
+    {
+      "name": "DoubleFree Mr Fuffington cat sprite",
+      "url": "https://doublefree.itch.io/mr-fuffington",
+      "reason": "Says CC0 but poses are traced from Pixabay images (Pixabay License, not CC0); unclear provenance."
+    },
+    {
+      "name": "Eclair Assets GLB packs",
+      "url": "https://eclair-assets.itch.io/mini-market-glb-pack-20-free-cc0-3d-models",
+      "reason": "Repackaging of Kenney's models (Kenney already in catalog)."
+    },
+    {
+      "name": "HydeCo Godot Skies",
+      "url": "https://hydethebooty98.itch.io/godot-skies",
+      "reason": "Repackaging of Poly Haven HDRIs (Poly Haven already in catalog)."
+    },
+    {
+      "name": "glory-asset Low Poly Viking ship",
+      "url": "https://glory-asset.itch.io/low-poly-viking-ship",
+      "reason": "Re-upload; page says the model is not the uploader's creation, source unclear."
+    },
+    {
+      "name": "hamsunqiu Modern Military Weapons SFX",
+      "url": "https://hamsunqiu.itch.io/modern-military-weapons-sound-pack-38-wav-cc0",
+      "reason": "CC0 but adds 'please don't resell this exact collection' restriction."
+    },
+    {
+      "name": "Meemies Screamin' CC0 3D Asset Dump",
+      "url": "https://meemies.itch.io/cc0",
+      "reason": "CC0 field but description says 'please don't sell them as-is'."
+    },
+    {
+      "name": "rkuhlf Low Poly Shields",
+      "url": "https://rkuhlf-assets.itch.io/low-poly-shields",
+      "reason": "CC0 field but description lists 'What You Can't Do: Resell/redistribute this asset'."
+    },
+    {
+      "name": "tinypixeldev Dark Dungeon horror tileset",
+      "url": "https://tinypixeldev.itch.io/dark-dungeon-pixel-horror-tileset",
+      "reason": "Says CC0 but adds 'Do NOT resell or redistribute as-is'."
+    },
+    {
+      "name": "thatguynm Public Domain Trash Music",
+      "url": "https://thatguynm.itch.io/public-domain-trash-music",
+      "reason": "Text only says 'Public Domain'; CC0 appears only as a tag and in a filename."
+    },
+    {
+      "name": "Dobo UI Cozy UI packs",
+      "url": "https://dobo-ui.itch.io/cozy-ui",
+      "reason": "Custom license forbidding resale, redistribution, NFT and AI-training use; not CC0."
+    },
+    {
+      "name": "Toffeecraft UI packs",
+      "url": "https://toffeecraft.itch.io/ui-user-interface-mega-pack",
+      "reason": "Custom license: 'Not redistribute or resell this assets'; not CC0."
+    },
+    {
+      "name": "Pixel fonts without CC0 (yukipixels BoldPixels, joebrogers BitPotion, speakthesky Dicier, ninjikin Font+)",
+      "url": "https://yukipixels.itch.io/boldpixels",
+      "reason": "Asset license fields are CC BY or CC BY-SA, not CC0."
+    },
+    {
+      "name": "Noraneko Games Anime Backgrounds",
+      "url": "https://noranekogames.itch.io/yumebackground",
+      "reason": "Custom terms with NFT ban; no CC0."
+    },
+    {
+      "name": "Spiralatlas Contemporary VN Backgrounds",
+      "url": "https://spiralatlas.itch.io/contemporary-vn-backgrounds",
+      "reason": "Requires link back and forbids redistributing unedited images; not CC0."
+    },
+    {
+      "name": "potat0master Visual Novel Backgrounds (Mansion)",
+      "url": "https://potat0master.itch.io/free-visual-novel-backgrounds-mansion-pack",
+      "reason": "Forbids resale/redistribution of images; not CC0."
+    },
+    {
+      "name": "Kaboff 154 Mouse Cursors Pack #2",
+      "url": "https://kaboff.itch.io/154-mouse-cursors-pack-2-32x32",
+      "reason": "Asset license field is CC BY 4.0, not CC0."
+    },
+    {
+      "name": "Simple SVG brand logos (herrbischoff)",
+      "url": "https://github.com/herrbischoff/simple-svg-brand-logos",
+      "reason": "README says the CC0 license applies only to source code, not the brand graphics."
+    },
+    {
+      "name": "Open Lo-Fi (btahir)",
+      "url": "https://github.com/btahir/open-lofi",
+      "reason": "README states all tracks were generated with Suno v5 (AI-generated)."
+    },
+    {
+      "name": "Deceased Superior Technician music archive",
+      "url": "https://github.com/goblinhack/deceased-superior-technician-music",
+      "reason": "LICENSE is CC0 but README quotes the original CC attribution terms; conflict."
+    },
+    {
+      "name": "Weather Now icons (Grabster)",
+      "url": "https://github.com/Grabstertv/WeatherNowIcons",
+      "reason": "LICENSE.md is CC0 but README license block says CC BY-SA 4.0; conflict."
+    },
+    {
+      "name": "Culinary Assets (cosmintrica)",
+      "url": "https://github.com/cosmintrica/culinary-assets",
+      "reason": "README states the artwork is AI-generated."
+    },
+    {
+      "name": "FiveM/RedM inventory icons (SwisserDev)",
+      "url": "https://github.com/SwisserDev/fivem-icons-pixel",
+      "reason": "README states the icons are AI generated."
+    },
+    {
+      "name": "OpenEOS POS icon database",
+      "url": "https://github.com/OpenEOS-Project/pos-icon-database",
+      "reason": "Icons generated with OpenAI gpt-image-1 (AI-generated)."
+    },
+    {
+      "name": "NYC die-cut stickers (Pranav-Karra-3301)",
+      "url": "https://github.com/Pranav-Karra-3301/nyc-die-cut-stickers",
+      "reason": "README states the sheets were generated with ChatGPT image generation."
+    },
+    {
+      "name": "VRMavatars (MJMoonbow)",
+      "url": "https://github.com/MJMoonbow/VRMavatars",
+      "reason": "README states models were created with Stable Diffusion and TripoSR (AI)."
+    },
+    {
+      "name": "Free Mocap Library FBX GLB (mocapflow)",
+      "url": "https://github.com/mocapflow/Free-Mocap-Library-FBX-GLB",
+      "reason": "LICENSE is CC0 but README badge says CC BY 4.0; conflict."
+    },
+    {
+      "name": "Simone Piervergili sound effects (NeoSoundFonts)",
+      "url": "https://github.com/NeoSoundFonts/SimonePiervergili-SoundEffects",
+      "reason": "Third-party recordings converted from an SF2 with no statement of the original license; unclear provenance."
+    },
+    {
+      "name": "VoxForge sounds",
+      "url": "https://github.com/maddoxdunlap1-glitch/voxforge-sounds",
+      "reason": "678 of 1000 sounds are re-uploads of Kenney audio packs (already listed); rest synthesized."
+    },
+    {
+      "name": "TR-808 samples (Michael Fischer, tidalcycles)",
+      "url": "https://github.com/tidalcycles/sounds-tr808-fischer",
+      "reason": "1994 third-party sample set re-hosted under CC0 with no statement from the original author; unclear provenance."
+    },
+    {
+      "name": "FreeCAD Flat Icons",
+      "url": "https://github.com/obelisk79/FreeCAD-Flat-Icons",
+      "reason": "Derived from another forum user's icon work whose license is not stated; unclear provenance."
+    },
+    {
+      "name": "Fatcow icons bundle (JPInfinity)",
+      "url": "https://github.com/JPInfinity/FatcowIconsBundle",
+      "reason": "Re-upload of FatCow Farm-Fresh icons, originally released under CC BY 3.0, not CC0."
+    },
+    {
+      "name": "Open SVG Map Icons (twain47)",
+      "url": "https://github.com/twain47/Open-SVG-Map-Icons",
+      "reason": "Repository of the SJJB map icons, which are already listed."
+    },
+    {
+      "name": "Kitbitz Assets (CaptExcellent)",
+      "url": "https://github.com/CaptExcellent/kits-library-assets",
+      "reason": "GitHub repo of Kitbitz, already listed as pending (kitbitz.com)."
+    },
+    {
+      "name": "FPS asset kits (petroulacl)",
+      "url": "https://github.com/petroulacl/fps-asset-kit",
+      "reason": "Re-packaging of Kenney, Quaternius, ambientCG and OpenGameArt assets that are already listed."
+    },
+    {
+      "name": "Mini Mike's Metro Minis (mikelovesrobots)",
+      "url": "https://github.com/mikelovesrobots/mmmm",
+      "reason": "Licensed CC BY 4.0, not CC0."
+    },
+    {
+      "name": "FlagSVG (TheDanniCraft)",
+      "url": "https://github.com/TheDanniCraft/FlagSVG",
+      "reason": "Only 14 flag SVGs; below the ~30 asset threshold."
+    },
+    {
+      "name": "Kajahdus impulse responses",
+      "url": "https://github.com/lehtoroni/kajahdus",
+      "reason": "Only 9 impulse response WAV files; below the ~30 asset threshold."
+    },
+    {
+      "name": "IndieWeb icons",
+      "url": "https://github.com/getindiekit/indieweb-icons",
+      "reason": "Only 20 SVG icons; below the ~30 asset threshold."
+    },
+    {
+      "name": "Vanzemlja Sounds netlabel (Internet Archive)",
+      "url": "https://archive.org/details/vanzemlja-sounds",
+      "reason": "Items marked CC0 but described as tapes from Radio Slovenia 3; uploader provenance unclear."
+    },
+    {
+      "name": "ZenQ Sounds netlabel (Internet Archive)",
+      "url": "https://archive.org/details/zenq-sounds",
+      "reason": "Radio plays from Radio Slovenia re-uploaded and marked CC0; provenance unclear."
+    },
+    {
+      "name": "Daniel Veesey (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/Daniel_Veesey/",
+      "reason": "Albums labeled only 'PD', not CC0; one album CC BY-NC-SA."
+    },
+    {
+      "name": "Lloyd Rodgers (Free Music Archive)",
+      "url": "https://freemusicarchive.org/music/Lloyd_Rodgers/",
+      "reason": "Albums use Public Domain Mark 1.0, not CC0."
+    },
+    {
+      "name": "Blarumyrran (OpenGameArt)",
+      "url": "https://opengameart.org/users/blarumyrran",
+      "reason": "Recent CC0 uploads are Battle for Wesnoth images; derivative provenance unclear."
+    },
+    {
+      "name": "looplicator (Freesound)",
+      "url": "https://freesound.org/people/looplicator/sounds/",
+      "reason": "Only 3700 of 18764 sounds are CC0; not mostly CC0."
+    },
+    {
+      "name": "aceinet (Freesound)",
+      "url": "https://freesound.org/people/aceinet/sounds/",
+      "reason": "Only 105 of 186 sounds are CC0; not mostly CC0."
+    },
+    {
+      "name": "Deleted Freesound account deleted_user_3277771",
+      "url": "https://freesound.org/people/deleted_user_3277771/sounds/",
+      "reason": "Deleted account; username filter returns ambiguous counts."
+    },
+    {
+      "name": "Low-Poly Game Asset Image Dataset (rappjaco)",
+      "url": "https://huggingface.co/datasets/rappjaco/Low-Poly-Game-Asset-Images",
+      "reason": "Synthetic images generated from text prompts (AI-generated)."
+    },
+    {
+      "name": "Stock photos of Asian people (agentlans)",
+      "url": "https://huggingface.co/datasets/agentlans/stock-photos-asian-people",
+      "reason": "Images created with Stable Diffusion 1.5 (AI-generated)."
+    },
+    {
+      "name": "Bulgarian audiobook speech dataset (raditotev)",
+      "url": "https://huggingface.co/datasets/raditotev/bg-audiobooks-tts",
+      "reason": "Audio ripped from third-party YouTube audiobooks; uploader's CC0 claim has unclear rights."
+    },
+    {
+      "name": "Kachin ASR audio (freococo)",
+      "url": "https://huggingface.co/datasets/freococo/kachin_asr_audio",
+      "reason": "Audio downloaded from a TV channel's YouTube; broadcaster never released it under CC0."
+    },
+    {
+      "name": "Aircraft images (nyuuzyou)",
+      "url": "https://huggingface.co/datasets/nyuuzyou/aircraft-images",
+      "reason": "CC0 covers captions only; photographs keep original copyright."
+    },
+    {
+      "name": "Texture images (JapanDegitalMaterial)",
+      "url": "https://huggingface.co/datasets/JapanDegitalMaterial/Texture_images",
+      "reason": "Template card with no documented provenance for the textures."
+    },
+    {
+      "name": "Alloy library (argonrobotics-ai)",
+      "url": "https://huggingface.co/datasets/argonrobotics-ai/alloy-library",
+      "reason": "Mixed licences; only ~34 objects CC0, the majority CC BY 4.0 from Objaverse."
+    },
+    {
+      "name": "Phylo-fish (Imageomics)",
+      "url": "https://huggingface.co/datasets/imageomics/phylo-fish",
+      "reason": "Images and text licensed CC BY-NC; only the compilation is CC0."
+    },
+    {
+      "name": "Fine-grained challenges (Imageomics)",
+      "url": "https://huggingface.co/datasets/imageomics/fine-grained-challenges",
+      "reason": "CC0 covers compilation metadata only and explicitly does not relicense the images."
     }
   ],
   "pending": [
@@ -9609,11 +11888,6 @@
       "name": "Startup Stock Photos",
       "url": "https://startupstockphotos.com/",
       "reason": "Only the page metadata says '(CC0)'; no license page or visible CC0 statement was found."
-    },
-    {
-      "name": "Open Goldberg Variations (Kimiko Ishizaka)",
-      "url": "https://www.opengoldbergvariations.org/",
-      "reason": "The site calls the recording and score 'public domain' but shows no CC0 dedication."
     },
     {
       "name": "100Avatars (Polygonal Mind)",
@@ -9944,6 +12218,36 @@
       "name": "Zenodo API (CC0 media record search)",
       "url": "https://zenodo.org/api/records",
       "reason": "HTTP 403 'unusual traffic' block; no new Zenodo records could be checked."
+    },
+    {
+      "name": "Tranquil Tunnels 8x8 Tileset (octoshrimpy)",
+      "url": "https://octoshrimpy.itch.io/tranquil-tunnels",
+      "reason": "CC0 license field, but the page says it mixes in tiles from other named packs whose licenses need checking."
+    },
+    {
+      "name": "Nb Pixel Font Bundle (Nimble Beasts)",
+      "url": "https://nimblebeastscollective.itch.io/nb-pixel-font-bundle",
+      "reason": "CC0 license field on a compilation of fonts by other authors; each font's own license needs checking."
+    },
+    {
+      "name": "Pocket Battle VFX",
+      "url": "https://github.com/poke5121999-art/pocket-battle-vfx",
+      "reason": "CC0 LICENSE, but the sprites are described as drawn procedurally by code with no statement on how that code was made."
+    },
+    {
+      "name": "Codeberg repository search (CC0 asset repos)",
+      "url": "https://codeberg.org/api/v1/repos/search?q=cc0",
+      "reason": "Codeberg search API returned HTTP 429 (search throttled); not retried."
+    },
+    {
+      "name": "Musopen",
+      "url": "https://musopen.org/music/",
+      "reason": "HTTP 403 for automated fetch; CC0 labeling could not be checked."
+    },
+    {
+      "name": "Musea Brugge collection",
+      "url": "https://collectie.museabrugge.be/en",
+      "reason": "Listed as CC0 by PDIA but collection site returns HTTP 403 to curl; could not verify terms page."
     }
   ]
 }
