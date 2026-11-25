@@ -10959,6 +10959,154 @@
         "date": "2026-11-25",
         "evidence": "Page: 'The recording is licensed with the Creative Commons Zero - public domain - license.'"
       }
+    },
+    {
+      "id": "blender-hdri-archive",
+      "name": "Blender Institute HDRI Archive",
+      "url": "https://download.blender.org/archive/hdri/",
+      "kinds": [
+        "hdri"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://download.blender.org/archive/hdri/myanmar/bagan-pagodas-and-trees/",
+      "notes": "Archive of the former Blender Cloud HDRI library: 137 equirectangular HDRIs in 7 sets (BlendedSkies, Dutch Landscape Pack, Indoor, Myanmar, Outdoor, SloCro Landscape Pack, Small World), EXR/HDR up to 16K. Each item page states its licence: 135 are marked cc-0, 2 are cc-by (Outdoor 'Forest Hochsal 02', Small World 'Elevator'), so check the label per item. A few Outdoor/Indoor items are credited to Greg Zaal and may also appear on Poly Haven.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'Bagan: Pagodas and Trees cc-0 Published by Sybren A. Stüvel'"
+      }
+    },
+    {
+      "id": "hdr-vault-philip-modin",
+      "name": "HDR Vault (Philip Modin)",
+      "url": "https://pvmodin.gumroad.com/l/HDRVault",
+      "kinds": [
+        "hdri"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://pvmodin.gumroad.com/l/HDRVault",
+      "notes": "Photographer's own library of full-sphere HDR maps (44 images at the 2017 announcement, 5376x2688 32-bit EXR, mostly indoor), released as one Gumroad download with pay-what-you-want pricing from $0. Includes his earlier 12-image Industrial set.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'publish a growing catalog of HDRs maps into the public domain (CC0) for personal and commercial use'"
+      }
+    },
+    {
+      "id": "kringla-cc0-media",
+      "name": "Kringla (Swedish museums and heritage search, CC0 media filter)",
+      "url": "https://www.kringla.nu/kringla/sok?text=*&filter=mediaLicense%3Dcc0",
+      "kinds": [
+        "image",
+        "artwork"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.kringla.nu/kringla/sok?text=*&filter=mediaLicense%3Dcc0",
+      "notes": "Search portal of the Swedish National Heritage Board (Riksantikvarieämbetet) over K-samsök. The media-license facet 'cc0' returned 659,843 records on 2026-11-25, mostly Riksantikvarieämbetet heritage photos (~496k), Östasiatiska museet (~42k), Etnografiska museet (~29k), Medelhavsmuseet (~26k), Värmlands museum (~19k), Österlens and Sörmlands museum. Object pages link the media license to creativecommons.org/publicdomain/zero/1.0/. Many records have no image; use the 'Med bilder' filter. Other records in Kringla carry CC BY, CC BY-NC or PDM.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Object pages under the mediaLicense=cc0 filter: 'Licens: <a href=\"http://creativecommons.org/publicdomain/zero/1.0/\">'"
+      }
+    },
+    {
+      "id": "publicvideos-org-ia",
+      "name": "Publicvideos.org stock clip batches (Internet Archive)",
+      "url": "https://archive.org/search?query=subject%3A%22publicvideos.org%22",
+      "kinds": [
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://archive.org/details/ace_200911_02",
+      "notes": "57 Internet Archive items (about 142 GB) archiving the publicvideos.org CC0 stock footage project, uploaded 2009-2010 by Ace of Spades (Fabricio Zuardi) and Marcio Galli. Each batch item holds hundreds of short camera clips (street, nature, objects, people) in MP4/OGV derivatives of the original MTS files. Internet Archive API: 57 items with subject publicvideos.org, all 57 with licenseurl http://creativecommons.org/publicdomain/zero/1.0/. Clips have hash filenames, so browsing is by batch rather than by subject.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'Usage CC0 1.0 Universal Topics publicvideos.org , royalty free , free , cc0 , cczero , stock footage'"
+      }
+    },
+    {
+      "id": "clouds-over-the-tay-timelapse",
+      "name": "Clouds over the Tay timelapses (Adam Sampson, Internet Archive)",
+      "url": "https://archive.org/search?query=title%3A%22Clouds+over+the+Tay%22",
+      "kinds": [
+        "video"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://archive.org/details/TayClouds201306full",
+      "notes": "26 month-long sky timelapses (about 32 GB, 2013-2016, several in HD) of clouds over the Tay Road Bridge in Dundee, Scotland, shot one frame per minute with a Raspberry Pi camera. Internet Archive API: 26 items titled 'Clouds over the Tay', all 26 with licenseurl http://creativecommons.org/publicdomain/zero/1.0/. Useful as sky/cloud b-roll and timelapse source material.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'Usage CC0 1.0 Universal Topics clouds , tay , dundee , scotland , timelapse'"
+      }
+    },
+    {
+      "id": "nina-paley-cc0-films",
+      "name": "Nina Paley CC0 feature films (Sita Sings the Blues, Seder-Masochism)",
+      "url": "https://archive.org/details/Sita_Sings_the_Blues",
+      "kinds": [
+        "video"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://archive.org/details/sedermasochism",
+      "notes": "Two hand-animated feature films dedicated to CC0 by the animator, with full production masters on the Internet Archive: Sita Sings the Blues (item Sita_Sings_the_Blues, about 234 GB incl. 1080p masters, audio stems and stills) and Seder-Masochism (item sedermasochism, about 259 GB). Only these CC0 items qualify; many other Nina Paley uploads are CC BY-SA or CC BY. Music in both films (e.g. 1920s Annette Hanshaw recordings in Sita) belongs to third parties and is not covered by CC0.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'Nina Paley dedicated the film to the public domain under CC0 on January 24, 2019. The music in the film is still under copyright of its original owners and is not covered by the CC0 dedication.'"
+      }
+    },
+    {
+      "id": "ivory-billed-woodpecker-video-dryad",
+      "name": "Video footage of the Ivory-billed Woodpecker (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.8w9ghx3hp",
+      "kinds": [
+        "video",
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.8w9ghx3hp",
+      "notes": "Raw field video (about 9.7 GB, 23 files) of possible Ivory-billed Woodpeckers recorded in Louisiana (2006, 2008) and Florida (2007), as interlaced DV originals and de-interlaced MOV versions plus short event clips. Companion data for Scientific Reports doi:10.1038/s41598-020-71677-5.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "dronezaic-aerial-video-dryad",
+      "name": "DroneZaic freely flown aerial video dataset (Dryad)",
+      "url": "https://datadryad.org/dataset/doi:10.5061/dryad.r4xgxd2q7",
+      "kinds": [
+        "video",
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://datadryad.org/dataset/doi:10.5061/dryad.r4xgxd2q7",
+      "notes": "About 70 GB: raw consumer-drone video of agricultural (maize) field trials (1_raw_videos.zip, about 38 GB) plus processed mosaics and models, from a pipeline for mosaicking freely flown UAV video.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "coronary-dominance-angiography",
+      "name": "CoronaryDominance angiogram video dataset",
+      "url": "https://huggingface.co/datasets/BearSubj13/CoronaryDominance",
+      "kinds": [
+        "video",
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://huggingface.co/datasets/BearSubj13/CoronaryDominance/raw/main/README.md",
+      "notes": "1,574 invasive coronary angiography studies with multi-view X-ray videos from two angiography systems, tagged for dominance, quality, artifacts and occlusion; prepared by Kruzhilov et al. for Nature Scientific Data. Specialist medical research footage (10B-100B size category).",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "README.md: 'license: cc0-1.0'"
+      }
     }
   ],
   "excluded": [
@@ -12176,6 +12324,171 @@
       "name": "Pocket Battle VFX",
       "reason": "All 6 commits carry 'Co-Authored-By: Claude' trailers; the sprite-generating code was AI-assisted.",
       "url": "https://github.com/poke5121999-art/pocket-battle-vfx"
+    },
+    {
+      "name": "FieraRyan panorama packs (Sci-Fi Lab, Spaceship Bridge)",
+      "reason": "CC0 on itch.io but AI-generated with Blockade Labs Skybox AI (AI Disclosure: AI Assisted).",
+      "url": "https://fieraryan.itch.io/sci-fi-lab-panorama-pack"
+    },
+    {
+      "name": "Emberpine skyboxes",
+      "reason": "Paid and AI-generated skyboxes per itch.io AI disclosure.",
+      "url": "https://emberpine.itch.io/skyboxes-day-dusk-storm"
+    },
+    {
+      "name": "Wa Skies (komonodo3d)",
+      "reason": "AI-assisted, custom licence forbids redistribution; not CC0.",
+      "url": "https://komonodo3d.itch.io/free-japanese-skies-2k-hdri"
+    },
+    {
+      "name": "4K Sky HDRI Bundle (GerryVerse)",
+      "reason": "Re-upload: page says the HDRIs were not created by the uploader and are sourced from other sites.",
+      "url": "https://gerryverse.itch.io/4k-sky-hdri-bundle"
+    },
+    {
+      "name": "HydeCo Godot Skies packs",
+      "reason": "Paid repackaging of third-party CC0 HDRIs for Godot; no original content.",
+      "url": "https://hydethebooty98.itch.io/godot-skies-bundle"
+    },
+    {
+      "name": "Sky Textures (Bumbadida)",
+      "reason": "Drone-photo skyboxes stated only as 'Public Domain'; CC0 is not named.",
+      "url": "https://bumbadida.itch.io/skybox-textures-sdr"
+    },
+    {
+      "name": "Open HDRI 1K (Hugging Face)",
+      "reason": "Downsampled aggregate of Poly Haven, BlenderKit, ambientCG, CGEES and Open HDRI, all already listed.",
+      "url": "https://huggingface.co/datasets/leodriesch/open-hdri-1k"
+    },
+    {
+      "name": "RENI HDR (Hugging Face)",
+      "reason": "Low-resolution research derivative of CC0 panoramas from other libraries; no original captures.",
+      "url": "https://huggingface.co/datasets/jadgardner/reni-hdr"
+    },
+    {
+      "name": "Krea 2 scene-linear HDR dataset",
+      "reason": "Perspective crops re-projected from Poly Haven HDRIs; derivative of a listed source.",
+      "url": "https://huggingface.co/datasets/LAXMAYDAY/krea2-scene-linear-hdr-dataset"
+    },
+    {
+      "name": "RoboBenchMart PBR textures and HDRIs",
+      "reason": "Convenience re-pack of ambientCG and Poly Haven assets, adds nothing new.",
+      "url": "https://huggingface.co/datasets/emb-ai/RoboBenchMart_pbr_hdri"
+    },
+    {
+      "name": "zuujis-cc0 HDRI mirrors (GitHub)",
+      "reason": "Mirrors of Poly Haven and ambientCG HDRIs, both already listed.",
+      "url": "https://github.com/zuujis-cc0"
+    },
+    {
+      "name": "BevelLab Packs",
+      "reason": "Only 3 HDRIs, all taken from Poly Haven.",
+      "url": "https://github.com/h3x4d3x4/BevelLab-Packs"
+    },
+    {
+      "name": "HDRI-Skies (free section)",
+      "reason": "Free HDRIs under a custom licence forbidding resale and sharing; not CC0.",
+      "url": "https://blenderartists.org/t/free-hdri-skies-a-lot-of/651203"
+    },
+    {
+      "name": "SkyGAN HDR sky dataset",
+      "reason": "Dataset licensed CC BY-NC-SA 4.0, not CC0.",
+      "url": "https://github.com/CGGMFF/SkyGAN"
+    },
+    {
+      "name": "iHDRI.com",
+      "reason": "Domain now serves an unrelated gambling site; the author's HDRIs moved to CGEES, already listed.",
+      "url": "https://www.ihdri.com/"
+    },
+    {
+      "name": "RISD Museum image request / open access",
+      "reason": "Page only says 'free access to digital images of public domain materials'; CC0 is not named",
+      "url": "https://risdmuseum.org/node/13783"
+    },
+    {
+      "name": "Davison Art Collection, Wesleyan University",
+      "reason": "Open Access images are provided as having 'no known copyright restrictions', not CC0",
+      "url": "https://www.wesleyan.edu/dac/open/openaccess.html"
+    },
+    {
+      "name": "KMSKA (Royal Museum of Fine Arts Antwerp)",
+      "reason": "CC0 waiver covers site texts only; artwork photos are described as public domain without CC0",
+      "url": "https://kmska.be/en/disclaimer"
+    },
+    {
+      "name": "Biblioteca Virtual de Defensa (Spain)",
+      "reason": "Record pages now state 'La copia digital se distribuye bajo licencia CC BY 4.0'; not CC0",
+      "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/"
+    },
+    {
+      "name": "Norrbottens museum (Carlotta)",
+      "reason": "Sampled images are CC BY 4.0 or CC BY-NC 4.0, not CC0",
+      "url": "https://samlingar.norrbottensmuseum.se/web"
+    },
+    {
+      "name": "Kulturen i Lund (Carlotta)",
+      "reason": "Own object pages show CC BY-NC-ND 2.5 even where Europeana says CC0",
+      "url": "https://carl.kulturen.com/web/"
+    },
+    {
+      "name": "Sozialarchiv SAH image archive (Stadt Zürich open data)",
+      "reason": "Dataset license is CC BY (Creative Commons Attribution), not CC0",
+      "url": "https://data.stadt-zuerich.ch/dataset/sozialarchiv-sah"
+    },
+    {
+      "name": "Williams College Museum of Art collection data",
+      "reason": "CC0 repository contains metadata only; no CC0 images",
+      "url": "https://github.com/wcmaart/collection"
+    },
+    {
+      "name": "ACMI collection data",
+      "reason": "CC0 covers collection metadata only (deprecated archive); no images",
+      "url": "https://github.com/ACMILabs/collection"
+    },
+    {
+      "name": "Peaceful Peach clips (Internet Archive)",
+      "reason": "Tagged CC0 on upload but the sampled item (Morning Egg) says the clip is from pixabay.com; re-uploads of other people's footage.",
+      "url": "https://archive.org/details/morning-egg"
+    },
+    {
+      "name": "matthornb explosion and blood spray VFX clips",
+      "reason": "Free for commercial use without credit, but the page never names CC0; custom permission only.",
+      "url": "https://matthornb.itch.io/explosion"
+    },
+    {
+      "name": "Everyday Life Stock Footage 18 clips (TS CALM)",
+      "reason": "Clips were made with generative AI image-to-video tools per the page; also not CC0.",
+      "url": "https://tscalmshop.itch.io/everyday-life-stock-footage-18-clips"
+    },
+    {
+      "name": "Sun cycle loop videos (lilambdcrossing)",
+      "reason": "itch.io AI disclosure marks the pack as AI Assisted; skipped under the no-AI rule.",
+      "url": "https://lilambdcrossing.itch.io/sun-cycle-loop-videos"
+    },
+    {
+      "name": "Flowing Light Backgrounds (lampe332)",
+      "reason": "itch.io AI disclosure marks the graphics as AI Assisted; skipped under the no-AI rule.",
+      "url": "https://lampe332.itch.io/flowing-light-backgrounds"
+    },
+    {
+      "name": "w0rldw3aver360-walks (TheMindExpansionNetwork)",
+      "reason": "Synthetic walkthrough clips generated with an image-to-video model; AI-generated footage.",
+      "url": "https://huggingface.co/datasets/TheMindExpansionNetwork/w0rldw3aver360-walks"
+    },
+    {
+      "name": "CLEVRER re-upload (ghomasHudson)",
+      "reason": "Third-party re-upload tagged cc0-1.0, but the original CLEVRER site does not state a license; provenance unclear.",
+      "url": "https://huggingface.co/datasets/ghomasHudson/clevrer"
+    },
+    {
+      "name": "Internet Archive vj_loops collection",
+      "reason": "Only 13 of 592 items carry the CC0 license url, nearly all from one uploader mixed with gameplay and re-uploads; too thin.",
+      "url": "https://archive.org/details/vj_loops"
+    },
+    {
+      "name": "hhoppe/data image and video test data",
+      "reason": "CC0 but only a handful of short test clips (brink, palmtrees, cherries); below the collection quality bar.",
+      "url": "https://github.com/hhoppe/data"
     }
   ],
   "pending": [
@@ -12463,6 +12776,111 @@
       "name": "Musea Brugge collection",
       "url": "https://collectie.museabrugge.be/en",
       "reason": "Still HTTP 403 (nginx) on the collection site."
+    },
+    {
+      "name": "CC0 Skybox Pack 2 (IndieDB)",
+      "reason": "IndieDB returned HTTP 403 to curl; licence and provenance could not be checked.",
+      "url": "https://www.indiedb.com/addons/cc0-skybox-pack-2"
+    },
+    {
+      "name": "Eisklotz HDRIs",
+      "reason": "Site is down (hosting placeholder page); no licence text available. Some Eisklotz HDRIs are in the Blender archive, mostly marked cc-0.",
+      "url": "https://www.eisklotz.com/"
+    },
+    {
+      "name": "Saint Louis Art Museum open access",
+      "reason": "Cloudflare challenge (403 'Just a moment...'); CC0 wording could not be checked",
+      "url": "https://www.slam.org/collection/open-access/"
+    },
+    {
+      "name": "Yale University Art Gallery open access",
+      "reason": "Cloudflare challenge (403); a third-party library guide says Yale images are CC0, not verified on the gallery's own page",
+      "url": "https://artgallery.yale.edu/open-access"
+    },
+    {
+      "name": "Clark Art Institute open access",
+      "reason": "Cloudflare challenge (403); license wording not checked",
+      "url": "https://www.clarkart.edu/collections/open-access"
+    },
+    {
+      "name": "Princeton University Art Museum open access",
+      "reason": "Cloudflare challenge (403); license wording not checked",
+      "url": "https://artmuseum.princeton.edu/about/open-access"
+    },
+    {
+      "name": "Badisches Landesmuseum Karlsruhe digital catalogue",
+      "reason": "TLS handshake error from curl; Europeana lists ~21,600 CC0 images from this museum, own page not verified",
+      "url": "https://katalog.landesmuseum.de/"
+    },
+    {
+      "name": "Sörmlands museum collections",
+      "reason": "Connection timed out; Europeana lists ~107,000 CC0 images, own page not verified (partly visible via Kringla)",
+      "url": "https://sokisamlingar.sormlandsmuseum.se/"
+    },
+    {
+      "name": "Blekinge museum image archive",
+      "reason": "Connection timed out; Europeana and Kringla list a few thousand CC0 images",
+      "url": "https://blm.kulturhotell.se/"
+    },
+    {
+      "name": "Netherlands Institute for Military History image bank (NIMH)",
+      "reason": "HTTP 403 on object pages; Europeana lists ~68,600 CC0 images",
+      "url": "https://nimh-beeldbank.defensie.nl/"
+    },
+    {
+      "name": "Regionaal Archief Nijmegen image collection",
+      "reason": "HTTP 403 bot protection; Europeana lists ~11,600 CC0 images",
+      "url": "https://studiezaal.nijmegen.nl/"
+    },
+    {
+      "name": "Salzburg Museum Sammlung Online",
+      "reason": "JS-only object pages; Europeana lists ~6,700 CC0 images, license text not visible without JS",
+      "url": "https://sammlung-online.salzburgmuseum.at/"
+    },
+    {
+      "name": "Göteborgs stadsmuseum collections (Carlotta)",
+      "reason": "JS-only object pages; Europeana lists ~2,200 CC0 images, per-image license not visible in HTML",
+      "url": "https://samlingar.goteborgsstadsmuseum.se/carlotta/web"
+    },
+    {
+      "name": "Städtische Museen Freiburg Online-Sammlung",
+      "reason": "Anubis bot-check page served to curl; reuse terms not readable",
+      "url": "https://onlinesammlung.freiburg.de/en/weiterverwenden"
+    },
+    {
+      "name": "KENOM numismatic portal (incl. Landesmuseum für Vorgeschichte Halle coins)",
+      "reason": "Anubis bot-check page served to curl; Europeana lists ~19,000 CC0 coin images",
+      "url": "https://www.kenom.de/"
+    },
+    {
+      "name": "Amsterdam Museum collection (Adlib portal)",
+      "reason": "Record pages show only a CC0 badge link; unclear if it covers images or just metadata, and the museum site has no current open-data page (404)",
+      "url": "https://am.adlibhosting.com/ais6v2/"
+    },
+    {
+      "name": "NÖ Museen digital catalogue (noemuseen.at)",
+      "reason": "Object pages label 'CC0 1.0 Universell' but the link points to CC BY-NC-SA 4.0; conflicting license needs clarification",
+      "url": "https://www.noemuseen.at/dipkatalognoemuseen/"
+    },
+    {
+      "name": "Athens City Museum (Vouros-Eutaxias) portal",
+      "reason": "JS-only Angular app; Europeana lists ~2,400 CC0 images, own license text not visible",
+      "url": "https://portal.athenscitymuseum.gr/"
+    },
+    {
+      "name": "Manos & Anastasia Faltaits Museum repository",
+      "reason": "HTTP 403 bot protection; Europeana lists ~2,900 CC0 images",
+      "url": "https://faltaits.gr/"
+    },
+    {
+      "name": "Open Beelden (Sound and Vision open media)",
+      "reason": "Media search page did not finish loading (timed out after two minutes); site states CC0 only for metadata, item licenses mostly CC BY-SA, CC0 video items not confirmed.",
+      "url": "https://www.openbeelden.nl/media/"
+    },
+    {
+      "name": "Sita Sings the Blues official site",
+      "reason": "Returned 502 Bad Gateway; license was verified instead on the Internet Archive item pages.",
+      "url": "https://www.sitasingstheblues.com/"
     }
   ]
 }

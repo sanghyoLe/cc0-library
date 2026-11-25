@@ -105,7 +105,7 @@ const result = (value: object) => ({
 const fail = (message: string) => ({ content: [{ type: "text" as const, text: message }], isError: true });
 
 export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
-  const server = new McpServer({ name: "cc0-library", version: "0.2.11" });
+  const server = new McpServer({ name: "cc0-library", version: "0.2.12" });
 
   server.registerTool(
     "search_assets",
