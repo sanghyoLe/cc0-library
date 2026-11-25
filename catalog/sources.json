@@ -252,8 +252,8 @@
       "licensePage": "https://creativecommons.org/publicdomain/zero/1.0/",
       "notes": "Mixed licenses. Only items whose licenseurl is the CC0 1.0 deed qualify. Many CC0 videos are US government footage.",
       "verified": {
-        "date": "2026-11-19",
-        "evidence": "advancedsearch returns items with licenseurl=\"http(s)://creativecommons.org/publicdomain/zero/1.0/\""
+        "date": "2026-11-25",
+        "evidence": "Internet Archive API: advancedsearch licenseurl=creativecommons.org/publicdomain/zero/1.0/ numFound 769552"
       }
     },
     {
@@ -285,8 +285,8 @@
       "licensePage": "https://isorepublic.com/license/",
       "notes": "Stock photos and videos.",
       "verified": {
-        "date": "2026-11-19",
-        "evidence": "license page: 'CC0 License. All photo and video downloads on ISORepublic.com are free'"
+        "date": "2026-11-25",
+        "evidence": "license page: 'All photo and video downloads on ISORepublic.com are free for both personal and commercial use and come with a CC0 license'"
       }
     },
     {
@@ -418,8 +418,8 @@
       "licensePage": "https://wordpress.org/photos/",
       "notes": "Community photos, moderated before publishing. Searchable through the WordPress REST API without a key.",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "directory page: 'All photos are CC0 licensed. No rights are reserved, so you are free to use the photos anywhere, for any purpose'"
+        "date": "2026-11-25",
+        "evidence": "directory page (links creativecommons.org/publicdomain/zero/1.0/): 'All photos are CC0 licensed'"
       }
     },
     {
@@ -450,8 +450,8 @@
       "licensePage": "https://www.phylopic.org",
       "notes": "Silhouettes of organisms, searched by scientific name. Licenses vary per image (CC0, CC BY, CC BY-SA...); use only images whose license is CC0. Searchable here.",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "API image records carry a license link; e.g. 'Felis chaus' and 'Felis nigripes' images link creativecommons.org/publicdomain/zero/1.0/ while another links by-sa/3.0"
+        "date": "2026-11-25",
+        "evidence": "PhyloPic API: 41 of 48 images on page 0 link 'https://creativecommons.org/publicdomain/zero/1.0/'"
       }
     },
     {
@@ -498,8 +498,8 @@
       "licensePage": "https://freesvg.org/",
       "notes": "SVG vectors and clip art (about 173,000 files).",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "home page: '173,167+ Free SVG Vectors • CC0 Public Domain (Free for Commercial Use)'"
+        "date": "2026-11-25",
+        "evidence": "home page: 'FreeSVG.org offers free vector images in SVG format with Creative Commons 0 license (public domain).'"
       }
     },
     {
@@ -530,8 +530,8 @@
       "licensePage": "https://www.cgbookcase.com/textures/",
       "notes": "PBR textures with Blender and Unreal guides.",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "textures page: 'The textures are published under the CC0 1.0 license, which means you can use them for free without giving credit'"
+        "date": "2026-11-25",
+        "evidence": "textures page: 'The textures are published under the CC0 1.0 license'"
       }
     },
     {
@@ -546,8 +546,8 @@
       "licensePage": "https://shotstash.com/license/",
       "notes": "Stock photos.",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "license page: 'ShotStash.com photographs come with a CC0 license, meaning they are offered free for both personal and commercial use without attribution'"
+        "date": "2026-11-25",
+        "evidence": "license page meta: 'The ShotStash CC0 license allows free photo download for personal and commercial projects.'"
       }
     },
     {
@@ -677,8 +677,8 @@
       "licensePage": "https://www.thebasemesh.com/faq",
       "notes": "Base meshes (simple starting 3D models) for modeling and sculpting.",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "FAQ: 'these models are under the CC0 license'; submissions are released under CC0"
+        "date": "2026-11-25",
+        "evidence": "FAQ: 'By submitting models here, you are releasing them under the CC0 license.'"
       }
     },
     {
@@ -693,8 +693,8 @@
       "licensePage": "https://transhumans.xyz/",
       "notes": "Sci-fi character illustrations by Pablo Stanley.",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "home page: 'cc0 download transhumans — open source illustrations'"
+        "date": "2026-11-25",
+        "evidence": "home page: 'Free for commercial and personal use under CC0 License.'"
       }
     },
     {
@@ -709,8 +709,8 @@
       "licensePage": "https://freestocks.org/terms-of-use",
       "notes": "Stock photos. The terms add a restriction on reselling the photos as-is, which goes beyond plain CC0; read the terms before redistributing.",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "terms of use: 'All photos on freestocks.org are free and licensed under CC0 (Creative Commons Zero)'"
+        "date": "2026-11-25",
+        "evidence": "terms of use: 'All photos on freestocks.org are free and licensed under CC0'"
       }
     },
     {
@@ -1014,8 +1014,8 @@
       "licensePage": "https://bioicons.com/",
       "notes": "Science and biology illustration icons under mixed licenses (BSD, CC0, CC BY, CC BY-SA, MIT). Use the CC0 license filter.",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "site offers a license filter listing 'BSD, CC0, CC BY 3.0, CC BY 4.0, CC BY-SA 3.0, CC BY-SA 4.0, MIT'"
+        "date": "2026-11-25",
+        "evidence": "license filter: 'All licenses BSD CC0 CC BY 3.0 CC BY 4.0 CC BY-SA 3.0 CC BY-SA 4.0 MIT'"
       }
     },
     {
@@ -1566,8 +1566,8 @@
       "licensePage": "https://about.zenodo.org/terms/",
       "notes": "Research figures, photos and videos. Searchable here; records must report license cc-zero.",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "API records matching metadata.rights.id:cc0-1.0 report metadata.license.id 'cc-zero'"
+        "date": "2026-11-25",
+        "evidence": "terms: 'Zenodo metadata may be freely reused under the CC0 waiver'"
       }
     },
     {
@@ -1582,11 +1582,11 @@
       ],
       "scope": "filter-only",
       "searchable": true,
-      "licensePage": "https://docs.github.com/en/search-github/searching-on-github/searching-for-repositories#search-by-license",
+      "licensePage": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository",
       "notes": "Whole asset repositories whose detected license is CC0-1.0. Searchable here with kind=collection. Check each README: contents can carry other licenses.",
       "verified": {
-        "date": "2026-11-20",
-        "evidence": "search qualifier license:cc0-1.0; repository API reports license.spdx_id 'CC0-1.0'"
+        "date": "2026-11-25",
+        "evidence": "licensing-a-repository doc: 'Creative Commons Zero v1.0 Universal CC0-1.0'"
       }
     },
     {
@@ -1780,8 +1780,8 @@
       "licensePage": "https://brackeysgames.itch.io/brackeys-platformer-bundle",
       "notes": "Pixel-art platformer sprites, music and sound effects.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "page: 'LICENSE: These assets are released under a Creative Commons Zero (CC0) license.'"
+        "date": "2026-11-25",
+        "evidence": "page: 'LICENSE: These assets are released under a Creative Commons Zero'"
       }
     },
     {
@@ -1812,8 +1812,8 @@
       "licensePage": "https://tallbeard.itch.io/music-loop-bundle",
       "notes": "Loopable game music tracks.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "page: 'LICENSE CC-0 (Public Domain) To the extent possible under law, Abstraction Music and Tallbeard Studios ...'"
+        "date": "2026-11-25",
+        "evidence": "page: 'LICENSE CC-0 (Public Domain) To the extent possible under law, Abstraction Music and Tallbeard Studios'"
       }
     },
     {
@@ -1998,8 +1998,8 @@
       "licensePage": "https://docs.dandiarchive.org/user-guide-sharing/data-licenses/",
       "notes": "Neurophysiology data with microscopy images and behavior video. Each dandiset declares CC0-1.0 or CC-BY-4.0; use those with CC0-1.0.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "data licenses page lists 'Public domain dedication (CC0-1.0)' as a dandiset license option"
+        "date": "2026-11-25",
+        "evidence": "data licenses page (CC0-1.0 section): 'This license dedicates the dataset to the public domain'"
       }
     },
     {
@@ -2015,8 +2015,8 @@
       "licensePage": "https://bbbc.broadinstitute.org/BBBC038",
       "notes": "Cell microscopy image sets. Each set has a Copyright field; some sets are not CC0.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "BBBC038 page: 'Copyright: CC0. To the extent possible under law, the various contributors ...'"
+        "date": "2026-11-25",
+        "evidence": "BBBC038 page: 'Copyright: CC0. To the extent possible under law, the various contributors'"
       }
     },
     {
@@ -2180,8 +2180,8 @@
       "licensePage": "https://v3x3d.itch.io/bit-bonanza",
       "notes": "Only the free packs marked CC0 (for example Bit Bonanza) are CC0; paid packs are not.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "Bit Bonanza page: 'These assets are CC0, use them in commercial projects modify tiles as you wish.'"
+        "date": "2026-11-25",
+        "evidence": "page title: 'Bit Bonanza - Simple Top-Down 10x10 RPG Assets Tileset (1Bit, CC0, Free)'"
       }
     },
     {
@@ -2276,8 +2276,8 @@
       "licensePage": "https://libreshot.com/license-information/",
       "notes": "Stock photos. The site adds usage rules (no bulk download, no hotlinking) on top of CC0.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "license page: 'Images on LibreShot are bound to Creative Commons Deed CC0.'"
+        "date": "2026-11-25",
+        "evidence": "license page: 'Images on LibreShot are bound to Creative Commons Deed CC0'"
       }
     },
     {
@@ -2292,8 +2292,8 @@
       "licensePage": "https://www.opendoodles.com/about",
       "notes": "Hand-drawn sketch illustrations by Pablo Stanley.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "about page: 'copy, edit, remix, share, or redraw these images for any purpose without restriction under copyright or database law (CC0 license)' linking creativecommons.org/publicdomain/zero/1.0/"
+        "date": "2026-11-25",
+        "evidence": "about page (CC0 license): 'copy, edit, remix, share, or redraw these images for any purpose without restriction under copyright or database law'"
       }
     },
     {
@@ -2326,8 +2326,8 @@
       "licensePage": "https://sammlung.wienmuseum.at/en/about-us/",
       "notes": "Open Content search mixes CC0 and CC BY 4.0; use objects labelled CC0.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "about page: 'Images in the public domain are labelled with CC0.'"
+        "date": "2026-11-25",
+        "evidence": "about page: 'Images in the public domain are labelled with CC0'"
       }
     },
     {
@@ -2442,11 +2442,11 @@
       ],
       "scope": "whole-library",
       "searchable": false,
-      "licensePage": "https://github.com/waysidemapping/pinhead",
+      "licensePage": "https://raw.githubusercontent.com/waysidemapping/pinhead/main/README.md",
       "notes": "More than 2,700 map-pin icons.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "README: 'since they're licensed **CC0**, you can use them anywhere for free'; LICENSE is CC0 1.0"
+        "date": "2026-11-25",
+        "evidence": "README.md: 'since they're licensed **CC0**, you can use them anywhere for free'"
       }
     },
     {
@@ -2573,8 +2573,8 @@
       "licensePage": "https://github.com/mypaint/mypaint-brushes",
       "notes": "Official MyPaint brush presets. Preview images may carry another license.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "README: 'Only public domain (or Creative Commons 1.0 Universal) is an acceptable license for the official mypaint-brushes package'; COPYING is CC0 1.0"
+        "date": "2026-11-25",
+        "evidence": "README: 'relicensed Public Domain/CC0 1.0'"
       }
     },
     {
@@ -2653,8 +2653,8 @@
       "licensePage": "https://github.com/leouieda/landsat-wallpapers",
       "notes": "Wallpapers made from Landsat satellite images. The code folder is MIT.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "README: 'All other files are distributed under the CC0 license (see LICENSE-CC0.txt).'"
+        "date": "2026-11-25",
+        "evidence": "README: 'All other files are distributed under the CC0 license'"
       }
     },
     {
@@ -2814,8 +2814,8 @@
       "licensePage": "https://tinytreats.itch.io/pretty-park",
       "notes": "Stylized interior and exterior sets; some sets are paid. Check each set's license.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "Pretty Park page: 'Free for personal and commercial use, no attribution required. (CC0 Licensed)'"
+        "date": "2026-11-25",
+        "evidence": "itch.io asset license field: 'Asset license Creative Commons Zero v1.0 Universal'"
       }
     },
     {
@@ -2830,8 +2830,8 @@
       "licensePage": "https://static.makehumancommunity.org/about/license.html",
       "notes": "Base mesh, targets and proxies of the human generator. The software is AGPL; community assets can be CC BY.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "license page: 'All core assets are shared under Creative Commons, CC0.'"
+        "date": "2026-11-25",
+        "evidence": "license page: 'All core assets are shared under Creative Commons, CC0'"
       }
     },
     {
@@ -2846,8 +2846,8 @@
       "licensePage": "https://not-jam.itch.io/not-jam-music-pack",
       "notes": "Game music tracks.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "page: 'To the extent possible under law, Not Jam has waived all copyright and related or neighboring rights to Not Jam Music Pack.'"
+        "date": "2026-11-25",
+        "evidence": "page: 'made freely available for use in any commercial or non-commercial projects under the CC0 licence.'"
       }
     },
     {
@@ -2944,8 +2944,8 @@
       "licensePage": "https://www.library.pref.gunma.jp/%E6%8E%A2%E3%81%99%E3%83%BB%E8%AA%BF%E3%81%B9%E3%82%8B/%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%83%BC/%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%81%AE%E4%BA%8C%E6%AC%A1%E5%88%A9%E7%94%A8",
       "notes": "Old maps, photographs, postcards and sericulture documents.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "reuse page: '群馬県立図書館デジタルライブラリー掲載の画像データは、CC0（CC0 1.0 全世界 パブリック・ドメイン提供）の下に提供されています'"
+        "date": "2026-11-25",
+        "evidence": "reuse page: 'CC0（CC0 1.0 全世界 パブリック・ドメイン提供）'"
       }
     },
     {
@@ -2978,8 +2978,8 @@
       "licensePage": "https://nivaagaard.dk/en/fri-download/",
       "notes": "Renaissance, Baroque and Danish 19th-century paintings.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "free download page: images 'marked with' Creative Commons' Public Domain dedication, linking creativecommons.org/publicdomain/zero/1.0/"
+        "date": "2026-11-25",
+        "evidence": "free download page (links creativecommons.org/publicdomain/zero/1.0/): 'The images are marked with Creative Commons' Public Domain-dedikation'"
       }
     },
     {
@@ -3450,8 +3450,8 @@
       "licensePage": "https://borealisdata.ca/api/licenses",
       "notes": "Research datasets; CC0 1.0 is the default license. Filter with license \"CC0 1.0\".",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "licenses API: 'CC0 1.0' 'Creative Commons CC0 1.0 Universal Public Domain Dedication.' marked isDefault"
+        "date": "2026-11-25",
+        "evidence": "licenses API: 'Creative Commons CC0 1.0 Universal Public Domain Dedication.'"
       }
     },
     {
@@ -3466,8 +3466,8 @@
       "licensePage": "https://dataverse.nl/api/licenses",
       "notes": "Dutch research datasets; CC0-1.0 is the default license. Filter with license \"CC0-1.0\".",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "licenses API: 'CC0-1.0' 'Creative Commons CC0 1.0 Universal Public Domain Dedication.'"
+        "date": "2026-11-25",
+        "evidence": "licenses API: 'Creative Commons CC0 1.0 Universal Public Domain Dedication.'"
       }
     },
     {
@@ -3565,11 +3565,11 @@
       ],
       "scope": "whole-library",
       "searchable": false,
-      "licensePage": "https://github.com/facebookresearch/voxpopuli",
+      "licensePage": "https://raw.githubusercontent.com/facebookresearch/voxpopuli/main/README.md",
       "notes": "European Parliament speech recordings. The README also points to the European Parliament legal notice.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "README license table: 'VoxPopuli Data | CC0'"
+        "date": "2026-11-25",
+        "evidence": "README.md: 'VoxPopuli Data | [CC0]'"
       }
     },
     {
@@ -3584,8 +3584,8 @@
       "licensePage": "https://www.cs.cmu.edu/~kmcrane/Projects/ModelRepository/",
       "notes": "Test meshes for geometry processing; at least one model is CC BY 4.0, so check each model's notice.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "page: 'Model and associated data is dedicated under CC0 1.0 Universal.'"
+        "date": "2026-11-25",
+        "evidence": "page: 'Model and associated data is dedicated under CC0 1.0 Universal'"
       }
     },
     {
@@ -3680,11 +3680,11 @@
       ],
       "scope": "filter-only",
       "searchable": false,
-      "licensePage": "https://www.digitalna.nb.rs/",
+      "licensePage": "https://www.digitalna.nb.rs/view/URN:NB:RS:SD_2DDADFD498CBB3E7F070DD44B5638478",
       "notes": "Each item has a usage-rights field (Право коришћења); use items marked CC0.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "item 'Fotografije o migracijama 20': 'Право коришћења CC0'"
+        "date": "2026-11-25",
+        "evidence": "item page (Fotografije o migracijama) rights field: 'Право коришћења CC0'"
       }
     },
     {
@@ -3826,11 +3826,11 @@
       ],
       "scope": "whole-library",
       "searchable": false,
-      "licensePage": "https://github.com/sevmeyer/mocu-xcursor",
+      "licensePage": "https://raw.githubusercontent.com/sevmeyer/mocu-xcursor/master/README.md",
       "notes": "X11 cursor theme in black/white and left/right-handed variants, sizes 24-96.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "README: 'Distributed under the [CC0].'"
+        "date": "2026-11-25",
+        "evidence": "README.md: 'Distributed under the [CC0]'"
       }
     },
     {
@@ -3842,11 +3842,11 @@
       ],
       "scope": "whole-library",
       "searchable": false,
-      "licensePage": "https://github.com/egonelbre/gophers",
+      "licensePage": "https://raw.githubusercontent.com/egonelbre/gophers/master/README.md",
       "notes": "Large set of Go gopher illustrations (SVG and PNG).",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "README: 'The images and art-work in this repository are under CC0 license.'"
+        "date": "2026-11-25",
+        "evidence": "README.md: 'The images and art-work in this repository are under [CC0 license]'"
       }
     },
     {
@@ -3906,11 +3906,11 @@
       ],
       "scope": "filter-only",
       "searchable": false,
-      "licensePage": "https://github.com/Donitzo/godot-color-dither",
+      "licensePage": "https://raw.githubusercontent.com/Donitzo/godot-color-dither/main/README.md",
       "notes": "Dither shader and palettes. dither_palette_generator.gd is MIT; all other files are CC0.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "README: 'All other files in the project are licensed under CC0.'"
+        "date": "2026-11-25",
+        "evidence": "README.md: 'All other files in the project are licensed under [CC0]'"
       }
     },
     {
@@ -3925,8 +3925,8 @@
       "licensePage": "https://brackeysgames.itch.io/brackeys-vfx-bundle",
       "notes": "Particle textures, flipbooks and sprite sheets.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "page: 'These assets are released under a Creative Commons Zero (CC0) license.'"
+        "date": "2026-11-25",
+        "evidence": "page: 'These assets are released under a Creative Commons Zero'"
       }
     },
     {
@@ -3986,11 +3986,11 @@
       ],
       "scope": "filter-only",
       "searchable": false,
-      "licensePage": "https://github.com/ephread/PommePlate",
+      "licensePage": "https://raw.githubusercontent.com/ephread/PommePlate/master/README.md",
       "notes": "Flat Apple device mockups. The logo is CC BY-NC 4.0, not CC0.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "README: 'Pomme Plate mockups (SVG, PNG and sketch project files) are licensed under a CC0 1.0 Universal License.'"
+        "date": "2026-11-25",
+        "evidence": "README.md: 'are licensed under a [CC0 1.0 Universal License]'"
       }
     },
     {
@@ -4165,8 +4165,8 @@
       "licensePage": "https://tomfeldmann.itch.io/old-cartoon-music-pack",
       "notes": "Only the free packs are CC0; paid packs are not.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "Old Cartoon pack: 'License: CC0, full commercial use, no credit required'"
+        "date": "2026-11-25",
+        "evidence": "itch.io asset license field: 'Asset license Creative Commons Zero v1.0 Universal'"
       }
     },
     {
@@ -4635,8 +4635,8 @@
       "licensePage": "https://moda.gov.tw/announcement/publicdeclare/951",
       "notes": "Site photos, video and text.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "declaration: '刊載之所有資料與素材，其得受著作權保護之範圍，採「公眾領域貢獻宣告」（CC0 1.0）'"
+        "date": "2026-11-25",
+        "evidence": "footer: 'CC0 No copyright reserved.'"
       }
     },
     {
@@ -5548,10 +5548,10 @@
       ],
       "scope": "filter-only",
       "searchable": false,
-      "licensePage": "https://digital-sagamihara.jp/terms",
+      "licensePage": "https://digital-sagamihara.jp/digital-archive/16024",
       "notes": "City record photos, mostly Showa era; about 68,000 items have 権利 CC0. Newsletter data is CC BY-ND.",
       "verified": {
-        "date": "2026-11-23",
+        "date": "2026-11-25",
         "evidence": "item page rights field: '権利 CC0'"
       }
     },
@@ -5616,8 +5616,8 @@
       "licensePage": "https://theme.npm.edu.tw/opendata/",
       "notes": "About 410,000 low-resolution (1 MP) images are CC0; the 6 MP images are CC BY 4.0.",
       "verified": {
-        "date": "2026-11-23",
-        "evidence": "open data page: '開放院藏書畫類、器物類、織品類文物低階圖像（100萬畫素）計約41萬幅，以「公眾領域貢獻宣告」（CC0）規範，不須註明出處。'"
+        "date": "2026-11-25",
+        "evidence": "open data page: (CC0) clause follows: '開放院藏書畫類、器物類、織品類文物低階圖像（100萬畫素）計約41萬幅，'"
       }
     },
     {
@@ -7849,8 +7849,8 @@
       "licensePage": "https://huggingface.co/datasets/NbAiLab/NPSC",
       "notes": "National Library of Norway speech corpus of Stortinget debates with transcriptions; audio and transcripts CC0.",
       "verified": {
-        "date": "2026-11-24",
-        "evidence": "README.md: 'The sound and the transcriptions are released under the [CC-ZERO-license](https://creativecommons.org/publicdomain/zero/1.0/)'"
+        "date": "2026-11-25",
+        "evidence": "Hub page: 'License: cc0-1.0'"
       }
     },
     {
@@ -7866,8 +7866,8 @@
       "licensePage": "https://huggingface.co/datasets/Aalto-Speech-Synthesis/stortinget_speech_corpus_v1.0",
       "notes": "5000+ hours of Norwegian Parliament speech aligned to proceedings text; originally published by Sprakbanken (National Library of Norway), mirrored by Aalto Speech Synthesis.",
       "verified": {
-        "date": "2026-11-24",
-        "evidence": "original_ssc_v1_0_dataset_card.md: 'The dataset only uses open data and is distributed with a CC0 license.'"
+        "date": "2026-11-25",
+        "evidence": "Hub page: 'License: cc0-1.0'"
       }
     },
     {
@@ -7917,8 +7917,8 @@
       "licensePage": "https://huggingface.co/datasets/alexandrainst/nota",
       "notes": "Audio and transcriptions from Nota (Danish Ministry of Culture) audiomagazines, published via sprogteknologi.dk; ~256 GB.",
       "verified": {
-        "date": "2026-11-24",
-        "evidence": "README.md: 'The dataset is licensed under the [CC0 license](https://creativecommons.org/share-your-work/public-domain/cc0/).'"
+        "date": "2026-11-25",
+        "evidence": "Hub page: 'License: cc0-1.0'"
       }
     },
     {
@@ -7934,8 +7934,8 @@
       "licensePage": "https://huggingface.co/datasets/CoRal-project/coral-tts",
       "notes": "Danish TTS recordings from the CoRal project (Alexandra Institute and partners).",
       "verified": {
-        "date": "2026-11-24",
-        "evidence": "README.md: 'The dataset is licensed under the [CC0 license](https://creativecommons.org/share-your-work/public-domain/cc0/).'"
+        "date": "2026-11-25",
+        "evidence": "Hub page: 'License: cc0-1.0'"
       }
     },
     {
@@ -7951,8 +7951,8 @@
       "licensePage": "https://huggingface.co/datasets/imageomics/thewilds_bioacousticmonitors",
       "notes": "Passive acoustic monitor recordings from The Wilds conservation center, Ohio.",
       "verified": {
-        "date": "2026-11-24",
-        "evidence": "README.md: 'This dataset is dedicated to the public domain under a [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)'"
+        "date": "2026-11-25",
+        "evidence": "Hub page: 'License: cc0-1.0'"
       }
     },
     {
@@ -7968,8 +7968,8 @@
       "licensePage": "https://huggingface.co/datasets/imageomics/thewilds_drones",
       "notes": "Drone mission video and telemetry of wildlife at The Wilds, Ohio.",
       "verified": {
-        "date": "2026-11-24",
-        "evidence": "README.md: 'This dataset is dedicated to the public domain under a [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)'"
+        "date": "2026-11-25",
+        "evidence": "Hub page: 'License: cc0-1.0'"
       }
     },
     {
@@ -7985,8 +7985,8 @@
       "licensePage": "https://huggingface.co/datasets/imageomics/thewilds_cameratraps",
       "notes": "Camera-trap wildlife images from The Wilds, Ohio.",
       "verified": {
-        "date": "2026-11-24",
-        "evidence": "README.md: 'This dataset is dedicated to the public domain under a [CC0 license](https://creativecommons.org/publicdomain/zero/1.0/)'"
+        "date": "2026-11-25",
+        "evidence": "Hub page: 'License: cc0-1.0'"
       }
     },
     {
@@ -8003,8 +8003,8 @@
       "licensePage": "https://huggingface.co/datasets/imageomics/mmla_wilds",
       "notes": "Drone imagery of wildlife; sibling sets mmla_opc and mmla_mpala are also CC0 on the Hub.",
       "verified": {
-        "date": "2026-11-24",
-        "evidence": "README.md: 'This dataset is dedicated to the public domain (by applying the [CC0-1.0 Public Domain Waiver](https://creativecommons.org/publicdomain/zero/1.0/))'"
+        "date": "2026-11-25",
+        "evidence": "Hub page: 'License: cc0-1.0'"
       }
     },
     {
@@ -8171,10 +8171,10 @@
       ],
       "scope": "whole-library",
       "searchable": false,
-      "licensePage": "https://github.com/basveeling/pcam",
+      "licensePage": "https://raw.githubusercontent.com/basveeling/pcam/master/README.md",
       "notes": "327,680 lymph-node histopathology image patches derived from Camelyon16.",
       "verified": {
-        "date": "2026-11-24",
+        "date": "2026-11-25",
         "evidence": "README.md: 'The data is provided under the [CC0 License](https://choosealicense.com/licenses/cc0-1.0/)'"
       }
     },
@@ -10629,6 +10629,336 @@
         "date": "2026-11-24",
         "evidence": "README.md: 'Creative Commons Zero 1.0 universal'"
       }
+    },
+    {
+      "id": "smithsonian-open-access",
+      "name": "Smithsonian Open Access",
+      "url": "https://www.si.edu/openaccess",
+      "kinds": [
+        "image",
+        "model",
+        "artwork",
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://registry.opendata.aws/smithsonian-open-access/",
+      "notes": "Keyless bulk access through the AWS Open Data bucket (s3://smithsonian-open-access). Only records whose usage/access field is CC0 qualify; the open-access set is a subset of the collections. The web API needs an api.data.gov key.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'the Smithsonian released over 2.8 million CC0 interdisciplinary 2-D and 3-D images'"
+      }
+    },
+    {
+      "id": "walters-art-museum",
+      "name": "Walters Art Museum",
+      "url": "https://art.thewalters.org",
+      "kinds": [
+        "artwork",
+        "image",
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/WaltersArtMuseum/api-thewalters-org/blob/main/README.md",
+      "notes": "API v1 closed in 2023; static CSV data files (objects, media) are in the GitHub repository. art.thewalters.org blocks automated requests.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "README.md: 'The data and images are made available to the public under a [CC0 license]'"
+      }
+    },
+    {
+      "id": "getty-open-content",
+      "name": "Getty Open Content",
+      "url": "https://www.getty.edu",
+      "kinds": [
+        "artwork",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.getty.edu/projects/open-content-program/",
+      "notes": "Only images of Getty-owned public-domain artworks marked with the CC0 icon qualify.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'Digital images of Getty-owned artworks in the public domain marked with the CC0-public domain icon are available for download under CC0'"
+      }
+    },
+    {
+      "id": "paris-musees",
+      "name": "Paris Musées",
+      "url": "https://parismuseescollections.paris.fr",
+      "kinds": [
+        "artwork",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.parismuseescollections.paris.fr/en",
+      "notes": "Only works in the Open Content program, credited 'CC0 Paris Musées', qualify; other images are under copyright.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'CC0 Paris Musées'"
+      }
+    },
+    {
+      "id": "finnish-national-gallery",
+      "name": "Finnish National Gallery",
+      "url": "https://www.kansallisgalleria.fi",
+      "kinds": [
+        "artwork",
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://kansallisgalleria.fi/en/photographic-service/",
+      "notes": "Only images of works whose copyright has expired are released under CC0 (over 36,000 images); other images are restricted.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'The Finnish National Gallery has released over 36,000 images into the public domain under the CC0-license.'"
+      }
+    },
+    {
+      "id": "bhl-metadata",
+      "name": "Biodiversity Heritage Library",
+      "url": "https://www.biodiversitylibrary.org",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://about.biodiversitylibrary.org/help/copyright-and-reuse/",
+      "notes": "Only BHL metadata is CC0. Scanned page images are public domain or CC BY-NC-SA 4.0 and do not qualify.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'BHL makes its metadata available for public use under the CC0 1.0 Universal (CC0 1.0) Public Domain Dedication'"
+      }
+    },
+    {
+      "id": "cooper-hewitt-collection-data",
+      "name": "Cooper Hewitt, Smithsonian Design Museum",
+      "url": "https://github.com/cooperhewitt/collection",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/cooperhewitt/collection/blob/master/README.md",
+      "notes": "Collection metadata only (JSON/CSV); images are not included and not covered. Cooper Hewitt CC0 images are reachable through Smithsonian Open Access (unit CHNDM).",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "README.md: 'Cooper Hewitt has licensed this release under a Creative Commons Zero (CC0) license'"
+      }
+    },
+    {
+      "id": "texture-ninja",
+      "name": "Texture Ninja",
+      "url": "https://texture.ninja",
+      "kinds": [
+        "texture",
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://texture.ninja/assets/index-B3Qn25Eh.js",
+      "notes": "Single-page app; the license text is in the JS bundle (file name is content-hashed and will change with new builds).",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'All textures on Texture Ninja are released into the public domain (CC0)'"
+      }
+    },
+    {
+      "id": "poly-pizza-cc0",
+      "name": "Poly Pizza",
+      "url": "https://poly.pizza",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://poly.pizza/api/featured",
+      "notes": "Mixed CC0 1.0 and CC-BY 3.0 low-poly models; only models whose licence field is 'CC0 1.0' qualify. The search API needs a key.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Poly Pizza API (/api/featured): '\"licence\":\"CC0 1.0\"'"
+      }
+    },
+    {
+      "id": "gameart2d-freebies",
+      "name": "GameArt2D freebies",
+      "url": "https://www.gameart2d.com/freebies.html",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://www.gameart2d.com/license.html",
+      "notes": "2D game sprites, tilesets and GUI. Only the Freebies section is CC0; paid assets use a separate royalty-free license.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'Assets in the Freebies section are licensed under Creative Commons Zero (CC0) / Public Domain'"
+      }
+    },
+    {
+      "id": "free-gophers-pack",
+      "name": "Free Gophers Pack",
+      "url": "https://github.com/MariaLetta/free-gophers-pack",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://github.com/MariaLetta/free-gophers-pack/blob/master/README.md",
+      "notes": "100+ original Go gopher illustrations by Maria Letta (SVG and PNG). The Go gopher character was designed by Renee French (CC BY 3.0); crediting her is a prudent courtesy.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "README.md: 'This package is now licensed as __CC0 (public domain)__ so you can use the images in any way with no restrictions.'"
+      }
+    },
+    {
+      "id": "chaos-sticker-collection",
+      "name": "Chaos sticker collection",
+      "url": "https://github.com/mwarning/chaos-sticker-collection",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://github.com/mwarning/chaos-sticker-collection/blob/master/data.json",
+      "notes": "Hacker-event sticker designs with a per-item license field; only entries with license 'CC0-1.0' qualify (about 200 of about 800 at check). Others are CC BY, CC BY-SA, NC or unlabeled.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "data.json: '\"license\": \"CC0-1.0\"'"
+      }
+    },
+    {
+      "id": "startup-stock-photos",
+      "name": "Startup Stock Photos",
+      "url": "https://startupstockphotos.com/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://startupstockphotos.com/",
+      "notes": "Free startup, office and tech stock photos. CC0 is stated only in the site's own description (JSON-LD and meta tags); there is no separate license page.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page JSON-LD: 'The best free startup and tech photos (CC0).'"
+      }
+    },
+    {
+      "id": "harvard-dataverse",
+      "name": "Harvard Dataverse",
+      "url": "https://dataverse.harvard.edu",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://dataverse.harvard.edu/api/licenses",
+      "notes": "Research datasets; CC0 1.0 is the default license (isDefault true) but depositors may pick CC BY, CC BY-NC and others. Only datasets whose license is \"CC0 1.0\" qualify. The web UI may show a bot-check; the API responds.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "licenses API: 'Creative Commons CC0 1.0 Universal Public Domain Dedication.'"
+      }
+    },
+    {
+      "id": "open-data-zurich",
+      "name": "Open Data Zürich",
+      "url": "https://data.stadt-zuerich.ch",
+      "kinds": [
+        "collection"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://data.stadt-zuerich.ch/api/3/action/package_search?rows=0&facet.field=%5B%22license_id%22%5D",
+      "notes": "City of Zurich open data (CKAN). 917 of 946 datasets use license_id \"cc-zero\" (CKAN title 'Creative Commons CCZero'); the rest are CC BY or CC BY-SA. Filter with fq=license_id:cc-zero.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "CKAN API: 917 datasets with license 'Creative Commons CCZero'"
+      }
+    },
+    {
+      "id": "openn-penn",
+      "name": "OPenn (Penn Libraries)",
+      "url": "https://openn.library.upenn.edu",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://openn.library.upenn.edu/ReadMe.html",
+      "notes": "Manuscript and rare-book images from Penn Libraries and partner institutions. Each repository uses PDM, CC0, CC BY or CC BY-SA; only repositories/documents marked CC0 qualify (PDM items are excluded). Pages can be slow and time out.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'CC0 (“CC-zero”), the Public Domain dedication for copyrighted works'"
+      }
+    },
+    {
+      "id": "sketchfab-wirtualne-muzea-malopolski",
+      "name": "Wirtualne Muzea Małopolski 3D scans (Sketchfab)",
+      "url": "https://sketchfab.com/WirtualneMuzeaMalopolski",
+      "kinds": [
+        "model"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://api.sketchfab.com/v3/search?type=models&license=cc0&user=WirtualneMuzeaMalopolski",
+      "notes": "Lesser Poland virtual museums: scans of museum objects from regional collections. 959 models are CC0 via the API license filter; others are CC BY or unlabeled.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Sketchfab API: 959 models labeled 'CC0 Public Domain'"
+      }
+    },
+    {
+      "id": "crumpaloo",
+      "name": "Crumpaloo pixel art packs",
+      "url": "https://crumpaloo.itch.io/",
+      "kinds": [
+        "image"
+      ],
+      "scope": "filter-only",
+      "searchable": false,
+      "licensePage": "https://crumpaloo.itch.io/four-leaf-asset-pack16x16",
+      "notes": "Only packs whose itch.io 'Asset license' field is CC0 qualify (e.g. Four Leaf 16x16, 15 Ready-To-Use Chest Animations; both state 'No generative AI was used'). Several free backgrounds use custom terms that forbid reselling the assets and are not CC0. Some packs are paid.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'Creative Commons Zero v1.0 Universal'"
+      }
+    },
+    {
+      "id": "applause-plate-archive",
+      "name": "APPLAUSE photographic plate archive (AIP Potsdam)",
+      "url": "https://www.plate-archive.org/applause/",
+      "kinds": [
+        "image",
+        "collection"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://www.plate-archive.org/cms/project/disclaimer/",
+      "notes": "Digitised astronomical photographic plates from Bamberg, Hamburg, Potsdam, Tautenburg, Vatican and other observatories, with catalogue data. Some bulk or query features may need a free login.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'The APPLAUSE images are released under the Creative Commons CC0 waiver'"
+      }
+    },
+    {
+      "id": "open-well-tempered-clavier",
+      "name": "Open Well-Tempered Clavier (Kimiko Ishizaka)",
+      "url": "https://welltemperedclavier.org/",
+      "kinds": [
+        "audio"
+      ],
+      "scope": "whole-library",
+      "searchable": false,
+      "licensePage": "https://kimikoishizaka.bandcamp.com/album/bach-well-tempered-clavier-book-1",
+      "notes": "Studio recording of Bach's Well-Tempered Clavier Book 1 (BWV 846-869). Free download on Bandcamp (pay what you want). The CC0 statement is on the Bandcamp album page; welltemperedclavier.org only says 'public domain'.",
+      "verified": {
+        "date": "2026-11-25",
+        "evidence": "Page: 'The recording is licensed with the Creative Commons Zero - public domain - license.'"
+      }
     }
   ],
   "excluded": [
@@ -11691,563 +12021,448 @@
       "name": "Fine-grained challenges (Imageomics)",
       "url": "https://huggingface.co/datasets/imageomics/fine-grained-challenges",
       "reason": "CC0 covers compilation metadata only and explicitly does not relicense the images."
+    },
+    {
+      "name": "Jay Mantri",
+      "reason": "Site now shows only a personal page ('design at lightspark'); no photo library or CC0 statement remains.",
+      "url": "https://jaymantri.com"
+    },
+    {
+      "name": "3D Models CC0",
+      "reason": "Domain now redirects to an unrelated site (alexisoctans.com t-shirt store page); no CC0 model library.",
+      "url": "https://www.3dmodelscc0.com"
+    },
+    {
+      "name": "DroneStock",
+      "reason": "Site is a paid drone-footage marketplace with per-asset prices (e.g. 'EUR 59,00') and licences; no CC0 statement.",
+      "url": "https://dronestock.com"
+    },
+    {
+      "name": "RouteNote Licensing CC0 collection",
+      "reason": "Public site sells royalty-free music by subscription ($59.99/year) under a commercial license; no CC0 statement.",
+      "url": "https://licensing.routenote.com"
+    },
+    {
+      "name": "HoliznaCC0",
+      "reason": "Artist bio mentions CC0, but all 16 Bandcamp albums checked link creativecommons.org/licenses/by/4.0 (CC BY 4.0).",
+      "url": "https://holiznacc0.bandcamp.com"
+    },
+    {
+      "name": "Gopherkon",
+      "reason": "README says 'Based on original artwork from the Renee French' (Go gopher, CC BY 3.0); the repo CC0 LICENSE cannot waive the original's attribution requirement.",
+      "url": "https://github.com/quasilyte/gopherkon"
+    },
+    {
+      "name": "pmndrs market",
+      "reason": "market.pmnd.rs returns Vercel DEPLOYMENT_NOT_FOUND (site offline); pmndrs CC0 assets are already covered by the pmndrs-assets source.",
+      "url": "https://market.pmnd.rs"
+    },
+    {
+      "name": "Mozilla Common Voice",
+      "reason": "Not keyless: since Oct 2025 Common Voice datasets are only distributed via Mozilla Data Collective, which requires an account (free accounts limited to 7 dataset downloads); no CC0 statement readable for the audio datasets (GitHub README's CC0 covers sentence text only).",
+      "url": "https://commonvoice.mozilla.org/en/datasets"
+    },
+    {
+      "name": "100Avatars (Polygonal Mind)",
+      "reason": "No license file (GitHub API license null) and the README imposes a custom restriction ('not to sell this avatars without any major modification'); no CC0 named.",
+      "url": "https://github.com/PolygonalMind/100Avatars"
+    },
+    {
+      "name": "Khronos glTF Sample Assets",
+      "reason": "Mixed per-model licenses: LICENSES/ contains CC0-1.0 alongside CC-BY-4.0, CC-BY-NC(-SA), Adobe Stock, Poser EULA and other proprietary terms; model READMEs checked are CC BY 4.0; no CC0 filter.",
+      "url": "https://github.com/KhronosGroup/glTF-Sample-Assets"
+    },
+    {
+      "name": "Good Free Photos",
+      "reason": "Home page states 'All photos are released under the public domain license'; CC0 appears only in keywords/marketing text and no CC0 license page exists (license.php 404).",
+      "url": "https://www.goodfreephotos.com"
+    },
+    {
+      "name": "SoundBible",
+      "reason": "About page: sounds are 'Creative Commons Attribution, or Public Domain License'; per-item CC BY/public domain with no CC0 filter or CC0 statement.",
+      "url": "https://soundbible.com/"
+    },
+    {
+      "name": "PolyScan",
+      "reason": "License page contradicts CC0: 'You can't sell, redistribute, or claim our assets as your own', 'No Redistribution on Other Platforms', and some assets may require attribution.",
+      "url": "https://polyscann.com"
+    },
+    {
+      "name": "PublicDomainQ",
+      "reason": "Front page is dominated by AI-generated images ('[フリーAI画像]', tag 'CC0 AI画像'); AI content mixed in with no reliable way to separate it.",
+      "url": "https://publicdomainq.net/"
+    },
+    {
+      "name": "University of Tokyo Archives Digital Archive",
+      "reason": "Usage page: images are under the Public Domain Mark (creativecommons.org/publicdomain/mark/1.0); CC0 applies only to the archivists' catalogue data, not images.",
+      "url": "https://uta.u-tokyo.ac.jp/uta/s/da/"
+    },
+    {
+      "name": "Erfgoed Leiden Beeldbank",
+      "reason": "Site terms ('Gebruiksvoorwaarden en auteursrecht') allow only personal, non-commercial use and ask users to contact them for photos; no CC0 named.",
+      "url": "https://www.erfgoedleiden.nl/"
+    },
+    {
+      "name": "Mozilla Data Collective CC0 speech datasets",
+      "reason": "Mixed licenses (CC0, CC BY-NC, MDC Data Licence, custom), publishers can add custom download constraints, and downloads need a sign-in or API key.",
+      "url": "https://mozilladatacollective.com/"
+    },
+    {
+      "name": "Yale Peabody Museum",
+      "reason": "Current terms-of-use page names no CC0; it says content may be public domain or rights-restricted and users must determine whether permission is needed. Collections portal is JS-only.",
+      "url": "https://peabody.yale.edu/"
+    },
+    {
+      "name": "NHM London data portal",
+      "reason": "CC0 covers specimen data only; datastore API shows image media licensed CC BY 4.0 (creativecommons.org/licenses/by/4.0/).",
+      "url": "https://data.nhm.ac.uk/"
+    },
+    {
+      "name": "Vonwaon Bitmap font",
+      "reason": "Glyphs are based on the GPL-3 BitmapFont project, and comments state the glyph moulds derive from a commercial font; the CC0 label does not clear that provenance.",
+      "url": "https://timothyqiu.itch.io/vonwaon-bitmap"
+    },
+    {
+      "name": "Kitbitz",
+      "reason": "kitbitz.com now redirects to a domain-parking lander (/lander, ap:'parking'); no asset library exists.",
+      "url": "https://kitbitz.com/"
+    },
+    {
+      "name": "Public-Domain-Music (SoundSafari, Hugging Face)",
+      "reason": "Re-upload of ~5,000 third-party MP3s with an empty dataset card; same aggregator as the GitHub repo, which sources from Pixabay and Chosic (not CC0 licenses).",
+      "url": "https://huggingface.co/datasets/SoundSafari/Public-Domain-Music"
+    },
+    {
+      "name": "CC0-1.0 Music (SoundSafari, GitHub)",
+      "reason": "README says tracks were gathered from Pixabay, Chosic, FMA, FreePD and Freesound and grouped as 'public-domain/CC0'; Pixabay and Chosic are not CC0 licenses and no per-track provenance is given.",
+      "url": "https://github.com/SoundSafari/CC0-1.0-Music"
+    },
+    {
+      "name": "Tokyo Metropolitan Library Digital Archive",
+      "reason": "Image use page labels free images only as 'パブリックドメイン' (public domain); no CC0 dedication. Japan Search also marks these items pdm.",
+      "url": "https://archive.library.metro.tokyo.lg.jp/da/top"
+    },
+    {
+      "name": "DefMaterial (subsoap)",
+      "reason": "Bundled textures (numbered matcaps, marble, bark, lunar/martian surfaces) have no stated origin; likely third-party re-uploads, so the repo-wide CC0 LICENSE cannot be relied on.",
+      "url": "https://github.com/subsoap/defmaterial"
+    },
+    {
+      "name": "Ingenium (Canada Science and Technology Museums) open data",
+      "reason": "Own page still HTTP 403; the federal open data portal lists Ingenium's 'Artifact Collection - CSTMC' under the Open Government Licence - Canada, not CC0.",
+      "url": "https://ingeniumcanada.org/ingenium/collection-research/open-data"
+    },
+    {
+      "name": "Queensland University of Technology Digital Collections",
+      "reason": "OAI-PMH harvest of ~1,200 records: 1,197 CC BY 4.0, 2 CC0, 1 PDM; no CC0 filter in the search interface.",
+      "url": "https://www.qut.edu.au/library"
+    },
+    {
+      "name": "Zenodo API (CC0 media record search)",
+      "reason": "API reachable again, but this duplicates the already catalogued source 'Zenodo (CC0 records)'.",
+      "url": "https://zenodo.org/api/records"
+    },
+    {
+      "name": "Tranquil Tunnels 8x8 Tileset (octoshrimpy)",
+      "reason": "Download bundles expression-pro-v1.1.zip, a somepx font whose license says it may not be distributed by itself; pack is not wholly CC0.",
+      "url": "https://octoshrimpy.itch.io/tranquil-tunnels"
+    },
+    {
+      "name": "Nb Pixel Font Bundle (Nimble Beasts)",
+      "reason": "Compilation of 20 fonts by other authors, including game-derived fonts (MMXSNES, Habbo) and two by 'Anonymous'; provenance unclear, re-upload of others' work.",
+      "url": "https://nimblebeastscollective.itch.io/nb-pixel-font-bundle"
+    },
+    {
+      "name": "Pocket Battle VFX",
+      "reason": "All 6 commits carry 'Co-Authored-By: Claude' trailers; the sprite-generating code was AI-assisted.",
+      "url": "https://github.com/poke5121999-art/pocket-battle-vfx"
     }
   ],
   "pending": [
     {
       "name": "National Gallery of Art (US)",
-      "reason": "Metadata repo (github.com/NationalGalleryOfArt/opendata) is CC0. The image policy page returned HTTP 403, so image licensing is unverified.",
+      "reason": "Open access policy page returned a Cloudflare challenge (HTTP 403) on 2026-11-25; image licensing unverified (metadata covered by nga-opendata).",
       "url": "https://www.nga.gov"
     },
     {
-      "name": "Smithsonian Open Access",
-      "reason": "API needs an api.data.gov key; per-item CC0 fields could not be checked without one.",
-      "url": "https://www.si.edu/openaccess"
-    },
-    {
       "name": "Art Institute of Chicago",
-      "reason": "Open-access images are reported as CC0 (artic.edu open-access page, per search summaries; API responses mark data CC0), but artic.edu and its IIIF image server block automated requests, so neither the page nor a search provider could be verified.",
+      "reason": "artic.edu and api.artic.edu returned a Cloudflare challenge (HTTP 403) on 2026-11-25; the GitHub api-data README does not name CC0.",
       "url": "https://www.artic.edu"
     },
     {
       "name": "Negative Space",
-      "reason": "License page returned HTTP 403 on the verification date.",
+      "reason": "License page returned a Cloudflare challenge (HTTP 403) on 2026-11-25.",
       "url": "https://negativespace.co"
     },
     {
       "name": "Musopen",
-      "reason": "FAQ returned HTTP 403 on the verification date.",
+      "reason": "Still HTTP 403 on musopen.org and /music/.",
       "url": "https://musopen.org"
     },
     {
       "name": "Smithsonian 3D (3d.si.edu)",
-      "reason": "CC0 page returned HTTP 403 on the verification date. Some Smithsonian CC0 models are reachable through Sketchfab search.",
+      "reason": "3d.si.edu returned a Cloudflare page (HTTP 403) on 2026-11-25. Smithsonian 3D CC0 models are covered by Smithsonian Open Access and the Sketchfab entry.",
       "url": "https://3d.si.edu"
     },
     {
-      "name": "Walters Art Museum",
-      "reason": "Open access page returned HTTP 403 on the verification date.",
-      "url": "https://art.thewalters.org"
-    },
-    {
       "name": "Birmingham Museums Trust",
-      "reason": "Site returned HTTP 403 on the verification date.",
+      "reason": "Site returned a Cloudflare challenge (HTTP 403) on 2026-11-25.",
       "url": "https://www.birminghammuseums.org.uk"
     },
     {
       "name": "Life of Pix",
-      "reason": "The page renders its text with JavaScript; no license statement was readable by a plain request.",
+      "reason": "Home and /license pages render text with JavaScript only; no license statement readable on 2026-11-25.",
       "url": "https://www.lifeofpix.com"
-    },
-    {
-      "name": "Jay Mantri",
-      "reason": "No CC0 text found on the home page.",
-      "url": "https://jaymantri.com"
-    },
-    {
-      "name": "Getty Open Content",
-      "reason": "No CC0 text found on the program page.",
-      "url": "https://www.getty.edu"
-    },
-    {
-      "name": "Paris Musées",
-      "reason": "Open content page did not respond on the verification date.",
-      "url": "https://parismuseescollections.paris.fr"
-    },
-    {
-      "name": "Finnish National Gallery",
-      "reason": "Open data page redirected; license not checked yet.",
-      "url": "https://www.kansallisgalleria.fi"
-    },
-    {
-      "name": "Biodiversity Heritage Library",
-      "url": "https://www.biodiversitylibrary.org",
-      "reason": "Openverse labels some items CC0, but the permissions page returned HTTP 403, so the license could not be checked on the source."
     },
     {
       "name": "SVG Silh",
       "url": "https://svgsilh.com",
-      "reason": "Openverse labels items CC0, but the site returned HTTP 403 to verification requests."
+      "reason": "Site returned HTTP 403 on 2026-11-25."
     },
     {
       "name": "DigitaltMuseum",
       "url": "https://digitaltmuseum.no",
-      "reason": "Mixed licenses across Norwegian/Swedish museums; Openverse labels some items CC0, but the site returned HTTP 403."
+      "reason": "Site returned a Cloudflare challenge (HTTP 403) on 2026-11-25; licenses are mixed per item."
     },
     {
       "name": "Rawpixel (public domain section)",
       "url": "https://www.rawpixel.com",
-      "reason": "Openverse labels items CC0, but the public-domain page returned HTTP 403."
+      "reason": "Public-domain page returned a Cloudflare challenge (HTTP 403) on 2026-11-25."
     },
     {
       "name": "StockSnap.io",
       "url": "https://stocksnap.io",
-      "reason": "Openverse labels items CC0, but the license page returned HTTP 403."
+      "reason": "License page returned a Cloudflare challenge (HTTP 403) on 2026-11-25."
     },
     {
       "name": "Europeana",
       "url": "https://www.europeana.eu",
-      "reason": "Aggregator with per-item rights statements (some CC0); the rights page returned HTTP 403 and the API needs a key."
-    },
-    {
-      "name": "Cooper Hewitt, Smithsonian Design Museum",
-      "url": "https://www.cooperhewitt.org",
-      "reason": "Openverse labels items CC0; the open-access page URL returned HTTP 404, so the policy could not be found."
+      "reason": "europeana.eu and pro.europeana.eu rights pages returned Cloudflare challenges (HTTP 403) on 2026-11-25; the API needs a key."
     },
     {
       "name": "New York Public Library Digital Collections",
       "url": "https://digitalcollections.nypl.org",
-      "reason": "The about page has no CC0 statement; NYPL describes public-domain items with its own wording, which may not be a CC0 dedication."
+      "reason": "About page returned an Incapsula bot-check stub on 2026-11-25."
     },
     {
       "name": "Finnish Heritage Agency",
       "url": "https://www.museovirasto.fi/en/",
-      "reason": "Openverse shows only a few CC0-labeled items; no CC0 statement found on the English home page."
+      "reason": "No CC0 statement found on the English home page or the data-systems page on 2026-11-25."
     },
     {
       "name": "Public Domain Pictures",
       "url": "https://www.publicdomainpictures.net",
-      "reason": "Site returned HTTP 403 to verification requests."
+      "reason": "Site returned a Cloudflare challenge (HTTP 403) on 2026-11-25."
     },
     {
       "name": "Barn Images",
       "url": "https://barnimages.com",
-      "reason": "License page returned HTTP 403."
-    },
-    {
-      "name": "Texture Ninja",
-      "url": "https://texture.ninja",
-      "reason": "The page renders its text with JavaScript; no license statement was readable by a plain request."
-    },
-    {
-      "name": "Poly Pizza",
-      "url": "https://poly.pizza",
-      "reason": "Low-poly models under mixed licenses (CC0 and CC BY); the page is rendered by JavaScript and the API needs a key, so per-model licenses were not checked."
-    },
-    {
-      "name": "GameArt2D freebies",
-      "url": "https://www.gameart2d.com/freebies.html",
-      "reason": "No CC0 statement found on the freebies page."
-    },
-    {
-      "name": "HoliznaCC0",
-      "url": "https://holiznacc0.bandcamp.com",
-      "reason": "Artist name says CC0, but the album page checked ('Public Domain Lo-Fi 2') links creativecommons.org/licenses/by/4.0/ (CC BY 4.0). Check each release's license."
-    },
-    {
-      "name": "3D Models CC0",
-      "url": "https://www.3dmodelscc0.com",
-      "reason": "Listed in awesome-cc0, but no CC0 statement was found on the home page."
+      "reason": "License page returned a Cloudflare challenge (HTTP 403) on 2026-11-25."
     },
     {
       "name": "Thingiverse (CC0 filter)",
       "url": "https://www.thingiverse.com",
-      "reason": "Has a public-domain license filter, but the site returned HTTP 403 to verification requests."
-    },
-    {
-      "name": "DroneStock",
-      "url": "https://dronestock.com",
-      "reason": "Blog lists claim CC0 drone footage, but no CC0 statement was found on the site."
+      "reason": "Site returned a Cloudflare challenge (HTTP 403) on 2026-11-25."
     },
     {
       "name": "Icons for free",
       "url": "https://icons-for-free.com",
-      "reason": "Blog lists claim a CC0 icon set, but no CC0 statement was found on the home page."
-    },
-    {
-      "name": "RouteNote Licensing CC0 collection",
-      "url": "https://licensing.routenote.com",
-      "reason": "Described as a CC0 collection behind sign-up; no CC0 statement on the public home page."
-    },
-    {
-      "name": "Free Gophers Pack",
-      "url": "https://github.com/MariaLetta/free-gophers-pack",
-      "reason": "The repository declares CC0-1.0, but the Go gopher design it builds on was created by Renee French under CC BY 3.0, so attribution to the original design may still be required."
-    },
-    {
-      "name": "Chaos sticker collection",
-      "url": "https://github.com/mwarning/chaos-sticker-collection",
-      "reason": "Repository declares CC0-1.0, but it collects stickers made by many different people and groups; each sticker's own license needs checking."
-    },
-    {
-      "name": "Gopherkon",
-      "url": "https://github.com/quasilyte/gopherkon",
-      "reason": "Repository declares CC0-1.0, but the Go gopher design it builds on was created by Renee French under CC BY 3.0."
-    },
-    {
-      "name": "pmndrs market",
-      "url": "https://market.pmnd.rs",
-      "reason": "README describes CC0 models, textures and HDRIs, but the site returned HTTP 404 during verification."
-    },
-    {
-      "name": "Mozilla Common Voice",
-      "url": "https://commonvoice.mozilla.org/en/datasets",
-      "reason": "Speech dataset widely described as CC0, but the datasets page renders with JavaScript and no license statement was readable; the cv-dataset repository is MPL-2.0 (code)."
-    },
-    {
-      "name": "Startup Stock Photos",
-      "url": "https://startupstockphotos.com/",
-      "reason": "Only the page metadata says '(CC0)'; no license page or visible CC0 statement was found."
-    },
-    {
-      "name": "100Avatars (Polygonal Mind)",
-      "url": "https://github.com/PolygonalMind/100Avatars",
-      "reason": "Repository has no detected license and the README states no CC0; some avatars appear in Open Source Avatars, which is listed."
-    },
-    {
-      "name": "Khronos glTF Sample Assets",
-      "url": "https://github.com/KhronosGroup/glTF-Sample-Assets",
-      "reason": "Each model carries its own license (CC0, CC BY and others); no per-model CC0 filter has been checked."
-    },
-    {
-      "name": "Good Free Photos",
-      "url": "https://www.goodfreephotos.com",
-      "reason": "Mixes public-domain, CC0 and other photos; the license page linked from curated lists returned HTTP 404."
-    },
-    {
-      "name": "SoundBible",
-      "url": "https://soundbible.com/",
-      "reason": "Sound clips carry per-item licenses (public domain, CC BY and others) and there is no CC0 filter."
-    },
-    {
-      "name": "PolyScan",
-      "url": "https://polyscann.com",
-      "reason": "The home page says every asset is CC0, but the license page forbids redistributing assets 'as is'; the two statements conflict."
+      "reason": "Home page returned a 'Checking your browser' security check on 2026-11-25."
     },
     {
       "name": "MorphoSource",
       "url": "https://www.morphosource.org",
-      "reason": "3D specimen scans with per-item licenses; the terms page returned a bot-protection page."
-    },
-    {
-      "name": "Harvard Dataverse",
-      "url": "https://dataverse.harvard.edu",
-      "reason": "Dataverse defaults to CC0 per dataset, but the Harvard terms page returned HTTP 403."
-    },
-    {
-      "name": "Open Data Zürich",
-      "url": "https://data.stadt-zuerich.ch",
-      "reason": "Datasets are described as free to reuse; no CC0 statement was readable on the portal pages checked."
+      "reason": "Site now serves an Anubis proof-of-work bot check (JavaScript) on home and terms pages; license not readable."
     },
     {
       "name": "Musical Artifacts",
       "url": "https://musical-artifacts.com",
-      "reason": "Soundfonts and presets with per-item licenses; the site returned HTTP 403."
+      "reason": "Soundfonts and presets with per-item licenses; the site returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "Deutsche Digitale Bibliothek",
       "url": "https://www.deutsche-digitale-bibliothek.de",
-      "reason": "Search offers a 'CC0 1.0 Universell' rights filter, but the license page renders with JavaScript and no CC0 text was readable."
+      "reason": "Home loads, but /content/nutzungshinweise and search pages now serve an Anubis proof-of-work bot check; CC0 filter text not readable."
     },
     {
       "name": "Noord-Hollands Archief (Fotopersbureau De Boer)",
       "url": "https://noord-hollandsarchief.nl",
-      "reason": "The De Boer press photo collection is reported as CC0, but the site returned HTTP 403."
+      "reason": "The De Boer press photo collection is reported as CC0, but the site returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "Belvedere Wien Open Content",
       "url": "https://sammlung.belvedere.at",
-      "reason": "Public-domain images are reported to use CC0, but the site returned HTTP 403."
+      "reason": "Public-domain images are reported to use CC0, but the site returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "Finna.fi",
       "url": "https://www.finna.fi",
-      "reason": "Metadata is CC0 and image licenses vary per item, but the terms page returned HTTP 403."
-    },
-    {
-      "name": "OPenn (Penn Libraries)",
-      "url": "https://openn.library.upenn.edu",
-      "reason": "CC0 is one of four rights options set per repository; repository pages timed out."
+      "reason": "Metadata is CC0 and image licenses vary per item, but the terms page returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "Kunstmuseum Basel Sammlung Online",
       "url": "https://sammlung.kunstmuseumbasel.ch/en/",
-      "reason": "Offers public-domain downloads, but no CC0 wording was found on its pages."
+      "reason": "Collection site is a JavaScript-only app ('Welcome to Our Collections' shell); no license text readable in HTML."
     },
     {
       "name": "Blender demo files and asset bundles",
       "url": "https://www.blender.org/download/demo-files/",
-      "reason": "Asset bundles are reported as CC0, but the page returned HTTP 403."
+      "reason": "Asset bundles are reported as CC0, but the page returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "Travel Coffee Book",
       "url": "https://travelcoffeebook.com/",
-      "reason": "Often listed as CC0, but the site returned HTTP 403."
+      "reason": "Often listed as CC0, but the site returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "Moveast",
       "url": "https://moveast.me/",
-      "reason": "Often listed as CC0, but the site returned HTTP 403."
-    },
-    {
-      "name": "Wirtualne Muzea Małopolski 3D scans",
-      "url": "https://sketchfab.com/WirtualneMuzeaMalopolski",
-      "reason": "About 1,300 museum scans with per-model licenses (mostly CC0); the model pages render with JavaScript, so the license was not readable in plain HTML. Its CC0 models are reachable through the Sketchfab search."
+      "reason": "Often listed as CC0, but the site returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "Finnish Museum of Photography (CC0 selections)",
       "url": "https://valokuvataiteenmuseo.finna.fi/",
-      "reason": "The museum says selected sets use CC0, but the Finna portal returned HTTP 403."
-    },
-    {
-      "name": "PublicDomainQ",
-      "url": "https://publicdomainq.net/",
-      "reason": "Japanese image site with a CC0 tag; the site returned HTTP 403."
+      "reason": "The museum says selected sets use CC0, but the Finna portal returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "VRoid Studio sample avatars",
       "url": "https://vroid.com/en/studio",
-      "reason": "Some older sample avatars are reported as CC0, but the official help page returned HTTP 403 and the base models are not CC0."
+      "reason": "Product page loads but names no CC0; sample-avatar license terms on the help site were not located/readable."
     },
     {
       "name": "Printables (CC0 filter)",
       "url": "https://www.printables.com/model",
-      "reason": "3D-print models with per-item licenses; the site returned HTTP 403."
-    },
-    {
-      "name": "University of Tokyo Archives Digital Archive",
-      "url": "https://uta.u-tokyo.ac.jp/uta/s/da/",
-      "reason": "CC0 is stated for catalogue data; the images are described only as public domain."
+      "reason": "3D-print models with per-item licenses; the site returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "National Museum in Kraków online collection",
       "url": "https://zbiory.mnk.pl/en/",
-      "reason": "Lists label items CC0 or PDM, but the portal renders with JavaScript and no CC0 text was readable."
+      "reason": "Portal is a JavaScript-only app (only page title readable); no CC0 text readable."
     },
     {
       "name": "Pickupimage",
       "url": "https://www.pickupimage.com/",
-      "reason": "Often listed as CC0, but the site returned HTTP 403."
+      "reason": "Often listed as CC0, but the site returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "Figshare",
       "url": "https://figshare.com",
-      "reason": "CC0 is a license option, but no working CC0 search filter was found and the search page returned a challenge."
+      "reason": "Web search returns a challenge (HTTP 202, empty). API /v2/licenses lists CC0 (value 2), but the search API's license=2 parameter returned CC BY 4.0 items, so no working CC0 filter is confirmed."
     },
     {
       "name": "Mendeley Data",
       "url": "https://data.mendeley.com",
-      "reason": "CC0 is a deposit option, but the site renders with JavaScript and no license filter was confirmed."
+      "reason": "Page loads but renders with JavaScript; no CC0 text or license filter readable in HTML."
     },
     {
       "name": "National Library of Scotland digitisations",
       "url": "https://digital.nls.uk/",
-      "reason": "The copyright page reportedly waives rights in digitisations with CC0, but it returned HTTP 403."
+      "reason": "Site returned HTTP 405 with an AWS WAF 'Human Verification' challenge."
     },
     {
       "name": "museum-digital (CC0 image filter)",
       "url": "https://global.museum-digital.org/",
-      "reason": "Has a CC0 image-license filter across German museums, but the site's TLS certificate failed verification."
+      "reason": "TLS now works, but no CC0 license filter or statement was found in plain HTML/JSON; object JSON has no image-license field (CC0 only appears in free-text fields)."
     },
     {
       "name": "Naturalis BioPortal",
       "url": "https://bioportal.naturalis.nl/",
-      "reason": "Reported to apply CC0 unless stated otherwise; the page renders with JavaScript and returned HTTP 403."
+      "reason": "Site now serves an Anubis proof-of-work bot check (JavaScript); license not readable."
     },
     {
       "name": "Digital Repository of Ireland",
       "url": "https://repository.dri.ie/",
-      "reason": "Has a CC0 licence facet, but the site returned a Cloudflare challenge."
+      "reason": "Has a CC0 licence facet, but the site returned a Cloudflare challenge; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "National Library of Wales",
       "url": "https://www.library.wales/",
-      "reason": "The copyright page returned HTTP 403."
+      "reason": "The copyright page returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "Het Utrechts Archief",
       "url": "https://hetutrechtsarchief.nl/",
-      "reason": "Europeana lists CC0 items, but the archive's site returned HTTP 403."
+      "reason": "Europeana lists CC0 items, but the archive's site returned HTTP 403; re-check 2026-11-25 still HTTP 403 / timeout."
     },
     {
       "name": "Brandenburgisches Landeshauptarchiv",
       "url": "https://blha-recherche.brandenburg.de/",
-      "reason": "Digitized items are CC0 in Europeana/DDB, but the archive's own pages show no license text."
-    },
-    {
-      "name": "Erfgoed Leiden Beeldbank",
-      "url": "https://www.erfgoedleiden.nl/",
-      "reason": "CC0 appears only on the national data portal record; it may cover metadata only."
-    },
-    {
-      "name": "Mozilla Data Collective CC0 speech datasets",
-      "url": "https://mozilladatacollective.com/",
-      "reason": "Kathleen 1.0 says CC-0, but the same page adds a condition (do not identify the speaker); needs review."
+      "reason": "Research portal is a JavaScript-only app (empty Angular shell); no license text readable."
     },
     {
       "name": "godotshaders.com",
       "url": "https://godotshaders.com/",
-      "reason": "Per-shader CC0 option reported; the site was not reachable from the checking network."
+      "reason": "Site returns HTTP 454 'Checking your browser' WAF challenge to curl."
     },
     {
       "name": "KVR Canyon Soundings impulse responses",
       "url": "https://www.kvraudio.com/product/canyon-soundings-by-cthonophonic",
-      "reason": "Reported CC0; the page returned HTTP 403."
+      "reason": "Still HTTP 403 (bot block) on product and details pages."
     },
     {
       "name": "SciDraw",
       "url": "https://scidraw.io/",
-      "reason": "Drawings are CC0 or CC BY; the license text is only in the JavaScript-rendered page."
-    },
-    {
-      "name": "Yale Peabody Museum",
-      "url": "https://peabody.yale.edu/",
-      "reason": "Reported CC0 for data and images; the policy page now returns 404."
-    },
-    {
-      "name": "NHM London data portal",
-      "url": "https://data.nhm.ac.uk/",
-      "reason": "Returned HTTP 403; images are likely CC BY."
-    },
-    {
-      "name": "Vonwaon Bitmap font",
-      "url": "https://timothyqiu.itch.io/vonwaon-bitmap",
-      "reason": "Marked CC0, but a comment says the glyphs derive from a commercial Windows bitmap font."
-    },
-    {
-      "name": "Crumpaloo packs",
-      "url": "https://crumpaloo.itch.io/",
-      "reason": "Links CC0, but an earlier page also said the assets may not be sold."
-    },
-    {
-      "name": "Kitbitz",
-      "url": "https://kitbitz.com/",
-      "reason": "Reported as CC0 assets; the license text is only in the JavaScript-rendered page."
+      "reason": "Page is still a JavaScript-only shell; no license text in HTML and no public API found."
     },
     {
       "name": "Kiri Engine Fruit and Veg scans",
       "url": "https://www.kiriengine.app/",
-      "reason": "Reported CC0 by CG Channel; not confirmed on Kiri's own page, and downloads need an account."
+      "reason": "Kiri site has no CC0 text in HTML; no CC0 Kiri models found via Sketchfab API; downloads need an account."
     },
     {
       "name": "Scan the World (MyMiniFactory)",
       "url": "https://www.myminifactory.com/scantheworld/",
-      "reason": "The site returned HTTP 403."
-    },
-    {
-      "name": "Kanazawa Museum Plus",
-      "url": "https://kanazawa-mplus.jp/",
-      "reason": "Japan Search lists about 1,900 CC0 items; the site renders only with JavaScript."
-    },
-    {
-      "name": "Sekigahara history archive",
-      "url": "https://sekigahara-archive.geoa.tech/",
-      "reason": "Japan Search lists 805 CC0 items; the site renders only with JavaScript."
-    },
-    {
-      "name": "Hokkaido Digital Museum (Tomakomai)",
-      "url": "https://hokkaido-digital-museum.jp/",
-      "reason": "Japan Search lists 280 CC0 items; the site renders only with JavaScript."
-    },
-    {
-      "name": "Open Well-Tempered Clavier (Kimiko Ishizaka)",
-      "url": "https://welltemperedclavier.org/",
-      "reason": "The site calls the recording and score 'free and public domain' but shows no CC0 dedication."
-    },
-    {
-      "name": "Public-Domain-Music (SoundSafari, Hugging Face)",
-      "url": "https://huggingface.co/datasets/SoundSafari/Public-Domain-Music",
-      "reason": "Tagged cc0-1.0, but the per-track provenance of the bundled music is not documented."
-    },
-    {
-      "name": "CC0-1.0 Music (SoundSafari, GitHub)",
-      "url": "https://github.com/SoundSafari/CC0-1.0-Music",
-      "reason": "Repository LICENSE is CC0, but it aggregates about 7000 third-party tracks whose per-track provenance needs checking."
-    },
-    {
-      "name": "Tokyo Metropolitan Library Digital Archive",
-      "url": "https://archive.library.metro.tokyo.lg.jp/da/top",
-      "reason": "Items marked Public Domain are open data, but the site names no CC0 dedication."
+      "reason": "Still HTTP 403 (bot block)."
     },
     {
       "name": "itch.io multi-tag CC0 listings (tag-cc0/tag-music etc.)",
       "url": "https://itch.io/game-assets/free/tag-cc0/tag-music",
-      "reason": "Cloudflare challenge (403 Just a moment) on combined-tag listing pages; used assets-cc0 tag listings instead."
+      "reason": "Still a Cloudflare 'Just a moment...' challenge (HTTP 403)."
     },
     {
       "name": "Zuujis free game assets",
       "url": "https://github.com/zuujis-cc0/free-game-assets",
-      "reason": "LICENSE is CC0 1.0 but the org mass-mirrors Poly Haven/ambientCG and has no statement on how its own art was made; AI use unclear."
+      "reason": "CC0 LICENSE; 11 commits in one day (2026-11-23) with no AI trailers, but no statement on how the art (e.g. 480 tarot images) was made."
     },
     {
       "name": "Pixel Buildings (HoangLong256)",
       "url": "https://github.com/HoangLong256/pixel-buildings",
-      "reason": "CC0 stated, but 1,200+ sprites pushed within a day of repo creation; provenance/AI use not documented."
+      "reason": "CC0 stated; 8 commits in one day with no AI trailers, but no statement on how 1,200+ sprites were made."
     },
     {
       "name": "Devil Painter Asset Library",
       "url": "https://github.com/Artbyo3/DEVIL-PAINTER_Asset_Library",
-      "reason": "CC0 texture packs created one week ago and apparently script-generated; AI involvement not disclosed."
-    },
-    {
-      "name": "DefMaterial (subsoap)",
-      "url": "https://github.com/subsoap/defmaterial",
-      "reason": "CC0 LICENSE, but the README gives no origin for the bundled textures and materials."
+      "reason": "CC0 stated; 70 commits since 2026-11-17 with no AI trailers, but no statement on how the texture packs were produced."
     },
     {
       "name": "Codeberg CC0 repository search",
       "url": "https://codeberg.org/explore/repos?q=cc0",
-      "reason": "Codeberg search API returned HTTP 429 (rate limited); not retried."
+      "reason": "Codeberg returns an anti-bot decoy page for explore search; API still HTTP 429."
     },
     {
       "name": "Musee departemental Albert-Kahn (Archives de la Planete)",
       "url": "https://collections.albert-kahn.hauts-de-seine.fr/",
-      "reason": "Item pages say 'Librement reutilisable (CC-00) - Domaine Public' with no CC0 link; terms-of-use page returned 404, so CC0 naming is ambiguous."
+      "reason": "About page points to CGU (/cgu_media) for reuse rights, but the CGU and item pages time out after 30 s."
     },
     {
       "name": "Grand Rapids Public Museum collections",
       "url": "https://grpmcollections.org/",
-      "reason": "Collections site shows an 'I'm not a robot' bot check; CC0 statement could not be fetched."
-    },
-    {
-      "name": "Ingenium (Canada Science and Technology Museums) open data",
-      "url": "https://ingeniumcanada.org/ingenium/collection-research/open-data",
-      "reason": "HTTP 403 when fetched with curl."
-    },
-    {
-      "name": "APPLAUSE photographic plate archive (AIP Potsdam)",
-      "url": "https://www.plate-archive.org/applause/",
-      "reason": "HTTP 502 server error when fetched."
-    },
-    {
-      "name": "Queensland University of Technology Digital Collections",
-      "url": "https://www.qut.edu.au/library",
-      "reason": "HTTP 403 when fetched with curl."
-    },
-    {
-      "name": "Zenodo API (CC0 media record search)",
-      "url": "https://zenodo.org/api/records",
-      "reason": "HTTP 403 'unusual traffic' block; no new Zenodo records could be checked."
-    },
-    {
-      "name": "Tranquil Tunnels 8x8 Tileset (octoshrimpy)",
-      "url": "https://octoshrimpy.itch.io/tranquil-tunnels",
-      "reason": "CC0 license field, but the page says it mixes in tiles from other named packs whose licenses need checking."
-    },
-    {
-      "name": "Nb Pixel Font Bundle (Nimble Beasts)",
-      "url": "https://nimblebeastscollective.itch.io/nb-pixel-font-bundle",
-      "reason": "CC0 license field on a compilation of fonts by other authors; each font's own license needs checking."
-    },
-    {
-      "name": "Pocket Battle VFX",
-      "url": "https://github.com/poke5121999-art/pocket-battle-vfx",
-      "reason": "CC0 LICENSE, but the sprites are described as drawn procedurally by code with no statement on how that code was made."
+      "reason": "Collections site still shows an 'I'm not a robot' check."
     },
     {
       "name": "Codeberg repository search (CC0 asset repos)",
       "url": "https://codeberg.org/api/v1/repos/search?q=cc0",
-      "reason": "Codeberg search API returned HTTP 429 (search throttled); not retried."
+      "reason": "Codeberg search API still HTTP 429 (rate limited)."
     },
     {
       "name": "Musopen",
       "url": "https://musopen.org/music/",
-      "reason": "HTTP 403 for automated fetch; CC0 labeling could not be checked."
+      "reason": "Still HTTP 403 on musopen.org and /music/."
     },
     {
       "name": "Musea Brugge collection",
       "url": "https://collectie.museabrugge.be/en",
-      "reason": "Listed as CC0 by PDIA but collection site returns HTTP 403 to curl; could not verify terms page."
+      "reason": "Still HTTP 403 (nginx) on the collection site."
     }
   ]
 }
