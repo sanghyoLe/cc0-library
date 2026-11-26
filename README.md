@@ -138,6 +138,18 @@ npm install        # also builds dist/ via the prepare script
 claude mcp add cc0-library -- node "$PWD/dist/index.js"
 ```
 
+### Agent skill (optional)
+
+[`skills/cc0-assets/SKILL.md`](skills/cc0-assets/SKILL.md) tells an agent when to use these tools and in what order: search, prefer studio- and museum-declared items, skip items with `riskFlags`, then download with a `cc0.json` receipt. For Claude Code:
+
+```sh
+mkdir -p ~/.claude/skills/cc0-assets
+curl -fsSL -o ~/.claude/skills/cc0-assets/SKILL.md \
+  https://raw.githubusercontent.com/sanghyoLe/cc0-library/main/skills/cc0-assets/SKILL.md
+```
+
+Other agents that read `SKILL.md` files take the same file in their own skills folder.
+
 ## Tools
 
 | Tool | Input | Returns |
@@ -261,5 +273,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 ```sh
 claude mcp add cc0-library -- npx -y cc0-library-mcp
 ```
+
+에이전트용 스킬(선택): [`skills/cc0-assets/SKILL.md`](skills/cc0-assets/SKILL.md)는 에이전트에게 이 도구를 언제, 어떤 순서로 쓰는지 알려 줍니다. 검색한 뒤 제작사·미술관이 선언한 항목을 먼저 고르고, `riskFlags`가 붙은 항목은 건너뛰고, `cc0.json`과 함께 받는 순서입니다. Claude Code에서는 위 영어 섹션의 `curl` 명령으로 `~/.claude/skills/cc0-assets/`에 넣으면 됩니다.
 
 코드는 MIT, 카탈로그 데이터는 CC0입니다. 자료원 제안과 기여 방법은 [CONTRIBUTING.md](CONTRIBUTING.md)에 있습니다. 매주 자동 점검이 새 CC0 후보를 찾아 `source-check` 이슈에 올립니다. 후보는 사람이 원본 라이선스 페이지를 확인한 뒤에 목록에 들어갑니다.
