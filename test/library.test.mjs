@@ -601,3 +601,127 @@ test("collections: only kind=collection queries GitHub and Hugging Face, and bot
   assert.equal(new URL(callsTo(f, "api.github.com")[0]).searchParams.get("q"), "sprites license mit license:cc0-1.0");
   assert.deepEqual(r.assets.map((a) => a.id).sort(), ["github:a/x", "huggingface:o/d1"]);
 });
+
+test("search with deadlineMs returns what arrived and names the providers still running", async () => {
+  const f = async (url) => {
+    if (url.startsWith("https://collectionapi.metmuseum.org/")) await new Promise((r) => setTimeout(r, 300));
+    if (url.startsWith("https://openaccess-api.clevelandart.org/")) return { ok: true, status: 200, json: async () => ({ info: { total: 0 }, data: [] }) };
+    return { ok: true, status: 200, json: async () => ({ total: 0, objectIDs: [] }) };
+  };
+  const t0 = Date.now();
+  const r = await search(f, "cat", "artwork", 5, 1, { deadlineMs: 30 });
+  assert.ok(Date.now() - t0 < 200);
+  assert.deepEqual(r.pending, ["met"]);
+  const full = await search(f, "cat", "artwork", 5, 1);
+  assert.deepEqual(full.pending, []);
+});
+
+test("riskFlags names franchises and copy wording on uploader items only, and skips ordinary words", async () => {
+  const { riskFlags } = await import("../dist/risk.js");
+  const up = (title, tags = []) => ({ title, tags, licenseEvidence: { declaredBy: "uploader" } });
+  assert.deepEqual(riskFlags(up("Frostmourn Sword")), ["franchise-name: frostmourn"]);
+  assert.deepEqual(riskFlags(up("Lightsaber hilt", ["star wars", "fanart"])), ["franchise-name: star wars, lightsaber", "derivative-wording: fan art"]);
+  assert.deepEqual(riskFlags(up("Pokémon trainer")), ["franchise-name: pokémon"]);
+  assert.deepEqual(riskFlags(up("Star Frigate", ["starwars", "spaceship"])), ["franchise-name: star wars"]);
+  assert.deepEqual(riskFlags(up("Airborn Clone Trooper Helmet")), ["franchise-name: clone trooper"]);
+  assert.deepEqual(riskFlags(up("Spiderman mask", ["fan-art"])), ["franchise-name: spider-man", "derivative-wording: fan art"]);
+  assert.deepEqual(riskFlags(up("Sun halo over a blizzard")), []);
+  assert.deepEqual(riskFlags(up("Marios pizza shop")), []);
+  assert.deepEqual(riskFlags({ ...up("Star Wars poster"), licenseEvidence: { declaredBy: "institution" } }), []);
+});
+
+test("search results and get_asset carry riskFlags", async () => {
+  const UUID2 = "245e0b37-0577-416b-8d05-27c0b0bdde46";
+  const item = { id: UUID2, title: "Darth Vader helmet", license: "cc0", foreign_landing_url: "https://x/1", url: "https://x/1.jpg", tags: [] };
+  const f = fakeFetch({ "https://api.openverse.org/v1/images/?": { result_count: 1, results: [item] }, [`https://api.openverse.org/v1/images/${UUID2}/`]: item });
+  const r = await search(f, "helmet", "image", 5, 1, { providers: ["openverse"] });
+  assert.deepEqual(r.assets[0].riskFlags, ["franchise-name: darth vader"]);
+  assert.deepEqual((await getAsset(f, `openverse:image:${UUID2}`)).riskFlags, ["franchise-name: darth vader"]);
+});
+
+async function downloadClient(routes, files) {
+  const { createServer } = await import("../dist/server.js");
+  const { Client } = await import("@modelcontextprotocol/sdk/client/index.js");
+  const { InMemoryTransport } = await import("@modelcontextprotocol/sdk/inMemory.js");
+  const fetched = [];
+  const download = async (url) => {
+    fetched.push(url);
+    const f = files[url];
+    if (!f) return new Response("missing", { status: 404 });
+    return new Response(f.body, { status: 200, headers: { "content-type": f.type ?? "application/octet-stream" } });
+  };
+  const [a, b] = InMemoryTransport.createLinkedPair();
+  const server = createServer(fakeFetch(routes), download);
+  const client = new Client({ name: "download-check", version: "0" });
+  await Promise.all([server.connect(a), client.connect(b)]);
+  return { client, fetched };
+}
+
+const doorFiles = {
+  gltf: { "1k": { gltf: { url: "https://dl.polyhaven.org/door_1k.gltf", size: 9, include: {
+    "door.bin": { url: "https://dl.polyhaven.org/door.bin", size: 3 },
+    "textures/door_diff_1k.jpg": { url: "https://dl.polyhaven.org/door_diff_1k.jpg", size: 4 },
+    "../escape.txt": { url: "https://dl.polyhaven.org/escape.txt", size: 1 },
+  } } } },
+  blend: { "1k": { blend: { url: "https://dl.polyhaven.org/door_1k.blend", size: 5 } } },
+};
+const doorIndex = { door: { name: "Door", type: 2, tags: [], authors: { Tina: "All" } } };
+
+test("download_asset saves a glTF with its companions and a cc0.json receipt", async () => {
+  const { mkdtemp, readFile, stat } = await import("node:fs/promises");
+  const { tmpdir } = await import("node:os");
+  const path = await import("node:path");
+  resetPolyhavenCache();
+  const { client } = await downloadClient(
+    { "https://api.polyhaven.com/assets": doorIndex, "https://api.polyhaven.com/files/door": doorFiles },
+    {
+      "https://dl.polyhaven.org/door_1k.gltf": { body: '{"asset":{}}', type: "model/gltf+json" },
+      "https://dl.polyhaven.org/door.bin": { body: "bin" },
+      "https://dl.polyhaven.org/door_diff_1k.jpg": { body: "jpeg", type: "image/jpeg" },
+      "https://dl.polyhaven.org/door_1k.blend": { body: "blend" },
+    },
+  );
+  const dir = await mkdtemp(path.join(tmpdir(), "cc0-dl-"));
+
+  const ambiguous = await client.callTool({ name: "download_asset", arguments: { id: "polyhaven:door", dir } });
+  assert.equal(ambiguous.isError, true);
+  assert.match(ambiguous.content[0].text, /"gltf \/ 1k \/ gltf"/);
+
+  const r = (await client.callTool({ name: "download_asset", arguments: { id: "polyhaven:door", dir, files: ["gltf / 1k / gltf"] } })).structuredContent;
+  assert.equal(r.folder, path.join(dir, "polyhaven_door"));
+  assert.deepEqual(r.saved.map((s) => s.path), ["door_1k.gltf", "door.bin", "textures/door_diff_1k.jpg"]);
+  assert.equal(await readFile(path.join(r.folder, "textures/door_diff_1k.jpg"), "utf8"), "jpeg");
+  assert.deepEqual(r.skipped.map((s) => s.reason), ["companion path would leave the asset folder"]);
+  await assert.rejects(stat(path.join(dir, "escape.txt")));
+
+  // A second call adds to the receipt instead of replacing it.
+  await client.callTool({ name: "download_asset", arguments: { id: "polyhaven:door", dir, files: ["blend / 1k / blend"] } });
+  const receipt = JSON.parse(await readFile(r.receipt, "utf8"));
+  assert.equal(receipt.id, "polyhaven:door");
+  assert.equal(receipt.license.license, "CC0-1.0");
+  assert.equal(receipt.creator, "Tina");
+  assert.deepEqual(receipt.files.map((f) => f.path).sort(), ["door.bin", "door_1k.blend", "door_1k.gltf", "textures/door_diff_1k.jpg"]);
+  assert.match(receipt.files[0].sha256, /^[0-9a-f]{64}$/);
+  await client.close();
+});
+
+test("download_asset skips web pages and failed files instead of saving them", async () => {
+  const { mkdtemp, readdir } = await import("node:fs/promises");
+  const { tmpdir } = await import("node:os");
+  const path = await import("node:path");
+  const files = { blend: { "1k": { blend: { url: "https://dl.polyhaven.org/login.html" } } }, gltf: { "1k": { gltf: { url: "https://dl.polyhaven.org/gone.gltf" } } } };
+  resetPolyhavenCache();
+  const { client } = await downloadClient(
+    { "https://api.polyhaven.com/assets": doorIndex, "https://api.polyhaven.com/files/door": files },
+    { "https://dl.polyhaven.org/login.html": { body: "<html>", type: "text/html; charset=utf-8" } },
+  );
+  const dir = await mkdtemp(path.join(tmpdir(), "cc0-dl-"));
+  const r = (await client.callTool({ name: "download_asset", arguments: { id: "polyhaven:door", dir, files: ["blend / 1k / blend", "gltf / 1k / gltf"] } })).structuredContent;
+  assert.deepEqual(r.saved, []);
+  assert.match(r.skipped[0].reason, /web page/);
+  assert.equal(r.skipped[1].reason, "HTTP 404");
+  assert.deepEqual(await readdir(r.folder), ["cc0.json"]);
+  const unknown = await client.callTool({ name: "download_asset", arguments: { id: "polyhaven:door", dir, files: ["nope"] } });
+  assert.equal(unknown.isError, true);
+  await client.close();
+});

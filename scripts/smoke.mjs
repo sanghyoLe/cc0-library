@@ -16,10 +16,11 @@ const check = (cond, msg) => { if (!cond) throw new Error(`FAIL: ${msg}`); conso
 
 const toolDefs = (await client.listTools()).tools;
 const tools = toolDefs.map((t) => t.name).sort();
-check(tools.join() === "get_asset,list_sources,search_assets", `tools listed: ${tools}`);
+check(tools.join() === "download_asset,get_asset,list_sources,search_assets", `tools listed: ${tools}`);
 // Glama's TDQS rewards documented outputs and declared annotations; keep them on every tool.
-check(toolDefs.every((t) => t.outputSchema?.properties && t.annotations?.readOnlyHint === true && t.title && t.description.length > 200),
+check(toolDefs.every((t) => t.outputSchema?.properties && typeof t.annotations?.readOnlyHint === "boolean" && t.title && t.description.length > 200),
   "every tool has outputSchema, readOnly annotation, title and a full description");
+check(toolDefs.filter((t) => t.annotations.readOnlyHint === false).map((t) => t.name).join() === "download_asset", "only download_asset writes");
 
 const QUERIES = { image: "cat", audio: "rain", video: "forest", hdri: "sunset", texture: "brick", model: "chair", artwork: "cat" };
 const seenProviders = new Map();
@@ -59,6 +60,19 @@ check(src.sources.length > 0 && src.notCc0.length > 0 && src.pendingVerification
 
 const fonts = await call("list_sources", { kind: "font" });
 check(fonts.sources.length > 0 && fonts.sources.every((s) => s.kinds.includes("font")), `list_sources font -> ${fonts.sources.map((s) => s.id).join(", ")}`);
+
+// download_asset: a Poly Haven glTF must arrive with its .bin and textures, plus a receipt.
+const { mkdtemp, readFile } = await import("node:fs/promises");
+const { tmpdir } = await import("node:os");
+const { join } = await import("node:path");
+const dlDir = await mkdtemp(join(tmpdir(), "cc0-smoke-"));
+const dl = await call("download_asset", { id: "polyhaven:large_castle_door", dir: dlDir, files: ["gltf / 1k / gltf"] });
+const gltf = JSON.parse(await readFile(join(dl.folder, "large_castle_door_1k.gltf"), "utf8"));
+const needed = [...(gltf.buffers ?? []), ...(gltf.images ?? [])].map((x) => x.uri);
+check(needed.length > 0 && needed.every((u) => dl.saved.some((s) => s.path === u)) && dl.skipped.length === 0,
+  `download_asset polyhaven glTF -> ${dl.saved.length} files, every uri the glTF references is saved (${needed.join(", ")})`);
+const receipt = JSON.parse(await readFile(dl.receipt, "utf8"));
+check(receipt.license.license === "CC0-1.0" && receipt.files.length === dl.saved.length, "download_asset wrote cc0.json with license and files");
 
 const bad = await client.callTool({ name: "get_asset", arguments: { id: "polyhaven:does_not_exist_xyz" } });
 check(bad.isError === true, "unknown id returns isError");

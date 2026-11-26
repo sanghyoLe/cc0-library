@@ -7,6 +7,8 @@ import type { FetchLike } from "./types.js";
 export const USER_AGENT = "cc0-library-mcp/0.2.12 (+https://github.com/sanghyoLe/cc0-library)";
 
 const TIMEOUT_MS = 15_000;
+/** File downloads can be hundreds of MB, so they get far longer than API calls. */
+const DOWNLOAD_TIMEOUT_MS = 10 * 60_000;
 
 export class UpstreamError extends Error {
   constructor(
@@ -23,6 +25,9 @@ export const defaultFetch: FetchLike = (url, init) =>
     headers: { "User-Agent": USER_AGENT, Accept: "application/json", ...init?.headers },
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
+
+export const defaultDownload = (url: string): Promise<Response> =>
+  fetch(url, { headers: { "User-Agent": USER_AGENT }, signal: AbortSignal.timeout(DOWNLOAD_TIMEOUT_MS) });
 
 /** Gateway errors that upstreams (notably Openverse) return transiently under load. */
 const RETRYABLE = new Set([502, 503, 504]);

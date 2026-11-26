@@ -60,6 +60,11 @@ export interface Asset {
   licenseEvidence: LicenseEvidence;
   /** Credit line for the API that served the item (required by its terms). */
   servedBy: string;
+  /**
+   * Set on uploader-declared items whose title or tags name a known franchise or
+   * say the work is derived from someone else's, e.g. "franchise-name: star wars".
+   */
+  riskFlags?: string[];
 }
 
 export interface AssetFile {

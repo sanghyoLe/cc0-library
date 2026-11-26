@@ -2,6 +2,7 @@
  * Provider fan-out and id routing. Has no Node-only imports, so the same code
  * runs in the MCP server and in the browser gallery (web/).
  */
+import { withRiskFlags } from "./risk.js";
 import { getOpenverse, searchOpenverse } from "./providers/openverse.js";
 import { getPolyhaven, searchPolyhaven } from "./providers/polyhaven.js";
 import { getAmbientcg, searchAmbientcg } from "./providers/ambientcg.js";
@@ -35,6 +36,11 @@ export interface SearchOptions {
    * providers are still running, so a UI can show results before slow sources answer.
    */
   onProgress?: (partial: SearchResult, pending: number) => void;
+  /**
+   * Return after this many milliseconds with whatever has arrived; providers
+   * still running are named in `pending`. Without it, search waits for every provider.
+   */
+  deadlineMs?: number;
 }
 
 export interface SearchResult {
@@ -46,6 +52,8 @@ export interface SearchResult {
   totals: Record<string, number>;
   /** Providers that failed; the other providers' results are still returned. */
   errors: string[];
+  /** Providers that had not answered when `deadlineMs` passed; empty without a deadline. */
+  pending: string[];
 }
 
 /**
@@ -116,13 +124,16 @@ export async function search(
   const totals: Record<string, number> = {};
   const errorSlots: (string | undefined)[] = new Array(run.length);
   const listSlots: (Asset[] | undefined)[] = new Array(run.length);
+  const done: boolean[] = new Array(run.length).fill(false);
   const snapshot = (): SearchResult => {
     const lists = listSlots.filter((l): l is Asset[] => !!l);
     const errors = errorSlots.filter((e): e is string => !!e);
-    return { query, kind, page, assets: rank(query, interleave(lists)).slice(0, limit), totals: { ...totals }, errors };
+    const waiting = run.filter((_, i) => !done[i]).map((j) => j.name);
+    const assets = rank(query, interleave(lists)).slice(0, limit).map(withRiskFlags);
+    return { query, kind, page, assets, totals: { ...totals }, errors, pending: waiting };
   };
   let pending = run.length;
-  await Promise.all(
+  const settled = Promise.all(
     run.map(async (j, i) => {
       try {
         const r = await j.run();
@@ -131,10 +142,18 @@ export async function search(
       } catch (e) {
         errorSlots[i] = `${j.name}: ${e instanceof Error ? e.message : String(e)}`;
       }
+      done[i] = true;
       pending--;
       if (pending > 0) options.onProgress?.(snapshot(), pending);
     }),
   );
+  if (options.deadlineMs === undefined) {
+    await settled;
+  } else {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    await Promise.race([settled, new Promise<void>((r) => (timer = setTimeout(r, options.deadlineMs)))]);
+    clearTimeout(timer);
+  }
   return snapshot();
 }
 
@@ -192,6 +211,11 @@ export function interleave<T>(lists: T[][]): T[] {
  * `github:<owner>/<repo>`, `huggingface:<owner>/<dataset>`, `blenderkit:<uuid>`.
  */
 export async function getAsset(fetchImpl: FetchLike, id: string): Promise<AssetDetail | null> {
+  const asset = await getAssetUnflagged(fetchImpl, id);
+  return asset && withRiskFlags(asset);
+}
+
+async function getAssetUnflagged(fetchImpl: FetchLike, id: string): Promise<AssetDetail | null> {
   const parts = id.split(":");
   const [provider, a, b] = parts;
   if (parts.length === 3 && provider === "openverse" && (a === "image" || a === "audio") && b) return getOpenverse(fetchImpl, a, b);

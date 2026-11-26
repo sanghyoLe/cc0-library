@@ -1,8 +1,12 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { defaultFetch } from "./http.js";
+import { DownloadRequestError, MAX_FILES_PER_CALL, RECEIPT_NAME, downloadAsset, type DownloadLike } from "./download.js";
+import { defaultDownload, defaultFetch } from "./http.js";
 import { getAsset, loadCatalog, search } from "./library.js";
 import { ASSET_KINDS, CATALOG_KINDS, PROVIDER_IDS, type FetchLike } from "./types.js";
+
+/** One slow source (The Met can take 30 s) must not hold every reply; it is reported in `pending`. */
+const SEARCH_DEADLINE_MS = 10_000;
 
 /** Poly Haven textures can list 100+ map/resolution/format files; keep replies readable. */
 const MAX_FILES_IN_REPLY = 60;
@@ -48,6 +52,14 @@ const assetShape = {
   origin: z.string().describe("Site the item originally came from (e.g. flickr, freesound, metmuseum.org)"),
   licenseEvidence: licenseEvidenceSchema,
   servedBy: z.string().describe("Credit line required by the serving API's terms; show it next to results"),
+  riskFlags: z
+    .array(z.string())
+    .optional()
+    .describe(
+      "Present only on uploader-declared items whose title or tags name a known franchise, character or brand, or say the work is fan-made or copied " +
+        "(e.g. 'franchise-name: star wars'). CC0 from an uploader does not clear the franchise owner's rights: tell the user before suggesting it. " +
+        "Absence does not mean the item is safe",
+    ),
 };
 
 const fileSchema = z.object({
@@ -73,6 +85,9 @@ const searchOutput = {
   assets: z.array(z.object(assetShape)).describe("CC0 results, at most `limit`; may be fewer when sources drop non-CC0 items"),
   totals: z.record(z.string(), z.number()).describe("Upstream match count per source job (before CC0 re-checks); useful to decide whether to page"),
   errors: z.array(z.string()).describe("Sources that failed this time, e.g. 'met: The Met returned HTTP 503'; other sources still returned results"),
+  pending: z
+    .array(z.string())
+    .describe(`Sources that had not answered within ${SEARCH_DEADLINE_MS / 1000} s and were left out; search again (or narrow with providers) to include them`),
 };
 
 const getOutput = {
@@ -108,7 +123,24 @@ const result = (value: object) => ({
 });
 const fail = (message: string) => ({ content: [{ type: "text" as const, text: message }], isError: true });
 
-export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
+const savedFileSchema = z.object({
+  label: z.string().describe("File label from get_asset; companions read '<main label> + <path>'"),
+  path: z.string().describe("Path relative to `folder`"),
+  url: z.string().describe("Where it was downloaded from"),
+  bytes: z.number(),
+  sha256: z.string(),
+});
+
+const downloadOutput = {
+  folder: z.string().describe("Absolute path of the folder created for this asset"),
+  saved: z.array(savedFileSchema).describe("Files written, including each model's companion files at their relative paths"),
+  skipped: z
+    .array(z.object({ label: z.string(), url: z.string(), reason: z.string() }))
+    .describe("Files not saved and why, e.g. a page that needs the user's login; tell the user and give them landingUrl"),
+  receipt: z.string().describe(`Absolute path of ${RECEIPT_NAME}: id, title, creator, source URLs, license evidence, riskFlags and download time`),
+};
+
+export function createServer(fetchImpl: FetchLike = defaultFetch, downloadImpl: DownloadLike = defaultDownload): McpServer {
   const server = new McpServer({ name: "cc0-library", version: "0.2.12" });
 
   server.registerTool(
@@ -120,9 +152,11 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
         "returning only items whose CC0 status was checked. " +
         "Use it first to discover candidates; then call get_asset for download files and a fresh license re-check. " +
         "Use list_sources instead to answer which sites are CC0. Do not use it for CC BY, CC BY-SA or other 'free' licenses: they are filtered out. " +
-        "Behavior: read-only, no API key, live HTTPS calls to each source (usually 2-10 s). A failing source is listed in `errors` while the others still return. " +
+        `Behavior: read-only, no API key, live HTTPS calls to each source; replies within ${SEARCH_DEADLINE_MS / 1000} s. ` +
+        "A failing source is listed in `errors` and a source still running at the deadline in `pending`, while the others still return. " +
         "Results from uploader-driven sites (Openverse, Commons, Internet Archive, Sketchfab, WordPress Photo Directory, iNaturalist, PhyloPic, Zenodo, BlenderKit, GitHub, Hugging Face) carry licenseEvidence.declaredBy='uploader': " +
-        "tell the user to confirm the uploader owns the work. Show each item's servedBy credit with the results.",
+        "tell the user to confirm the uploader owns the work; items with riskFlags name a franchise or brand and need that warning most. " +
+        "Show each item's servedBy credit with the results.",
       inputSchema: {
         query: z.string().min(1).max(200).describe("Keywords in any language, matched against titles and tags, e.g. 'rainy street' or 'brick wall'"),
         kind: z.enum([...ASSET_KINDS, "any"]).default("any").describe(KIND_HELP),
@@ -154,7 +188,7 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
       outputSchema: searchOutput,
       annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
     },
-    async ({ query, kind, limit, page, providers }) => result(await search(fetchImpl, query, kind, limit, page, { providers })),
+    async ({ query, kind, limit, page, providers }) => result(await search(fetchImpl, query, kind, limit, page, { providers, deadlineMs: SEARCH_DEADLINE_MS })),
   );
 
   server.registerTool(
@@ -191,6 +225,51 @@ export function createServer(fetchImpl: FetchLike = defaultFetch): McpServer {
         files: asset.files.slice(0, MAX_FILES_IN_REPLY),
         ...(truncated && { filesNote: `${asset.files.length - MAX_FILES_IN_REPLY} more files omitted; see landingUrl.` }),
       });
+    },
+  );
+
+  server.registerTool(
+    "download_asset",
+    {
+      title: "Download a CC0 asset with a license receipt",
+      description:
+        "Save chosen files of one asset to a local folder, re-checking at the source that it is still CC0 first. " +
+        "Creates <dir>/<asset id>/, saves each file there with its companions (a glTF's .bin and textures) at the relative paths the main file expects, " +
+        `and writes ${RECEIPT_NAME} recording the source, creator, license evidence, riskFlags and download time, so the project keeps proof of where the asset came from. ` +
+        "Use it after search_assets (and get_asset when the asset has several files, to read their labels) when the user wants the asset in their project; " +
+        "use get_asset instead when they only want links. " +
+        "Pages that need the user's login (Sketchfab, BlenderKit, Freesound originals) are not downloaded and come back in `skipped`. " +
+        "Zip packs (ambientCG) are saved as-is, not extracted. " +
+        "Behavior: writes files under `dir` only, overwriting same-named files from an earlier download of the same asset; live HTTPS downloads, up to 1 GB per file.",
+      inputSchema: {
+        id: z.string().min(1).max(120).describe("Asset id exactly as returned by search_assets"),
+        dir: z
+          .string()
+          .min(1)
+          .max(1024)
+          .describe("Folder to save into, normally inside the user's project (e.g. 'assets/cc0'). A subfolder named after the asset id is created. Relative paths resolve against the server's working directory"),
+        files: z
+          .array(z.string().min(1).max(200))
+          .min(1)
+          .max(MAX_FILES_PER_CALL)
+          .optional()
+          .describe(
+            "Exact file labels from get_asset, e.g. ['gltf / 1k / gltf'] or ['1K-JPG (zip)']. Leave out only when the asset has a single file; " +
+              "otherwise the call fails and lists the labels",
+          ),
+      },
+      outputSchema: downloadOutput,
+      annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: true },
+    },
+    async ({ id, dir, files }) => {
+      const asset = await getAsset(fetchImpl, id);
+      if (!asset) return fail(`No CC0 asset found for id "${id}". The id may be malformed, removed upstream, or no longer CC0.`);
+      try {
+        return result(await downloadAsset(downloadImpl, asset, dir, files));
+      } catch (e) {
+        if (e instanceof DownloadRequestError) return fail(e.message);
+        throw e;
+      }
     },
   );
 

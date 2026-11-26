@@ -323,6 +323,9 @@ function card(a) {
         }, a.licenseEvidence.declaredBy === "uploader" ? "CC0 · uploader" : "CC0 ✓"),
         el("span", { class: "badge" }, PROVIDER_NAMES[a.provider] ?? a.provider),
         el("span", { class: "badge" }, a.kind),
+        a.riskFlags?.length
+          ? el("span", { class: "badge risk", title: `${a.riskFlags.join("; ")}. CC0 from an uploader does not clear the franchise or brand owner's rights.` }, "⚠ IP risk")
+          : null,
       ),
     ),
   );

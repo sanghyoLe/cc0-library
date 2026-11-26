@@ -71,6 +71,7 @@ a { color: var(--accent); }
 .by { font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: auto; }
 .badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--chip); color: var(--muted); }
+.badge.risk { color: var(--warn); border: 1px solid currentColor; }
 .cc0 { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); text-decoration: none; }
 .more-row { display: flex; justify-content: center; margin: 20px 0; }
 .errors { font-size: 14px; color: var(--warn); margin-bottom: 24px; }
