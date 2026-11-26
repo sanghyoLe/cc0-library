@@ -141,7 +141,7 @@ const downloadOutput = {
 };
 
 export function createServer(fetchImpl: FetchLike = defaultFetch, downloadImpl: DownloadLike = defaultDownload): McpServer {
-  const server = new McpServer({ name: "cc0-library", version: "0.2.12" });
+  const server = new McpServer({ name: "cc0-library", version: "0.2.13" });
 
   server.registerTool(
     "search_assets",

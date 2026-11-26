@@ -4,7 +4,7 @@ import type { FetchLike } from "./types.js";
  * Poly Haven's API terms require a User-Agent that names the calling app.
  * Openverse also asks clients to identify themselves.
  */
-export const USER_AGENT = "cc0-library-mcp/0.2.12 (+https://github.com/sanghyoLe/cc0-library)";
+export const USER_AGENT = "cc0-library-mcp/0.2.13 (+https://github.com/sanghyoLe/cc0-library)";
 
 const TIMEOUT_MS = 15_000;
 /** File downloads can be hundreds of MB, so they get far longer than API calls. */
