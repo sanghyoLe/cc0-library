@@ -45,7 +45,8 @@ const FRANCHISE_TERMS = [
 ];
 
 /** Words in a title or tags that say the item copies someone else's work. */
-const DERIVATIVE_TERMS = ["fan art", "fan made", "ripped", "sprite rip", "replica", "inspired by"];
+// "replica" is left out: most are photos of museum replicas of ancient objects.
+const DERIVATIVE_TERMS = ["fan art", "fan made", "ripped", "sprite rip", "inspired by"];
 
 /** Lowercase words separated by single spaces; hyphens count as spaces ("fan-art" = "fan art"). */
 function normalize(text: string): string {

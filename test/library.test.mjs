@@ -626,6 +626,7 @@ test("riskFlags names franchises and copy wording on uploader items only, and sk
   assert.deepEqual(riskFlags(up("Airborn Clone Trooper Helmet")), ["franchise-name: clone trooper"]);
   assert.deepEqual(riskFlags(up("Spiderman mask", ["fan-art"])), ["franchise-name: spider-man", "derivative-wording: fan art"]);
   assert.deepEqual(riskFlags(up("Sun halo over a blizzard")), []);
+  assert.deepEqual(riskFlags(up("Mycenaean Type G Bronze Sword replica.png")), []);
   assert.deepEqual(riskFlags(up("Marios pizza shop")), []);
   assert.deepEqual(riskFlags({ ...up("Star Wars poster"), licenseEvidence: { declaredBy: "institution" } }), []);
 });
