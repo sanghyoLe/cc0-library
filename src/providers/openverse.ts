@@ -1,5 +1,5 @@
 import { getJson } from "../http.js";
-import { CC0_LICENSE_URL, type Asset, type AssetDetail, type FetchLike, type SearchParams } from "../types.js";
+import { CC0_LICENSE_URL, type Asset, type AssetDetail, type AssetFile, type FetchLike, type SearchParams } from "../types.js";
 
 /**
  * Openverse indexes openly licensed media from many sites (Flickr, Freesound,
@@ -31,6 +31,7 @@ interface OpenverseItem {
   tags?: { name: string }[] | null;
   filesize?: number | null;
   filetype?: string | null;
+  alt_files?: { url: string; filesize?: number | null; filetype?: string | null }[] | null;
   mature?: boolean;
 }
 
@@ -98,11 +99,26 @@ export async function getOpenverse(
   const item = await getJson<OpenverseItem>(fetchImpl, "Openverse", `${BASE}/${endpoint(media)}/${id}/`);
   if (!isCc0(item)) return null;
   const asset = toAsset(media, item);
-  return {
-    ...asset,
-    description: null,
-    files: item.url
-      ? [{ label: item.filetype ? `original (${item.filetype})` : "original", url: item.url, sizeBytes: item.filesize ?? null }]
-      : [],
-  };
+  return { ...asset, description: null, files: openverseFiles(item) };
+}
+
+/**
+ * Freesound items in Openverse point `url` at a lossy preview (cdn.freesound.org/previews/...).
+ * The uploaded original is only listed in `alt_files`, behind an OAuth API endpoint, so it is
+ * offered as the Freesound page, where a logged-in user can download it.
+ */
+function openverseFiles(item: OpenverseItem): AssetFile[] {
+  if (!item.url) return [];
+  const isFreesoundPreview = /^https:\/\/cdn\.freesound\.org\/previews\//.test(item.url);
+  if (!isFreesoundPreview) {
+    return [{ label: item.filetype ? `original (${item.filetype})` : "original", url: item.url, sizeBytes: item.filesize ?? null }];
+  }
+  const ext = item.url.split(".").pop();
+  const preview: AssetFile = { label: `preview (${ext}, lossy)`, url: item.url, sizeBytes: null };
+  const originals = (item.alt_files ?? []).map((f) => ({
+    label: `original (${f.filetype ?? "file"}) — download on Freesound (login required)`,
+    url: item.foreign_landing_url,
+    sizeBytes: f.filesize ?? null,
+  }));
+  return [preview, ...originals];
 }

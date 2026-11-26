@@ -30,6 +30,11 @@ export interface SearchOptions {
   skip?: ProviderId[];
   /** When set, only these providers run (applied after `skip`). */
   providers?: ProviderId[];
+  /**
+   * Called each time a provider settles, with the result so far and how many
+   * providers are still running, so a UI can show results before slow sources answer.
+   */
+  onProgress?: (partial: SearchResult, pending: number) => void;
 }
 
 export interface SearchResult {
@@ -107,20 +112,30 @@ export async function search(
     const id = j.name.split(":")[0];
     return !skip.has(id) && (!only || only.has(id));
   });
-  const settled = await Promise.allSettled(run.map((j) => j.run()));
+  // Slots keep provider order, so the interleave is the same however the calls finish.
   const totals: Record<string, number> = {};
-  const errors: string[] = [];
-  const lists: Asset[][] = [];
-  settled.forEach((s, i) => {
-    if (s.status === "fulfilled") {
-      totals[run[i].name] = s.value.total;
-      lists.push(s.value.assets);
-    } else {
-      errors.push(`${run[i].name}: ${s.reason instanceof Error ? s.reason.message : String(s.reason)}`);
-    }
-  });
-
-  return { query, kind, page, assets: rank(query, interleave(lists)).slice(0, limit), totals, errors };
+  const errorSlots: (string | undefined)[] = new Array(run.length);
+  const listSlots: (Asset[] | undefined)[] = new Array(run.length);
+  const snapshot = (): SearchResult => {
+    const lists = listSlots.filter((l): l is Asset[] => !!l);
+    const errors = errorSlots.filter((e): e is string => !!e);
+    return { query, kind, page, assets: rank(query, interleave(lists)).slice(0, limit), totals: { ...totals }, errors };
+  };
+  let pending = run.length;
+  await Promise.all(
+    run.map(async (j, i) => {
+      try {
+        const r = await j.run();
+        totals[j.name] = r.total;
+        listSlots[i] = r.assets;
+      } catch (e) {
+        errorSlots[i] = `${j.name}: ${e instanceof Error ? e.message : String(e)}`;
+      }
+      pending--;
+      if (pending > 0) options.onProgress?.(snapshot(), pending);
+    }),
+  );
+  return snapshot();
 }
 
 /** Words of two or more letters or digits, lowercased; works for any script. */

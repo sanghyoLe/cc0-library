@@ -54,6 +54,10 @@ const fileSchema = z.object({
   label: z.string().describe("Variant, e.g. '2K-JPG (zip)', 'hdri / 4k / exr', 'primary'"),
   url: z.string().describe("Direct download URL (Sketchfab: model page, login required)"),
   sizeBytes: z.number().nullable().describe("File size in bytes when the source reports it"),
+  includes: z
+    .array(z.object({ path: z.string(), url: z.string(), sizeBytes: z.number().nullable() }))
+    .optional()
+    .describe("Companion files (a glTF's .bin and textures). Save each at `path` relative to the main file, or the main file will not open"),
 });
 
 const nameReason = z.object({

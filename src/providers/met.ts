@@ -61,6 +61,49 @@ export function toAsset(o: MetObject): Asset {
   };
 }
 
+/**
+ * The Met's API sits behind bot protection that stalls or rejects (without CORS
+ * headers) a burst of parallel object requests, so they go a few at a time.
+ * The detail phase also has a deadline: The Met can take 10-30 s per object,
+ * and objects still pending then are left out rather than holding the search open.
+ */
+const MET_CONCURRENCY = 4;
+const MET_DETAIL_DEADLINE_MS = 12_000;
+
+/**
+ * Like Promise.allSettled over items.map(fn), with at most `limit` calls in flight; keeps input order.
+ * Items not settled within `deadlineMs` are reported as rejected and no new calls start after it.
+ */
+export async function settleWithLimit<T, R>(
+  items: T[],
+  limit: number,
+  fn: (item: T) => Promise<R>,
+  deadlineMs = Infinity,
+): Promise<PromiseSettledResult<R>[]> {
+  const out: (PromiseSettledResult<R> | undefined)[] = new Array(items.length);
+  let next = 0;
+  let expired = false;
+  const worker = async () => {
+    while (!expired && next < items.length) {
+      const i = next++;
+      try {
+        out[i] = { status: "fulfilled", value: await fn(items[i]) };
+      } catch (reason) {
+        out[i] = { status: "rejected", reason };
+      }
+    }
+  };
+  const all = Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  if (Number.isFinite(deadlineMs)) {
+    await Promise.race([all, new Promise<void>((r) => (timer = setTimeout(() => ((expired = true), r()), deadlineMs)))]);
+    clearTimeout(timer);
+  } else {
+    await all;
+  }
+  return Array.from(out, (r) => r ?? { status: "rejected" as const, reason: new Error("deadline passed") });
+}
+
 const fetchObject = (fetchImpl: FetchLike, id: number | string) => getJson<MetObject>(fetchImpl, "The Met", `${OBJECT}/${id}`);
 
 export async function searchMet(fetchImpl: FetchLike, params: SearchParams): Promise<{ total: number; assets: Asset[] }> {
@@ -72,7 +115,7 @@ export async function searchMet(fetchImpl: FetchLike, params: SearchParams): Pro
   });
   const search = await getJson<{ total: number; objectIDs: number[] | null }>(fetchImpl, "The Met", `${SEARCH}?${qs}`);
   const ids = (search.objectIDs ?? []).slice(0, params.limit);
-  const objects = await Promise.allSettled(ids.map((id) => fetchObject(fetchImpl, id)));
+  const objects = await settleWithLimit(ids, MET_CONCURRENCY, (id) => fetchObject(fetchImpl, id), MET_DETAIL_DEADLINE_MS);
   const assets = objects.flatMap((r) => (r.status === "fulfilled" && isCc0(r.value) ? [toAsset(r.value)] : []));
   return { total: search.total, assets };
 }

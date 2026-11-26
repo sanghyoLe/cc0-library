@@ -120,14 +120,17 @@ test("kind=any queries all 16 provider jobs, interleaves them, and reports faili
   assert.match(new URL(callsTo(f, "archive.org", "/advancedsearch.php")[0]).searchParams.get("q"), /mediatype:\(image OR audio OR movies\)/);
 });
 
-test("flattenFiles turns nested Poly Haven files into labeled rows and skips 'include'", () => {
+test("flattenFiles turns nested Poly Haven files into labeled rows and keeps a model's 'include' on its row", () => {
   const rows = flattenFiles({
     hdri: { "1k": { hdr: { url: "u1", size: 10, md5: "m" } } },
-    gltf: { "1k": { gltf: { url: "u2", size: 5, include: { "tex.jpg": { url: "u3", size: 1 } } } } },
+    gltf: { "1k": { gltf: { url: "u2", size: 5, include: { "door.bin": { url: "u3", size: 1 }, "textures/d.jpg": { url: "u4" } } } } },
   });
   assert.deepEqual(rows, [
     { label: "hdri / 1k / hdr", url: "u1", sizeBytes: 10 },
-    { label: "gltf / 1k / gltf", url: "u2", sizeBytes: 5 },
+    {
+      label: "gltf / 1k / gltf", url: "u2", sizeBytes: 5,
+      includes: [{ path: "door.bin", url: "u3", sizeBytes: 1 }, { path: "textures/d.jpg", url: "u4", sizeBytes: null }],
+    },
   ]);
 });
 
@@ -261,6 +264,61 @@ test("The Met keeps only isPublicDomain objects with images and survives a faile
   const r = await search(f, "cat", "artwork", 5, 1);
   assert.deepEqual(r.assets.filter((a) => a.provider === "met").map((a) => a.id), ["met:1"]);
   assert.ok(!r.errors.some((e) => e.startsWith("met")));
+});
+
+test("The Met fetches object details at most 4 at a time", async () => {
+  let inFlight = 0, peak = 0;
+  const ids = Array.from({ length: 12 }, (_, i) => i + 1);
+  const f = async (url) => {
+    if (url.includes("/v1.1/search?")) return { ok: true, status: 200, json: async () => ({ total: 12, objectIDs: ids }) };
+    if (!url.includes("/objects/")) return { ok: false, status: 404, json: async () => ({}) };
+    inFlight++; peak = Math.max(peak, inFlight);
+    await new Promise((r) => setTimeout(r, 5));
+    inFlight--;
+    const id = Number(url.split("/").pop());
+    return { ok: true, status: 200, json: async () => metObj(id, true) };
+  };
+  const r = await search(f, "cat", "artwork", 12, 1);
+  assert.equal(peak, 4);
+  assert.equal(r.assets.filter((a) => a.provider === "met").length, 12);
+});
+
+test("search reports partial results as providers finish, before the slowest one answers", async () => {
+  const slow = (body, ms) => async () => { await new Promise((r) => setTimeout(r, ms)); return { ok: true, status: 200, json: async () => body }; };
+  const routes = {
+    "https://openaccess-api.clevelandart.org/": slow({ info: { total: 0 }, data: [] }, 1),
+    "https://collectionapi.metmuseum.org/": slow({ total: 0, objectIDs: [] }, 40),
+  };
+  const f = async (url) => { const hit = Object.entries(routes).find(([p]) => url.startsWith(p)); return hit ? hit[1]() : { ok: false, status: 404, json: async () => ({}) }; };
+  const progress = [];
+  const r = await search(f, "cat", "artwork", 5, 1, { onProgress: (partial, pending) => progress.push(pending) });
+  assert.deepEqual(progress, [1]);
+  assert.deepEqual(r.errors, []);
+});
+
+test("settleWithLimit drops items still pending at the deadline", async () => {
+  const { settleWithLimit } = await import("../dist/providers/met.js");
+  const delays = [1, 1, 500, 1];
+  const t0 = Date.now();
+  const r = await settleWithLimit(delays, 2, (ms) => new Promise((res) => setTimeout(() => res(ms), ms)), 50);
+  assert.ok(Date.now() - t0 < 300);
+  assert.deepEqual(r.map((x) => x.status), ["fulfilled", "fulfilled", "rejected", "fulfilled"]);
+});
+
+test("Openverse Freesound items label the lossy preview and point the original at the Freesound page", async () => {
+  const f = fakeFetch({
+    [`https://api.openverse.org/v1/audio/${UUID}/`]: {
+      id: UUID, title: "Steps", license: "cc0", source: "freesound",
+      foreign_landing_url: "https://freesound.org/people/a/sounds/1",
+      url: "https://cdn.freesound.org/previews/0/1_2-hq.mp3", filetype: "mp3",
+      alt_files: [{ url: "https://freesound.org/apiv2/sounds/1/download/", filesize: 5040736, filetype: "wav" }],
+    },
+  });
+  const d = await getAsset(f, `openverse:audio:${UUID}`);
+  assert.deepEqual(d.files, [
+    { label: "preview (mp3, lossy)", url: "https://cdn.freesound.org/previews/0/1_2-hq.mp3", sizeBytes: null },
+    { label: "original (wav) — download on Freesound (login required)", url: "https://freesound.org/people/a/sounds/1", sizeBytes: 5040736 },
+  ]);
 });
 
 test("The Met get_asset lists primary and additional images", async () => {

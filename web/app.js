@@ -25,8 +25,17 @@ const PROVIDER_NAMES = {
   github: "GitHub", huggingface: "Hugging Face", blenderkit: "BlenderKit",
 };
 
+/** Same limit as the MCP server's fetch: one stalled upstream must not hold a search open. */
+const FETCH_TIMEOUT_MS = 15_000;
 // Browsers may not send a custom User-Agent; Accept is CORS-safelisted.
-const browserFetch = (url, init) => fetch(url, { headers: { Accept: "application/json", ...init?.headers } });
+const fetchWithin = (signal) => (url, init) =>
+  fetch(url, {
+    headers: { Accept: "application/json", ...init?.headers },
+    signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(FETCH_TIMEOUT_MS)]) : AbortSignal.timeout(FETCH_TIMEOUT_MS),
+  });
+const browserFetch = fetchWithin();
+/** Aborts the search in flight when a new query, type or filter replaces it. */
+let searchCtl = null;
 
 const $ = (sel) => document.querySelector(sel);
 const state = { q: "", kind: "any", page: 1, seen: new Set(), loading: false, strict: false };
@@ -236,7 +245,9 @@ function renderKinds() {
 
 // ---------- search ----------
 async function runSearch(reset) {
-  if (state.loading) return;
+  if (state.loading && !reset) return;
+  searchCtl?.abort();
+  const ctl = (searchCtl = new AbortController());
   if (reset) {
     state.page = 1;
     state.seen.clear();
@@ -250,9 +261,19 @@ async function runSearch(reset) {
   $("#more").hidden = true;
   $("#status").textContent = reset ? `Searching for “${state.q}”…` : "Loading more…";
   try {
-    const r = await search(browserFetch, state.q, state.kind, PAGE_SIZE, state.page, { skip: state.strict ? [...SKIP, ...UPLOADER_PROVIDERS] : SKIP });
+    // First page: show each source's results as they arrive instead of waiting for the slowest.
+    const onProgress = reset
+      ? (partial, pending) => {
+          if (ctl.signal.aborted || !partial.assets.length) return;
+          $("#grid").replaceChildren(...partial.assets.map(card));
+          $("#status").textContent = `${partial.assets.length} CC0 results so far; waiting for ${pending} more source${pending === 1 ? "" : "s"}…`;
+        }
+      : undefined;
+    const r = await search(fetchWithin(ctl.signal), state.q, state.kind, PAGE_SIZE, state.page, { skip: state.strict ? [...SKIP, ...UPLOADER_PROVIDERS] : SKIP, onProgress });
+    if (ctl.signal.aborted) return;
     const fresh = r.assets.filter((a) => !state.seen.has(a.id));
     fresh.forEach((a) => state.seen.add(a.id));
+    if (reset) $("#grid").replaceChildren();
     $("#grid").append(...fresh.map(card));
     const shown = state.seen.size;
     const sources = new Set([...state.seen].map((id) => id.split(":")[0])).size;
@@ -262,9 +283,13 @@ async function runSearch(reset) {
     $("#more").hidden = r.assets.length === 0 || state.page >= 12;
     renderErrors(r.errors);
   } catch (e) {
+    if (ctl.signal.aborted) return;
     $("#status").textContent = `Search failed: ${e.message}`;
   } finally {
-    state.loading = false;
+    if (searchCtl === ctl) {
+      state.loading = false;
+      searchCtl = null;
+    }
   }
 }
 
@@ -341,7 +366,12 @@ async function openDetail(a) {
   }
   if (list.length) {
     files.replaceChildren(...list.slice(0, 40).map((f) =>
-      el("li", {}, el("a", { href: f.url, target: "_blank", rel: "noopener" }, f.label), f.sizeBytes ? ` — ${formatBytes(f.sizeBytes)}` : "")));
+      el("li", {},
+        el("a", { href: f.url, target: "_blank", rel: "noopener" }, f.label), f.sizeBytes ? ` — ${formatBytes(f.sizeBytes)}` : "",
+        f.includes?.length
+          ? el("details", {}, el("summary", {}, `+ ${f.includes.length} files to save next to it`),
+              el("ul", {}, ...f.includes.map((i) => el("li", {}, el("a", { href: i.url, target: "_blank", rel: "noopener" }, i.path)))))
+          : null)));
   } else if (files.textContent.startsWith("Loading")) {
     files.replaceChildren(el("li", {}, "No direct files. Download from the source page."));
   }

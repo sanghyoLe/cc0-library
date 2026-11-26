@@ -91,12 +91,23 @@ export async function searchPolyhaven(
   return { total: search.total, assets };
 }
 
-/** Flattens the nested /files response into one row per downloadable file. */
+/**
+ * Flattens the nested /files response into one row per downloadable file.
+ * A model file's `include` map (the glTF .bin, textures) stays on its row as
+ * `includes`: without them the main file does not open, and as separate rows
+ * they would push other formats past the reply's file cap.
+ */
 export function flattenFiles(node: unknown, path: string[] = []): AssetFile[] {
   if (!node || typeof node !== "object") return [];
   const rec = node as Record<string, unknown>;
   if (typeof rec.url === "string") {
-    return [{ label: path.join(" / "), url: rec.url, sizeBytes: typeof rec.size === "number" ? rec.size : null }];
+    const row: AssetFile = { label: path.join(" / "), url: rec.url, sizeBytes: typeof rec.size === "number" ? rec.size : null };
+    const include = rec.include && typeof rec.include === "object" ? Object.entries(rec.include as Record<string, unknown>) : [];
+    const includes = include.flatMap(([p, v]) => {
+      const f = v as { url?: unknown; size?: unknown } | null;
+      return f && typeof f.url === "string" ? [{ path: p, url: f.url, sizeBytes: typeof f.size === "number" ? f.size : null }] : [];
+    });
+    return [includes.length ? { ...row, includes } : row];
   }
   return Object.entries(rec).flatMap(([k, v]) => (k === "include" ? [] : flattenFiles(v, [...path, k])));
 }

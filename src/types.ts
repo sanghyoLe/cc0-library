@@ -66,6 +66,11 @@ export interface AssetFile {
   label: string;
   url: string;
   sizeBytes: number | null;
+  /**
+   * Companion files the main file loads by relative path (a glTF's .bin and
+   * textures). Save each at `path` next to the main file or it will not open.
+   */
+  includes?: { path: string; url: string; sizeBytes: number | null }[];
 }
 
 export interface AssetDetail extends Asset {
