@@ -8,12 +8,12 @@
     "source": "github"
   },
   "websiteUrl": "https://sanghyole.github.io/cc0-library/",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "cc0-library-mcp",
-      "version": "0.2.13",
+      "version": "0.2.14",
       "transport": {
         "type": "stdio"
       }

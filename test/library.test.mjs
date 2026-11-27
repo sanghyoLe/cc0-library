@@ -1,7 +1,7 @@
 // Unit tests with a fake fetch: no network access.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { search, getAsset, interleave, rank, relevance, loadCatalog } from "../dist/library.js";
+import { search, getAsset, interleave, rank, relevance, loadCatalog, listSources } from "../dist/library.js";
 import { resetPolyhavenCache, flattenFiles } from "../dist/providers/polyhaven.js";
 import { sanitizeQuery, isPackedFile } from "../dist/providers/archive.js";
 import { stripHtml } from "../dist/providers/commons.js";
@@ -517,7 +517,38 @@ test("list_sources output matches its declared output schema (catalog fields sta
   // The client validates structuredContent against outputSchema and throws on mismatch.
   const r = await client.callTool({ name: "list_sources", arguments: {} });
   assert.ok(r.structuredContent.sources.length > 0);
+  // The default reply must stay small enough for an MCP client to accept (the full catalog is ~500 KB).
+  assert.ok(r.content[0].text.length < 20_000, `default list_sources reply is ${r.content[0].text.length} characters`);
   await client.close();
+});
+
+test("listSources filters every list by query words, filters sources by kind, and pages with totals", () => {
+  const src = (id, kinds, notes = "") => ({ id, name: id, url: `https://${id}.example`, kinds, notes });
+  const catalog = {
+    sources: [src("kenney", ["model", "image"], "Game packs"), src("fontlib", ["font"]), src("pixelpack", ["image"], "pixel art game sprites")],
+    excluded: [{ name: "Unsplash", url: "https://unsplash.com", reason: "Unsplash License" }, { name: "Pixabay", url: "https://pixabay.com", reason: "own license" }],
+    pending: [{ name: "Game Museum", url: "https://gm.example", reason: "unverified" }],
+  };
+  const ids = (r) => r.sources.map((s) => s.id);
+
+  const byName = listSources(catalog, { query: "UNSPLASH.com", limit: 10 });
+  assert.deepEqual([ids(byName), byName.notCc0.map((s) => s.name), byName.pendingVerification], [[], ["Unsplash"], []]);
+
+  // Every word must match; kind narrows sources only.
+  const game = listSources(catalog, { query: "game packs", kind: "image", limit: 10 });
+  assert.deepEqual(ids(game), ["kenney"]);
+  assert.deepEqual(listSources(catalog, { kind: "font", limit: 10 }).totals, { sources: 1, notCc0: 2, pendingVerification: 1 });
+
+  const p2 = listSources(catalog, { limit: 2, page: 2 });
+  assert.deepEqual([ids(p2), p2.notCc0, p2.totals.sources], [["pixelpack"], [], 3]);
+});
+
+test("the version is the same in package.json, server.json and the server", async () => {
+  const { readFileSync } = await import("node:fs");
+  const { VERSION } = await import("../dist/http.js");
+  const read = (f) => JSON.parse(readFileSync(new URL(`../${f}`, import.meta.url), "utf8"));
+  const server = read("server.json");
+  assert.deepEqual([VERSION, server.version, ...server.packages.map((p) => p.version)], Array(2 + server.packages.length).fill(read("package.json").version));
 });
 
 const CC0 = "http://creativecommons.org/publicdomain/zero/1.0/";

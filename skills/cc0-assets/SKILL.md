@@ -46,7 +46,8 @@ claude mcp add cc0-library -- npx -y cc0-library-mcp
   user's own account. `download_asset` lists them in `skipped`; give the user the
   `landingUrl` instead of trying to fetch the file another way.
 - **Sites outside the search.** For a source that is not searched live (Kenney,
-  Quaternius, OpenGameArt CC0 packs and others), call `list_sources` and give the
+  Quaternius, OpenGameArt CC0 packs and others), call `list_sources` with the site
+  name or a topic as `query` (it returns one page; `totals` shows the rest) and give the
   user the catalog link. `list_sources` also lists free-looking sites that are not
   CC0 (Unsplash, Pixabay, Pexels, NASA and others): do not present their files as CC0.
 

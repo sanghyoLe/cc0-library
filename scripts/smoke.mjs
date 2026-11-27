@@ -56,7 +56,10 @@ const any = await call("search_assets", { query: "forest", limit: 6 });
 check(new Set(any.assets.map((a) => a.provider)).size >= 2, `kind=any mixes providers: ${any.assets.map((a) => a.id.split(":")[0]).join(",")}`);
 
 const src = await call("list_sources", { kind: "audio" });
-check(src.sources.length > 0 && src.notCc0.length > 0 && src.pendingVerification.length > 0, `list_sources audio -> ${src.sources.map((s) => s.id).join(", ")}`);
+check(src.sources.length > 0 && src.notCc0.length > 0 && src.pendingVerification.length > 0 && src.totals.sources > src.sources.length, `list_sources audio -> ${src.sources.map((s) => s.id).join(", ")}`);
+
+const unsplash = await call("list_sources", { query: "unsplash" });
+check(unsplash.notCc0.some((s) => s.name === "Unsplash"), `list_sources query=unsplash -> notCc0: ${unsplash.notCc0.map((s) => s.name).join(", ")}`);
 
 const fonts = await call("list_sources", { kind: "font" });
 check(fonts.sources.length > 0 && fonts.sources.every((s) => s.kinds.includes("font")), `list_sources font -> ${fonts.sources.map((s) => s.id).join(", ")}`);

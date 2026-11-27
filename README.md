@@ -157,7 +157,7 @@ Other agents that read `SKILL.md` files take the same file in their own skills f
 | `search_assets` | `query`, `kind` (`image`·`audio`·`video`·`hdri`·`texture`·`model`·`artwork`·`collection`·`any`, default `any`; `any` excludes `collection`), `limit` 1–20, `page` 1–12, optional `providers` (e.g. `["iconify"]` for icons) | CC0 assets ranked by query words in title and tags, per-provider totals, per-provider errors, and `pending` sources that missed the 10 s deadline. Uploader-declared items that name a known franchise or brand, or say they are fan-made, carry `riskFlags` |
 | `get_asset` | `id` from `search_assets` (`openverse:image:<uuid>`, `openverse:audio:<uuid>`, `polyhaven:<slug>`, `ambientcg:<assetId>`, `cleveland:<number>`, `met:<number>`, `commons:<pageid>`, `archive:<identifier>`, `sketchfab:<uid>`, `wpphotos:<number>`, `inaturalist:<n>`, `gbif:<n>`, `phylopic:<uuid>`, `iconify:<set>:<icon>`, `zenodo:<n>`, `blenderkit:<uuid>`, `github:<owner>/<repo>`, `huggingface:<owner>/<dataset>`) | Details plus download URLs (Poly Haven: up to 60 map/resolution/format files; Sketchfab: model page only, because downloads need the user's own login) |
 | `download_asset` | `id`, `dir` (folder to save into), `files` (exact labels from `get_asset`; optional when the asset has one file) | Saves the files under `<dir>/<asset id>/` with each model's companion files (glTF `.bin` and textures) at their relative paths, and writes `cc0.json` with the source, creator, license evidence, `riskFlags` and download time. Login-only pages (Sketchfab, BlenderKit, Freesound originals) are reported in `skipped`; zips are saved as-is |
-| `list_sources` | `kind` (optional) | Curated catalog, the non-CC0 list, and the pending-verification list |
+| `list_sources` | optional `kind`, `query` (site name, domain or topic words), `limit` 1–50 (default 10), `page` | One page each of the curated catalog, the non-CC0 list and the pending-verification list, with `totals` of all matches |
 
 Results are ranked by how many query words appear in each item's title (weight 2) or tags (weight 1); ties alternate between providers. Loose matches, such as a GBIF record that mentions the word only in its locality, sink below exact ones.
 
@@ -262,7 +262,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 - `get_asset`은 다운로드 URL을 주기 전에 원본에서 CC0 여부를 다시 확인합니다.
 - `download_asset`은 고른 파일을 `<dir>/<asset id>/`에 저장합니다. glTF의 `.bin`과 텍스처 같은 부속 파일도 제자리에 함께 받고, 출처·제작자·라이선스 근거·받은 시각을 `cc0.json`에 남깁니다.
 - 업로더가 CC0라고만 선언한 항목 중 제목이나 태그에 유명 게임·영화·브랜드 이름이 있거나 팬아트라고 적힌 항목에는 `riskFlags`가 붙습니다. CC0 표시가 있어도 원작자의 권리는 남아 있다는 경고입니다.
-- `list_sources`는 검증한 CC0 자료원 681곳의 목록을 줍니다. 종류별로 이미지 323곳, 오디오 181곳, 3D 119곳, 데이터 컬렉션 110곳, 텍스처 48곳, 영상 37곳, 폰트 35곳, 미술품 29곳, HDRI 10곳입니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA, Coverr, Burst, Mixkit, Gratisography, Natural Earth)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
+- `list_sources`는 검증한 CC0 자료원 681곳의 목록을 한 번에 `limit`개씩(기본 10개) 줍니다. `query`에 사이트 이름·도메인·주제어를 넣으면 그 낱말이 모두 들어 있는 곳만 고르고, `totals`로 전체 일치 수를 알려 줍니다. 종류별로 이미지 323곳, 오디오 181곳, 3D 119곳, 데이터 컬렉션 110곳, 텍스처 48곳, 영상 37곳, 폰트 35곳, 미술품 29곳, HDRI 10곳입니다. CC0가 아닌 무료 사이트(Unsplash, Pixabay, Pexels, Pixnio, SMK, NASA, Coverr, Burst, Mixkit, Gratisography, Natural Earth)와 그 이유도 줍니다. 아직 검증하지 못한 후보도 따로 줍니다.
 
 - 매주 자동 점검이 목록의 라이선스 페이지를 다시 확인하고 새 후보를 찾습니다.
 - 버전 태그를 올리면 npm과 MCP 공식 레지스트리에 자동으로 배포됩니다.

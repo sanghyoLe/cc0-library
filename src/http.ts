@@ -1,10 +1,14 @@
 import type { FetchLike } from "./types.js";
 
 /**
+ * VERSION must equal the version in package.json and server.json; a test checks it.
+ * It is a literal because this module also runs in the browser gallery, which cannot read package.json.
+ *
  * Poly Haven's API terms require a User-Agent that names the calling app.
  * Openverse also asks clients to identify themselves.
  */
-export const USER_AGENT = "cc0-library-mcp/0.2.13 (+https://github.com/sanghyoLe/cc0-library)";
+export const VERSION = "0.2.14";
+export const USER_AGENT = `cc0-library-mcp/${VERSION} (+https://github.com/sanghyoLe/cc0-library)`;
 
 const TIMEOUT_MS = 15_000;
 /** File downloads can be hundreds of MB, so they get far longer than API calls. */

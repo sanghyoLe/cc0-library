@@ -1,8 +1,8 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { DownloadRequestError, MAX_FILES_PER_CALL, RECEIPT_NAME, downloadAsset, type DownloadLike } from "./download.js";
-import { defaultDownload, defaultFetch } from "./http.js";
-import { getAsset, loadCatalog, search } from "./library.js";
+import { VERSION, defaultDownload, defaultFetch } from "./http.js";
+import { getAsset, listSources, loadCatalog, search } from "./library.js";
 import { ASSET_KINDS, CATALOG_KINDS, PROVIDER_IDS, type FetchLike } from "./types.js";
 
 /** One slow source (The Met can take 30 s) must not hold every reply; it is reported in `pending`. */
@@ -112,14 +112,18 @@ const listOutput = {
         verified: z.object({ date: z.string().describe("YYYY-MM-DD"), evidence: z.string().describe("Text or field that was checked") }),
       }),
     )
-    .describe("Verified CC0 sources"),
-  notCc0: z.array(nameReason).describe("Popular 'free' sites that are NOT CC0"),
-  pendingVerification: z.array(nameReason).describe("Candidates whose license could not be verified yet"),
+    .describe("Verified CC0 sources on this page"),
+  notCc0: z.array(nameReason).describe("Popular 'free' sites that are NOT CC0, on this page"),
+  pendingVerification: z.array(nameReason).describe("Candidates whose license could not be verified yet, on this page"),
+  totals: z
+    .object({ sources: z.number(), notCc0: z.number(), pendingVerification: z.number() })
+    .describe("Matches per list before paging. When a total exceeds `limit`, narrow with `query` or request the next `page`"),
 };
 
+/** The text copy is compact JSON: clients that read it pay for every byte, and indentation adds about a third. */
 const result = (value: object) => ({
   structuredContent: value as Record<string, unknown>,
-  content: [{ type: "text" as const, text: JSON.stringify(value, null, 2) }],
+  content: [{ type: "text" as const, text: JSON.stringify(value) }],
 });
 const fail = (message: string) => ({ content: [{ type: "text" as const, text: message }], isError: true });
 
@@ -141,7 +145,7 @@ const downloadOutput = {
 };
 
 export function createServer(fetchImpl: FetchLike = defaultFetch, downloadImpl: DownloadLike = defaultDownload): McpServer {
-  const server = new McpServer({ name: "cc0-library", version: "0.2.13" });
+  const server = new McpServer({ name: "cc0-library", version: VERSION });
 
   server.registerTool(
     "search_assets",
@@ -158,7 +162,14 @@ export function createServer(fetchImpl: FetchLike = defaultFetch, downloadImpl: 
         "tell the user to confirm the uploader owns the work; items with riskFlags name a franchise or brand and need that warning most. " +
         "Show each item's servedBy credit with the results.",
       inputSchema: {
-        query: z.string().min(1).max(200).describe("Keywords in any language, matched against titles and tags, e.g. 'rainy street' or 'brick wall'"),
+        query: z
+          .string()
+          .min(1)
+          .max(200)
+          .describe(
+            "Keywords matched against titles and tags, e.g. 'rainy street' or 'brick wall'. Any language is accepted, " +
+              "but most sources index English titles and tags: translate the user's words to English for more results",
+          ),
         kind: z.enum([...ASSET_KINDS, "any"]).default("any").describe(KIND_HELP),
         limit: z
           .number()
@@ -278,24 +289,32 @@ export function createServer(fetchImpl: FetchLike = defaultFetch, downloadImpl: 
     {
       title: "List verified CC0 source sites",
       description:
-        "List the curated catalog of CC0 asset sites, each with its license page, scope and dated evidence, " +
+        "Look up the curated catalog of CC0 asset sites, each with its license page, scope and dated evidence, " +
         "plus popular 'free' sites that are NOT CC0 (e.g. Unsplash, Pixabay) and candidates still pending verification. " +
-        "Use it to answer 'is site X CC0?' or to suggest sites to browse by hand; use search_assets instead to find actual assets. " +
+        "Use it to answer 'is site X CC0?' (pass the site name or domain as `query`) or to suggest sites to browse by hand " +
+        "(pass `kind`, and a topic as `query`); use search_assets instead to find actual assets. " +
+        "The catalog holds several hundred sites, so each of the three lists returns one page of `limit` entries and `totals` gives the full match counts. " +
         "Behavior: reads a bundled JSON file, so no network access, instant and deterministic.",
       inputSchema: {
         kind: z
           .enum([...CATALOG_KINDS, "any"])
           .default("any")
-          .describe("Keep only sources offering this asset type ('font' is catalog-only); 'any' (default) returns all. Does not filter the notCc0 and pending lists"),
+          .describe("Keep only sources offering this asset type ('font' is catalog-only); 'any' (default) keeps all. Does not filter the notCc0 and pending lists"),
+        query: z
+          .string()
+          .max(200)
+          .optional()
+          .describe(
+            "Site name, domain or topic words, e.g. 'unsplash', 'kenney.nl' or 'pixel art'. Keeps entries in all three lists whose " +
+              "id, name, URL, notes or reason contain every word (case-insensitive). Leave out to page through everything",
+          ),
+        limit: z.number().int().min(1).max(50).default(10).describe("Maximum entries per list, 1-50"),
+        page: z.number().int().min(1).max(100).default(1).describe("1-based page, applied to each list; request page 2+ only if `totals` shows more matches"),
       },
       outputSchema: listOutput,
       annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
     },
-    async ({ kind }) => {
-      const catalog = loadCatalog();
-      const sources = kind === "any" ? catalog.sources : catalog.sources.filter((s) => s.kinds.includes(kind));
-      return result({ sources, notCc0: catalog.excluded, pendingVerification: catalog.pending });
-    },
+    async ({ kind, query, limit, page }) => result(listSources(loadCatalog(), { kind, query, limit, page })),
   );
 
   return server;
